@@ -12,7 +12,6 @@ extension DataMaster {
     // billdata..
     // searched
     func search(text: String) {
-        
         print("Eingabe: " + text);
         print("Now checking DATE");
         checkDate(text: text)
