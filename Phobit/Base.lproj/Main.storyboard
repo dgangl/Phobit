@@ -1843,7 +1843,7 @@
                         <outlet property="AchtungLabel" destination="M11-h7-F99" id="UrR-Qg-XN2"/>
                         <outlet property="AlreadyUsedLabel" destination="Eg0-6I-mLw" id="JDZ-4x-B1H"/>
                         <outlet property="CodeBenutzer" destination="uXV-GW-qvn" id="tpS-nb-C2U"/>
-                        <outlet property="NameBenutzer" destination="ClQ-Ur-Q0p" id="sWo-I9-Eju"/>
+                        <outlet property="EmailBenutzer" destination="ClQ-Ur-Q0p" id="kNG-4c-wQE"/>
                         <outlet property="Skip" destination="b6E-46-eDR" id="8jp-lS-wKm"/>
                         <outlet property="loginLabel" destination="hYi-Wc-HdH" id="XoQ-1o-9DP"/>
                         <segue destination="A2V-fX-xHl" kind="show" identifier="toStart" id="Dwg-cM-EkN"/>

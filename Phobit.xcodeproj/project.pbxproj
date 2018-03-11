@@ -178,6 +178,7 @@
 		1603F3FD201CF041009557C1 /* Additional Files */ = {
 			isa = PBXGroup;
 			children = (
+				3CAB9062202DDCE800453E6E /* UserData.swift */,
 				983DEB1420166C0C00F98A9C /* CustomFormat.swift */,
 				161602561FFE5EEE0039438E /* BillData.swift */,
 				169E8BAB2037295300D0C36E /* BillData2.0.swift */,
@@ -232,7 +233,6 @@
 		1687771B1FEEAFFB00A3B2AC /* Verschiedene View-Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3CAB9062202DDCE800453E6E /* UserData.swift */,
 				16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */,
 				3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */,
 				3C352B3D20447EF800117EAE /* LoginTableViewController.swift */,
@@ -694,11 +694,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BS5TKJU456;
+				DEVELOPMENT_TEAM = 4365VP3HP5;
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitsa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -713,11 +713,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BS5TKJU456;
+				DEVELOPMENT_TEAM = 4365VP3HP5;
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitsa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
