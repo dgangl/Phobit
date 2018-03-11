@@ -28,6 +28,7 @@ class LoginTableViewCell: MGSwipeTableCell {
     @IBAction func DeletPressed(_ sender: Any) {
         
         
+        
     }
     
 }

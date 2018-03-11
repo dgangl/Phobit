@@ -24,10 +24,23 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
         
         let steuerzeile = tableDict![IndexPath.init(row: matrix.0 + 1, section: 2)] as! Steuerzeile
         switch matrix.1{
-        case 0: steuerzeile.setProzent(prozent: Int(text)!)
-        case 1: steuerzeile.setNetto(netto: doubleString)
-        case 2: steuerzeile.setProzentbetrag(prozentbetrag: doubleString)
-        case 3: steuerzeile.setBrutto(brutto: doubleString)
+        case 0:
+            //Bruttobetrag bleibt gleich
+            //Nur der Nettobetrag und der Prozentbetrag ändern sich
+//            let prozent = steuerzeile.getProzent()
+//            steuerzeile.setProzent(prozent: Int(text)!)
+//            steuerzeile.setProzentbetrag(prozentbetrag: Double(steuerzeile.getBrutto()/Double(prozent)+100 * Double(Int(text)!)))
+//            steuerzeile.setNetto(netto: steuerzeile.getBrutto()-steuerzeile.getProzentbetrag())
+            steuerzeile.setProzent(prozent: Int(text)!)
+            
+        case 1:
+            steuerzeile.setNetto(netto: doubleString)
+            
+            
+        case 2:
+            steuerzeile.setProzentbetrag(prozentbetrag: doubleString)
+        case 3:
+            steuerzeile.setBrutto(brutto: doubleString)
         default: print("Fehler")
         }
         tableView.reloadData()
