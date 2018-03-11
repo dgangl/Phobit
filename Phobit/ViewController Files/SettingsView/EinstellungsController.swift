@@ -66,9 +66,9 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
         // Prepeare Active Firm Lable
         //ENCODING ARRAY START//
         
-        var thisArray: [UserStructure] = [];
+        var thisArray: [UserData] = [];
         if var data = UserDefaults.standard.data(forKey: "UserData"),
-            var test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserStructure] {
+            var test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
             thisArray = test;
         } else {
             print("There is an issue with reading the User Defaults / USER STRUCTURE")

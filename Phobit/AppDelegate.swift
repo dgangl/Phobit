@@ -11,15 +11,15 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     
     var window: UIWindow?
     
-   
     
-
-
-
+    
+    
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -27,10 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        var thisArray: [UserStructure] = [];
+        var thisArray: [UserData] = [];
         
-        if var data = UserDefaults.standard.data(forKey: "UserData"),
-            var test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserStructure] {
+        if let data = UserDefaults.standard.data(forKey: "UserData"),
+            let test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
             thisArray = test;
         } else {
             print("There is an issue")
@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
-
+        
         
         
         
@@ -74,19 +74,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // uncomment this method to activate sample data.
         /*
-        if UserDefaults.standard.bool(forKey: "sampleDataLoaded") == false {
-            SampleDataLoader.loadSampleData()
-            UserDefaults.standard.set(true, forKey: "sampleDataLoaded")
-            print("loaded Sample Data.")
-        }
-        */
+         if UserDefaults.standard.bool(forKey: "sampleDataLoaded") == false {
+         SampleDataLoader.loadSampleData()
+         UserDefaults.standard.set(true, forKey: "sampleDataLoaded")
+         print("loaded Sample Data.")
+         }
+         */
         
         
         
         
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -104,26 +104,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.addSubview(visualEffektView)
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
         self.window?.viewWithTag(815)?.removeFromSuperview()
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
         self.window?.viewWithTag(0815)?.removeFromSuperview()
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
 }
 
