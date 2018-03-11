@@ -73,8 +73,13 @@ extension ScanningViewController {
                     imageView.image = UIImage.init(ciImage: image)
                     */
                     
+                    let context = CIContext(options: nil)
+                    if let cgImage = context.createCGImage(image, from: image.extent) {
+                        self.image = UIImage.init(cgImage: cgImage)
+                        return
+                    }
                     
-                    self.image = UIImage.init(ciImage: image)
+                    
                 }
                 
             } else {

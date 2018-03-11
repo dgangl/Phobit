@@ -29,6 +29,8 @@ extension ScanningViewController: AVCaptureMetadataOutputObjectsDelegate {
                     // shout
                     informUserAboutQR()
                     
+                    print("String:  \(myMeta.stringValue!)")
+                    
                     billData = QRSplitter.split(qrCode: myMeta.stringValue!)
                     print(billData ?? "Keine Billdata! (Fehler im metadata Output)")
                 }

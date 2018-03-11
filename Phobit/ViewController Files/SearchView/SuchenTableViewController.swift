@@ -561,6 +561,7 @@ class SuchenTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationItem.searchController?.isActive = true
+        
     }
     
     override func viewDidLoad() {
@@ -586,7 +587,7 @@ class SuchenTableViewController: UITableViewController {
         definesPresentationContext = true
         
 
-        
+        self.title = "Suchen"
         
 
         
