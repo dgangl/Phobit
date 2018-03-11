@@ -71,18 +71,7 @@ class ZeilenPickerViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc private func callDelegate() {
-        // before we get to the delegate we have to format correctly...
         let text = textField.text!
-        
-        
-        // right no we don't have anything to be formatted
-        //        switch indexPath?.section {
-        ////        case 0:
-        ////        nothing to do here, we dont format the text
-        //        case 3:
-        //
-        //        }
-        
         delegate?.finishedEditing(forMatrix: matrix!, text: text)
         
         self.dismiss(animated: false, completion: nil)
