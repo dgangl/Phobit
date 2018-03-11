@@ -739,9 +739,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-UO-Mqe">
-                                <rect key="frame" x="0.0" y="512" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="512" width="132" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6wY-ux-tyS"/>
+                                    <constraint firstAttribute="height" constant="50" id="xpL-um-kQS"/>
                                 </constraints>
                                 <state key="normal" title="Off" image="BlitzIcon">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -755,20 +755,20 @@
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="PpB-9f-dgN" secondAttribute="bottom" id="6Bm-bn-NYv"/>
                             <constraint firstItem="cee-hL-40Q" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="6Q1-ps-hG0"/>
+                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="leading" secondItem="9dV-U4-Uc7" secondAttribute="leading" id="9aU-yY-9rR"/>
                             <constraint firstItem="cee-hL-40Q" firstAttribute="trailing" secondItem="fZK-gE-YHv" secondAttribute="trailing" id="9cD-Q9-H6d"/>
                             <constraint firstItem="9dV-U4-Uc7" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="A4B-rm-TLt"/>
+                            <constraint firstItem="cee-hL-40Q" firstAttribute="top" secondItem="1ic-UO-Mqe" secondAttribute="bottom" constant="15" id="AWC-qI-vEx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PpB-9f-dgN" secondAttribute="trailing" id="Dqs-Ta-PdL"/>
                             <constraint firstItem="cee-hL-40Q" firstAttribute="top" secondItem="9dV-U4-Uc7" secondAttribute="bottom" id="Ea8-kW-Qmp"/>
-                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="trailing" secondItem="9dV-U4-Uc7" secondAttribute="trailing" id="HKX-oy-dC0"/>
                             <constraint firstItem="9dV-U4-Uc7" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="Iaw-df-HbE"/>
                             <constraint firstItem="cee-hL-40Q" firstAttribute="top" secondItem="9dV-U4-Uc7" secondAttribute="bottom" id="LM9-h7-7EM"/>
-                            <constraint firstItem="cee-hL-40Q" firstAttribute="top" secondItem="1ic-UO-Mqe" secondAttribute="bottom" constant="15" id="LxI-PX-jaU"/>
+                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="trailing" secondItem="9dV-U4-Uc7" secondAttribute="trailing" constant="-243" id="PLr-uO-az0"/>
                             <constraint firstItem="PpB-9f-dgN" firstAttribute="leading" secondItem="SQf-lj-RL4" secondAttribute="leadingMargin" id="SYn-XW-pjU"/>
                             <constraint firstItem="cee-hL-40Q" firstAttribute="trailing" secondItem="fZK-gE-YHv" secondAttribute="trailing" id="Zsn-cv-V4U"/>
                             <constraint firstAttribute="bottom" secondItem="cee-hL-40Q" secondAttribute="bottom" id="c5u-Hg-f7s"/>
                             <constraint firstItem="8ne-mQ-d1E" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" constant="123" id="dg0-wl-FD6"/>
                             <constraint firstItem="PpB-9f-dgN" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="eLg-OS-6ba"/>
-                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="leading" secondItem="9dV-U4-Uc7" secondAttribute="leading" id="h9e-sT-Ogs"/>
                             <constraint firstAttribute="bottom" secondItem="cee-hL-40Q" secondAttribute="bottom" id="jCX-1c-tyc"/>
                             <constraint firstItem="8ne-mQ-d1E" firstAttribute="top" secondItem="fZK-gE-YHv" secondAttribute="top" constant="161" id="knh-i2-QzQ"/>
                             <constraint firstItem="8ne-mQ-d1E" firstAttribute="centerX" secondItem="9dV-U4-Uc7" secondAttribute="centerX" id="nDB-x6-9gw"/>
