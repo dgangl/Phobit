@@ -13,9 +13,9 @@ class QRSplitter{
 //        let bill = BillData(0.0)
         //MARK: ARRAYS
        
-        var steuersatzArr = [20.0, 10.0, 13.0, 19.0, 0.0]
+        var steuersatzArr = [20.0, 10.0, 13.0, 0.0, 19.0]
         var steuerBetragArr = [0.0, 0.0, 0.0, 0.0, 0.0]
-        var steuersatzDiv = [120.0, 110.0, 113.0, 119.0, 0.0]
+        var steuersatzDiv = [120.0, 110.0, 113.0, 0.0, 119.0]
         var betragsArrDouble : [Double] = [0.0, 0.0, 0.0, 0.0, 0.0]
         
         //MARK: Vars
@@ -64,6 +64,13 @@ class QRSplitter{
         var steuerZeileArray = [Steuerzeile]()
         for count in  0 ..< steuersatzArr.count{
             if(steuerBetragArr[count] != 0.0){
+//                let prozent = Int.init(steuersatzArr[count])
+//                let prozentbetrag = steuerBetragArr[count]
+//                let netto = betragsArrDouble[count] - steuerBetragArr[count]
+//                let brutto = betragsArrDouble[count]
+                
+                
+                
             var steuerzeile = Steuerzeile.init(prozent: Int.init(steuersatzArr[count]), prozentbetrag: steuerBetragArr[count], netto: betragsArrDouble[count] - steuerBetragArr[count], brutto: betragsArrDouble[count])
             steuerZeileArray.append(steuerzeile)
             print(steuerzeile)
