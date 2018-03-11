@@ -86,7 +86,7 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
     //AlertView and Button
     @IBAction func clearCSV(_ sender: Any) {
         // Alert Erstellen
-        let alert = UIAlertController(title: "Achtung!", message: "Es werden alle Rechnungen auf von \(UserData.getChoosen().email) gelöscht", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Achtung!", message: "Es werden alle Rechnungen von \(UserData.getChoosen().email) gelöscht", preferredStyle: UIAlertControllerStyle.alert)
         
         //Buttons
         alert.addAction(UIAlertAction(title: "Löschen", style: UIAlertActionStyle.destructive, handler: {
