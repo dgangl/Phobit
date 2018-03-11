@@ -43,10 +43,10 @@ class LoginTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        var thisArray: [UserStructure] = [];
+        var thisArray: [UserData] = [];
         
-        if var data = UserDefaults.standard.data(forKey: "UserData"),
-            var test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserStructure] {
+        if let data = UserDefaults.standard.data(forKey: "UserData"),
+            let test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
             thisArray = test;
         } else {
             print("There is an issue")
@@ -58,9 +58,9 @@ class LoginTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var thisArray: [UserStructure] = [];
-        if var data = UserDefaults.standard.data(forKey: "UserData"),
-            var test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserStructure] {
+        var thisArray: [UserData] = [];
+        if let data = UserDefaults.standard.data(forKey: "UserData"),
+            let test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
             thisArray = test;
         } else {
             print("There is an issue")
@@ -68,7 +68,7 @@ class LoginTableViewController: UITableViewController {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as!
-            MGSwipeTableCell
+        MGSwipeTableCell
         cell.textLabel!.text = thisArray[indexPath.row].name
         
         cell.rightButtons = [
@@ -87,7 +87,7 @@ class LoginTableViewController: UITableViewController {
                 return true
             }
             
-            ]
+        ]
         cell.rightSwipeSettings.transition = .clipCenter
         
         if(indexPath.row != 0){
@@ -111,9 +111,9 @@ class LoginTableViewController: UITableViewController {
     }
     func clearFromArray(stelle: Int){
         //ENCODING ARRAY START//
-        var thisArray: [UserStructure] = [];
-        if var data = UserDefaults.standard.data(forKey: "UserData"),
-            var test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserStructure] {
+        var thisArray: [UserData] = [];
+        if let data = UserDefaults.standard.data(forKey: "UserData"),
+            let test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
             thisArray = test;
         } else {
             print("There is an issue with reading the User Defaults / USER STRUCTURE")
@@ -144,9 +144,9 @@ class LoginTableViewController: UITableViewController {
         //Put it to the top!
         
         //ENCODING ARRAY START//
-        var thisArray: [UserStructure] = [];
-        if var data = UserDefaults.standard.data(forKey: "UserData"),
-            var test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserStructure] {
+        var thisArray: [UserData] = [];
+        if let data = UserDefaults.standard.data(forKey: "UserData"),
+            let test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
             thisArray = test;
         } else {
             print("There is an issue with reading the User Defaults / USER STRUCTURE")
