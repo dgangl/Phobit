@@ -47,6 +47,10 @@ class UserData: NSObject, NSCoding {
         } else {
             print("There is an issue with reading the User Defaults / USER STRUCTURE")
         }
+        if(thisArray == nil){
+            let testUser = UserData.init(name: "Demo Benutzer", email: "demomail@test.com", passwort: "DEMO", loginDate: Date.init());
+            return testUser;
+        }
         
         return thisArray[0];
     }
