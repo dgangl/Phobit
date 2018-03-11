@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.6.0)
+  - MGSwipeTableCell (1.6.6)
+  - Whisper (6.0.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.6)
+  - MGSwipeTableCell
+  - Whisper
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  MGSwipeTableCell: c3bc6e261e7bc06c112909fe3fb8205de286082c
+  Whisper: 169760fc4bab0abf24d5529f9276f95c25cf1025
+
+PODFILE CHECKSUM: 441a4b4523f1cfff8111808a5b83e4527195571a
+
+COCOAPODS: 1.4.0
