@@ -28,9 +28,6 @@ class QRScannerController: UIViewController {
     var INPUT : String?
     var bill = BillData2(0.0)
     
-    private let sessionQueue = DispatchQueue(label: "session queue") // Communicate with the session and other session objects on this queue.
-    
-    
     private var img : UIImage?
     
     let setting = EinstellungsController()
