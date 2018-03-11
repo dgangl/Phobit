@@ -19,6 +19,8 @@ extension DataMaster {
         checkMonth(text: text);
         print("Now checking STRING")
         checkElse(text: text)
+        print("Now checking Price")
+        //GANGL DEI METHODE
         
     }
     
@@ -33,72 +35,79 @@ extension DataMaster {
     
     
     
+    
+    func checkDate(text: String) -> Bool {
+        let deletLerzeichen = text.replacingOccurrences(of: " ", with: "");
+        var splited = Array(deletLerzeichen);
         
-        func checkDate(text: String) -> Bool {
-            let deletLerzeichen = text.replacingOccurrences(of: " ", with: "");
-            var splited = Array(deletLerzeichen);
-            
-            
-            while(true){
-                if(splited.count <= 0){
-                    return false;
-                }
-                
-                var test:String = "";
-                test.append(splited.first!);
-                let first = test;
-                
-                
-                if let number = Double(first){
-                    break;
-                } else {
-                    splited.removeFirst();
-                }
-            }
-            var fullTextString: String = "";
-            
-            for stelle in splited {
-                fullTextString.append(stelle);
-            }
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = fullTextString;
-            guard let date = dateFormatter.date(from: fullTextString) else {
+        
+        while(true){
+            if(splited.count <= 0){
                 return false;
             }
             
+            var test:String = "";
+            test.append(splited.first!);
+            let first = test;
             
-            durchsuche(deinDatum: date, datumArray: billdata)
             
-            return true;
+            if let number = Double(first){
+                break;
+            } else {
+                splited.removeFirst();
+            }
+        }
+        var fullTextString: String = "";
+        
+        for stelle in splited {
+            fullTextString.append(stelle);
         }
         
+        //            let dateFormatter = DateFormatter()
+        //            dateFormatter.dateFormat = fullTextString;
+        //            guard let date = dateFormatter.date(from: fullTextString) else {
+        //                return false;
+        //            }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy" //Your date format
         
+        let date = dateFormatter.date(from: fullTextString) //according to date format your date string
+        print(date ?? "") //Convert String to Date
+        if(date == nil){
+            return false;
+        }
+        durchsuche(deinDatum: date!, datumArray: billdata)
         
-        func checkMonth(text: String) -> Bool {
-            let deletLerzeichen = text.replacingOccurrences(of: " ", with: "");
-            let month = Monate.init(searchText: deletLerzeichen);
-            if(month.getMonth() == nil){
-                return false;
-            }
-            var finished:String = "00.";
-            let monates = month.getMonth()?.description;
-            finished.append(monates!);
+        return true;
+        
+    }
+    
+    
+    
+    func checkMonth(text: String) -> Bool {
+        let deletLerzeichen = text.replacingOccurrences(of: " ", with: "");
+        let month = Monate.init(searchText: deletLerzeichen);
+        if(month.getMonth() == nil){
+            return false;
+        }
+        var finished:String = "00.";
+        let monates = month.getMonth()?.description;
+        finished.append(monates!);
+        
+        var counter:Int = 2018;
+        while foundResults(jahr: counter, texting: finished) <= 1 {
+            counter = counter - 1;
             
-            var counter:Int = 2018;
-            while foundResults(jahr: counter, texting: finished) <= 1 {
-                counter = counter - 1;
+            if(counter <= 2000){
                 
-                if(counter <= 2000){
-                    
-                    return false;
-                    
-                }
+                return false;
+                
             }
-            
-            return true;
         }
         
+        return true;
+    }
+    
     func foundResults(jahr: Int, texting: String) ->Int {
         
         var text = texting;
@@ -118,22 +127,23 @@ extension DataMaster {
         return (searchedbilldata?.count)!;
         
         
+    }
+    
+    func durchsuche(deinDatum: Date, datumArray: [BillData2]) {
+        
+        
+        for choosenDate in datumArray {
+            let variable = choosenDate.getDate();
+            if(deinDatum.compare(variable).rawValue == 0){
+                searchedbilldata?.append(choosenDate);
+            }
         }
         
-        func durchsuche(deinDatum: Date, datumArray: [BillData2]) {
-            
-            
-            for choosenDate in datumArray {
-                let variable = choosenDate.getDate();
-                if(deinDatum.compare(variable).rawValue == 0){
-                    searchedbilldata?.append(choosenDate)
-                }
-            }
-            
-            //USE finishedArray
-            
-            print(searchedbilldata ?? "EMPTY");
-        }
+        //USE finishedArray
+        
+        
+        print(searchedbilldata ?? "EMPTY");
+    }
     
     func durchsucheMonat(deinDatum: Date, array: [BillData2]) {
         
@@ -167,7 +177,7 @@ extension DataMaster {
             return false;
         }
         for item in billdata {
-            if(text.contains(item.rechnungsersteller)){
+            if(item.rechnungsersteller.contains(text)){
                 searchedbilldata?.append(item);
             }
         }
@@ -176,3 +186,4 @@ extension DataMaster {
         return true;
     }
 }
+

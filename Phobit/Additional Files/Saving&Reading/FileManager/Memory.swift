@@ -10,10 +10,7 @@ import Foundation
 import UIKit
 
 class Memory{
-    private enum speicherort : String{
-        case standart = "standart"
-        case hidden = "hidden"
-    }
+   
     
     public func save(input: BillData2, append : Bool){
         //Getting the remaining Billdatas and writing them again
@@ -36,16 +33,19 @@ class Memory{
         let encryptedData = NSKeyedArchiver.archivedData(withRootObject: data)
         
         //Save to UserDefaults
-        UserDefaults.standard.set(encryptedData, forKey: speicherort.standart.rawValue)
+        print("Save Data in \(UserData.getChoosen().email)")
+        UserDefaults.standard.set(encryptedData, forKey: String("\(UserData.getChoosen().email)"))
     }
     
     public func delete(){
-        UserDefaults.standard.set(nil, forKey: speicherort.standart.rawValue)
+        UserDefaults.standard.set(nil, forKey: String(UserData.getChoosen().hash))
     }
     
     public func read() -> [BillData2]!{
         //Get data from UserDefaults if avaliable
-        if let data = UserDefaults.standard.data(forKey: speicherort.standart.rawValue){
+        print("Reading Data in \(UserData.getChoosen().email)")
+
+        if let data = UserDefaults.standard.data(forKey: String("\(UserData.getChoosen().email)")){
             
             //Decrypt Data and return
             let decryptedData = NSKeyedUnarchiver.unarchiveObject(with: data) as! [BillData2]
@@ -53,7 +53,7 @@ class Memory{
             
         }else{
             //Fehler
-            print("Fehler. Something went wrong! Speichersystem konnte nichts auslesen (normal beim ersten starten)")
+            print("<error>. Something went wrong! Speichersystem konnte nichts auslesen (normal beim ersten starten)")
         }
         return nil
     }

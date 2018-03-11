@@ -10,7 +10,7 @@ import UIKit
 
 class OnbordingController: UIViewController {
     //TextFields//
-    @IBOutlet weak var NameBenutzer: UITextField!
+    @IBOutlet weak var EmailBenutzer: UITextField!
     @IBOutlet weak var CodeBenutzer: UITextField!
     //Buttons//
     // @IBOutlet weak var Login: UIButton!
@@ -27,9 +27,9 @@ class OnbordingController: UIViewController {
         // Login.layer.cornerRadius = 20
         Skip.layer.cornerRadius = 20
         // Do any additional setup after loading the view.
-        NameBenutzer.delegate = self
-        NameBenutzer.autocorrectionType = .no
-        NameBenutzer.returnKeyType = UIReturnKeyType.continue
+        EmailBenutzer.delegate = self
+        EmailBenutzer.autocorrectionType = .no
+        EmailBenutzer.returnKeyType = UIReturnKeyType.continue
         
         
         
@@ -51,8 +51,8 @@ class OnbordingController: UIViewController {
     }
     
     @IBAction func goOnToTheNext(_ sender: UITextField) {
-        self.NameBenutzer.endEditing(true)
-        self.NameBenutzer.resignFirstResponder()
+        self.EmailBenutzer.endEditing(true)
+        self.EmailBenutzer.resignFirstResponder()
         self.CodeBenutzer.becomeFirstResponder()
         self.CodeBenutzer.accessibilityContainerType = UIAccessibilityContainerType.none
     }
@@ -78,17 +78,17 @@ class OnbordingController: UIViewController {
      }
      */
     @objc func continuetouched() {
-        if(NameBenutzer.text == "" || CodeBenutzer.text == ""){
+        if(EmailBenutzer.text == "" || CodeBenutzer.text == ""){
             AchtungLabel.isHidden = false
             goOn()
         }
         else{
-            let thisUser = UserStructure.init(name: NameBenutzer.text!, passwort: CodeBenutzer.text!, loginDate: Date.init())
+            let thisUser = UserData.init(name: EmailBenutzer.text!,email: EmailBenutzer.text!, passwort: CodeBenutzer.text!, loginDate: Date.init());
             
-            var nsarr: [UserStructure] = [];
+            var nsarr: [UserData] = [];
             
-            if var data = UserDefaults.standard.data(forKey: "UserData"),
-                var test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserStructure] {
+            if let data = UserDefaults.standard.data(forKey: "UserData"),
+                let test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
                 nsarr = test;
             } else {
                 print("There is an issue")
@@ -142,11 +142,11 @@ class OnbordingController: UIViewController {
         
         present(alert, animated: true, completion: nil)
         
-      
+        
         
     }
     @objc func goOn() {
-        self.NameBenutzer.resignFirstResponder()
+        self.EmailBenutzer.resignFirstResponder()
         self.CodeBenutzer.resignFirstResponder()
     }
     

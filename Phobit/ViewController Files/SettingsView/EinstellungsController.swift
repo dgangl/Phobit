@@ -66,9 +66,9 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
         // Prepeare Active Firm Lable
         //ENCODING ARRAY START//
         
-        var thisArray: [UserStructure] = [];
+        var thisArray: [UserData] = [];
         if var data = UserDefaults.standard.data(forKey: "UserData"),
-            var test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserStructure] {
+            var test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
             thisArray = test;
         } else {
             print("There is an issue with reading the User Defaults / USER STRUCTURE")
@@ -86,7 +86,7 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
     //AlertView and Button
     @IBAction func clearCSV(_ sender: Any) {
         // Alert Erstellen
-        let alert = UIAlertController(title: "Achtung!", message: "Es werden alle Rechnungen auf Ihrem Gerät gelöscht!", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Achtung!", message: "Es werden alle Rechnungen auf von \(UserData.getChoosen().email) gelöscht", preferredStyle: UIAlertControllerStyle.alert)
         
         //Buttons
         alert.addAction(UIAlertAction(title: "Löschen", style: UIAlertActionStyle.destructive, handler: {

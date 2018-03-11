@@ -26,7 +26,7 @@
 		16FD6CA220445A5A00D8B88D /* ZeilenPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6CA120445A5A00D8B88D /* ZeilenPickerViewController.swift */; };
 		16FD6CA6204479C100D8B88D /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */; };
 		3C352B3E20447EF800117EAE /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C352B3D20447EF800117EAE /* LoginTableViewController.swift */; };
-		3CAB9063202DDCE900453E6E /* UserStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9062202DDCE800453E6E /* UserStructure.swift */; };
+		3CAB9063202DDCE900453E6E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9062202DDCE800453E6E /* UserData.swift */; };
 		3CAB9067202DDD6C00453E6E /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */; };
 		981617202042E85100A3C29E /* SuchenTableViewSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816171F2042E85100A3C29E /* SuchenTableViewSelectionHandler.swift */; };
 		981B67561FDC7551008D9835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B67551FDC7551008D9835 /* AppDelegate.swift */; };
@@ -111,7 +111,7 @@
 		16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		3867A260BF5D2352CEFE25D2 /* Pods-Phobit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.debug.xcconfig"; sourceTree = "<group>"; };
 		3C352B3D20447EF800117EAE /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
-		3CAB9062202DDCE800453E6E /* UserStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStructure.swift; sourceTree = "<group>"; };
+		3CAB9062202DDCE800453E6E /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		9816171F2042E85100A3C29E /* SuchenTableViewSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchenTableViewSelectionHandler.swift; sourceTree = "<group>"; };
 		981B67521FDC7551008D9835 /* Phobit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phobit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +190,7 @@
 		1603F3FD201CF041009557C1 /* Additional Files */ = {
 			isa = PBXGroup;
 			children = (
+				3CAB9062202DDCE800453E6E /* UserData.swift */,
 				983DEB1420166C0C00F98A9C /* CustomFormat.swift */,
 				161602561FFE5EEE0039438E /* BillData.swift */,
 				169E8BAB2037295300D0C36E /* BillData2.0.swift */,
@@ -244,7 +245,6 @@
 		1687771B1FEEAFFB00A3B2AC /* Verschiedene View-Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3CAB9062202DDCE800453E6E /* UserStructure.swift */,
 				16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */,
 				3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */,
 				3C352B3D20447EF800117EAE /* LoginTableViewController.swift */,
@@ -574,7 +574,7 @@
 				9822B5C8201CCB4C00C36A1F /* AuswertungTFDelegate.swift in Sources */,
 				16D8DC3A202CB05D00D001C4 /* Memory.swift in Sources */,
 				983789971FEC4B2B00718A32 /* InputType.swift in Sources */,
-				3CAB9063202DDCE900453E6E /* UserStructure.swift in Sources */,
+				3CAB9063202DDCE900453E6E /* UserData.swift in Sources */,
 				9893AB58203A355200249850 /* SpaltenSelectionProtocol.swift in Sources */,
 				9893AB3120387B5D00249850 /* EditingProtocol.swift in Sources */,
 				9893AB3620387E4E00249850 /* DatePickerViewController.swift in Sources */,
