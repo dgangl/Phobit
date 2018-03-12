@@ -57,11 +57,10 @@ class AuswertungsTableViewController: UITableViewController {
     
     @objc func returnHomeAndSave() {
         bill?.merchChanges(tableDict: tableDict!)
-        setImage()
         print("saving BillData")
         let mem = Memory.init()
-        mem.save(input: bill!, append: true)
-        self.dismiss(animated: true, completion: nil)
+        setImage()
+        mem.save(input: bill!, append: true, target: self)
         //
     }
     

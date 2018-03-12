@@ -72,14 +72,14 @@ class LoginTableViewController: UITableViewController {
         cell.textLabel!.text = thisArray[indexPath.row].name
         
         cell.rightButtons = [
-            MGSwipeButton(title: "Löschen", backgroundColor: UIColor.red){
+            MGSwipeButton(title: "Löschen", backgroundColor: UIColor.APPLE_red){
                 (sender: MGSwipeTableCell!) -> Bool in
                 self.clearFromArray(stelle: indexPath.row)
                 print("Gelöscht")
                 tableView.reloadData();
                 return true
             },
-            MGSwipeButton(title: "Auswählen",backgroundColor: UIColor.appleBlue){
+            MGSwipeButton(title: "Auswählen",backgroundColor: UIColor.APPLE_tealBlue){
                 (sender: MGSwipeTableCell!) -> Bool in
                 print("Ausgewählt")
                 self.chooseIt(stelle: indexPath.row);

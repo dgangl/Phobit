@@ -38,7 +38,7 @@ class SampleDataLoader {
         let mem = Memory()
         
         for bill in billData {
-            mem.save(input: bill, append: true)
+            mem.save(input: bill, append: true, target: nil)
         }
     }
     
