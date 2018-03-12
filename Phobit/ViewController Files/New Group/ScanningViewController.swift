@@ -74,8 +74,6 @@ class ScanningViewController: UIViewController {
         
         self.image = nil
         self.billData = nil
-        
-
     }
     
     
