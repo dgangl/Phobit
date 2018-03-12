@@ -29,6 +29,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(100+Double(steuerzeile.getProzent()))*100))//Nettto
             steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
             
+            
         case 1:
             steuerzeile.setNetto(netto: doubleString)
             steuerzeile.setBrutto(brutto: steuerzeile.getNetto()*(1+(Double(steuerzeile.getProzent())/100)))//Brutto
@@ -48,6 +49,8 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
         tableView.reloadData()
         
     }
+    
+
     
     
     
@@ -119,6 +122,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             pickerView.label = "Bitte geben Sie den Rechnungsersteller ein."
             pickerView.modalPresentationStyle = .overCurrentContext
             present(pickerView, animated: false, completion: nil)
+            
         case 1:
             let pickerView = storyboard?.instantiateViewController(withIdentifier: "DatePicker") as! DatePickerViewController
             pickerView.delegate = self

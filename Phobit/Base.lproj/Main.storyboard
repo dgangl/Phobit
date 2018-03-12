@@ -942,13 +942,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocs-cm-Mj1">
                                                     <rect key="frame" x="16" y="12" width="304" height="20.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktive Firmen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ2-Mw-V31">
+                                                        <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktive Firma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ2-Mw-V31">
                                                             <rect key="frame" x="0.0" y="0.0" width="124" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RZL Software" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7j-yN-dbq">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RZL  Software" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7j-yN-dbq">
                                                             <rect key="frame" x="124" y="0.0" width="180" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="180" id="CoN-cM-EVX"/>
@@ -1686,6 +1686,7 @@
                         <outlet property="Skip" destination="b6E-46-eDR" id="8jp-lS-wKm"/>
                         <outlet property="loginLabel" destination="hYi-Wc-HdH" id="XoQ-1o-9DP"/>
                         <segue destination="A2V-fX-xHl" kind="show" identifier="toStart" id="Dwg-cM-EkN"/>
+                        <segue destination="UGs-lE-fL2" kind="show" identifier="toName" id="1LP-5s-s3d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvT-T5-lOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2019,6 +2020,9 @@
                                 <state key="normal" title="Weiter zum Hauptprogramm">
                                     <color key="titleColor" red="0.2036309909" green="0.0011431497880000001" blue="0.19759937380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="ClickedButton:" destination="UGs-lE-fL2" eventType="touchUpInside" id="GaT-nr-aJO"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gib hier deinen Namen ein:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ts-R0-eVq">
                                 <rect key="frame" x="16" y="229" width="343" height="30"/>
@@ -2026,14 +2030,28 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="checkIt:" destination="UGs-lE-fL2" eventType="touchDown" id="XKt-z8-QC0"/>
+                                    <action selector="test:" destination="UGs-lE-fL2" eventType="editingChanged" id="7o8-df-okF"/>
+                                </connections>
                             </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verwende bitte weniger als 15 Zeichen!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6C-Ez-5Ia">
+                                <rect key="frame" x="33" y="200" width="302" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="0.1345965485" blue="0.051795228169999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="qC5-2q-fut"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="FehlerMeldung" destination="Z6C-Ez-5Ia" id="25R-zd-6en"/>
                         <outlet property="TextField" destination="6Ts-R0-eVq" id="cBy-XA-I9w"/>
                         <outlet property="goOn" destination="697-DS-Wjb" id="4yI-qI-GJj"/>
+                        <segue destination="A2V-fX-xHl" kind="show" identifier="toStart" id="XYs-A7-9SC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMF-tf-scU" sceneMemberID="firstResponder"/>
@@ -2050,4 +2068,7 @@
         <image name="SearchIcon" width="300" height="300"/>
         <image name="blank" width="884" height="650"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XYs-A7-9SC"/>
+    </inferredMetricsTieBreakers>
 </document>
