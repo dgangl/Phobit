@@ -43,14 +43,7 @@ class LoginTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        var thisArray: [UserData] = [];
-        
-        if let data = UserDefaults.standard.data(forKey: "UserData"),
-            let test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
-            thisArray = test;
-        } else {
-            print("There is an issue")
-        }
+        let thisArray = UserData.getWholeArray()
         
         return thisArray.count
     }
@@ -58,13 +51,7 @@ class LoginTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var thisArray: [UserData] = [];
-        if let data = UserDefaults.standard.data(forKey: "UserData"),
-            let test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
-            thisArray = test;
-        } else {
-            print("There is an issue")
-        }
+       let thisArray = UserData.getWholeArray()
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as!
@@ -110,25 +97,16 @@ class LoginTableViewController: UITableViewController {
         
     }
     func clearFromArray(stelle: Int){
-        //ENCODING ARRAY START//
-        var thisArray: [UserData] = [];
-        if let data = UserDefaults.standard.data(forKey: "UserData"),
-            let test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
-            thisArray = test;
-        } else {
-            print("There is an issue with reading the User Defaults / USER STRUCTURE")
-        }
-        //ENCODING ARRAY END//
+        var thisArray = UserData.getWholeArray()
         
         //Presentig Alert View Start//
         let alertController = UIAlertController(title: "Löschen", message:
             "Wollen sie diesen Account wirklich löschen?", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Nein", style: UIAlertActionStyle.default,handler: nil))
-        alertController.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.cancel,handler: {action in let indexNumber = UserDefaults.standard.value(forKey: "clickedTabLoginScreen") as! Int;
+        alertController.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.cancel,handler: {action in let indexNumber = stelle as! Int;
             thisArray.remove(at: indexNumber);
             
-            let encodedData = NSKeyedArchiver.archivedData(withRootObject: thisArray)
-            UserDefaults.standard.set(encodedData, forKey: "UserData");
+            UserData.saveNew(newArray: thisArray);
             self.navigationController?.popViewController(animated: true);
             
         }))

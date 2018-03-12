@@ -103,7 +103,15 @@ class UserData: NSObject, NSCoding {
             return true;
         }
         
+       
         
+        
+        
+    }
+    static func saveNew(newArray: [UserData]){
+        
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: newArray)
+        UserDefaults.standard.set(encodedData, forKey: "UserData");
         
     }
     
