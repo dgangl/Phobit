@@ -33,8 +33,8 @@ class Memory{
                 if let target = target {
                     if(proveIfLimitReached(billDataArray: datainmemory)){
                         
-                        let alert = UIAlertController.init(title: "Rechnungslimit erreicht!", message: "Du hast dein Rechnungslimit erreicht. Kaufe nun die Premium-Version um unlimitierten Zugriff auf alle Features zu haben.", preferredStyle: .alert)
-                        let okayAlertAction = UIAlertAction.init(title: "Okay", style: .default, handler: { action in
+                        let alert = UIAlertController.init(title: "Rechnungslimit erreicht!", message: "Du hast dein Rechnungslimit erreicht. Mit dem Premium-Versions Abo hast du unlimitierten Zugriff auf alle Features.", preferredStyle: .alert)
+                        let okayAlertAction = UIAlertAction.init(title: "Rechnung verwerfen", style: .default, handler: { action in
                             alert.dismiss(animated: true, completion: nil)
                             target.dismiss(animated: true, completion: nil)
                         })
