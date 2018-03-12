@@ -27,6 +27,7 @@
 		16FD6CA220445A5A00D8B88D /* ZeilenPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6CA120445A5A00D8B88D /* ZeilenPickerViewController.swift */; };
 		16FD6CA6204479C100D8B88D /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */; };
 		3C352B3E20447EF800117EAE /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C352B3D20447EF800117EAE /* LoginTableViewController.swift */; };
+		3C70AB9B2056C0FA002F08B0 /* SetANameOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C70AB9A2056C0FA002F08B0 /* SetANameOnboarding.swift */; };
 		3CAB9063202DDCE900453E6E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9062202DDCE800453E6E /* UserData.swift */; };
 		3CAB9067202DDD6C00453E6E /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */; };
 		981617202042E85100A3C29E /* SuchenTableViewSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816171F2042E85100A3C29E /* SuchenTableViewSelectionHandler.swift */; };
@@ -113,6 +114,7 @@
 		16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		3867A260BF5D2352CEFE25D2 /* Pods-Phobit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.debug.xcconfig"; sourceTree = "<group>"; };
 		3C352B3D20447EF800117EAE /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		3C70AB9A2056C0FA002F08B0 /* SetANameOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetANameOnboarding.swift; sourceTree = "<group>"; };
 		3CAB9062202DDCE800453E6E /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		9816171F2042E85100A3C29E /* SuchenTableViewSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchenTableViewSelectionHandler.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				1654ED072017B7EB00529C6B /* OnboardingController.swift */,
 				981B676F1FDC7B82008D9835 /* DetailTableViewController.swift */,
 				981B67711FDC7B9A008D9835 /* BildViewController.swift */,
+				3C70AB9A2056C0FA002F08B0 /* SetANameOnboarding.swift */,
 			);
 			path = "Verschiedene View-Controller";
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				9893AB3420387E4200249850 /* TextPickerViewController.swift in Sources */,
 				164840762007B2980023AC43 /* QRSplitter.swift in Sources */,
 				9822B5C8201CCB4C00C36A1F /* AuswertungTFDelegate.swift in Sources */,
+				3C70AB9B2056C0FA002F08B0 /* SetANameOnboarding.swift in Sources */,
 				16D8DC3A202CB05D00D001C4 /* Memory.swift in Sources */,
 				983789971FEC4B2B00718A32 /* InputType.swift in Sources */,
 				3CAB9063202DDCE900453E6E /* UserData.swift in Sources */,
@@ -722,11 +726,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4365VP3HP5;
+				DEVELOPMENT_TEAM = BS5TKJU456;
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobits;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitsa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -741,11 +745,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4365VP3HP5;
+				DEVELOPMENT_TEAM = BS5TKJU456;
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobits;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitsa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
