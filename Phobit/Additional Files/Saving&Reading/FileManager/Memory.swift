@@ -46,7 +46,6 @@ class Memory{
                         
                     }else{
                         target.dismiss(animated: true, completion: nil)
-                        target.dismiss(animated: true, completion: nil)
 
                         data.append(input)
                         
@@ -60,6 +59,19 @@ class Memory{
                         UserDefaults.standard.set(encryptedData, forKey: String("\(UserData.getChoosen().email)"))
                     }
                 }
+            }else{
+                target?.dismiss(animated: true, completion: nil)
+                
+                data.append(input)
+                
+                
+                
+                //Encrypt Data
+                let encryptedData = NSKeyedArchiver.archivedData(withRootObject: data)
+                
+                //Save to UserDefaults
+                print("Save Data in \(UserData.getChoosen().email)")
+                UserDefaults.standard.set(encryptedData, forKey: String("\(UserData.getChoosen().email)"))
             }
         }
     }
