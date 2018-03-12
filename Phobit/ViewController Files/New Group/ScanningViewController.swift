@@ -195,6 +195,7 @@ class ScanningViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "Auswertung") as! AuswertungsTableViewController
         
         vc.bill = bill
+        
         vc.image = image
         
         let nvc = UINavigationController.init(rootViewController: vc)

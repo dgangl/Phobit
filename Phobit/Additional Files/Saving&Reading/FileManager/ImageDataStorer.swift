@@ -14,6 +14,7 @@ class ImageData{
     
     
     public func writeImageTo(name : String, imageToWrite: UIImage){
+        
         let imageData = UIImagePNGRepresentation(imageToWrite)!
         let documentDirectory = getDocumentsDirectory().appendingPathComponent(name)
         do{
