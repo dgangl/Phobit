@@ -84,7 +84,7 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
     
     
     //AlertView and Button
-    @IBAction func clearCSV(_ sender: Any) {
+    @IBAction func clearMemory(_ sender: Any) {
         // Alert Erstellen
         let alert = UIAlertController(title: "Achtung!", message: "Es werden alle Rechnungen von deinem aktuellen Account (\(UserData.getChoosen().name)) auf diesem Gerät gelöscht", preferredStyle: UIAlertControllerStyle.alert)
         
