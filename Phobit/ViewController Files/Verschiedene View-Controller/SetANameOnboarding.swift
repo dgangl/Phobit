@@ -36,7 +36,7 @@ class SetANameOnboarding: UIViewController {
             
             FehlerMeldung.isHidden = false;
             
-            text.removeLast();
+            
             TextField.text = text;
         }
         else{

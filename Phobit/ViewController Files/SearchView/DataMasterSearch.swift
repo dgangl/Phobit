@@ -24,7 +24,7 @@ extension DataMaster {
         checkMonth(text: text);
         print("Now checking STRING")
         checkElse(texti: text)
-        print("Now checking Price")
+        
     }
     
     
