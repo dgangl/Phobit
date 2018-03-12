@@ -159,11 +159,7 @@ extension BillData2 {
         print("--------------------")
     }
     
-    
-    //////////////////////////
-    //fixing kronis arroganz//
-    //////////////////////////
-    
+
     public func getDate() -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
