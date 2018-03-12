@@ -122,7 +122,7 @@ class OnbordingController: UIViewController {
                 
                 
                 // UserDefaults.standard.setValue(nsarr, forKey: "UserData");
-                performSegue(withIdentifier: "toStart", sender: nil);
+                performSegue(withIdentifier: "toName", sender: nil);
                 
             }
             

@@ -107,7 +107,8 @@ class LoginTableViewController: UITableViewController {
             thisArray.remove(at: indexNumber);
             
             UserData.saveNew(newArray: thisArray);
-            self.navigationController?.popViewController(animated: true);
+            
+            self.tableView.reloadData();
             
         }))
         

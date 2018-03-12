@@ -73,13 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ////////////////////////////////
         
         // uncomment this method to activate sample data.
-        /*
+        
          if UserDefaults.standard.bool(forKey: "sampleDataLoaded") == false {
          SampleDataLoader.loadSampleData()
          UserDefaults.standard.set(true, forKey: "sampleDataLoaded")
          print("loaded Sample Data.")
          }
-         */
+        
         
         
         
