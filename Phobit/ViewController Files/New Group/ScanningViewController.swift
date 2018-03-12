@@ -232,16 +232,33 @@ class ScanningViewController: UIViewController {
     
     // buttons
     @IBAction func cameraButtonTabbed(_ sender: UIButton) {
+        self.takeScan = true
+
         
+        let alert = UIAlertController(title: nil, message: "Bitte warten...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
         
-        
-        takeScan = true
-        
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+        //Time the View is loading
+        let when = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: when){
             
-            self.jumpToAuswertung()
+            
+            alert.dismiss(animated: true, completion: nil)
+                self.jumpToAuswertung()
+            
         }
+        
+        
+        
+        
+        
+        
+        
     }
     
     
