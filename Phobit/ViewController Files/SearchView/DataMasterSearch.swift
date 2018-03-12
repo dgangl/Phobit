@@ -21,7 +21,7 @@ extension DataMaster {
         print("Now checking MONTH")
         checkMonth(text: text);
         print("Now checking STRING")
-        checkElse(text: text)
+        checkElse(texti: text)
         print("Now checking Price")
         //GANGL DEI METHODE
         
@@ -175,12 +175,14 @@ extension DataMaster {
         }
         print(searchedbilldata ?? "EMPTY")
     }
-    func checkElse(text: String) -> Bool {
-        if(text.count <= 2){
+    func checkElse(texti: String) -> Bool {
+        let text = texti.lowercased()
+        if(text.count <= 0){
             return false;
         }
         for item in billdata {
             var name = item.rechnungsersteller;
+            name = name.lowercased()
             if(name.contains(text)){
                 searchedbilldata?.append(item);
             }
