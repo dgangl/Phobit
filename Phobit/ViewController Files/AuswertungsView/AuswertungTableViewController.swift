@@ -46,7 +46,8 @@ class AuswertungsTableViewController: UITableViewController {
             getImage()
             // navBar für detail vorbereiten
             self.title = bill?.rechnungsersteller
-            self.navigationController?.navigationBar.backItem?.backBarButtonItem?.title = "Zurück"
+//            self.navigationController?.navigationBar.backItem?.backBarButtonItem?.title = "Zurück"
+            self.navigationController?.navigationBar.backItem?.title = "Zurück"
         }
     }
     
@@ -158,14 +159,14 @@ class AuswertungsTableViewController: UITableViewController {
     }
     
     func getImage(){
-        var i = ImageData()
+        let i = ImageData()
         
         if bill?.imageURL == "" {print("no image url found"); return}
         
         
         
-        if var image = i.getImage(name: (bill?.imageURL)!) {
-            image = UIImage.init(cgImage: (image.cgImage)!, scale: 2, orientation: UIImageOrientation.right)
+        if let image = i.getImage(name: (bill?.imageURL)!) {
+            
             imagePicker.image = image
         }
     

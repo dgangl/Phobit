@@ -33,7 +33,7 @@ class ScanningViewController: UIViewController {
     var billData: BillData2?
     var image: UIImage?
     
-    
+
     
     // items...
     @IBOutlet weak var flashToggle: UIButton!
@@ -63,6 +63,7 @@ class ScanningViewController: UIViewController {
         super.viewDidDisappear(animated)
         self.session.stopRunning()
         self.flashToggle.setTitle("Aus", for: .normal)
+
     }
     
     
@@ -70,6 +71,11 @@ class ScanningViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
         self.session.startRunning()
+        
+        self.image = nil
+        self.billData = nil
+        
+
     }
     
     
@@ -100,7 +106,7 @@ class ScanningViewController: UIViewController {
         let deviceOutput = AVCaptureVideoDataOutput.init()
         
         
-        deviceOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
+//        deviceOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
         deviceOutput.setSampleBufferDelegate(self, queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.default))
         
         //QR-Code Metadata Output
@@ -205,7 +211,7 @@ class ScanningViewController: UIViewController {
             self.informationSheet.removeFromSuperview()
             self.takeScan = false
             self.takePhoto = false
-            self.image = nil
+//            self.image = nil
         }
     }
     
@@ -404,7 +410,14 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             
             if takePhoto {
                 takePhoto = false
-                image = UIImage.init(ciImage: CIImage.init(cvImageBuffer: pixelbuffer).oriented(forExifOrientation: Int32(CGImagePropertyOrientation.right.rawValue)))
+                let ciimage = CIImage.init(cvImageBuffer: pixelbuffer).oriented(forExifOrientation: Int32(CGImagePropertyOrientation.right.rawValue))
+                let context = CIContext(options: nil)
+                if let cgImage = context.createCGImage(ciimage, from: ciimage.extent) {
+                    image = UIImage.init(cgImage: cgImage)
+                    return
+                }
+//
+//                image = UIImage.init(ciImage: CIImage.init(cvImageBuffer: pixelbuffer).oriented(forExifOrientation: Int32(CGImagePropertyOrientation.right.rawValue)))
             }
             
             try requestHandler.perform(self.requests)

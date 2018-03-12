@@ -46,7 +46,7 @@ class QRSplitter{
             
             // fixing the NaN bug
             
-            if count != 4 {
+            if count != 3 {
             steuerBetragArr[count] = (betragsArrDouble[count] / steuersatzDiv[count]) * steuersatzArr[count]
             steuerBetragArr[count] = Double(round(100 * steuerBetragArr[count])/100)
             }
