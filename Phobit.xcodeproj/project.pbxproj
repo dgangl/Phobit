@@ -72,6 +72,7 @@
 		98BA5AB720379DF7004655A0 /* GesamtBruttoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */; };
 		98C1ED79200056AE002A87E9 /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C1ED78200056AE002A87E9 /* SearchDataModel.swift */; };
 		98C1ED7B200057D3002A87E9 /* SearchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C1ED7A200057D3002A87E9 /* SearchObject.swift */; };
+		98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */; };
 		98D11AF51FF5C4FF00E7CDEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16162C541FF58EF5002000E1 /* Images.xcassets */; };
 		98D768041FF52DDC00876B3E /* SuchfunktionDaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D768031FF52DDC00876B3E /* SuchfunktionDaten.swift */; };
 /* End PBXBuildFile section */
@@ -160,6 +161,7 @@
 		98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesamtBruttoTableViewCell.swift; sourceTree = "<group>"; };
 		98C1ED78200056AE002A87E9 /* SearchDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataModel.swift; sourceTree = "<group>"; };
 		98C1ED7A200057D3002A87E9 /* SearchObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchObject.swift; sourceTree = "<group>"; };
+		98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSuggestions.swift; sourceTree = "<group>"; };
 		98D768031FF52DDC00876B3E /* SuchfunktionDaten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchfunktionDaten.swift; sourceTree = "<group>"; };
 		B025AD47474295118F3BB1A5 /* Pods_Phobit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phobit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FD1BD6EEEA6DDC6D69466E /* Pods-Phobit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				16B8A1071FEEB521005E95E9 /* File.swift */,
 				16B8A1091FEEBD1F005E95E9 /* Input.swift */,
 				16D8DC39202CB05D00D001C4 /* Memory.swift */,
+				98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */,
 				163C3342204B121B00D03E41 /* ImageUpload.swift */,
 				984DD79C205024150098BE0F /* SampleDataLoader.swift */,
 			);
@@ -589,6 +592,7 @@
 				9893AB5E203B024100249850 /* KontierungTableViewCell.swift in Sources */,
 				9844A6A0204316BE009ED46D /* DataMasterSearch.swift in Sources */,
 				981B676E1FDC7B72008D9835 /* SuchenTableViewController.swift in Sources */,
+				98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */,
 				161602591FFE65AF0039438E /* Regonizer.swift in Sources */,
 				16FD6C9C20430DAD00D8B88D /* BezahlformenPickerViewController.swift in Sources */,
 			);
@@ -726,7 +730,7 @@
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -745,7 +749,7 @@
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

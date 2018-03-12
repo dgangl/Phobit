@@ -38,6 +38,8 @@ class ImageUpload{
                     print("STRING RESPONSE")
                     debugPrint(response)
                 }
+                
+
             case .failure(let encodingError):
                 print(encodingError)
             }
