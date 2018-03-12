@@ -26,23 +26,21 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
         switch matrix.1{
         case 0:
             steuerzeile.setProzent(prozent: Int(text)!)
-            steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(1+(Double(steuerzeile.getProzent())/100))*100))//Nettto
-            steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
+//            steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(1+(Double(steuerzeile.getProzent())/100))*100))//Nettto
+//            steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
             
         case 1:
             steuerzeile.setNetto(netto: doubleString)
-            steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
-            steuerzeile.setProzent(prozent: Int(steuerzeile.getProzentbetrag()/(steuerzeile.getNetto()/100)))//Prozent
+//            steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
             
         case 2:
             steuerzeile.setProzentbetrag(prozentbetrag: doubleString)
-            steuerzeile.setNetto(netto: steuerzeile.getBrutto()-steuerzeile.getProzentbetrag())//Netto
-            steuerzeile.setProzent(prozent: Int(steuerzeile.getProzentbetrag()/(steuerzeile.getNetto()/100)))//Prozent
+//            steuerzeile.setNetto(netto: steuerzeile.getBrutto()-steuerzeile.getProzentbetrag())//Netto
 
         case 3:
             steuerzeile.setBrutto(brutto: doubleString)
-            steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(1+(Double(steuerzeile.getProzent())/100))*100))//Nettto
-            steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
+//            steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(1+(Double(steuerzeile.getProzent())/100))*100))//Nettto
+//            steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
 
         default: print("Fehler")
         }
