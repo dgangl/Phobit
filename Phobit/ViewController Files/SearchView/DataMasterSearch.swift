@@ -16,6 +16,8 @@ extension DataMaster {
         searchedbilldata = [BillData2]()
         
         print("Eingabe: " + text);
+        print("Now checking Price")
+        Sonderzeichen(input: text)
         print("Now checking DATE");
         checkDate(text: text)
         print("Now checking MONTH")
@@ -23,8 +25,6 @@ extension DataMaster {
         print("Now checking STRING")
         checkElse(texti: text)
         print("Now checking Price")
-        //GANGL DEI METHODE
-        
     }
     
     
@@ -36,7 +36,91 @@ extension DataMaster {
     //  Copyright © 2018 Paul Krenn. All rights reserved.
     //
     
-    
+    func Sonderzeichen(input: String) -> Bool{
+        if(input != ""){
+            var result: Double = -1
+            let deleteLeerzeichen = input.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
+            
+            var splitary = Array(deleteLeerzeichen)
+            
+            switch splitary[0] {
+            case "<":
+                var elements: String = "";
+                for (index,element) in splitary.enumerated(){
+                    if Double(String(splitary[index])) != nil {
+                        elements.append(element)
+                    }
+                }
+                
+                if Double(elements) != nil{
+                    result = Double(elements)!
+                    for userVar in billdata {
+                        for userVar in billdata{
+                            if(userVar.gesamtBrutto >= result && result != -1){
+                                searchedbilldata?.append(userVar)
+                            }
+                        }
+                    }
+                }
+            case ">":
+                var elements: String = "";
+                for (index,element) in splitary.enumerated(){
+                    if Double(String(splitary[index])) != nil {
+                        elements.append(element)
+                    }
+                }
+                if Double(elements) != nil{
+                    result = Double(elements)!
+                    for userVar in billdata {
+                        for userVar in billdata{
+                            if(userVar.gesamtBrutto >= result && result != -1){
+                                searchedbilldata?.append(userVar)
+                            }
+                        }
+                    }
+                }
+            case "=":
+                var elements: String = "";
+                for (index,element) in splitary.enumerated(){
+                    if Double(String(splitary[index])) != nil {
+                        elements.append(element)
+                    }
+                }
+                if Double(elements) != nil{
+                    result = Double(elements)!
+                    for userVar in billdata {
+                        for userVar in billdata{
+                            if(userVar.gesamtBrutto == result && result != -1){
+                                searchedbilldata?.append(userVar)
+                            }
+                        }
+                    }
+                }
+            default:
+                switch splitary[splitary.count-1]{
+                case "€":
+                    var elements: String = "";
+                    for (index,element) in splitary.enumerated(){
+                        if Double(String(splitary[index])) != nil {
+                            elements.append(element)
+                        }
+                    }
+                    if Double(elements) != nil{
+                        result = Double(elements)!
+                        for userVar in billdata {
+                            for userVar in billdata{
+                                if(userVar.gesamtBrutto >= (result*0.9) && userVar.gesamtBrutto <= (result*1.1) && result != -1){
+                                    searchedbilldata?.append(userVar)
+                                }
+                            }
+                        }
+                    }
+                default: return false;
+                }
+            }
+        }
+        return true
+    }
     
     
     func checkDate(text: String) -> Bool {
