@@ -270,6 +270,7 @@
                     </tableView>
                     <connections>
                         <outlet property="imagePicker" destination="kQQ-h1-1eC" id="vVl-g2-cXf"/>
+                        <outlet property="noImgeFoundLBL" destination="8Gf-de-QuU" id="Xd5-5V-pHX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kP7-Ub-8t0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -665,7 +666,7 @@
         <!--CameraView-->
         <scene sceneID="7GM-ue-Uxm">
             <objects>
-                <viewController storyboardIdentifier="camera" id="HRO-ck-iqc" userLabel="CameraView" customClass="QRScannerController" customModule="Phobit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="camera" id="HRO-ck-iqc" userLabel="CameraView" customClass="ScanningViewController" customModule="Phobit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SQf-lj-RL4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -685,7 +686,7 @@
                                         </constraints>
                                         <state key="normal" image="SearchIcon"/>
                                         <connections>
-                                            <action selector="SuchenButtonTabbed:" destination="HRO-ck-iqc" eventType="touchUpInside" id="hix-19-62B"/>
+                                            <action selector="toSearchViewTabbed:" destination="HRO-ck-iqc" eventType="touchUpInside" id="qN0-rS-fvi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsa-hU-4wb">
@@ -698,7 +699,7 @@
                                         <size key="titleShadowOffset" width="-8" height="6"/>
                                         <state key="normal" image="KameraButton_1.0"/>
                                         <connections>
-                                            <action selector="CameraButtonTabbed:" destination="HRO-ck-iqc" eventType="touchUpInside" id="SFT-HU-nQx"/>
+                                            <action selector="cameraButtonTabbed:" destination="HRO-ck-iqc" eventType="touchUpInside" id="in2-SI-gLt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuL-Gp-sC5">
@@ -709,7 +710,7 @@
                                         </constraints>
                                         <state key="normal" image="EinstellungsButton"/>
                                         <connections>
-                                            <action selector="settingsTabbed:" destination="HRO-ck-iqc" eventType="touchUpInside" id="WXm-Zl-yha"/>
+                                            <action selector="toSettingTabbed:" destination="HRO-ck-iqc" eventType="touchUpInside" id="dSh-UR-DTQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -739,15 +740,12 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-UO-Mqe">
-                                <rect key="frame" x="0.0" y="512" width="132" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="xpL-um-kQS"/>
-                                </constraints>
-                                <state key="normal" title="Off" image="BlitzIcon">
+                                <rect key="frame" x="0.0" y="506" width="375" height="47"/>
+                                <state key="normal" title="Aus" image="BlitzIcon">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="flashlight:" destination="HRO-ck-iqc" eventType="touchUpInside" id="64I-Xp-AjF"/>
+                                    <action selector="flashButtonToggle:" destination="HRO-ck-iqc" eventType="touchUpInside" id="Kgo-CL-2B9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -755,18 +753,18 @@
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="PpB-9f-dgN" secondAttribute="bottom" id="6Bm-bn-NYv"/>
                             <constraint firstItem="cee-hL-40Q" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="6Q1-ps-hG0"/>
-                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="leading" secondItem="9dV-U4-Uc7" secondAttribute="leading" id="9aU-yY-9rR"/>
                             <constraint firstItem="cee-hL-40Q" firstAttribute="trailing" secondItem="fZK-gE-YHv" secondAttribute="trailing" id="9cD-Q9-H6d"/>
                             <constraint firstItem="9dV-U4-Uc7" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="A4B-rm-TLt"/>
-                            <constraint firstItem="cee-hL-40Q" firstAttribute="top" secondItem="1ic-UO-Mqe" secondAttribute="bottom" constant="15" id="AWC-qI-vEx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PpB-9f-dgN" secondAttribute="trailing" id="Dqs-Ta-PdL"/>
+                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="DuT-da-HJE"/>
                             <constraint firstItem="cee-hL-40Q" firstAttribute="top" secondItem="9dV-U4-Uc7" secondAttribute="bottom" id="Ea8-kW-Qmp"/>
                             <constraint firstItem="9dV-U4-Uc7" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="Iaw-df-HbE"/>
                             <constraint firstItem="cee-hL-40Q" firstAttribute="top" secondItem="9dV-U4-Uc7" secondAttribute="bottom" id="LM9-h7-7EM"/>
-                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="trailing" secondItem="9dV-U4-Uc7" secondAttribute="trailing" constant="-243" id="PLr-uO-az0"/>
+                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="trailing" secondItem="fZK-gE-YHv" secondAttribute="trailing" id="QTc-RP-UK8"/>
                             <constraint firstItem="PpB-9f-dgN" firstAttribute="leading" secondItem="SQf-lj-RL4" secondAttribute="leadingMargin" id="SYn-XW-pjU"/>
                             <constraint firstItem="cee-hL-40Q" firstAttribute="trailing" secondItem="fZK-gE-YHv" secondAttribute="trailing" id="Zsn-cv-V4U"/>
                             <constraint firstAttribute="bottom" secondItem="cee-hL-40Q" secondAttribute="bottom" id="c5u-Hg-f7s"/>
+                            <constraint firstItem="9dV-U4-Uc7" firstAttribute="top" secondItem="1ic-UO-Mqe" secondAttribute="bottom" constant="8" id="dVX-Bw-pH7"/>
                             <constraint firstItem="8ne-mQ-d1E" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" constant="123" id="dg0-wl-FD6"/>
                             <constraint firstItem="PpB-9f-dgN" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="eLg-OS-6ba"/>
                             <constraint firstAttribute="bottom" secondItem="cee-hL-40Q" secondAttribute="bottom" id="jCX-1c-tyc"/>
@@ -783,19 +781,66 @@
                         <barButtonItem key="backBarButtonItem" title="Zurück" id="Vhi-FL-Mcb"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="button" destination="1ic-UO-Mqe" id="BDQ-kR-vzi"/>
-                        <outlet property="camButton" destination="rsa-hU-4wb" id="hSP-5G-bDb"/>
-                        <outlet property="hinweisText" destination="9dV-U4-Uc7" id="gF1-2m-jdT"/>
-                        <outlet property="stack" destination="PpB-9f-dgN" id="ebM-et-LAG"/>
-                        <outlet property="whiteboard" destination="cee-hL-40Q" id="iwh-KS-tgx"/>
-                        <segue destination="lPM-u0-jSi" kind="show" identifier="suchen" id="93w-7E-xWn"/>
-                        <segue destination="KWt-eW-RyK" kind="show" identifier="einstellung" id="KfA-oE-NIg"/>
+                        <outlet property="flashToggle" destination="1ic-UO-Mqe" id="VPj-RO-CM1"/>
+                        <outlet property="infoLabel" destination="9dV-U4-Uc7" id="xhg-uf-RZj"/>
+                        <outlet property="informationSheet" destination="bhQ-67-4YQ" id="s0K-td-3X5"/>
+                        <outlet property="stackView" destination="PpB-9f-dgN" id="R4h-Mf-tji"/>
+                        <outlet property="whiteboard" destination="cee-hL-40Q" id="lax-A2-Vyx"/>
+                        <segue destination="lPM-u0-jSi" kind="show" identifier="suchen" id="fdq-Re-P67"/>
+                        <segue destination="KWt-eW-RyK" kind="show" identifier="einstellungen" id="8Pa-Zx-LIW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZM-AK-LqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController searchResultsTitle="" id="NY7-oc-Bmd"/>
+                <view contentMode="scaleToFill" id="bhQ-67-4YQ">
+                    <rect key="frame" x="0.0" y="0.0" width="363" height="87"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qbN-xO-d4j" customClass="CustomRoundedEffectView" customModule="Phobit" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="363" height="87"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="TbR-2y-ohE">
+                                <rect key="frame" x="0.0" y="0.0" width="363" height="87"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wir konnten einen Teil deiner Rechnung ausfüllen." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cO-pY-tsz">
+                                        <rect key="frame" x="8" y="8" width="347" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hier drücken um fortzufahren." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wK1-dL-F8O">
+                                        <rect key="frame" x="8" y="41" width="347" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <blurEffect style="light"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </visualEffectView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="2kQ-xK-sYe"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </objects>
-            <point key="canvasLocation" x="1317.5999999999999" y="193.85307346326837"/>
+            <point key="canvasLocation" x="1317.5999999999999" y="176.76161919040482"/>
         </scene>
         <!--Einstellungen-->
         <scene sceneID="qAT-Ca-kJ1">
@@ -2154,7 +2199,7 @@
         <!--SetA Name Onboarding-->
         <scene sceneID="bYH-hH-3zC">
             <objects>
-                <viewController id="UGs-lE-fL2" customClass="SetANameOnboarding" customModule="newLoginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UGs-lE-fL2" customClass="SetANameOnboarding" customModule="Phobit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6pK-60-jzZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

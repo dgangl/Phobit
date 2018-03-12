@@ -17,6 +17,7 @@ class AuswertungsTableViewController: UITableViewController {
     
     
     @IBOutlet weak var imagePicker: UIImageView!
+    @IBOutlet weak var noImgeFoundLBL: UILabel!
     
     // falls der VC als DetailView benutzt wird. (defaultmäßig false)
     var isDetail = false
@@ -39,12 +40,14 @@ class AuswertungsTableViewController: UITableViewController {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Senden", style: .done, target: self, action: #selector(returnHomeAndSave))
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Zurück", style: .plain, target: self, action: #selector(returnHome))
             imagePicker.image = image
+            noImgeFoundLBL.isHidden = true
         } else {
             
             getImage()
             // navBar für detail vorbereiten
             self.title = bill?.rechnungsersteller
-            self.navigationController?.navigationBar.backItem?.backBarButtonItem?.title = "Zurück"
+//            self.navigationController?.navigationBar.backItem?.backBarButtonItem?.title = "Zurück"
+            self.navigationController?.navigationBar.backItem?.title = "Zurück"
         }
     }
     
@@ -156,12 +159,14 @@ class AuswertungsTableViewController: UITableViewController {
     }
     
     func getImage(){
-        var i = ImageData()
+        let i = ImageData()
         
         if bill?.imageURL == "" {print("no image url found"); return}
         
-        if var image = i.getImage(name: (bill?.imageURL)!) {
-            image = UIImage.init(cgImage: (image.cgImage)!, scale: 2, orientation: UIImageOrientation.right)
+        
+        
+        if let image = i.getImage(name: (bill?.imageURL)!) {
+            
             imagePicker.image = image
         }
     
