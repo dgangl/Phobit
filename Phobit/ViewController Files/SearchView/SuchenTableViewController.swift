@@ -575,7 +575,7 @@ class SuchenTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Geben Sie Ihren Suchbegriff ein"
-
+        
         
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = searchController
@@ -586,10 +586,10 @@ class SuchenTableViewController: UITableViewController {
         
         definesPresentationContext = true
         
-
+        
         self.title = "Suchen"
         
-
+        
         
         prepareData()
     }
@@ -605,27 +605,51 @@ class SuchenTableViewController: UITableViewController {
     
     // Data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return (dates?.count) ?? 0
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return 1
+        } else {
+            return (dates?.count) ?? 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataMaster?.getNumberOfRowsInSections(section: section) ?? 0
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return dataMaster?.searchedbilldata?.count ?? 0
+            
+        } else {
+            // default search
+            return dataMaster?.getNumberOfRowsInSections(section: section) ?? 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return dataMaster?.dates[section]
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return ""
+        } else {
+            return dataMaster?.dates[section]
+        }
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let data = dataMaster?.getCellData(forIndexPath: indexPath)
-        
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SuchenTableViewCell
-        cell.firmenname.text = data?.0
-        cell.betrag.text = data?.1
-        
-        return cell
+        if searchController.isActive && searchController.searchBar.text != "" {
+            let data = dataMaster?.searchedbilldata![indexPath.row]
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SuchenTableViewCell
+            cell.firmenname.text = data?.rechnungsersteller
+            cell.betrag.text = CFormat.correctGeldbetrag(zahl: String(data!.gesamtBrutto))
+            
+            return cell
+        } else {
+            let data = dataMaster?.getCellData(forIndexPath: indexPath)
+            
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SuchenTableViewCell
+            cell.firmenname.text = data?.0
+            cell.betrag.text = data?.1
+            
+            return cell
+        }
     }
 }
 
