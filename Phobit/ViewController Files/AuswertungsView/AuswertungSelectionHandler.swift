@@ -26,7 +26,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
         switch matrix.1{
         case 0:
             steuerzeile.setProzent(prozent: Int(text)!)
-            steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(1+(Double(steuerzeile.getProzent())/100))*100))//Nettto
+            steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(100+Double(steuerzeile.getProzent()))*100))//Nettto
             steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
             
         case 1:
