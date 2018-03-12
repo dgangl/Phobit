@@ -31,13 +31,14 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             
         case 1:
             steuerzeile.setNetto(netto: doubleString)
+            steuerzeile.setBrutto(brutto: steuerzeile.getNetto()*(1+(Double(steuerzeile.getProzent())/100)))
             steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
             //steuerzeile.setProzent(prozent: Int(steuerzeile.getProzentbetrag()/(steuerzeile.getNetto()/100)))//Prozent
             
         case 2:
             steuerzeile.setProzentbetrag(prozentbetrag: doubleString)
-            steuerzeile.setNetto(netto: steuerzeile.getBrutto()-steuerzeile.getProzentbetrag())//Netto
-           steuerzeile.setBrutto(brutto: steuerzeile.getNetto() + steuerzeile.getProzentbetrag())
+            steuerzeile.setNetto(netto: steuerzeile.getProzentbetrag()/Double(steuerzeile.getProzent())*100)
+            steuerzeile.setBrutto(brutto: steuerzeile.getProzentbetrag()+steuerzeile.getNetto())
 
         case 3:
             steuerzeile.setBrutto(brutto: doubleString)
