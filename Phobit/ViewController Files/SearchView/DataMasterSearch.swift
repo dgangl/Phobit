@@ -104,12 +104,11 @@ extension DataMaster {
                     }
                     if Double(elements) != nil{
                         result = Double(elements)!
-                        for userVar in billdata {
                             for userVar in billdata{
                                 if(userVar.gesamtBrutto >= (result*0.9) && userVar.gesamtBrutto <= (result*1.1) && result != -1){
                                     searchedbilldata?.append(userVar)
                                 }
-                            }
+                            
                         }
                     }
                 default: return false;
