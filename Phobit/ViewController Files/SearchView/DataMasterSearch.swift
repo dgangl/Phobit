@@ -12,6 +12,9 @@ extension DataMaster {
     // billdata..
     // searched
     func search(text: String) {
+        
+        searchedbilldata = [BillData2]()
+        
         print("Eingabe: " + text);
         print("Now checking DATE");
         checkDate(text: text)
@@ -173,11 +176,12 @@ extension DataMaster {
         print(searchedbilldata ?? "EMPTY")
     }
     func checkElse(text: String) -> Bool {
-        if(text.count <= 3){
+        if(text.count <= 2){
             return false;
         }
         for item in billdata {
-            if(item.rechnungsersteller.contains(text)){
+            var name = item.rechnungsersteller;
+            if(name.contains(text)){
                 searchedbilldata?.append(item);
             }
         }

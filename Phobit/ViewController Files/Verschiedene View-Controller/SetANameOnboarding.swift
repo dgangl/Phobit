@@ -32,7 +32,7 @@ class SetANameOnboarding: UIViewController {
             return
         }
         var text = TextField.text!
-        if(text.count >= 20){
+        if(text.count >= 15){
             
             FehlerMeldung.isHidden = false;
             
@@ -53,14 +53,15 @@ class SetANameOnboarding: UIViewController {
     }
     
     @IBAction func ClickedButton(_ sender: Any) {
-        if(TextField.text == nil){
-            return
-        }
         var users = UserData.getWholeArray();
         let actual = users.popLast()
-        actual?.name = TextField.text!;
-        users.append(actual!);
+        if(TextField.text != nil){
+            
+            actual?.name = TextField.text!;
+            
+        }
         
+        users.append(actual!);
         //Check later wheater the Account is already used!
         if(true){
             UserData.saveNew(newArray: users)
