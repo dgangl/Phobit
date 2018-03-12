@@ -25,22 +25,25 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
         let steuerzeile = tableDict![IndexPath.init(row: matrix.0 + 1, section: 2)] as! Steuerzeile
         switch matrix.1{
         case 0:
-            //Bruttobetrag bleibt gleich
-            //Nur der Nettobetrag und der Prozentbetrag ändern sich
-//            let prozent = steuerzeile.getProzent()
-//            steuerzeile.setProzent(prozent: Int(text)!)
-//            steuerzeile.setProzentbetrag(prozentbetrag: Double(steuerzeile.getBrutto()/Double(prozent)+100 * Double(Int(text)!)))
-//            steuerzeile.setNetto(netto: steuerzeile.getBrutto()-steuerzeile.getProzentbetrag())
             steuerzeile.setProzent(prozent: Int(text)!)
+            steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(100+Double(steuerzeile.getProzent()))*100))//Nettto
+            steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
             
         case 1:
             steuerzeile.setNetto(netto: doubleString)
-            
+            steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
+            steuerzeile.setProzent(prozent: Int(steuerzeile.getProzentbetrag()/(steuerzeile.getNetto()/100)))//Prozent
             
         case 2:
             steuerzeile.setProzentbetrag(prozentbetrag: doubleString)
+            steuerzeile.setNetto(netto: steuerzeile.getBrutto()-steuerzeile.getProzentbetrag())//Netto
+            steuerzeile.setProzent(prozent: Int(steuerzeile.getProzentbetrag()/(steuerzeile.getNetto()/100)))//Prozent
+
         case 3:
             steuerzeile.setBrutto(brutto: doubleString)
+            steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(1+(Double(steuerzeile.getProzent())/100))*100))//Nettto
+            steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
+
         default: print("Fehler")
         }
         tableView.reloadData()

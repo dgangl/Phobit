@@ -195,7 +195,18 @@ class ScanningViewController: UIViewController {
     
     
     func jumpToAuswertung() {
-        guard let bill = self.billData else {return}
+        guard let bill = self.billData else {
+            
+            let alert = UIAlertController.init(title: "Keinen passenden QR-Code gefunden!", message: nil, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let dispatchAfter = DispatchTime.now() + 2.5
+            DispatchQueue.main.asyncAfter(deadline: dispatchAfter){
+                alert.dismiss(animated: true, completion: nil)
+            }
+            
+            return
+            
+        }
         guard let image = self.image else {return}
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "Auswertung") as! AuswertungsTableViewController
@@ -221,10 +232,14 @@ class ScanningViewController: UIViewController {
     
     // buttons
     @IBAction func cameraButtonTabbed(_ sender: UIButton) {
+        
+        
+        
         takeScan = true
         
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+            
             self.jumpToAuswertung()
         }
     }
