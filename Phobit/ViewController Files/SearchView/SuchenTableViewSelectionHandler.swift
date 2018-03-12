@@ -13,7 +13,7 @@ extension SuchenTableViewController {
     
     // handle selections.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if searchController.isActive && searchController.searchBar.text == "" {
+        if searchController.isActive && searchController.searchBar.text != "" {
             guard let dataMasterArray = dataMaster?.searchedbilldata else {return}
             
             let searchBill = dataMasterArray[indexPath.row]
