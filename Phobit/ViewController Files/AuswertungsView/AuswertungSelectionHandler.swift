@@ -29,15 +29,17 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(100+Double(steuerzeile.getProzent()))*100))//Nettto
             steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
             
+            
         case 1:
             steuerzeile.setNetto(netto: doubleString)
+            steuerzeile.setBrutto(brutto: steuerzeile.getNetto()*(1+(Double(steuerzeile.getProzent())/100)))
             steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
-            //steuerzeile.setProzent(prozent: Int(steuerzeile.getProzentbetrag()/(steuerzeile.getNetto()/100)))//Prozent
+            
             
         case 2:
             steuerzeile.setProzentbetrag(prozentbetrag: doubleString)
-            steuerzeile.setNetto(netto: steuerzeile.getBrutto()-steuerzeile.getProzentbetrag())//Netto
-           steuerzeile.setBrutto(brutto: steuerzeile.getNetto() + steuerzeile.getProzentbetrag())
+            steuerzeile.setNetto(netto: steuerzeile.getProzentbetrag()/Double(steuerzeile.getProzent())*100)
+            steuerzeile.setBrutto(brutto: steuerzeile.getProzentbetrag()+steuerzeile.getNetto())
 
         case 3:
             steuerzeile.setBrutto(brutto: doubleString)
@@ -48,6 +50,8 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
         tableView.reloadData()
         
     }
+    
+
     
     
     
@@ -119,6 +123,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             pickerView.label = "Bitte geben Sie den Rechnungsersteller ein."
             pickerView.modalPresentationStyle = .overCurrentContext
             present(pickerView, animated: false, completion: nil)
+            
         case 1:
             let pickerView = storyboard?.instantiateViewController(withIdentifier: "DatePicker") as! DatePickerViewController
             pickerView.delegate = self
