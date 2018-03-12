@@ -24,7 +24,7 @@ extension DataMaster {
         checkMonth(text: text);
         print("Now checking STRING")
         checkElse(text: text)
-        print("Now checking Price")
+       
     }
     
     
@@ -54,13 +54,12 @@ extension DataMaster {
                 
                 if Double(elements) != nil{
                     result = Double(elements)!
-                    for userVar in billdata {
                         for userVar in billdata{
-                            if(userVar.gesamtBrutto >= result && result != -1){
+                            if(userVar.gesamtBrutto <= result && result != -1){
                                 searchedbilldata?.append(userVar)
                             }
                         }
-                    }
+                    
                 }
             case ">":
                 var elements: String = "";
@@ -71,13 +70,12 @@ extension DataMaster {
                 }
                 if Double(elements) != nil{
                     result = Double(elements)!
-                    for userVar in billdata {
                         for userVar in billdata{
                             if(userVar.gesamtBrutto >= result && result != -1){
                                 searchedbilldata?.append(userVar)
                             }
                         }
-                    }
+                    
                 }
             case "=":
                 var elements: String = "";
@@ -88,14 +86,13 @@ extension DataMaster {
                 }
                 if Double(elements) != nil{
                     result = Double(elements)!
-                    for userVar in billdata {
                         for userVar in billdata{
                             if(userVar.gesamtBrutto == result && result != -1){
                                 searchedbilldata?.append(userVar)
                             }
                         }
                     }
-                }
+                
             default:
                 switch splitary[splitary.count-1]{
                 case "€":
