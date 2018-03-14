@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 extension DataMaster {
     // billdata..
     // searched
@@ -151,11 +152,15 @@ extension DataMaster {
         //            guard let date = dateFormatter.date(from: fullTextString) else {
         //                return false;
         //            }
+        
+        /*
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy" //Your date format
         
         let date = dateFormatter.date(from: fullTextString) //according to date format your date string
-        print(date ?? "") //Convert String to Date
+         */
+        let date = convertToDate(dateString: fullTextString);
+        print(date ?? "") //
         if(date == nil){
             return false;
         }
@@ -165,6 +170,23 @@ extension DataMaster {
         
     }
     
+    func convertToDate(dateString: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d.M.yy"
+        var serverDate: Date? = dateFormatter.date(from: dateString) // according to date format your date string
+        if(serverDate == nil){
+            let date = Date()
+            let calendar = Calendar.current
+            
+            let year = calendar.component(.year, from: date)
+            
+            let nextDate: String = dateString.appending("." + year.description);
+            
+             serverDate = dateFormatter.date(from: nextDate) // according to date format your date string
+            
+        }
+        return serverDate
+    }
     
     
     func checkMonth(text: String) -> Bool {
