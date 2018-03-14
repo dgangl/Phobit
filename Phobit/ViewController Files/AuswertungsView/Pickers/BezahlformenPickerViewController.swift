@@ -9,7 +9,7 @@
 import UIKit
 
 class BezahlformenPickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    let data = ["Bar", "Bank", "PSK", "Online Bezahlung", "Andere"]
+    let data = ["Bar", "Bank", "PSK", "Online Bezahlung" ,"Kreditkarte", "Andere"]
     var indexPath: IndexPath?
     var delegate: EditingProtocol?
     var returnTypeBezahlung = ""
@@ -62,6 +62,10 @@ class BezahlformenPickerViewController: UIViewController, UIPickerViewDataSource
         returnTypeBezahlung = data[row]
     }
     
+    
+    func didChangeValue<Value>(for keyPath: KeyPath<BezahlformenPickerViewController, Value>) {
+        
+    }
     
     
     

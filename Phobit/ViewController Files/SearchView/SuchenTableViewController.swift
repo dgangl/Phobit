@@ -574,7 +574,7 @@ class SuchenTableViewController: UITableViewController {
         searchController.delegate = self
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Geben Sie Ihren Suchbegriff ein"
+        searchController.searchBar.placeholder = "Gib den Suchbegriff ein"
         
         
         if #available(iOS 11.0, *) {
@@ -608,6 +608,7 @@ class SuchenTableViewController: UITableViewController {
         if searchController.isActive && searchController.searchBar.text != "" {
             return 1
         } else {
+            dataMaster?.searchedbilldata = nil
             return (dates?.count) ?? 0
         }
     }

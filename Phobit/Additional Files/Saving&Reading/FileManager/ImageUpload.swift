@@ -20,7 +20,7 @@ class ImageUpload{
         
         
         Alamofire.upload(multipartFormData:  { (multipartFormData) in
-            multipartFormData.append(UIImageJPEGRepresentation(img, 1)!, withName: "file", fileName: "phobit\(UUID.init().uuidString)_file.jpeg", mimeType: "image/jpeg")
+            multipartFormData.append(UIImageJPEGRepresentation(#imageLiteral(resourceName: "3391_001"), 1)!, withName: "file", fileName: "phobit\(UUID.init().uuidString)_file.jpeg", mimeType: "image/jpeg")
             for (key, value) in parameters {
                 multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
             }
@@ -38,6 +38,8 @@ class ImageUpload{
                     print("STRING RESPONSE")
                     debugPrint(response)
                 }
+                
+
             case .failure(let encodingError):
                 print(encodingError)
             }
