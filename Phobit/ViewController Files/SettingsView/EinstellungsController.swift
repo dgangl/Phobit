@@ -95,7 +95,7 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
             //Create new File
             let file = Memory()
             //Overwrite everything with nothing
-            file.delete()
+            file.delete(lockKey: "heUssdUWnD2331SjsadwSKS")
         }))
         alert.addAction(UIAlertAction(title: "Zurück", style: UIAlertActionStyle.cancel, handler: nil))
         

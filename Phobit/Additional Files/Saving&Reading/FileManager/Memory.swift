@@ -16,7 +16,7 @@ class Memory{
         
         
         //Getting the remaining Billdatas and writing them again
-        var data = [input]
+        var data : [BillData2]!
         if(append){
             // will crash if the user didn't save anything before...
             //        data = read()!
@@ -46,7 +46,13 @@ class Memory{
                         
                     }else{
                         target.dismiss(animated: true, completion: nil)
-
+                        data.append(input)
+                        //Encrypt Data
+                        let encryptedData = NSKeyedArchiver.archivedData(withRootObject: data)
+                        
+                        //Save to UserDefaults
+                        print("Save Data in \(UserData.getChoosen().name)")
+                        UserDefaults.standard.set(encryptedData, forKey: String("\(UserData.getChoosen().email)"))
                        
                     }
                 }else{
@@ -55,13 +61,12 @@ class Memory{
                     let encryptedData = NSKeyedArchiver.archivedData(withRootObject: data)
                     
                     //Save to UserDefaults
-                    print("Save Data in \(UserData.getChoosen().email)")
+                    print("Save Data in \(UserData.getChoosen().name)")
                     UserDefaults.standard.set(encryptedData, forKey: String("\(UserData.getChoosen().email)"))
                 }
             }else{
                 target?.dismiss(animated: true, completion: nil)
-                
-                data.append(input)
+                data = [input]
                 
                 
                 
@@ -69,19 +74,25 @@ class Memory{
                 let encryptedData = NSKeyedArchiver.archivedData(withRootObject: data)
                 
                 //Save to UserDefaults
-                print("Save Data in \(UserData.getChoosen().email)")
+                print("Save Data in \(UserData.getChoosen().name)")
                 UserDefaults.standard.set(encryptedData, forKey: String("\(UserData.getChoosen().email)"))
             }
         }
     }
     
-    public func delete(){
-        UserDefaults.standard.set(nil, forKey: String(UserData.getChoosen().hash))
+    /// Löscht alle BillData Objekte aus dem Speicher
+    ///
+    /// - Parameter lockKey: Key um sicherzugehen das diese Methode nicht unabsichtlich aufgerufen wird
+    public func delete(lockKey: String){
+        if(lockKey.elementsEqual("heUssdUWnD2331SjsadwSKS")){
+        UserDefaults.standard.set(nil, forKey: String(UserData.getChoosen().email))
+           
+        }
     }
     
     public func read() -> [BillData2]!{
         //Get data from UserDefaults if avaliable
-        print("Reading Data in \(UserData.getChoosen().email)")
+        print("Reading Data in \(UserData.getChoosen().name)")
         
         if let data = UserDefaults.standard.data(forKey: String("\(UserData.getChoosen().email)")){
             
@@ -99,8 +110,9 @@ class Memory{
     public func proveIfLimitReached(billDataArray: [BillData2])-> Bool{
         if(billDataArray.count >=  App_Settings.Bill_Limit && UserData.getChoosen().name.elementsEqual("Demo Benutzer")){
             return true
+        }else{
+            return false
         }
-        return false
     }
     
     
