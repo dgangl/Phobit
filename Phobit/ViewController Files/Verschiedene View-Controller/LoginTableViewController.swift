@@ -63,14 +63,19 @@ class LoginTableViewController: UITableViewController {
                 (sender: MGSwipeTableCell!) -> Bool in
                 self.clearFromArray(stelle: indexPath.row)
                 print("Gelöscht")
-                tableView.reloadData();
+                
                 return true
             },
             MGSwipeButton(title: "Auswählen",backgroundColor: UIColor.APPLE_tealBlue){
                 (sender: MGSwipeTableCell!) -> Bool in
                 print("Ausgewählt")
                 self.chooseIt(stelle: indexPath.row);
-                tableView.reloadData();
+//                tableView.reloadData();
+                let range = NSMakeRange(0, self.tableView.numberOfSections)
+                let sections = NSIndexSet(indexesIn: range)
+
+                self.tableView.reloadSections(sections as IndexSet, with: .top)
+
                 return true
             }
             
@@ -106,7 +111,10 @@ class LoginTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.cancel,handler: {action in let indexNumber = stelle as! Int;
             UserData.deleteUser(index: indexNumber);
             
-            self.tableView.reloadData();
+            let range = NSMakeRange(0, self.tableView.numberOfSections)
+            let sections = NSIndexSet(indexesIn: range)
+            
+            self.tableView.reloadSections(sections as IndexSet, with: .bottom)
             
         }))
         

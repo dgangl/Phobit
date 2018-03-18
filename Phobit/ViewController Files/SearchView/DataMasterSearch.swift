@@ -37,6 +37,24 @@ extension DataMaster {
     //  Copyright © 2018 Paul Krenn. All rights reserved.
     //
     
+    func zeitraumsuche(text: String) -> Bool {
+        
+        if(text.contains("-") != true){
+            return false;
+        }
+        var array = text.split(separator: "-")
+        
+        let firstDate = stringToDate(text: array[0].description);
+        let secondDate = stringToDate(text: array[1].description);
+        if(firstDate != nil && secondDate != nil){
+            zeiteingabe(firstDate: firstDate!, secondDate: secondDate!);
+        }
+        
+        
+        return true;
+        
+    }
+    
     func Sonderzeichen(input: String) -> Bool{
         if(input != ""){
             var result: Double = -1
@@ -119,6 +137,26 @@ extension DataMaster {
         return true
     }
     
+    func zeiteingabe(firstDate: Date, secondDate: Date) {
+        
+        for choosenVar in billdata {
+            let variable = choosenVar.getDate();
+            
+            if(firstDate.compare(variable).rawValue == -1){
+
+                if(secondDate.compare(variable).rawValue == 1){
+                    searchedbilldata?.append(choosenVar);
+                    
+                }
+                
+            }
+        }
+        if(searchedbilldata == nil){
+            return;
+        }
+        print(searchedbilldata ?? "EMPTY")
+        
+    }
     
     func checkDate(text: String) -> Bool {
         let deletLerzeichen = text.replacingOccurrences(of: " ", with: "");
@@ -147,18 +185,7 @@ extension DataMaster {
             fullTextString.append(stelle);
         }
         
-        //            let dateFormatter = DateFormatter()
-        //            dateFormatter.dateFormat = fullTextString;
-        //            guard let date = dateFormatter.date(from: fullTextString) else {
-        //                return false;
-        //            }
-        
-        /*
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy" //Your date format
-        
-        let date = dateFormatter.date(from: fullTextString) //according to date format your date string
-         */
+       
         let date = convertToDate(dateString: fullTextString);
         print(date ?? "") //
         if(date == nil){
@@ -168,6 +195,39 @@ extension DataMaster {
         
         return true;
         
+    }
+    
+    func stringToDate(text: String) -> Date? {
+        let deletLerzeichen = text.replacingOccurrences(of: " ", with: "");
+        var splited = Array(deletLerzeichen);
+        
+        
+        while(true){
+            if(splited.count <= 0){
+                return nil;
+            }
+            
+            var test:String = "";
+            test.append(splited.first!);
+            let first = test;
+            
+            
+            if let number = Double(first){
+                break;
+            } else {
+                splited.removeFirst();
+            }
+        }
+        var fullTextString: String = "";
+        
+        for stelle in splited {
+            fullTextString.append(stelle);
+        }
+        
+        
+        let date = convertToDate(dateString: fullTextString);
+        print(date ?? "") //
+        return date;
     }
     
     func convertToDate(dateString: String) -> Date? {
