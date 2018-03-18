@@ -133,10 +133,7 @@ class AccountTableViewController: UITableViewController, UIAlertViewDelegate {
             "Wollen sie diesen Account wirklich löschen?", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Nein", style: UIAlertActionStyle.default,handler: nil))
         alertController.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.cancel,handler: {action in let indexNumber = UserDefaults.standard.value(forKey: "clickedTabLoginScreen") as! Int;
-            self.finalArr.remove(at: indexNumber);
-            
-            let encodedData = NSKeyedArchiver.archivedData(withRootObject: self.finalArr)
-            UserDefaults.standard.set(encodedData, forKey: "UserData");
+            UserData.deleteUser(index: indexNumber);
             self.navigationController?.popViewController(animated: true);
             
         }))

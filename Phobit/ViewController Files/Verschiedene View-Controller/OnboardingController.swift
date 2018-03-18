@@ -85,49 +85,8 @@ class OnbordingController: UIViewController {
         else{
             let thisUser = UserData.init(name: EmailBenutzer.text!,email: EmailBenutzer.text!, passwort: CodeBenutzer.text!, loginDate: Date.init());
             
-            var nsarr: [UserData] = [];
-            
-            if let data = UserDefaults.standard.data(forKey: "UserData"),
-                let test = NSKeyedUnarchiver.unarchiveObject(with: data) as? [UserData] {
-                nsarr = test;
-            } else {
-                print("There is an issue")
-            }
-            
-            
-            
-            var isTaken = false;
-            
-            for test in nsarr{
-                
-                if(thisUser == test){
-                    AchtungLabel.isHidden = true;
-                    AlreadyUsedLabel.isHidden = false;
-                    isTaken = true;
-                }
-                
-            }
-            
-            
-            
-            
-            if(isTaken == false){
-                
-                
-                
-                
-                nsarr.append(thisUser);
-                let encodedData = NSKeyedArchiver.archivedData(withRootObject: nsarr)
-                UserDefaults.standard.set(encodedData, forKey: "UserData");
-                
-                
-                // UserDefaults.standard.setValue(nsarr, forKey: "UserData");
-                performSegue(withIdentifier: "toName", sender: nil);
-                
-            }
-            
-            
-            
+                UserData.addAccount(newUser: thisUser);
+            performSegue(withIdentifier: "toName", sender: self);
         }
         
         

@@ -104,9 +104,7 @@ class LoginTableViewController: UITableViewController {
             "Wollen sie diesen Account wirklich löschen?", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Nein", style: UIAlertActionStyle.default,handler: nil))
         alertController.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.cancel,handler: {action in let indexNumber = stelle as! Int;
-            thisArray.remove(at: indexNumber);
-            
-            UserData.saveNew(newArray: thisArray);
+            UserData.deleteUser(index: indexNumber);
             
             self.tableView.reloadData();
             
