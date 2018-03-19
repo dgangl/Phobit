@@ -547,21 +547,30 @@ extension UITableViewController: UISearchBarDelegate{
     
     
     func addToolbar(textField: UISearchBar){
-        var toolBar = UIToolbar()
+        let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default;
         toolBar.isTranslucent = true;
         toolBar.backgroundColor = UIColor.lightGray
         toolBar.tintColor = UIColor.APPLE_tealBlue
-        var betragButton = UIBarButtonItem(title: "Betrag", style: .done, target: self, action: #selector(UITableViewController.setToBetragSearch))
+        var betragButton = UIBarButtonItem(title: "Betrag", style: .plain, target: self, action: #selector(UITableViewController.setToBetragSearch))
+        var datumButton = UIBarButtonItem(title: "Datumsbereich", style: .plain, target: self, action: #selector(UITableViewController.setToDatumsbereichSearch))
+        var GewährleistungButton = UIBarButtonItem(title: "Gewährleistung", style: .plain, target: self, action: #selector(UITableViewController.setToGewährleistungsSearch))
         
-        toolBar.setItems([betragButton], animated: false);
+        toolBar.setItems([betragButton /**,datumButton, GewährleistungButton**/], animated: false);
         toolBar.sizeToFit()
-        
         textField.delegate = self
         textField.inputAccessoryView = toolBar
     }
     
     @objc func setToBetragSearch(){
+        
+        //TODO
+    }
+    
+    @objc func setToGewährleistungsSearch(){
+        //TODO
+    }
+    @objc func setToDatumsbereichSearch(){
         //TODO
     }
     

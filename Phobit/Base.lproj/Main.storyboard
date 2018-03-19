@@ -890,7 +890,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sende uns dein Feedback per Mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rP-jC-r8o">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sende uns dein Feedback per Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rP-jC-r8o">
                                                     <rect key="frame" x="26" y="11" width="295" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -915,14 +915,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bericht" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZn-iz-kfQ">
-                                                    <rect key="frame" x="29" y="11" width="304" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bericht" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZn-iz-kfQ">
+                                                    <rect key="frame" x="26" y="11" width="287" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fZn-iz-kfQ" firstAttribute="leading" secondItem="PGX-Ml-BaB" secondAttribute="leadingMargin" constant="10" id="dCu-rd-VSv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fZn-iz-kfQ" secondAttribute="trailing" constant="20" id="kRV-rc-rZx"/>
+                                                <constraint firstItem="fZn-iz-kfQ" firstAttribute="centerY" secondItem="PGX-Ml-BaB" secondAttribute="centerY" id="utL-6E-x5K"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="ggF-JU-gVM" kind="show" id="YS4-N5-bl4"/>
@@ -940,16 +944,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocs-cm-Mj1">
-                                                    <rect key="frame" x="16" y="12" width="304" height="20.5"/>
+                                                    <rect key="frame" x="26" y="12" width="294" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktive Firma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ2-Mw-V31">
-                                                            <rect key="frame" x="0.0" y="0.0" width="124" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="114" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RZL  Software" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7j-yN-dbq">
-                                                            <rect key="frame" x="124" y="0.0" width="180" height="20.5"/>
+                                                            <rect key="frame" x="114" y="0.0" width="180" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="180" id="CoN-cM-EVX"/>
                                                             </constraints>
@@ -963,7 +967,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ocs-cm-Mj1" secondAttribute="trailing" constant="13" id="E27-0R-zqF"/>
                                                 <constraint firstItem="ocs-cm-Mj1" firstAttribute="bottom" secondItem="XZk-cC-dCM" secondAttribute="bottomMargin" id="MZg-T3-GQx"/>
-                                                <constraint firstItem="ocs-cm-Mj1" firstAttribute="leading" secondItem="XZk-cC-dCM" secondAttribute="leadingMargin" id="dXB-uU-gHY"/>
+                                                <constraint firstItem="ocs-cm-Mj1" firstAttribute="leading" secondItem="XZk-cC-dCM" secondAttribute="leadingMargin" constant="10" id="uhq-jd-pES"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
