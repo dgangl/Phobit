@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 extension DataMaster {
     // billdata..
     // searched
@@ -35,6 +36,24 @@ extension DataMaster {
     //  Created by Paul Krenn on 03.03.18.
     //  Copyright © 2018 Paul Krenn. All rights reserved.
     //
+    
+    func zeitraumsuche(text: String) -> Bool {
+        
+        if(text.contains("-") != true){
+            return false;
+        }
+        var array = text.split(separator: "-")
+        
+        let firstDate = stringToDate(text: array[0].description);
+        let secondDate = stringToDate(text: array[1].description);
+        if(firstDate != nil && secondDate != nil){
+            zeiteingabe(firstDate: firstDate!, secondDate: secondDate!);
+        }
+        
+        
+        return true;
+        
+    }
     
     func Sonderzeichen(input: String) -> Bool{
         if(input != ""){
@@ -118,6 +137,26 @@ extension DataMaster {
         return true
     }
     
+    func zeiteingabe(firstDate: Date, secondDate: Date) {
+        
+        for choosenVar in billdata {
+            let variable = choosenVar.getDate();
+            
+            if(firstDate.compare(variable).rawValue == -1){
+
+                if(secondDate.compare(variable).rawValue == 1){
+                    searchedbilldata?.append(choosenVar);
+                    
+                }
+                
+            }
+        }
+        if(searchedbilldata == nil){
+            return;
+        }
+        print(searchedbilldata ?? "EMPTY")
+        
+    }
     
     func checkDate(text: String) -> Bool {
         let deletLerzeichen = text.replacingOccurrences(of: " ", with: "");
@@ -146,16 +185,9 @@ extension DataMaster {
             fullTextString.append(stelle);
         }
         
-        //            let dateFormatter = DateFormatter()
-        //            dateFormatter.dateFormat = fullTextString;
-        //            guard let date = dateFormatter.date(from: fullTextString) else {
-        //                return false;
-        //            }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy" //Your date format
-        
-        let date = dateFormatter.date(from: fullTextString) //according to date format your date string
-        print(date ?? "") //Convert String to Date
+       
+        let date = convertToDate(dateString: fullTextString);
+        print(date ?? "") //
         if(date == nil){
             return false;
         }
@@ -165,6 +197,56 @@ extension DataMaster {
         
     }
     
+    func stringToDate(text: String) -> Date? {
+        let deletLerzeichen = text.replacingOccurrences(of: " ", with: "");
+        var splited = Array(deletLerzeichen);
+        
+        
+        while(true){
+            if(splited.count <= 0){
+                return nil;
+            }
+            
+            var test:String = "";
+            test.append(splited.first!);
+            let first = test;
+            
+            
+            if let number = Double(first){
+                break;
+            } else {
+                splited.removeFirst();
+            }
+        }
+        var fullTextString: String = "";
+        
+        for stelle in splited {
+            fullTextString.append(stelle);
+        }
+        
+        
+        let date = convertToDate(dateString: fullTextString);
+        print(date ?? "") //
+        return date;
+    }
+    
+    func convertToDate(dateString: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d.M.yy"
+        var serverDate: Date? = dateFormatter.date(from: dateString) // according to date format your date string
+        if(serverDate == nil){
+            let date = Date()
+            let calendar = Calendar.current
+            
+            let year = calendar.component(.year, from: date)
+            
+            let nextDate: String = dateString.appending("." + year.description);
+            
+             serverDate = dateFormatter.date(from: nextDate) // according to date format your date string
+            
+        }
+        return serverDate
+    }
     
     
     func checkMonth(text: String) -> Bool {

@@ -14,6 +14,7 @@ class CFormat {
     
     
     static func correctProzentKomma(zahl: String) ->String {
+        
         let newzahl = zahl.replacingOccurrences(of: ",", with: ".")
         let number = Double(newzahl)
         

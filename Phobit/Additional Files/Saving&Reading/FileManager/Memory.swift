@@ -14,6 +14,10 @@ class Memory{
     
     public func save(input: BillData2, append : Bool, target: UIViewController?){
         
+        // adds the new rechnungsersteller to the userdefaults for smart type.
+        // newStringForSearch(rechnungsersteller: input.rechnungsersteller)
+        
+        
         
         //Getting the remaining Billdatas and writing them again
         var data : [BillData2]!
