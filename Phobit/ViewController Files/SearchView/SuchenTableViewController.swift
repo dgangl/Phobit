@@ -543,6 +543,30 @@ import UIKit
 //    }
 //}
 
+extension UITableViewController: UISearchBarDelegate{
+    
+    
+    func addToolbar(textField: UISearchBar){
+        var toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default;
+        toolBar.isTranslucent = true;
+        toolBar.backgroundColor = UIColor.lightGray
+        toolBar.tintColor = UIColor.APPLE_tealBlue
+        var betragButton = UIBarButtonItem(title: "Betrag", style: .done, target: self, action: "setToBetragSearch")
+        
+        toolBar.setItems([betragButton], animated: false);
+        toolBar.sizeToFit()
+        
+        textField.delegate = self
+        textField.inputAccessoryView = toolBar
+    }
+    
+    func setToBetragSearch(){
+        //TODO
+    }
+    
+}
+
 class SuchenTableViewController: UITableViewController {
     
     var dataMaster: DataMaster?
@@ -552,8 +576,13 @@ class SuchenTableViewController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        addToolbar(textField: searchController.searchBar)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
