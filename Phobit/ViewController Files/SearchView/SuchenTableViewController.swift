@@ -552,7 +552,7 @@ extension UITableViewController: UISearchBarDelegate{
         toolBar.isTranslucent = true;
         toolBar.backgroundColor = UIColor.lightGray
         toolBar.tintColor = UIColor.APPLE_tealBlue
-        var betragButton = UIBarButtonItem(title: "Betrag", style: .done, target: self, action: "setToBetragSearch")
+        var betragButton = UIBarButtonItem(title: "Betrag", style: .done, target: self, action: #selector(UITableViewController.setToBetragSearch))
         
         toolBar.setItems([betragButton], animated: false);
         toolBar.sizeToFit()
@@ -561,7 +561,7 @@ extension UITableViewController: UISearchBarDelegate{
         textField.inputAccessoryView = toolBar
     }
     
-    func setToBetragSearch(){
+    @objc func setToBetragSearch(){
         //TODO
     }
     
