@@ -8,6 +8,5 @@ target 'Phobit' do
   # Pods for Phobit
 
 	pod 'Alamofire', '~> 4.6'
-	pod 'Whisper'
 	pod 'MGSwipeTableCell'
 end

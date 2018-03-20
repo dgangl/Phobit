@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D7A10255F30AEB7A015FA816493B035A"
+               BlueprintIdentifier = "67D60841CE2E215415E72D3A2FF4471A"
                BuildableName = "Pods_Phobit.framework"
                BlueprintName = "Pods-Phobit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D7A10255F30AEB7A015FA816493B035A"
+            BlueprintIdentifier = "67D60841CE2E215415E72D3A2FF4471A"
             BuildableName = "Pods_Phobit.framework"
             BlueprintName = "Pods-Phobit"
             ReferencedContainer = "container:Pods.xcodeproj">
