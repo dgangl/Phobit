@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phobit/ViewController Files/AuswertungsView/AuswertungTableViewController.swift"
+            timestampString = "542792798.160072"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "AuswertungsTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phobit.AuswertungsTableViewController.image.getter : Swift.Optional&lt;__ObjC.UIImage&gt;"
+                  moduleName = "Phobit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Kroni/Desktop/Phobit/Phobit/ViewController%20Files/AuswertungsView/AuswertungTableViewController.swift"
+                  timestampString = "542490569.105902"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phobit.AuswertungsTableViewController.image.setter : Swift.Optional&lt;__ObjC.UIImage&gt;"
+                  moduleName = "Phobit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Kroni/Desktop/Phobit/Phobit/ViewController%20Files/AuswertungsView/AuswertungTableViewController.swift"
+                  timestampString = "542490569.109971"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phobit.AuswertungsTableViewController.init(style: __C.UITableViewStyle) -&gt; Phobit.AuswertungsTableViewController"
+                  moduleName = "Phobit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Kroni/Desktop/Phobit/Phobit/ViewController%20Files/AuswertungsView/AuswertungTableViewController.swift"
+                  timestampString = "542490569.113825"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "592">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phobit.AuswertungsTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Phobit.AuswertungsTableViewController"
+                  moduleName = "Phobit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Kroni/Desktop/Phobit/Phobit/ViewController%20Files/AuswertungsView/AuswertungTableViewController.swift"
+                  timestampString = "542490569.1182441"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "644">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phobit.AuswertungsTableViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Phobit.AuswertungsTableViewController&gt;"
+                  moduleName = "Phobit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Kroni/Desktop/Phobit/Phobit/ViewController%20Files/AuswertungsView/AuswertungTableViewController.swift"
+                  timestampString = "542490569.122224"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "592">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phobit/ViewController Files/New Group/VisionHandler.swift"
+            timestampString = "542491335.817118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "handleRectangles(request:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
