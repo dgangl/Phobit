@@ -40,8 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //Zeige den Onboarding Screen
             vc = storyboard.instantiateViewController(withIdentifier: "BoardingScreen")
             //Adding the Base File
-            let f = File()
-            f.saveFile(line: "", append: false, filename: "history")
+            
             
         }
         else/*Es wurde bereits ein User angelegt (Premium active)*/{
@@ -108,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if UserDefaults.standard.bool(forKey: "sampleDataLoaded") == false {
             
-            SampleDataLoader.loadSampleData()
+//            SampleDataLoader.loadSampleData()
             UserDefaults.standard.set(true, forKey: "sampleDataLoaded")
             print("loaded Sample Data.")
             

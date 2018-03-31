@@ -9,4 +9,6 @@ target 'Phobit' do
 
 	pod 'Alamofire', '~> 4.6'
 	pod 'MGSwipeTableCell'
+	pod 'TesseractOCRiOS', '4.0.0'
+
 end
