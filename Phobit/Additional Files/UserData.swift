@@ -51,10 +51,12 @@ class UserData: NSObject, NSCoding {
             thisArray = test;
         } else {
             print("There is an issue with reading the User Defaults / USER STRUCTURE")
+            
         }
+//        return thisArray[0]
+        let user = UserData.init(name: "Demo Benutzer", email: "demo@benutzer.at", passwort: "password", loginDate: Date.init())
+        return user;
         
-        
-        return thisArray[0];
     }
     
     /// You will get the whole Array out of the User Defaults

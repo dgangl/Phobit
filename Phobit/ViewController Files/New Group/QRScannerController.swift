@@ -280,7 +280,6 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                     seen = true
                     
                     capturePhoto()
-                    shout()
                     
                     print("Saved")
                     let beleg = QRSplitter.split(qrCode: metadataObj.stringValue!)
@@ -529,20 +528,7 @@ extension QRScannerController {
 }
 
 
-import Whisper
-extension QRScannerController{
-    func shout(){
-//        let image = #imageLiteral(resourceName: "Icon-1024")
-//        let announcement = Announcement(title: "Wir konnten einen Teil deiner Rechnung ausfüllen.", subtitle: nil, image: image, duration: 10.0, action: {print("Pressed")})
-//        Whisper.show(shout: announcement, to: self, completion: {
-//
-//            print("The shout was silent.")
-//        })
-//
-        
-        
-    }
-}
+
 
 
 
