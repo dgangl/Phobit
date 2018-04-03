@@ -189,6 +189,8 @@ extension EinstellungsController: MFMailComposeViewControllerDelegate{
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
+            mail.navigationBar.tintColor = UIColor.white
+            
             mail.setToRecipients(["phobit-support@rzlsoftware.at"])
             mail.setSubject("Feedback")
             mail.setMessageBody("<h1> Feedback </h1> <p>Feedback/ Verbesserungsvorschläge: </p>", isHTML: true)

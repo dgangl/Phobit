@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MessageUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
         
-        
+        themeApp()
         return true
     }
     
@@ -121,6 +121,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     } 
     
-    
+    func themeApp(){
+        UINavigationBar.appearance().barTintColor = UIColor.rzlRed
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        
+        
+        UIBarButtonItem.appearance(whenContainedInInstancesOf:[UISearchBar.self]).tintColor = UIColor.white
+        
+        
+
+    }
 }
 

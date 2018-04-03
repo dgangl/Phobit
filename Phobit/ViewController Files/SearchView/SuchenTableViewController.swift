@@ -615,6 +615,7 @@ class SuchenTableViewController: UITableViewController {
         searchController.searchBar.placeholder = "Gib den Suchbegriff ein"
         
         
+        
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = searchController
             self.navigationItem.hidesSearchBarWhenScrolling = false
@@ -628,7 +629,7 @@ class SuchenTableViewController: UITableViewController {
         self.title = "Suchen"
         
         
-        
+        setDefaultSearchBar()
         prepareData()
     }
     
@@ -690,6 +691,36 @@ class SuchenTableViewController: UITableViewController {
             return cell
         }
     }
+    func setDefaultSearchBar(){
+        searchController.searchBar.tintColor = .white
+
+        
+        if #available(iOS 11.0, *) {
+            let sc = UISearchController(searchResultsController: nil)
+            sc.delegate = self
+            let scb = sc.searchBar
+            scb.tintColor = UIColor.white
+            scb.barTintColor = UIColor.white
+            
+            if let textfield = scb.value(forKey: "searchField") as? UITextField {
+                textfield.textColor = UIColor.lightGray
+                if let backgroundview = textfield.subviews.first {
+                    
+                    // Background color
+                    backgroundview.backgroundColor = UIColor.white
+                    
+                    // Rounded corner
+                    backgroundview.layer.cornerRadius = 10;
+                    backgroundview.clipsToBounds = true;
+                }
+            }
+            
+            
+            navigationItem.searchController = sc
+            navigationItem.hidesSearchBarWhenScrolling = false
+        }
+        
+    }
 }
 
 
@@ -712,3 +743,5 @@ extension SuchenTableViewController: UISearchControllerDelegate {
         }
     }
 }
+
+

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 extension UIColor{
-    static let rzlRed = UIColor.init(red: 191/255, green: 54/255, blue: 50/255, alpha: 1.0)
+    static let rzlRed = UIColor.init(red: 170/255, green: 48/255, blue: 31/255, alpha: 1.0)
     //Detection Layer is currently Green
     static let detectionOverlayColor = UIColor.init(red: 176/255, green: 217/255, blue: 100/255, alpha: 0.4)
 
