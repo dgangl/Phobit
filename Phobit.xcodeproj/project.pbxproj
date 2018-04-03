@@ -35,7 +35,6 @@
 		981B67721FDC7B9A008D9835 /* BildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B67711FDC7B9A008D9835 /* BildViewController.swift */; };
 		981B67741FDC7BBC008D9835 /* SuchenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B67731FDC7BBC008D9835 /* SuchenTableViewCell.swift */; };
 		9822B5CB201CD47B00C36A1F /* CustomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9822B5CA201CD47B00C36A1F /* CustomToolbar.swift */; };
-		9822B5D0201CE3BB00C36A1F /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9822B5CF201CE3BB00C36A1F /* QRScannerController.swift */; };
 		983789931FEC3DC400718A32 /* TwoItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983789921FEC3DC400718A32 /* TwoItemsCell.swift */; };
 		983789951FEC3DD000718A32 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983789941FEC3DD000718A32 /* TextCell.swift */; };
 		983789971FEC4B2B00718A32 /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983789961FEC4B2B00718A32 /* InputType.swift */; };
@@ -116,7 +115,6 @@
 		981B67711FDC7B9A008D9835 /* BildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BildViewController.swift; sourceTree = "<group>"; };
 		981B67731FDC7BBC008D9835 /* SuchenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchenTableViewCell.swift; sourceTree = "<group>"; };
 		9822B5CA201CD47B00C36A1F /* CustomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbar.swift; sourceTree = "<group>"; };
-		9822B5CF201CE3BB00C36A1F /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 		983789921FEC3DC400718A32 /* TwoItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoItemsCell.swift; sourceTree = "<group>"; };
 		983789941FEC3DD000718A32 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		983789961FEC4B2B00718A32 /* InputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
@@ -329,7 +327,6 @@
 		9822B5CE201CE3A000C36A1F /* KameraView */ = {
 			isa = PBXGroup;
 			children = (
-				9822B5CF201CE3BB00C36A1F /* QRScannerController.swift */,
 				985935B220556D7700FB20D7 /* ScanningVCMetadata.swift */,
 				985935AC205564C500FB20D7 /* VisionUtilities.swift */,
 				985935AE205564CC00FB20D7 /* VisionHandler.swift */,
@@ -548,7 +545,6 @@
 				169E8BAC2037295300D0C36E /* BillData2.0.swift in Sources */,
 				16FD6CA6204479C100D8B88D /* AccountTableViewController.swift in Sources */,
 				98BA5AB520379D31004655A0 /* SpaltenTableViewCell.swift in Sources */,
-				9822B5D0201CE3BB00C36A1F /* QRScannerController.swift in Sources */,
 				983DEB1520166C0C00F98A9C /* CustomFormat.swift in Sources */,
 				985935AD205564C500FB20D7 /* VisionUtilities.swift in Sources */,
 				981617202042E85100A3C29E /* SuchenTableViewSelectionHandler.swift in Sources */,

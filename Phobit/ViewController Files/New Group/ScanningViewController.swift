@@ -10,9 +10,9 @@ import UIKit
 import AVFoundation
 import Vision
 import LocalAuthentication
+import TesseractOCR
 
-
-class ScanningViewController: UIViewController {
+class ScanningViewController: UIViewController, G8TesseractDelegate {
     // small bug when i am in a phone call the green bar is minimizing the screen so that the detection layer is not accurat.
     var detectionView: UIView? = nil
     
@@ -32,6 +32,8 @@ class ScanningViewController: UIViewController {
 
     var billData: BillData2?
     var image: UIImage?
+    var tesseract: G8Tesseract?
+
     
 
     
@@ -51,6 +53,13 @@ class ScanningViewController: UIViewController {
         setupCamera()
         setupVision()
         bringAllToFront()
+        
+        
+        if let tesseract = G8Tesseract(language: "deu_old"){
+            self.tesseract = tesseract
+            tesseract.delegate = self
+        }
+        
         
         // configure informationSheet
         let tapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(userTapedNotification))
@@ -183,6 +192,25 @@ class ScanningViewController: UIViewController {
             })
         }
     }
+                        /////////////
+                        //OCR STUFF//
+                        /////////////
+    
+    public func processImage(image: UIImage){
+        var image = image
+        image = image.g8_blackAndWhite()
+        tesseract?.image = image
+        tesseract?.recognize()
+        print(tesseract!.recognizedText)
+    }
+    
+    func progressImageRecognition(for tesseract: G8Tesseract!) {
+        print("TESSERACT PROGRESS: \(tesseract.progress)%")
+    }
+    
+                        ///////////////
+                        //////END//////
+                        ///////////////
     
     
     
@@ -484,4 +512,3 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
     }
 }
-
