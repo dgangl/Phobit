@@ -696,7 +696,7 @@ class SuchenTableViewController: UITableViewController {
 
         
         if #available(iOS 11.0, *) {
-            let sc = UISearchController(searchResultsController: nil)
+            let sc = searchController
             sc.delegate = self
             let scb = sc.searchBar
             scb.tintColor = UIColor.white

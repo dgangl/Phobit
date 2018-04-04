@@ -243,6 +243,9 @@ class ScanningViewController: UIViewController, G8TesseractDelegate {
         
         let nvc = UINavigationController.init(rootViewController: vc)
         
+        ImageUpload.requestWith(endUrl: "https://services.rzlsoftware.at/rzlocrservice/DoOCR", image: image)
+        processImage(image: image)
+        
         self.present(nvc, animated: true) {
             // TODO: clean up user interface.
             self.informationSheet.removeFromSuperview()

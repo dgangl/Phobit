@@ -8,49 +8,58 @@
 
 import Foundation
 import Alamofire
+import TesseractOCR
 
 class ImageUpload{
-    func uploadImg(img: UIImage, fullUrl: String){
-        let parameters = [
-            "ocrEngine": "0",
-            "submit": "Upload",
-            "__RequestVerificationToken": "CfDJ8PnFf_CXShpGv_pKnn2EaiMmnXVL7SSS63s_24zfYK6-0HifyXEY4Q8zFd8cbwfvgVw1yoNxTv69ka04XuRk6oEO_x0rzthXaJ2CKb-UoZdbqJyy9_2sTqiz1Sx2T5lPH9JaPoQZfxMYxtu9W1IbGpw"
-
+   
+    
+    
+    static func requestWith(endUrl: String, image: UIImage){
+        let image = #imageLiteral(resourceName: "3391_001")
+        let url = endUrl
+        let imageData = UIImagePNGRepresentation(image.g8_blackAndWhite())
+        let headers = [
+            "ocrEngine" : "0",
+//            "file" : "file",
+//            "submit" : "Upload",
+//            "__RequestVerificationToken" : "CfDJ8HVc80c9-RdDmo70-kzWpNTgdaAy4_3w_nsNPNunbLBdBg3YcgwxgSMXhcoCsuufdPpNeR1Dk1kf5ymS6m_P1Gk7jOzWky6JA7kxLJ83F6xFWkFmCmLTe3pgrA_t4HZkBnGKIsh6PyqhP1ux-I7VF34"
         ]
+       
         
-        
-        Alamofire.upload(multipartFormData:  { (multipartFormData) in
-            multipartFormData.append(UIImageJPEGRepresentation(#imageLiteral(resourceName: "3391_001"), 1)!, withName: "file", fileName: "phobit\(UUID.init().uuidString)_file.jpeg", mimeType: "image/jpeg")
-            for (key, value) in parameters {
-                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            if let data = imageData{
+                multipartFormData.append(data, withName: "file", fileName: "file.png", mimeType: "image/png")
             }
-        }, usingThreshold: UInt64.init() , to: fullUrl, method: HTTPMethod.post, headers: parameters, encodingCompletion: { encodingResult in
-            switch encodingResult {
-            case .success(let upload, _, _):
-                upload.uploadProgress(closure: { (progress) in
-                    print("Progress: \(progress)")
-                })
-                upload.responseJSON { response in
-                    print("JSON RESPONSE")
-                    debugPrint(response)
-                }
-                upload.responseString  { response in
-                    print("STRING RESPONSE")
-                    debugPrint(response)
-                }
+            
+        }, usingThreshold: UInt64.init(), to: url, method: .post, headers: headers) { (result) in
+            
+            
+            
+            
+            
+            
+            switch result{
                 
-
-            case .failure(let encodingError):
-                print(encodingError)
+                
+                
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    print("Succesfully uploaded")
+                    if let err = response.error{
+                        print("JSON FAILED")
+                    }
+                  
+                }
+                upload.responseString{ response in
+                    print("STRING RESPONSE: \(response)")
+                    
+                }
+            case .failure(let error):
+                print("Error in upload: \(error.localizedDescription)")
             }
-            
-        })
-            
-        
+        }
 
-    
     }
-    
 }
 
 

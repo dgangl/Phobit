@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnbordingController: UIViewController {
+class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
     //TextFields//
     @IBOutlet weak var EmailBenutzer: UITextField!
     @IBOutlet weak var CodeBenutzer: UITextField!
@@ -23,6 +23,13 @@ class OnbordingController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        tap.delegate = self
+        self.view.addGestureRecognizer(tap)
+        
+        
         
         // Login.layer.cornerRadius = 20
         Skip.layer.cornerRadius = 20
@@ -50,6 +57,10 @@ class OnbordingController: UIViewController {
         
     }
     
+    @objc func handleTap(sender: UITapGestureRecognizer? = nil) {
+        goOn()
+    }
+
     @IBAction func goOnToTheNext(_ sender: UITextField) {
         self.EmailBenutzer.endEditing(true)
         self.EmailBenutzer.resignFirstResponder()
@@ -59,6 +70,7 @@ class OnbordingController: UIViewController {
     @IBAction func checkPasswordAndContinue(_ sender: UITextField) {
         continuetouched()
     }
+
     
     
     
