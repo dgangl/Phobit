@@ -114,7 +114,7 @@ class LoginTableViewController: UITableViewController {
             let range = NSMakeRange(0, self.tableView.numberOfSections)
             let sections = NSIndexSet(indexesIn: range)
             
-            self.tableView.reloadSections(sections as IndexSet, with: .bottom)
+            self.tableView.reloadSections(sections as IndexSet, with: .left)
             
         }))
         
