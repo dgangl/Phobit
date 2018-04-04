@@ -14,7 +14,8 @@ class UserData: NSObject, NSCoding {
     var passwort = "";
     var loginDate = Date();
     
-    static var FIXED_DEMO_USER: UserData = UserData.init(name: "tempo", email: "temp", passwort: "temp", loginDate: Date.init());
+    static var FIXED_DEMO_USER: UserData = UserData.init(name: "Demo Benutzer", email: "demo@benutzer.at", passwort: "password", loginDate: Date.init());
+    
     init(name: String,email: String, passwort: String, loginDate: Date) {
         self.email = email;
         self.name = name;
@@ -43,6 +44,8 @@ class UserData: NSObject, NSCoding {
     /// If there is no User declared, you will get back a Default User with sample Datas!
     /// - Returns: current choosen User / Demo User
     static func getChoosen() -> UserData {
+        //Setting a Demo Account for later use
+        let user = FIXED_DEMO_USER;
         
         //ENCODING ARRAY START//
         var thisArray: [UserData] = [];
@@ -52,10 +55,17 @@ class UserData: NSObject, NSCoding {
         } else {
             print("There is an issue with reading the User Defaults / USER STRUCTURE")
             
+            return user;
+            
         }
-//        return thisArray[0]
-        let user = UserData.init(name: "Demo Benutzer", email: "demo@benutzer.at", passwort: "password", loginDate: Date.init())
-        return user;
+        if(thisArray.isEmpty || thisArray == nil){
+            return user;
+        }
+        else{
+             return thisArray[0]
+        }
+       
+        
         
     }
     

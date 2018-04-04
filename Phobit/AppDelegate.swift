@@ -18,13 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        //Initializing the User Data Array
+        if (UserData.getWholeArray().count == 0 || UserData.getWholeArray().isEmpty || UserData.getWholeArray() == nil) {
+            let demo = UserData.init(name: "Demo Benutzer", email: "-", passwort: "DEMO", loginDate: Date.init());
+            UserData.FIXED_DEMO_USER = demo;
+            UserData.addAccount(newUser: demo);
+            print("Added the Demo Account")
+        }
         
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
         appDidInstallAndFirstRun();
+        
+        
         
         
         let thisArray = UserData.getWholeArray();
@@ -107,18 +115,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if UserDefaults.standard.bool(forKey: "sampleDataLoaded") == false {
             
-//            SampleDataLoader.loadSampleData()
+            SampleDataLoader.loadSampleData()
             UserDefaults.standard.set(true, forKey: "sampleDataLoaded")
             print("loaded Sample Data.")
             
         }
         
-        if UserData.getWholeArray().count == 0 {
-            let demo = UserData.init(name: "Demo Benutzer", email: "-", passwort: "DEMO", loginDate: Date.init());
-            UserData.FIXED_DEMO_USER = demo;
-            UserData.addAccount(newUser: demo);
-            print("Added the Demo Account")
-        }
+        
     } 
     
     func themeApp(){
