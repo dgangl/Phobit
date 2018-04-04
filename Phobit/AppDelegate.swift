@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MessageUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,8 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //Zeige den Onboarding Screen
             vc = storyboard.instantiateViewController(withIdentifier: "BoardingScreen")
             //Adding the Base File
-            let f = File()
-            f.saveFile(line: "", append: false, filename: "history")
+            
             
         }
         else/*Es wurde bereits ein User angelegt (Premium active)*/{
@@ -54,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
         
-        
+        themeApp()
         return true
     }
     
@@ -108,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if UserDefaults.standard.bool(forKey: "sampleDataLoaded") == false {
             
-            SampleDataLoader.loadSampleData()
+//            SampleDataLoader.loadSampleData()
             UserDefaults.standard.set(true, forKey: "sampleDataLoaded")
             print("loaded Sample Data.")
             
@@ -122,6 +121,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     } 
     
-    
+    func themeApp(){
+        UINavigationBar.appearance().barTintColor = UIColor.rzlRed
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        
+        
+        UIBarButtonItem.appearance(whenContainedInInstancesOf:[UISearchBar.self]).tintColor = UIColor.white
+        
+        
+
+    }
 }
 

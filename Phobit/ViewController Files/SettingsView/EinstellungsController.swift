@@ -95,7 +95,7 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
             //Create new File
             let file = Memory()
             //Overwrite everything with nothing
-            file.delete()
+            file.delete(lockKey: "heUssdUWnD2331SjsadwSKS")
         }))
         alert.addAction(UIAlertAction(title: "Zurück", style: UIAlertActionStyle.cancel, handler: nil))
         
@@ -189,6 +189,8 @@ extension EinstellungsController: MFMailComposeViewControllerDelegate{
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
+            mail.navigationBar.tintColor = UIColor.white
+            
             mail.setToRecipients(["phobit-support@rzlsoftware.at"])
             mail.setSubject("Feedback")
             mail.setMessageBody("<h1> Feedback </h1> <p>Feedback/ Verbesserungsvorschläge: </p>", isHTML: true)

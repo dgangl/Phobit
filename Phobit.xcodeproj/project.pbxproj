@@ -10,17 +10,14 @@
 		00561FC339BEB757B3139368 /* Pods_Phobit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B025AD47474295118F3BB1A5 /* Pods_Phobit.framework */; };
 		160C034E2000B20B00BD3EC2 /* EinstellungsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160C034D2000B20B00BD3EC2 /* EinstellungsController.swift */; };
 		160C03502001864200BD3EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */; };
-		161602571FFE5EEE0039438E /* BillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161602561FFE5EEE0039438E /* BillData.swift */; };
-		161602591FFE65AF0039438E /* Regonizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161602581FFE65AF0039438E /* Regonizer.swift */; };
 		163C3343204B121B00D03E41 /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C3342204B121B00D03E41 /* ImageUpload.swift */; };
 		163C50AC2056AE230084701B /* App_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C50AB2056AE230084701B /* App_Settings.swift */; };
 		164840762007B2980023AC43 /* QRSplitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164840752007B2980023AC43 /* QRSplitter.swift */; };
 		1654ED082017B7EC00529C6B /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1654ED072017B7EB00529C6B /* OnboardingController.swift */; };
+		168BD09D206F93EE00431336 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 168BD09C206F93EE00431336 /* tessdata */; };
 		169E8BAC2037295300D0C36E /* BillData2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAB2037295300D0C36E /* BillData2.0.swift */; };
 		169E8BAE20372D1200D0C36E /* Steuerzeile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAD20372D1200D0C36E /* Steuerzeile.swift */; };
 		16B23707204D4B5900CFD87D /* PhobitColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B23706204D4B5900CFD87D /* PhobitColorPicker.swift */; };
-		16B8A1081FEEB521005E95E9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8A1071FEEB521005E95E9 /* File.swift */; };
-		16B8A10A1FEEBD1F005E95E9 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8A1091FEEBD1F005E95E9 /* Input.swift */; };
 		16D8DC3A202CB05D00D001C4 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8DC39202CB05D00D001C4 /* Memory.swift */; };
 		16FD6C9C20430DAD00D8B88D /* BezahlformenPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6C9B20430DAD00D8B88D /* BezahlformenPickerViewController.swift */; };
 		16FD6C9E20431B5000D8B88D /* ImageDataStorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6C9D20431B4F00D8B88D /* ImageDataStorer.swift */; };
@@ -35,17 +32,13 @@
 		981B675B1FDC7551008D9835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981B67591FDC7551008D9835 /* Main.storyboard */; };
 		981B676C1FDC7B61008D9835 /* AuswertungTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B676B1FDC7B61008D9835 /* AuswertungTableViewController.swift */; };
 		981B676E1FDC7B72008D9835 /* SuchenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B676D1FDC7B72008D9835 /* SuchenTableViewController.swift */; };
-		981B67701FDC7B82008D9835 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B676F1FDC7B82008D9835 /* DetailTableViewController.swift */; };
 		981B67721FDC7B9A008D9835 /* BildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B67711FDC7B9A008D9835 /* BildViewController.swift */; };
 		981B67741FDC7BBC008D9835 /* SuchenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B67731FDC7BBC008D9835 /* SuchenTableViewCell.swift */; };
-		9822B5C8201CCB4C00C36A1F /* AuswertungTFDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9822B5C7201CCB4C00C36A1F /* AuswertungTFDelegate.swift */; };
 		9822B5CB201CD47B00C36A1F /* CustomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9822B5CA201CD47B00C36A1F /* CustomToolbar.swift */; };
-		9822B5D0201CE3BB00C36A1F /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9822B5CF201CE3BB00C36A1F /* QRScannerController.swift */; };
 		983789931FEC3DC400718A32 /* TwoItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983789921FEC3DC400718A32 /* TwoItemsCell.swift */; };
 		983789951FEC3DD000718A32 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983789941FEC3DD000718A32 /* TextCell.swift */; };
 		983789971FEC4B2B00718A32 /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983789961FEC4B2B00718A32 /* InputType.swift */; };
 		983DEB1520166C0C00F98A9C /* CustomFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983DEB1420166C0C00F98A9C /* CustomFormat.swift */; };
-		983DEB1720166D7400F98A9C /* NEWAuswertungsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983DEB1620166D7400F98A9C /* NEWAuswertungsTableViewController.swift */; };
 		9844A6A0204316BE009ED46D /* DataMasterSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844A69F204316BE009ED46D /* DataMasterSearch.swift */; };
 		984DD79D205024150098BE0F /* SampleDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984DD79C205024150098BE0F /* SampleDataLoader.swift */; };
 		984DD7A5205081330098BE0F /* sampleData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 984DD7A4205081320098BE0F /* sampleData.txt */; };
@@ -67,12 +60,9 @@
 		98B3A0082055A3C200D55CBA /* CustomRoundedEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */; };
 		98B767232006C2E000AFE504 /* Monate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B767222006C2E000AFE504 /* Monate.swift */; };
 		98B767252006D3EC00AFE504 /* SearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B767242006D3EC00AFE504 /* SearchHandler.swift */; };
-		98B767272006D70A00AFE504 /* FilterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B767262006D70A00AFE504 /* FilterObject.swift */; };
 		98B7672B2007867D00AFE504 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */; };
 		98BA5AB520379D31004655A0 /* SpaltenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */; };
 		98BA5AB720379DF7004655A0 /* GesamtBruttoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */; };
-		98C1ED79200056AE002A87E9 /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C1ED78200056AE002A87E9 /* SearchDataModel.swift */; };
-		98C1ED7B200057D3002A87E9 /* SearchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C1ED7A200057D3002A87E9 /* SearchObject.swift */; };
 		98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */; };
 		98D11AF51FF5C4FF00E7CDEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16162C541FF58EF5002000E1 /* Images.xcassets */; };
 		98D768041FF52DDC00876B3E /* SuchfunktionDaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D768031FF52DDC00876B3E /* SuchfunktionDaten.swift */; };
@@ -94,8 +84,6 @@
 /* Begin PBXFileReference section */
 		160C034D2000B20B00BD3EC2 /* EinstellungsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinstellungsController.swift; sourceTree = "<group>"; };
 		160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		161602561FFE5EEE0039438E /* BillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillData.swift; sourceTree = "<group>"; };
-		161602581FFE65AF0039438E /* Regonizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regonizer.swift; sourceTree = "<group>"; };
 		16162C541FF58EF5002000E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Phobit/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		163C3342204B121B00D03E41 /* ImageUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
 		163C50AB2056AE230084701B /* App_Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App_Settings.swift; sourceTree = "<group>"; };
@@ -103,11 +91,10 @@
 		1648406620074E8B0023AC43 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		164840752007B2980023AC43 /* QRSplitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRSplitter.swift; sourceTree = "<group>"; };
 		1654ED072017B7EB00529C6B /* OnboardingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		168BD09C206F93EE00431336 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		169E8BAB2037295300D0C36E /* BillData2.0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillData2.0.swift; sourceTree = "<group>"; };
 		169E8BAD20372D1200D0C36E /* Steuerzeile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steuerzeile.swift; sourceTree = "<group>"; };
 		16B23706204D4B5900CFD87D /* PhobitColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhobitColorPicker.swift; sourceTree = "<group>"; };
-		16B8A1071FEEB521005E95E9 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		16B8A1091FEEBD1F005E95E9 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		16D8DC39202CB05D00D001C4 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		16FD6C9B20430DAD00D8B88D /* BezahlformenPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezahlformenPickerViewController.swift; sourceTree = "<group>"; };
 		16FD6C9D20431B4F00D8B88D /* ImageDataStorer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataStorer.swift; sourceTree = "<group>"; };
@@ -125,17 +112,13 @@
 		981B67611FDC7551008D9835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981B676B1FDC7B61008D9835 /* AuswertungTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuswertungTableViewController.swift; sourceTree = "<group>"; };
 		981B676D1FDC7B72008D9835 /* SuchenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchenTableViewController.swift; sourceTree = "<group>"; };
-		981B676F1FDC7B82008D9835 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		981B67711FDC7B9A008D9835 /* BildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BildViewController.swift; sourceTree = "<group>"; };
 		981B67731FDC7BBC008D9835 /* SuchenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchenTableViewCell.swift; sourceTree = "<group>"; };
-		9822B5C7201CCB4C00C36A1F /* AuswertungTFDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuswertungTFDelegate.swift; sourceTree = "<group>"; };
 		9822B5CA201CD47B00C36A1F /* CustomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbar.swift; sourceTree = "<group>"; };
-		9822B5CF201CE3BB00C36A1F /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 		983789921FEC3DC400718A32 /* TwoItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoItemsCell.swift; sourceTree = "<group>"; };
 		983789941FEC3DD000718A32 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		983789961FEC4B2B00718A32 /* InputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
 		983DEB1420166C0C00F98A9C /* CustomFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFormat.swift; sourceTree = "<group>"; };
-		983DEB1620166D7400F98A9C /* NEWAuswertungsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEWAuswertungsTableViewController.swift; sourceTree = "<group>"; };
 		9844A69F204316BE009ED46D /* DataMasterSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMasterSearch.swift; sourceTree = "<group>"; };
 		984DD79C205024150098BE0F /* SampleDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataLoader.swift; sourceTree = "<group>"; };
 		984DD7A4205081320098BE0F /* sampleData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleData.txt; sourceTree = "<group>"; };
@@ -157,12 +140,9 @@
 		98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedEffectView.swift; sourceTree = "<group>"; };
 		98B767222006C2E000AFE504 /* Monate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monate.swift; sourceTree = "<group>"; };
 		98B767242006D3EC00AFE504 /* SearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandler.swift; sourceTree = "<group>"; };
-		98B767262006D70A00AFE504 /* FilterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterObject.swift; sourceTree = "<group>"; };
 		98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaltenTableViewCell.swift; sourceTree = "<group>"; };
 		98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesamtBruttoTableViewCell.swift; sourceTree = "<group>"; };
-		98C1ED78200056AE002A87E9 /* SearchDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataModel.swift; sourceTree = "<group>"; };
-		98C1ED7A200057D3002A87E9 /* SearchObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchObject.swift; sourceTree = "<group>"; };
 		98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSuggestions.swift; sourceTree = "<group>"; };
 		98D768031FF52DDC00876B3E /* SuchfunktionDaten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchfunktionDaten.swift; sourceTree = "<group>"; };
 		B025AD47474295118F3BB1A5 /* Pods_Phobit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phobit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,13 +176,8 @@
 		1603F3FD201CF041009557C1 /* Additional Files */ = {
 			isa = PBXGroup;
 			children = (
-				163C50AB2056AE230084701B /* App_Settings.swift */,
-				3CAB9062202DDCE800453E6E /* UserData.swift */,
-				983DEB1420166C0C00F98A9C /* CustomFormat.swift */,
-				161602561FFE5EEE0039438E /* BillData.swift */,
-				169E8BAB2037295300D0C36E /* BillData2.0.swift */,
-				169E8BAD20372D1200D0C36E /* Steuerzeile.swift */,
-				16B23706204D4B5900CFD87D /* PhobitColorPicker.swift */,
+				168BD09F206F942900431336 /* BillDataFiles */,
+				168BD09E206F941500431336 /* AppSettings */,
 				16B8A1061FEEB511005E95E9 /* Saving&Reading */,
 				9822B5C9201CD46900C36A1F /* Custom User Interface */,
 			);
@@ -221,8 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				16FD6C9D20431B4F00D8B88D /* ImageDataStorer.swift */,
-				16B8A1071FEEB521005E95E9 /* File.swift */,
-				16B8A1091FEEBD1F005E95E9 /* Input.swift */,
 				16D8DC39202CB05D00D001C4 /* Memory.swift */,
 				98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */,
 				163C3342204B121B00D03E41 /* ImageUpload.swift */,
@@ -234,7 +207,6 @@
 		161602551FFE5EBE0039438E /* Splitter */ = {
 			isa = PBXGroup;
 			children = (
-				161602581FFE65AF0039438E /* Regonizer.swift */,
 				164840752007B2980023AC43 /* QRSplitter.swift */,
 			);
 			path = Splitter;
@@ -257,11 +229,30 @@
 				3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */,
 				3C352B3D20447EF800117EAE /* LoginTableViewController.swift */,
 				1654ED072017B7EB00529C6B /* OnboardingController.swift */,
-				981B676F1FDC7B82008D9835 /* DetailTableViewController.swift */,
 				981B67711FDC7B9A008D9835 /* BildViewController.swift */,
 				3C70AB9A2056C0FA002F08B0 /* SetANameOnboarding.swift */,
 			);
 			path = "Verschiedene View-Controller";
+			sourceTree = "<group>";
+		};
+		168BD09E206F941500431336 /* AppSettings */ = {
+			isa = PBXGroup;
+			children = (
+				163C50AB2056AE230084701B /* App_Settings.swift */,
+				16B23706204D4B5900CFD87D /* PhobitColorPicker.swift */,
+			);
+			path = AppSettings;
+			sourceTree = "<group>";
+		};
+		168BD09F206F942900431336 /* BillDataFiles */ = {
+			isa = PBXGroup;
+			children = (
+				169E8BAB2037295300D0C36E /* BillData2.0.swift */,
+				3CAB9062202DDCE800453E6E /* UserData.swift */,
+				983DEB1420166C0C00F98A9C /* CustomFormat.swift */,
+				169E8BAD20372D1200D0C36E /* Steuerzeile.swift */,
+			);
+			path = BillDataFiles;
 			sourceTree = "<group>";
 		};
 		16B8A1061FEEB511005E95E9 /* Saving&Reading */ = {
@@ -302,6 +293,7 @@
 				981B67591FDC7551008D9835 /* Main.storyboard */,
 				160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */,
 				981B67611FDC7551008D9835 /* Info.plist */,
+				168BD09C206F93EE00431336 /* tessdata */,
 				16162C541FF58EF5002000E1 /* Images.xcassets */,
 			);
 			path = Phobit;
@@ -310,9 +302,6 @@
 		981B67751FDC7BE1008D9835 /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
-				98C1ED78200056AE002A87E9 /* SearchDataModel.swift */,
-				98C1ED7A200057D3002A87E9 /* SearchObject.swift */,
-				98B767262006D70A00AFE504 /* FilterObject.swift */,
 				98B767222006C2E000AFE504 /* Monate.swift */,
 				98B767242006D3EC00AFE504 /* SearchHandler.swift */,
 				981B676D1FDC7B72008D9835 /* SuchenTableViewController.swift */,
@@ -338,7 +327,6 @@
 		9822B5CE201CE3A000C36A1F /* KameraView */ = {
 			isa = PBXGroup;
 			children = (
-				9822B5CF201CE3BB00C36A1F /* QRScannerController.swift */,
 				985935B220556D7700FB20D7 /* ScanningVCMetadata.swift */,
 				985935AC205564C500FB20D7 /* VisionUtilities.swift */,
 				985935AE205564CC00FB20D7 /* VisionHandler.swift */,
@@ -353,7 +341,6 @@
 			isa = PBXGroup;
 			children = (
 				9893AB3220387E1500249850 /* Pickers */,
-				983DEB1820166D8900F98A9C /* NEW */,
 				98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */,
 				9893AB2E20387B2C00249850 /* AuswertungSelectionHandler.swift */,
 				9893AB59203B011700249850 /* SpaltenEditingViewController.swift */,
@@ -368,15 +355,6 @@
 				983789961FEC4B2B00718A32 /* InputType.swift */,
 			);
 			path = AuswertungsView;
-			sourceTree = "<group>";
-		};
-		983DEB1820166D8900F98A9C /* NEW */ = {
-			isa = PBXGroup;
-			children = (
-				9822B5C7201CCB4C00C36A1F /* AuswertungTFDelegate.swift */,
-				983DEB1620166D7400F98A9C /* NEWAuswertungsTableViewController.swift */,
-			);
-			path = NEW;
 			sourceTree = "<group>";
 		};
 		9893AB3220387E1500249850 /* Pickers */ = {
@@ -468,6 +446,7 @@
 				9893AB60203B07B900249850 /* PhobitKontenplan.csv in Resources */,
 				981B675B1FDC7551008D9835 /* Main.storyboard in Resources */,
 				984DD7A5205081330098BE0F /* sampleData.txt in Resources */,
+				168BD09D206F93EE00431336 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,13 +495,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Phobit/Pods-Phobit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
-				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
+				"${BUILT_PRODUCTS_DIR}/TesseractOCRiOS/TesseractOCR.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TesseractOCR.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -545,12 +524,9 @@
 				985935B12055667B00FB20D7 /* ScanningResultsHandler.swift in Sources */,
 				981B67561FDC7551008D9835 /* AppDelegate.swift in Sources */,
 				9893AB2F20387B2C00249850 /* AuswertungSelectionHandler.swift in Sources */,
-				98C1ED79200056AE002A87E9 /* SearchDataModel.swift in Sources */,
 				16FD6CA220445A5A00D8B88D /* ZeilenPickerViewController.swift in Sources */,
-				983DEB1720166D7400F98A9C /* NEWAuswertungsTableViewController.swift in Sources */,
 				16FD6C9E20431B5000D8B88D /* ImageDataStorer.swift in Sources */,
 				98B767252006D3EC00AFE504 /* SearchHandler.swift in Sources */,
-				98B767272006D70A00AFE504 /* FilterObject.swift in Sources */,
 				160C034E2000B20B00BD3EC2 /* EinstellungsController.swift in Sources */,
 				1654ED082017B7EC00529C6B /* OnboardingController.swift in Sources */,
 				3C352B3E20447EF800117EAE /* LoginTableViewController.swift in Sources */,
@@ -558,9 +534,7 @@
 				16B23707204D4B5900CFD87D /* PhobitColorPicker.swift in Sources */,
 				163C3343204B121B00D03E41 /* ImageUpload.swift in Sources */,
 				981B67721FDC7B9A008D9835 /* BildViewController.swift in Sources */,
-				98C1ED7B200057D3002A87E9 /* SearchObject.swift in Sources */,
 				984DD79D205024150098BE0F /* SampleDataLoader.swift in Sources */,
-				981B67701FDC7B82008D9835 /* DetailTableViewController.swift in Sources */,
 				98B767232006C2E000AFE504 /* Monate.swift in Sources */,
 				3CAB9067202DDD6C00453E6E /* LoginTableViewCell.swift in Sources */,
 				983789951FEC3DD000718A32 /* TextCell.swift in Sources */,
@@ -568,20 +542,15 @@
 				169E8BAE20372D1200D0C36E /* Steuerzeile.swift in Sources */,
 				985935AB20555A9800FB20D7 /* ScanningViewController.swift in Sources */,
 				981B676C1FDC7B61008D9835 /* AuswertungTableViewController.swift in Sources */,
-				16B8A10A1FEEBD1F005E95E9 /* Input.swift in Sources */,
 				169E8BAC2037295300D0C36E /* BillData2.0.swift in Sources */,
 				16FD6CA6204479C100D8B88D /* AccountTableViewController.swift in Sources */,
 				98BA5AB520379D31004655A0 /* SpaltenTableViewCell.swift in Sources */,
-				9822B5D0201CE3BB00C36A1F /* QRScannerController.swift in Sources */,
-				161602571FFE5EEE0039438E /* BillData.swift in Sources */,
 				983DEB1520166C0C00F98A9C /* CustomFormat.swift in Sources */,
-				16B8A1081FEEB521005E95E9 /* File.swift in Sources */,
 				985935AD205564C500FB20D7 /* VisionUtilities.swift in Sources */,
 				981617202042E85100A3C29E /* SuchenTableViewSelectionHandler.swift in Sources */,
 				981B67741FDC7BBC008D9835 /* SuchenTableViewCell.swift in Sources */,
 				9893AB3420387E4200249850 /* TextPickerViewController.swift in Sources */,
 				164840762007B2980023AC43 /* QRSplitter.swift in Sources */,
-				9822B5C8201CCB4C00C36A1F /* AuswertungTFDelegate.swift in Sources */,
 				3C70AB9B2056C0FA002F08B0 /* SetANameOnboarding.swift in Sources */,
 				16D8DC3A202CB05D00D001C4 /* Memory.swift in Sources */,
 				983789971FEC4B2B00718A32 /* InputType.swift in Sources */,
@@ -597,7 +566,6 @@
 				9844A6A0204316BE009ED46D /* DataMasterSearch.swift in Sources */,
 				981B676E1FDC7B72008D9835 /* SuchenTableViewController.swift in Sources */,
 				98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */,
-				161602591FFE65AF0039438E /* Regonizer.swift in Sources */,
 				16FD6C9C20430DAD00D8B88D /* BezahlformenPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +616,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -705,6 +674,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -730,11 +700,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BS5TKJU456;
+				DEVELOPMENT_TEAM = 4365VP3HP5;
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitsa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -749,11 +719,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BS5TKJU456;
+				DEVELOPMENT_TEAM = 4365VP3HP5;
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitsa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
