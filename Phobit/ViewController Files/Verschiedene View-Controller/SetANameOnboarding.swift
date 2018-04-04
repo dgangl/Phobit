@@ -15,10 +15,7 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var FehlerMeldung: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
-        tap.delegate = self
-        self.view.addGestureRecognizer(tap)
-        
+        TextField.returnKeyType = UIReturnKeyType.done
         goOn.layer.cornerRadius = 10;
         TextField.becomeFirstResponder();
         
@@ -33,6 +30,10 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
         self.TextField.resignFirstResponder()
     }
     
+    @IBAction func goAhead(_ sender: Any) {
+        ClickedButton(self)
+        
+    }
     @IBAction func checkIt(_ sender: Any) {
         print("checkStringLength called")
         if(TextField.text == nil){
@@ -61,14 +62,15 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func ClickedButton(_ sender: Any) {
         var users = UserData.getWholeArray();
-        let actual = users.popLast()
+        let actual = users.remove(at: 0)
         if(TextField.text != nil){
             
-            actual?.name = TextField.text!;
+            actual.name = TextField.text!;
             
         }
         
-        users.append(actual!);
+        
+        users.insert(actual, at: 0)
         //Check later wheater the Account is already used!
         if(true){
             UserData.saveNew(newArray: users)

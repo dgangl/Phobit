@@ -13,13 +13,16 @@ class UserData: NSObject, NSCoding {
     var email = "";
     var passwort = "";
     var loginDate = Date();
+    var uniqueString = "";
     
-    static var FIXED_DEMO_USER: UserData = UserData.init(name: "tempo", email: "temp", passwort: "temp", loginDate: Date.init());
-    init(name: String,email: String, passwort: String, loginDate: Date) {
+    static var FIXED_DEMO_USER: String = "";
+    
+    init(name: String,email: String, passwort: String, loginDate: Date, uniqueString: String) {
         self.email = email;
         self.name = name;
         self.passwort = passwort;
         self.loginDate = loginDate;
+        self.uniqueString = uniqueString;
         
     }
     
@@ -29,6 +32,7 @@ class UserData: NSObject, NSCoding {
         aCoder.encode(name, forKey: "name")
         aCoder.encode(passwort, forKey: "passwort");
         aCoder.encode(loginDate, forKey: "loginDate")
+        aCoder.encode(uniqueString, forKey: "uniqueString")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,6 +40,7 @@ class UserData: NSObject, NSCoding {
         self.name = aDecoder.decodeObject(forKey: "name") as? String ?? ""
         self.passwort = aDecoder.decodeObject(forKey: "passwort") as? String ?? ""
         self.loginDate = (aDecoder.decodeObject(forKey: "loginDate") as? Date)!
+        self.uniqueString = aDecoder.decodeObject(forKey: "uniqueString") as? String ?? ""
     }
     
     
@@ -43,6 +48,8 @@ class UserData: NSObject, NSCoding {
     /// If there is no User declared, you will get back a Default User with sample Datas!
     /// - Returns: current choosen User / Demo User
     static func getChoosen() -> UserData {
+        //Setting a Demo Account for later use
+        let user = FIXED_DEMO_USER;
         
         //ENCODING ARRAY START//
         var thisArray: [UserData] = [];
@@ -52,10 +59,17 @@ class UserData: NSObject, NSCoding {
         } else {
             print("There is an issue with reading the User Defaults / USER STRUCTURE")
             
+            
+            
         }
-//        return thisArray[0]
-        let user = UserData.init(name: "Demo Benutzer", email: "demo@benutzer.at", passwort: "password", loginDate: Date.init())
-        return user;
+        if(thisArray.isEmpty || thisArray == nil){
+            print("THE ARRAY IS EMPTY! This shouldnt be possible")
+        }
+        else{
+             return thisArray[0]
+        }
+       
+        return thisArray[0]
         
     }
     
@@ -134,12 +148,15 @@ class UserData: NSObject, NSCoding {
     static func deleteUser(index: Int) -> Bool{
         
         var array = getWholeArray();
-        if(array[index].isEqual(FIXED_DEMO_USER)){
+        let magicNumber = array[index].uniqueString;
+        let numberOfDemo = FIXED_DEMO_USER;
+        if(magicNumber == numberOfDemo){
             return false;
-        }
+        }else{
         array.remove(at: index);
         saveNew(newArray: array);
         return true;
+        }
         
     }
     

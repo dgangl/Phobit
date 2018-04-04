@@ -18,13 +18,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//        UserDefaults.standard.removeObject(forKey: "UserData");
+//        UserDefaults.standard.set(false, forKey: "sampleDataLoaded")
         
+        UserData.FIXED_DEMO_USER = UserDefaults.standard.object(forKey: "DemoUserUniqueNumber") as? String ?? ""
+        
+        //Initializing the User Data Array
+        if (UserData.getWholeArray().count == 0 || UserData.getWholeArray().isEmpty) {
+            let demo = UserData.init(name: "Demo Benutzer", email: "demomail@rzl.at", passwort: "DEMO", loginDate: Date.init(), uniqueString: UUID.init().uuidString);
+            UserData.FIXED_DEMO_USER = demo.uniqueString;
+            UserDefaults.standard.set(demo.uniqueString, forKey: "DemoUserUniqueNumber");
+            UserData.addAccount(newUser: demo);
+            print("Added the Demo Account")
+        }
         
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
-        appDidInstallAndFirstRun();
+        
+        
+        DispatchQueue.global(qos: .background).async {
+            self.appDidInstallAndFirstRun();
+        }
         
         
         let thisArray = UserData.getWholeArray();
@@ -107,18 +123,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if UserDefaults.standard.bool(forKey: "sampleDataLoaded") == false {
             
-//            SampleDataLoader.loadSampleData()
+            SampleDataLoader.loadSampleData()
             UserDefaults.standard.set(true, forKey: "sampleDataLoaded")
             print("loaded Sample Data.")
             
         }
         
-        if UserData.getWholeArray().count == 0 {
-            let demo = UserData.init(name: "Demo Benutzer", email: "-", passwort: "DEMO", loginDate: Date.init());
-            UserData.FIXED_DEMO_USER = demo;
-            UserData.addAccount(newUser: demo);
-            print("Added the Demo Account")
-        }
+        
     } 
     
     func themeApp(){

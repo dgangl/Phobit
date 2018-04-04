@@ -24,12 +24,7 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
-        tap.delegate = self
-        self.view.addGestureRecognizer(tap)
-        
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         // Login.layer.cornerRadius = 20
         Skip.layer.cornerRadius = 20
@@ -46,7 +41,7 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         
         if(UserDefaults.standard.bool(forKey: "launching") == false){
             loginLabel.isHidden = true;
-            Skip.isHidden = true;
+            Skip.setTitle("Abbrechen", for: .normal)
             
             
         }
@@ -95,7 +90,7 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
             goOn()
         }
         else{
-            let thisUser = UserData.init(name: EmailBenutzer.text!,email: EmailBenutzer.text!, passwort: CodeBenutzer.text!, loginDate: Date.init());
+            let thisUser = UserData.init(name: EmailBenutzer.text!,email: EmailBenutzer.text!, passwort: CodeBenutzer.text!, loginDate: Date.init(), uniqueString: UUID.init().uuidString);
             
                 UserData.addAccount(newUser: thisUser);
             performSegue(withIdentifier: "toName", sender: self);
