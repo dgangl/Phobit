@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+class EinstellungsController: UITableViewController{
     
     //MARK- Outlets
     
@@ -18,29 +18,18 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
     //Clear Button
     @IBOutlet weak var clearCSVtext: UIButton!
     //Views
-    @IBOutlet var rechnungslimitView: UIView!
-    @IBOutlet var LoginView: UIView!
+  
     let darkView = UIView()
     
-    //Picker
-    @IBOutlet weak var limitPicker: UIPickerView!
-    //Limit Label
-    @IBOutlet weak var limitLabel: UILabel!
+    
     //User Defaults
     let userDefaults = UserDefaults.standard
     
     @IBOutlet weak var activeFirmLable: UILabel!
     
     //Close Button
-    @IBAction func callCancelBTN(_ sender: Any) {
-        removeViews()
-    }
-    @objc func removeViews(){
-        rechnungslimitView.removeFromSuperview()
-        LoginView.removeFromSuperview()
-        darkView.removeFromSuperview()
-    }
-    
+  
+   
     
     //Data Source
     let data = [0, 10, 50, 100, 500, 1000, 10000]
@@ -48,12 +37,10 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
         
         super.viewDidLoad()
         //MARK- SetUp Picker
-        limitPicker.dataSource = self
-        limitPicker.delegate = self
+       
+        
         self.checkState.addTarget(self, action: #selector(action(sender:)), for: .valueChanged)
         //Preparing the Views
-        rechnungslimitView.center = self.view.center
-        LoginView.center = self.view.center
         
         // Prepeare Active Firm Lable
         initializeActiveFirmLable();
@@ -125,9 +112,8 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         setUpUserDefaults()
-        setUpDarkView()
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(EinstellungsController.removeViews))
-        darkView.addGestureRecognizer(tapRecognizer)
+      
+     
         
     }
     func getSliderState() -> Bool{
@@ -145,15 +131,6 @@ class EinstellungsController: UITableViewController, UIPickerViewDelegate, UIPic
     func setUpUserDefaults(){
         let UD_Slider_On = UserDefaults.standard.bool(forKey: "slider")
         self.checkState.setOn(UD_Slider_On, animated: false)
-        let UD_Label_Limit = UserDefaults.standard.integer(forKey: "limit")
-        if(UD_Label_Limit == 0){
-            self.limitLabel.text = "Kein Limit"
-        }
-        else{
-            self.limitLabel.text = "\(UD_Label_Limit) Rechnungen"
-        }
-        
-        
     }
     
     
@@ -169,14 +146,7 @@ extension EinstellungsController{
         let section = indexPath.section
         if(section == 1 && row == 0){
             sendEmail()
-
-        }else if(section == 2 && row == 0){
-            
-        }else if(section == 4 && row == 0){
-            self.navigationController?.view.addSubview(darkView)
-            self.navigationController?.view.addSubview(rechnungslimitView)
         }
-        
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
@@ -209,45 +179,5 @@ extension EinstellungsController: MFMailComposeViewControllerDelegate{
     }
 }
 
-//Picker View
-extension EinstellungsController{
-    
-    
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        return 1
-    }
-    
-    
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return data.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow rowInt: Int, forComponent component: Int) -> String? {
-        let row = String.init(data[rowInt])
-        let string = row + " Rechnungen"
-        if(rowInt == 0){
-            return "Kein Limit"
-        }else{
-            return string
-        }
-        
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let rowString = String.init(data[row])
-        
-        let string = rowString + " Rechnungen"
-        if(row == 0){
-            limitLabel.text = "Kein Limit"
-        }else{
-            limitLabel.text = string
-        }
-        limitLabel.resignFirstResponder()
-        userDefaults.set(rowString , forKey: "limit")
-    }
-    
-    
-    
-}
+
 
