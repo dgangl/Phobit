@@ -35,8 +35,34 @@ class ChooseKontierungViewController: UITableViewController {
         }
         
         self.definesPresentationContext = true
-        
-        
+            searchController.searchBar.tintColor = .white
+            
+            
+            if #available(iOS 11.0, *) {
+               
+                let scb = searchController.searchBar
+                scb.tintColor = UIColor.white
+                scb.barTintColor = UIColor.white
+                
+                if let textfield = scb.value(forKey: "searchField") as? UITextField {
+                    textfield.textColor = UIColor.lightGray
+                    if let backgroundview = textfield.subviews.first {
+                        
+                        // Background color
+                        backgroundview.backgroundColor = UIColor.white
+                        
+                        // Rounded corner
+                        backgroundview.layer.cornerRadius = 10;
+                        backgroundview.clipsToBounds = true;
+                    }
+                }
+                
+                
+                navigationItem.searchController = searchController
+                navigationItem.hidesSearchBarWhenScrolling = false
+            
+            
+        }
         
         prepareData()
         
@@ -110,7 +136,12 @@ class ChooseKontierungViewController: UITableViewController {
         } else {
             return tableView.dequeueReusableCell(withIdentifier: "cell") as! KontierungTableViewCell
         }
+        
+        
     }
+    
+    
+  
 }
 
 

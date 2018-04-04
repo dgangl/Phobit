@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetANameOnboarding: UIViewController {
+class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var TextField: UITextField!
     @IBOutlet weak var goOn: UIButton!
@@ -25,6 +25,9 @@ class SetANameOnboarding: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @objc func handleTap(sender: UITapGestureRecognizer? = nil) {
+        self.TextField.resignFirstResponder()
     }
     
     @IBAction func goAhead(_ sender: Any) {

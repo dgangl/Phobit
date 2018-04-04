@@ -1735,7 +1735,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="ss5-Q9-bzl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <state key="normal" title="Fertig">
                                     <color key="titleColor" red="0.66869479417800903" green="0.18812134861946106" blue="0.11998320370912552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1800,6 +1800,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMF-tf-scU" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Bmp-Rq-DHs"/>
             </objects>
             <point key="canvasLocation" x="3452" y="-747.07646176911555"/>
         </scene>

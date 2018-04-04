@@ -144,9 +144,6 @@ class AuswertungsTableViewController: UITableViewController {
     func setImage(){
         //ImageSaving Class
         let i = ImageData()
-        let iU = ImageUpload()
-        //let url = "https://services.rzlsoftware.at/rzlocrservice/DoOCR"
-        let url = "https://services.rzlsoftware.at/rzlocrservice"
         //Setting a new UUID for each image so we dont have anything twice.
         let uuid = UUID.init()
         //Writing image to the document directory
@@ -154,7 +151,6 @@ class AuswertungsTableViewController: UITableViewController {
         bill?.imageURL = string
         i.writeImageTo(name: string, imageToWrite: image!)
         print("UUID FROM SETTING THE IMAGE \(uuid)")
-        iU.uploadImg(img: image!, fullUrl: url)
     }
     
     func getImage(){
