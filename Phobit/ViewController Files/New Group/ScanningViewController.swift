@@ -12,7 +12,7 @@ import Vision
 import LocalAuthentication
 import TesseractOCR
 
-class ScanningViewController: UIViewController, G8TesseractDelegate {
+class ScanningViewController: UIViewController, G8TesseractDelegate, UIGestureRecognizerDelegate {
     // small bug when i am in a phone call the green bar is minimizing the screen so that the detection layer is not accurat.
     var detectionView: UIView? = nil
     
@@ -53,6 +53,7 @@ class ScanningViewController: UIViewController, G8TesseractDelegate {
         setupCamera()
         setupVision()
         bringAllToFront()
+        addSwipeGestures()
         
         
         if let tesseract = G8Tesseract(language: "deu_old"){
@@ -162,7 +163,19 @@ class ScanningViewController: UIViewController, G8TesseractDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    
+    func addSwipeGestures(){
+        let searchSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(toSearchViewTabbed(_:)))
+        searchSwipe.direction = .right
+        self.view.addGestureRecognizer(searchSwipe)
+        searchSwipe.delegate = self
+        
+        let settingsSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(toSettingTabbed(_:)))
+        settingsSwipe.direction = .left
+        self.view.addGestureRecognizer(settingsSwipe)
+        settingsSwipe.delegate = self
+        
+        
+    }
     
     
     // dissmisses the QR Code after 7 seconds
@@ -346,7 +359,7 @@ class ScanningViewController: UIViewController, G8TesseractDelegate {
     
     
     
-    @IBAction func toSettingTabbed(_ sender: UIButton) {
+    @objc @IBAction func toSettingTabbed(_ sender: UIButton) {
         if getAuthStatus() == true {
             authentifizierung(seague: "einstellungen")
         } else {
@@ -356,10 +369,14 @@ class ScanningViewController: UIViewController, G8TesseractDelegate {
     
     
     
-    @IBAction func toSearchViewTabbed(_ sender: UIButton) {
+    @objc @IBAction func toSearchViewTabbed(_ sender: UIButton) {
         if getAuthStatus() == true {
             authentifizierung(seague: "suchen")
         } else {
+//            let viewcontroller = storyboard?.instantiateViewController(withIdentifier: "Suchen")
+//            let nvc = UINavigationController.init(rootViewController: viewcontroller!)
+//            let s = SegueFromLeft.init(identifier: "suchen", source: self, destination: nvc)
+//            s.perform()
             performSegue(withIdentifier: "suchen", sender: nil)
         }
     }
@@ -384,7 +401,15 @@ class ScanningViewController: UIViewController, G8TesseractDelegate {
                     DispatchQueue.main.async {
                         // Code did match
                         // continue
-                        self.performSegue(withIdentifier: seague, sender: nil)
+                        
+//                        if(seague.elementsEqual("suchen")){
+//                            let search = SuchenTableViewController()
+//                            let s = SegueFromLeft.init(identifier: "suchen", source: self, destination: search)
+//                        }else{
+                        self.performSegue(withIdentifier: seague, sender: self)
+//                        }
+                        
+                        
                     }
                 } else {
                     DispatchQueue.main.async {

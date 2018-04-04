@@ -12,6 +12,7 @@
 		160C03502001864200BD3EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */; };
 		163C3343204B121B00D03E41 /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C3342204B121B00D03E41 /* ImageUpload.swift */; };
 		163C50AC2056AE230084701B /* App_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C50AB2056AE230084701B /* App_Settings.swift */; };
+		164809BA2075264E00B44A60 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164809B92075264E00B44A60 /* CustomSegue.swift */; };
 		164840762007B2980023AC43 /* QRSplitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164840752007B2980023AC43 /* QRSplitter.swift */; };
 		1654ED082017B7EC00529C6B /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1654ED072017B7EB00529C6B /* OnboardingController.swift */; };
 		168BD09D206F93EE00431336 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 168BD09C206F93EE00431336 /* tessdata */; };
@@ -87,6 +88,7 @@
 		16162C541FF58EF5002000E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Phobit/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		163C3342204B121B00D03E41 /* ImageUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
 		163C50AB2056AE230084701B /* App_Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App_Settings.swift; sourceTree = "<group>"; };
+		164809B92075264E00B44A60 /* CustomSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
 		1648406520074E8B0023AC43 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		1648406620074E8B0023AC43 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		164840752007B2980023AC43 /* QRSplitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRSplitter.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			children = (
 				9822B5CA201CD47B00C36A1F /* CustomToolbar.swift */,
 				98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */,
+				164809B92075264E00B44A60 /* CustomSegue.swift */,
 			);
 			path = "Custom User Interface";
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				985935AD205564C500FB20D7 /* VisionUtilities.swift in Sources */,
 				981617202042E85100A3C29E /* SuchenTableViewSelectionHandler.swift in Sources */,
 				981B67741FDC7BBC008D9835 /* SuchenTableViewCell.swift in Sources */,
+				164809BA2075264E00B44A60 /* CustomSegue.swift in Sources */,
 				9893AB3420387E4200249850 /* TextPickerViewController.swift in Sources */,
 				164840762007B2980023AC43 /* QRSplitter.swift in Sources */,
 				3C70AB9B2056C0FA002F08B0 /* SetANameOnboarding.swift in Sources */,
