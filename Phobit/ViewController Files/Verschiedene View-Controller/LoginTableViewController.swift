@@ -75,7 +75,7 @@ class LoginTableViewController: UITableViewController {
                 let sections = NSIndexSet(indexesIn: range)
 
                 self.tableView.reloadSections(sections as IndexSet, with: .top)
-
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
                 return true
             }
             
@@ -84,6 +84,9 @@ class LoginTableViewController: UITableViewController {
         
         if(indexPath.row != 0){
             cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+        }
+        else if(indexPath.row == 0){
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
         }
         
         

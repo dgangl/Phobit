@@ -24,6 +24,8 @@ class OnbordingController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
         // Login.layer.cornerRadius = 20
         Skip.layer.cornerRadius = 20
         // Do any additional setup after loading the view.
@@ -39,7 +41,7 @@ class OnbordingController: UIViewController {
         
         if(UserDefaults.standard.bool(forKey: "launching") == false){
             loginLabel.isHidden = true;
-            Skip.isHidden = true;
+            Skip.setTitle("Abbrechen", for: .normal)
             
             
         }
@@ -83,7 +85,7 @@ class OnbordingController: UIViewController {
             goOn()
         }
         else{
-            let thisUser = UserData.init(name: EmailBenutzer.text!,email: EmailBenutzer.text!, passwort: CodeBenutzer.text!, loginDate: Date.init());
+            let thisUser = UserData.init(name: EmailBenutzer.text!,email: EmailBenutzer.text!, passwort: CodeBenutzer.text!, loginDate: Date.init(), uniqueString: UUID.init().uuidString);
             
                 UserData.addAccount(newUser: thisUser);
             performSegue(withIdentifier: "toName", sender: self);
