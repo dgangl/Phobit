@@ -99,8 +99,8 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     @IBAction func skipTouched(_ sender: Any) {
-        let alert = UIAlertController(title: "Testversion", message: "Falls du dich nicht einloggst kannst du Phobit nur ausprobieren! Logge dich ein um das volle Potenzial von Phobit auszuschöpfen!", preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)})
+        let alert = UIAlertController(title: "Testversion", message: "Falls du dich nicht einloggen kannst, kannst du Phobit nur ausprobieren! Logge dich ein, um das volle Potenzial von Phobit auszuschöpfen!", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Trotzdem Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)})
         let cancelAction = UIAlertAction(title: "Anmelden", style: .default, handler: { action in alert.dismiss(animated: true, completion: nil)})
         
         alert.addAction(okayAction)

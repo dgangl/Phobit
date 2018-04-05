@@ -24,7 +24,7 @@ class ChooseKontierungViewController: UITableViewController {
         // setup the searchController
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Geben Sie Ihren Suchbegriff ein"
+        searchController.searchBar.placeholder = "Gib deinen Suchbegriff ein"
         
         
         if #available(iOS 11.0, *) {

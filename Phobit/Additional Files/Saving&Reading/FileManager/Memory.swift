@@ -37,12 +37,19 @@ class Memory{
                         let okayAlertAction = UIAlertAction.init(title: "Rechnung verwerfen", style: .default, handler: { action in
                             alert.dismiss(animated: true, completion: nil)
                             target.dismiss(animated: true, completion: nil)
+                            let encryptedData = NSKeyedArchiver.archivedData(withRootObject: data)
+                            
+                            //Save to UserDefaults
+                            print("Save Data in \(UserData.getChoosen().name)")
+                            UserDefaults.standard.set(encryptedData, forKey: String("\(UserData.getChoosen().email)"))
+                            
                         })
                         let buyPremiumVersion = UIAlertAction.init(title: "Premiumversion kaufen", style: .cancel, handler: { action in
                             print("Premiumversion")
                             //TODO: Premiumversion handeler
                             alert.dismiss(animated: true, completion: nil)
                             target.dismiss(animated: true, completion: nil)
+                            
                         })
                         alert.addAction(okayAlertAction)
                         alert.addAction(buyPremiumVersion)

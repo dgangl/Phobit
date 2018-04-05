@@ -720,7 +720,7 @@
                                     <constraint firstItem="AuL-Gp-sC5" firstAttribute="top" secondItem="het-U2-2Nf" secondAttribute="top" id="j5Z-Ua-6VG"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halten Sie die Kamera über den zu scannenden Beleg" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dV-U4-Uc7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halte die Kamera über den zu scannenden Beleg." textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dV-U4-Uc7">
                                 <rect key="frame" x="0.0" y="561" width="375" height="16"/>
                                 <color key="backgroundColor" white="0.75185783930000005" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
@@ -1328,8 +1328,8 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Überprüfe deine Eingabe oder klicke auf Überspringen!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M11-h7-F99">
-                                <rect key="frame" x="32.5" y="327" width="311.5" height="14.5"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Überprüfe deine Eingabe oder klicke auf Testen!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M11-h7-F99">
+                                <rect key="frame" x="52" y="327" width="272.5" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1816,6 +1816,6 @@
         <image name="blank" width="884" height="650"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XYs-A7-9SC"/>
+        <segue reference="Dwg-cM-EkN"/>
     </inferredMetricsTieBreakers>
 </document>

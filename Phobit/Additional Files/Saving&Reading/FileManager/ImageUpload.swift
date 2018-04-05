@@ -12,16 +12,37 @@ import TesseractOCR
 
 class ImageUpload{
    
+    static func uploadSmth(img: UIImage){
+        let img = UIImagePNGRepresentation(img)
+        let parameters = [
+            "name": "user1",
+            "email": "user1@org",
+            "file" : img
+            ] as [String : Any]
+        let url = "https://myurl.com/posts"
+        Alamofire.request(url, method:.post, parameters:parameters,encoding: JSONEncoding.default).responseString { response in
+            switch response.result {
+            case .success:
+                print(response)
+            case .failure(let error):
+                return
+            }
+        }
+    }
+    
+    
     
     
     static func requestWith(endUrl: String, image: UIImage){
-        let image = #imageLiteral(resourceName: "3391_001")
+       
         let url = endUrl
-        let imageData = UIImagePNGRepresentation(image.g8_blackAndWhite())
+        var image = image.g8_blackAndWhite()
+        let imageData = UIImagePNGRepresentation((image?.g8_blackAndWhite())!)
         let headers = [
+            
             "ocrEngine" : "0",
-//            "file" : "file",
-//            "submit" : "Upload",
+            
+            
 //            "__RequestVerificationToken" : "CfDJ8HVc80c9-RdDmo70-kzWpNTgdaAy4_3w_nsNPNunbLBdBg3YcgwxgSMXhcoCsuufdPpNeR1Dk1kf5ymS6m_P1Gk7jOzWky6JA7kxLJ83F6xFWkFmCmLTe3pgrA_t4HZkBnGKIsh6PyqhP1ux-I7VF34"
         ]
        
@@ -51,7 +72,7 @@ class ImageUpload{
                   
                 }
                 upload.responseString{ response in
-                    print("STRING RESPONSE: \(response)")
+                    print("STRING RESPONSE: \(response) was successful")
                     
                 }
             case .failure(let error):
