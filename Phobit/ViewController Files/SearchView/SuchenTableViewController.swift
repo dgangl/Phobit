@@ -694,7 +694,6 @@ class SuchenTableViewController: UITableViewController {
     func setDefaultSearchBar(){
         searchController.searchBar.tintColor = .white
 
-        
         if #available(iOS 11.0, *) {
             let sc = searchController
             sc.delegate = self

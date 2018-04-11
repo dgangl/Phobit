@@ -274,7 +274,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kP7-Ub-8t0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="1209.4452773613195"/>
+            <point key="canvasLocation" x="257" y="932"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="X03-XH-sQv">
@@ -785,8 +785,8 @@
                         <outlet property="informationSheet" destination="bhQ-67-4YQ" id="s0K-td-3X5"/>
                         <outlet property="stackView" destination="PpB-9f-dgN" id="R4h-Mf-tji"/>
                         <outlet property="whiteboard" destination="cee-hL-40Q" id="lax-A2-Vyx"/>
-                        <segue destination="lPM-u0-jSi" kind="show" identifier="suchen" id="fdq-Re-P67"/>
                         <segue destination="KWt-eW-RyK" kind="show" identifier="einstellungen" id="8Pa-Zx-LIW"/>
+                        <segue destination="lPM-u0-jSi" kind="show" identifier="suchen" id="c0w-qF-i1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZM-AK-LqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -839,7 +839,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1317.5999999999999" y="176.76161919040482"/>
+            <point key="canvasLocation" x="3196" y="176.76161919040482"/>
         </scene>
         <!--Einstellungen-->
         <scene sceneID="qAT-Ca-kJ1">
@@ -1170,6 +1170,58 @@
             </objects>
             <point key="canvasLocation" x="1319" y="-747"/>
         </scene>
+        <!--Gewährleistung-->
+        <scene sceneID="waW-h7-ThS">
+            <objects>
+                <tableViewController title="Gewährleistung" id="R7k-Kp-EwC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nYA-uh-pZb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="63" id="exy-Zq-7bC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="exy-Zq-7bC" id="Ooa-zu-HIs">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="62.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hofer KG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3M-4K-ahr">
+                                            <rect key="frame" x="16" y="11" width="74" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="noch 2 Wochen verbleibend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmF-4i-hsX">
+                                            <rect key="frame" x="16" y="31" width="203" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="73,73€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmC-ie-otR">
+                                            <rect key="frame" x="277" y="21" width="56" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="R7k-Kp-EwC" id="myi-lF-tGf"/>
+                            <outlet property="delegate" destination="R7k-Kp-EwC" id="rMx-3e-FWH"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Gewährleistung" id="pjg-t8-ilq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gz2-US-1dN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="-528.48575712143929"/>
+        </scene>
         <!--Suchen-->
         <scene sceneID="VPj-Bb-mfs">
             <objects>
@@ -1271,13 +1323,15 @@
                             <outlet property="delegate" destination="lPM-u0-jSi" id="sU1-Sh-8XP"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="7QY-sM-kDC"/>
+                    <navigationItem key="navigationItem" id="ZAg-i7-U0H"/>
                     <connections>
                         <segue destination="3mh-ot-eQ9" kind="show" identifier="showDetail" id="7yB-fR-1xs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28e-e1-G1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="194"/>
+            <point key="canvasLocation" x="257" y="177"/>
         </scene>
         <!--Anmelden-->
         <scene sceneID="6pL-Pg-OpL">
@@ -1804,6 +1858,25 @@
             </objects>
             <point key="canvasLocation" x="3452" y="-747.07646176911555"/>
         </scene>
+        <!--Suchen-->
+        <scene sceneID="eG6-VG-Wed">
+            <objects>
+                <tabBarController title="Suchen" automaticallyAdjustsScrollViewInsets="NO" id="K2x-dY-7hC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="n3Y-Kl-IPZ"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I2c-dr-yyk">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="lPM-u0-jSi" kind="relationship" relationship="viewControllers" id="hoo-pJ-8c0"/>
+                        <segue destination="R7k-Kp-EwC" kind="relationship" relationship="viewControllers" id="e6f-O2-R8g"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ux-RS-diy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-682" y="177"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AbrrechenIcon" width="30" height="29"/>
@@ -1816,6 +1889,7 @@
         <image name="blank" width="884" height="650"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="c0w-qF-i1f"/>
         <segue reference="Dwg-cM-EkN"/>
     </inferredMetricsTieBreakers>
 </document>

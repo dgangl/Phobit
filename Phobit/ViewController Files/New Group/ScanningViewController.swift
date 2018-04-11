@@ -382,6 +382,8 @@ class ScanningViewController: UIViewController, G8TesseractDelegate, UIGestureRe
 //            let nvc = UINavigationController.init(rootViewController: viewcontroller!)
 //            let s = SegueFromLeft.init(identifier: "suchen", source: self, destination: nvc)
 //            s.perform()
+//
+//
             performSegue(withIdentifier: "suchen", sender: nil)
         }
     }

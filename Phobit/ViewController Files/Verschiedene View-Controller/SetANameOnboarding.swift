@@ -92,7 +92,12 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
-    
 
+
+extension SetANameOnboarding: UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+}
 
 
