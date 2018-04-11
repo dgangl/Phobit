@@ -12,7 +12,7 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var informationLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
-    var label = "Bitte geben Sie den ... ein"
+    var label = "Bitte gib den ... ein"
     
     // has to be set...
     var delegate: EditingProtocol?
