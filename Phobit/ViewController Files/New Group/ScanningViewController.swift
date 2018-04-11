@@ -56,7 +56,7 @@ class ScanningViewController: UIViewController, G8TesseractDelegate, UIGestureRe
         addSwipeGestures()
         
         
-        if let tesseract = G8Tesseract(language: "deu_old"){
+        if let tesseract = G8Tesseract(language: "deu-2+deu_old"){
             self.tesseract = tesseract
             tesseract.delegate = self
         }
@@ -212,10 +212,15 @@ class ScanningViewController: UIViewController, G8TesseractDelegate, UIGestureRe
     public func processImage(image: UIImage){
         var image = image
         image = image.g8_blackAndWhite()
+        tesseract?.engineMode = .tesseractOnly
+        tesseract?.pageSegmentationMode = .auto
         tesseract?.image = image
+        tesseract?.charWhitelist = "abcdefghijklmnopqrstuvw1234567890ABCDEFGHIJKLMNOPQRSTUVW€%,.-+:;#"
         tesseract?.recognize()
         print(tesseract!.recognizedText)
+        
     }
+        
     
     func progressImageRecognition(for tesseract: G8Tesseract!) {
         print("TESSERACT PROGRESS: \(tesseract.progress)%")
@@ -256,7 +261,7 @@ class ScanningViewController: UIViewController, G8TesseractDelegate, UIGestureRe
         
         let nvc = UINavigationController.init(rootViewController: vc)
         
-        ImageUpload.requestWith(endUrl: "https://services.rzlsoftware.at/rzlocrservice/DoOCR", image: image)
+        ImageUpload.requestWith(endUrl: "https://services.rzlsoftware.at/rzlocrservice", image: image)
         processImage(image: image)
         
         self.present(nvc, animated: true) {
@@ -377,6 +382,8 @@ class ScanningViewController: UIViewController, G8TesseractDelegate, UIGestureRe
 //            let nvc = UINavigationController.init(rootViewController: viewcontroller!)
 //            let s = SegueFromLeft.init(identifier: "suchen", source: self, destination: nvc)
 //            s.perform()
+//
+//
             performSegue(withIdentifier: "suchen", sender: nil)
         }
     }

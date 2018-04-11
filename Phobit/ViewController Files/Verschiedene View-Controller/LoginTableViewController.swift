@@ -109,7 +109,7 @@ class LoginTableViewController: UITableViewController {
         
         //Presentig Alert View Start//
         let alertController = UIAlertController(title: "Löschen", message:
-            "Wollen sie diesen Account wirklich löschen?", preferredStyle: UIAlertControllerStyle.alert)
+            "Willst du diesen Account wirklich löschen?", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Nein", style: UIAlertActionStyle.default,handler: nil))
         alertController.addAction(UIAlertAction(title: "Ja", style: UIAlertActionStyle.cancel,handler: {action in let indexNumber = stelle as! Int;
             UserData.deleteUser(index: indexNumber);

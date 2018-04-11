@@ -60,10 +60,10 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             pickerView.delegate = self
             pickerView.matrix = matrix
             switch matrix.1{
-            case 0: pickerView.label = "Bitte geben Sie den Prozentsatz ein"
-            case 1: pickerView.label = "Bitte geben Sie den Nettobetrag ein"
-            case 2: pickerView.label = "Bitte geben Sie die Mehrwertsteuer ein"
-            case 3: pickerView.label = "Bitte geben Sie den Bruttobetrag ein"
+            case 0: pickerView.label = "Bitte gib den Prozentsatz ein"
+            case 1: pickerView.label = "Bitte gib den Nettobetrag ein"
+            case 2: pickerView.label = "Bitte gib die Mehrwertsteuer ein"
+            case 3: pickerView.label = "Bitte gib den Bruttobetrag ein"
             default:
                 pickerView.label = "Fehler"
             }
@@ -119,7 +119,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             let pickerView = storyboard?.instantiateViewController(withIdentifier: "TextPicker") as! TextPickerViewController
             pickerView.delegate = self
             pickerView.indexPath = indexPath
-            pickerView.label = "Bitte geben Sie den Rechnungsersteller ein."
+            pickerView.label = "Bitte gib den Rechnungsersteller ein."
             pickerView.modalPresentationStyle = .overCurrentContext
             present(pickerView, animated: false, completion: nil)
             

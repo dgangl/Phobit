@@ -10,6 +10,7 @@
 		00561FC339BEB757B3139368 /* Pods_Phobit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B025AD47474295118F3BB1A5 /* Pods_Phobit.framework */; };
 		160C034E2000B20B00BD3EC2 /* EinstellungsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160C034D2000B20B00BD3EC2 /* EinstellungsController.swift */; };
 		160C03502001864200BD3EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */; };
+		1638DE2F2075597300FD069C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1638DE2E2075597300FD069C /* libz.tbd */; };
 		163C3343204B121B00D03E41 /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C3342204B121B00D03E41 /* ImageUpload.swift */; };
 		163C50AC2056AE230084701B /* App_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C50AB2056AE230084701B /* App_Settings.swift */; };
 		164809BA2075264E00B44A60 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164809B92075264E00B44A60 /* CustomSegue.swift */; };
@@ -86,6 +87,10 @@
 		160C034D2000B20B00BD3EC2 /* EinstellungsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinstellungsController.swift; sourceTree = "<group>"; };
 		160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16162C541FF58EF5002000E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Phobit/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		1638DE28207551E600FD069C /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		1638DE2A207551F100FD069C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		1638DE2C207551FF00FD069C /* TesseractOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1638DE2E2075597300FD069C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		163C3342204B121B00D03E41 /* ImageUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
 		163C50AB2056AE230084701B /* App_Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App_Settings.swift; sourceTree = "<group>"; };
 		164809B92075264E00B44A60 /* CustomSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
@@ -156,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1638DE2F2075597300FD069C /* libz.tbd in Frameworks */,
 				00561FC339BEB757B3139368 /* Pods_Phobit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +223,10 @@
 		1648406420074E8A0023AC43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1638DE2E2075597300FD069C /* libz.tbd */,
+				1638DE2C207551FF00FD069C /* TesseractOCR.framework */,
+				1638DE2A207551F100FD069C /* CoreImage.framework */,
+				1638DE28207551E600FD069C /* libstdc++.tbd */,
 				1648406620074E8B0023AC43 /* AVFoundation.framework */,
 				1648406520074E8B0023AC43 /* AVKit.framework */,
 				B025AD47474295118F3BB1A5 /* Pods_Phobit.framework */,
