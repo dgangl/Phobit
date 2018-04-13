@@ -153,6 +153,7 @@ extension ChooseKontierungViewController: UISearchResultsUpdating {
         prepareData()
         
         if searchController.searchBar.text == "" {
+            tableView.reloadData()
             return
         } else {
             
