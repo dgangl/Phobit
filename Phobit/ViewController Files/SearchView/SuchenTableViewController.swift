@@ -546,18 +546,34 @@ import UIKit
 extension UITableViewController: UISearchBarDelegate{
     
     
+    
+    
     func addToolbar(textField: UISearchBar){
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default;
         toolBar.isTranslucent = true;
         toolBar.backgroundColor = UIColor.lightGray
         toolBar.tintColor = UIColor.APPLE_tealBlue
-        var betragButton = UIBarButtonItem(title: "Betrag", style: .plain, target: self, action: #selector(UITableViewController.setToBetragSearch))
-        var datumButton = UIBarButtonItem(title: "Datumsbereich", style: .plain, target: self, action: #selector(UITableViewController.setToDatumsbereichSearch))
-        var GewährleistungButton = UIBarButtonItem(title: "Gewährleistung", style: .plain, target: self, action: #selector(UITableViewController.setToGewährleistungsSearch))
+        let betragButton = UIBarButtonItem(title: "Betrag", style: .plain, target: self, action: #selector(UITableViewController.setToBetragSearch))
+        let datumButton = UIBarButtonItem(title: "Datumsbereich", style: .plain, target: self, action: #selector(UITableViewController.setToDatumsbereichSearch))
+        let GewährleistungButton = UIBarButtonItem(title: "Gewährleistung", style: .plain, target: self, action: #selector(UITableViewController.setToGewährleistungsSearch))
+        ///
+        //Setting the Shortcut buttons! (Start)//
+        ///
+        let biggerButton = UIBarButtonItem(title: ">", style: .plain, target: self, action: #selector(UITableViewController.addABiggerSearch))
         
-        toolBar.setItems([betragButton /**,datumButton, GewährleistungButton**/], animated: false);
+        let smallerButton = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(UITableViewController.addABiggerSearch))
+        
+        let equalButton = UIBarButtonItem(title: "=", style: .plain, target: self, action: #selector(UITableViewController.addABiggerSearch))
+        
+        let minusButton = UIBarButtonItem(title: "-", style: .plain, target: self, action: #selector(UITableViewController.addABiggerSearch))
+        ///
+        //Setting the Shortcut buttons! (End)//
+        ///
+        
+        toolBar.setItems([betragButton, biggerButton, smallerButton, equalButton, minusButton /**,datumButton, GewährleistungButton**/], animated: false);
         toolBar.sizeToFit()
+        
         textField.delegate = self
         textField.inputAccessoryView = toolBar
     }
@@ -573,6 +589,13 @@ extension UITableViewController: UISearchBarDelegate{
     @objc func setToDatumsbereichSearch(){
         //TODO
     }
+    
+    @objc func addABiggerSearch(){
+       
+        
+    }
+    
+    
     
 }
 
@@ -590,6 +613,9 @@ class SuchenTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //SAVE THE SEARCHBAR FOR LATER USE//
+        
         
         addToolbar(textField: searchController.searchBar)
         self.navigationController?.isNavigationBarHidden = false
