@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.7.1)
+  - Alamofire (4.7.2)
   - MGSwipeTableCell (1.6.6)
   - TesseractOCRiOS (4.0.0)
 
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - TesseractOCRiOS (= 4.0.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   MGSwipeTableCell: c3bc6e261e7bc06c112909fe3fb8205de286082c
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
 
