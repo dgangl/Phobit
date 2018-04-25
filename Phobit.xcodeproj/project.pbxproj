@@ -29,6 +29,7 @@
 		3C70AB9B2056C0FA002F08B0 /* SetANameOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C70AB9A2056C0FA002F08B0 /* SetANameOnboarding.swift */; };
 		3CAB9063202DDCE900453E6E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9062202DDCE800453E6E /* UserData.swift */; };
 		3CAB9067202DDD6C00453E6E /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */; };
+		980270C1208F0B1D0033E808 /* DateUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980270C0208F0B1D0033E808 /* DateUtilities.swift */; };
 		981617202042E85100A3C29E /* SuchenTableViewSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816171F2042E85100A3C29E /* SuchenTableViewSelectionHandler.swift */; };
 		981B67561FDC7551008D9835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B67551FDC7551008D9835 /* AppDelegate.swift */; };
 		981B675B1FDC7551008D9835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981B67591FDC7551008D9835 /* Main.storyboard */; };
@@ -112,6 +113,7 @@
 		3C70AB9A2056C0FA002F08B0 /* SetANameOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetANameOnboarding.swift; sourceTree = "<group>"; };
 		3CAB9062202DDCE800453E6E /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
+		980270C0208F0B1D0033E808 /* DateUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtilities.swift; sourceTree = "<group>"; };
 		9816171F2042E85100A3C29E /* SuchenTableViewSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchenTableViewSelectionHandler.swift; sourceTree = "<group>"; };
 		981B67521FDC7551008D9835 /* Phobit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phobit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		981B67551FDC7551008D9835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		16B8A1061FEEB511005E95E9 /* Saving&Reading */ = {
 			isa = PBXGroup;
 			children = (
+				980270C0208F0B1D0033E808 /* DateUtilities.swift */,
 				161602551FFE5EBE0039438E /* Splitter */,
 				161602541FFE5EA60039438E /* FileManager */,
 			);
@@ -552,6 +555,7 @@
 				3CAB9067202DDD6C00453E6E /* LoginTableViewCell.swift in Sources */,
 				983789951FEC3DD000718A32 /* TextCell.swift in Sources */,
 				163C50AC2056AE230084701B /* App_Settings.swift in Sources */,
+				980270C1208F0B1D0033E808 /* DateUtilities.swift in Sources */,
 				169E8BAE20372D1200D0C36E /* Steuerzeile.swift in Sources */,
 				985935AB20555A9800FB20D7 /* ScanningViewController.swift in Sources */,
 				981B676C1FDC7B61008D9835 /* AuswertungTableViewController.swift in Sources */,
