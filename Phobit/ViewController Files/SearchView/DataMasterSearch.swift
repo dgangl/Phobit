@@ -59,7 +59,9 @@ extension DataMaster {
         if(input != ""){
             var result: Double = -1
             let deleteLeerzeichen = input.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
-            
+            if(deleteLeerzeichen.count < 3){
+                return false;
+            }
             var splitary = Array(deleteLeerzeichen)
             
             switch splitary[0] {

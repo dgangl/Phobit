@@ -73,7 +73,6 @@ class ScanningViewController: UIViewController, G8TesseractDelegate, UIGestureRe
         super.viewDidDisappear(animated)
         self.session.stopRunning()
         self.flashToggle.setTitle("Aus", for: .normal)
-
     }
     
     
@@ -120,7 +119,7 @@ class ScanningViewController: UIViewController, G8TesseractDelegate, UIGestureRe
         //QR-Code Metadata Output
         let metadataoutput = AVCaptureMetadataOutput()
 
-        
+        myDevice.focusMode = .continuousAutoFocus
         
         // adding it to the session
         session.addInput(deviceInput)
@@ -461,7 +460,7 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 
                 let detectionViewHeight = image.extent.height * calculationFactor
                 let detectionViewWidth = image.extent.width * calculationFactor
-                
+
                 detectionView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: detectionViewWidth, height: detectionViewHeight))
                 detectionView?.center = self.view.center
                 

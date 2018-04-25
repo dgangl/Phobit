@@ -542,37 +542,116 @@ import UIKit
 //        return false
 //    }
 //}
+class tempSaveForTheNextExtention {
+    static var searchBar: UISearchBar = UISearchBar.init();
+    static var toolBar: UIToolbar = UIToolbar.init();
+    
+}
 
 extension UITableViewController: UISearchBarDelegate{
     
     
+    
+    
     func addToolbar(textField: UISearchBar){
+        tempSaveForTheNextExtention.searchBar = textField;
+        
+        
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default;
         toolBar.isTranslucent = true;
         toolBar.backgroundColor = UIColor.lightGray
-        toolBar.tintColor = UIColor.APPLE_tealBlue
-        var betragButton = UIBarButtonItem(title: "Betrag", style: .plain, target: self, action: #selector(UITableViewController.setToBetragSearch))
-        var datumButton = UIBarButtonItem(title: "Datumsbereich", style: .plain, target: self, action: #selector(UITableViewController.setToDatumsbereichSearch))
-        var GewährleistungButton = UIBarButtonItem(title: "Gewährleistung", style: .plain, target: self, action: #selector(UITableViewController.setToGewährleistungsSearch))
+        toolBar.tintColor = UIColor.black;
+        let space = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
-        toolBar.setItems([betragButton /**,datumButton, GewährleistungButton**/], animated: false);
+        let betragButton = UIBarButtonItem(title: "Nummern", style: .plain, target: self, action: #selector(UITableViewController.setToBetragSearch))
+        let datumButton = UIBarButtonItem(title: "Text", style: .plain, target: self, action: #selector(UITableViewController.setToDatumsbereichSearch))
+        let GewährleistungButton = UIBarButtonItem(title: "Gewährleistung", style: .plain, target: self, action: #selector(UITableViewController.setToGewährleistungsSearch))
+        ///
+        //Setting the Shortcut buttons! (Start)//
+        ///
+        let biggerButton = UIBarButtonItem(title: ">", style: .plain, target: self, action: #selector(UITableViewController.addABiggerSearch))
+        
+        let smallerButton = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(UITableViewController.addASmallerSearch))
+        
+        let equalButton = UIBarButtonItem(title: "=", style: .plain, target: self, action: #selector(UITableViewController.addAEqualSearch))
+        
+        let minusButton = UIBarButtonItem(title: "-", style: .plain, target: self, action: #selector(UITableViewController.addAMinusSearch))
+        ///
+        //Setting the Shortcut buttons! (End)//
+        ///
+        
+        toolBar.setItems([ betragButton, space, biggerButton, space, smallerButton, space, equalButton, space, minusButton], animated: false);
+        
+        
+        
         toolBar.sizeToFit()
+        
         textField.delegate = self
         textField.inputAccessoryView = toolBar
+        
+        tempSaveForTheNextExtention.toolBar = toolBar;
     }
     
+    
+    
     @objc func setToBetragSearch(){
+        let tool = tempSaveForTheNextExtention.searchBar;
+        if(tool.keyboardType.rawValue == UIKeyboardType.decimalPad.rawValue){
+            tool.keyboardType = UIKeyboardType.alphabet;
+            tempSaveForTheNextExtention.toolBar.items?.first?.title = "Nummern"
+        }
+        else{
+        tool.keyboardType = UIKeyboardType.decimalPad
+        
+            tempSaveForTheNextExtention.toolBar.items?.first?.title = "Normal"
+        }
+        
+        tool.resignFirstResponder();
+        tool.becomeFirstResponder();
+        
         
         //TODO
     }
+    
+    
     
     @objc func setToGewährleistungsSearch(){
         //TODO
     }
     @objc func setToDatumsbereichSearch(){
-        //TODO
+        
     }
+    
+    @objc func addABiggerSearch(){
+        let tool = tempSaveForTheNextExtention.searchBar;
+        var text = tool.text;
+        text?.append(">")
+        tool.text = text;
+        
+    }
+    @objc func addASmallerSearch(){
+        let tool = tempSaveForTheNextExtention.searchBar;
+        var text = tool.text;
+        text?.append("<")
+        tool.text = text;
+        
+    }
+    @objc func addAEqualSearch(){
+        let tool = tempSaveForTheNextExtention.searchBar;
+        var text = tool.text;
+        text?.append("=")
+        tool.text = text;
+        
+    }
+    @objc func addAMinusSearch(){
+        let tool = tempSaveForTheNextExtention.searchBar;
+        var text = tool.text;
+        text?.append("-")
+        tool.text = text;
+        
+    }
+    
     
 }
 
@@ -590,6 +669,9 @@ class SuchenTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
+        
         
         addToolbar(textField: searchController.searchBar)
         self.navigationController?.isNavigationBarHidden = false
