@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        UserDefaults.standard.removeObject(forKey: "UserData");
-//        UserDefaults.standard.set(false, forKey: "sampleDataLoaded")
+        //WE ARE USING THIS FOR OUR DATABASE. DO NOT DELETE! VERY IMPORTANT
+        FirebaseApp.configure();
         
         UserData.FIXED_DEMO_USER = UserDefaults.standard.object(forKey: "DemoUserUniqueNumber") as? String ?? ""
         

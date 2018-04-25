@@ -62,9 +62,25 @@ class AuswertungsTableViewController: UITableViewController {
         setImage()
         mem.save(input: bill!, append: true, target: self)
         //
+        
+        //NEEDED FOR DATABASE SAVING
+        let dataBase = Database.init();
+        let companName = bill?.rechnungsersteller;
+        if(companName == nil || (companName?.elementsEqual(""))!){
+            return;
+        }
+        dataBase.addNew(wholeString: /*Here should be the OCR TEXT*/ "", companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto())
     }
     
-    
+    func getAllNetto() -> Double {
+        var all = 0.0;
+        
+        for item in (bill?.steuerzeilen)! {
+            all = all + item.getNetto();
+        }
+        
+        return all;
+    }
     
     
     
