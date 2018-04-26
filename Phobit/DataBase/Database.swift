@@ -33,6 +33,9 @@ class Database {
                 print("DATABASE=> ERROR WRITING NEW DOCUMENT")
             } else {
                 print("DATABASE=> WROTE A NEW NEW DOCUMENT SUCCESSFULLY")
+                
+                
+                
             }
             //Block end
         }

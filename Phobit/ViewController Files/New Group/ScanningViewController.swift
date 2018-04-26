@@ -216,7 +216,14 @@ class ScanningViewController: UIViewController, G8TesseractDelegate, UIGestureRe
         tesseract?.image = image
         tesseract?.charWhitelist = "abcdefghijklmnopqrstuvw1234567890ABCDEFGHIJKLMNOPQRSTUVW€%,.-+:;#"
         tesseract?.recognize()
-        print(tesseract!.recognizedText)
+        let t = Tagger();
+        if let tess = tesseract{
+            print(tess.recognizedText)
+
+            if let rechnungsersteller = t.recognizeOCR_Result(für: tess.recognizedText){
+            billData?.rechnungsersteller = rechnungsersteller
+            }
+        }
         
     }
         
