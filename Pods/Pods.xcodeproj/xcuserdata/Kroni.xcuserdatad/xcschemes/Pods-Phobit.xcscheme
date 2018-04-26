@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B5B8F04791E3D8B8418DA5B6CD69B2E8"
+               BlueprintIdentifier = "5C7497049EE7966ADDF1A039C4A28B49"
                BuildableName = "Pods_Phobit.framework"
                BlueprintName = "Pods-Phobit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B5B8F04791E3D8B8418DA5B6CD69B2E8"
+            BlueprintIdentifier = "5C7497049EE7966ADDF1A039C4A28B49"
             BuildableName = "Pods_Phobit.framework"
             BlueprintName = "Pods-Phobit"
             ReferencedContainer = "container:Pods.xcodeproj">

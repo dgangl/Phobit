@@ -19,6 +19,7 @@
 		168BD09D206F93EE00431336 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 168BD09C206F93EE00431336 /* tessdata */; };
 		169E8BAC2037295300D0C36E /* BillData2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAB2037295300D0C36E /* BillData2.0.swift */; };
 		169E8BAE20372D1200D0C36E /* Steuerzeile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAD20372D1200D0C36E /* Steuerzeile.swift */; };
+		16B0434E2091CF5200D89E93 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0434D2091CF5200D89E93 /* NeuralNetwork.swift */; };
 		16B23707204D4B5900CFD87D /* PhobitColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B23706204D4B5900CFD87D /* PhobitColorPicker.swift */; };
 		16D8DC3A202CB05D00D001C4 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8DC39202CB05D00D001C4 /* Memory.swift */; };
 		16FD6C9C20430DAD00D8B88D /* BezahlformenPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6C9B20430DAD00D8B88D /* BezahlformenPickerViewController.swift */; };
@@ -104,6 +105,7 @@
 		168BD09C206F93EE00431336 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		169E8BAB2037295300D0C36E /* BillData2.0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillData2.0.swift; sourceTree = "<group>"; };
 		169E8BAD20372D1200D0C36E /* Steuerzeile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steuerzeile.swift; sourceTree = "<group>"; };
+		16B0434D2091CF5200D89E93 /* NeuralNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
 		16B23706204D4B5900CFD87D /* PhobitColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhobitColorPicker.swift; sourceTree = "<group>"; };
 		16D8DC39202CB05D00D001C4 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		16FD6C9B20430DAD00D8B88D /* BezahlformenPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezahlformenPickerViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		1603F3FD201CF041009557C1 /* Additional Files */ = {
 			isa = PBXGroup;
 			children = (
+				16B0434F2091CF6100D89E93 /* NeuralNetwork */,
 				168BD09F206F942900431336 /* BillDataFiles */,
 				168BD09E206F941500431336 /* AppSettings */,
 				16B8A1061FEEB511005E95E9 /* Saving&Reading */,
@@ -273,6 +276,14 @@
 			path = BillDataFiles;
 			sourceTree = "<group>";
 		};
+		16B0434F2091CF6100D89E93 /* NeuralNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				16B0434D2091CF5200D89E93 /* NeuralNetwork.swift */,
+			);
+			path = NeuralNetwork;
+			sourceTree = "<group>";
+		};
 		16B8A1061FEEB511005E95E9 /* Saving&Reading */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				3C2A41D72090C49B00FE1CE9 /* GoogleService-Info.plist */,
-				3C2A41D62090C48800FE1CE9 /* DataBase */,
 				981B67541FDC7551008D9835 /* Phobit */,
 				981B67531FDC7551008D9835 /* Products */,
 				1648406420074E8A0023AC43 /* Frameworks */,
@@ -314,6 +324,7 @@
 		981B67541FDC7551008D9835 /* Phobit */ = {
 			isa = PBXGroup;
 			children = (
+				3C2A41D62090C48800FE1CE9 /* DataBase */,
 				1603F3FC201CEB07009557C1 /* ViewController Files */,
 				1603F3FD201CF041009557C1 /* Additional Files */,
 				981B67551FDC7551008D9835 /* AppDelegate.swift */,
@@ -420,7 +431,6 @@
 				981B67501FDC7551008D9835 /* Resources */,
 				98AD242B1FF55E4600417176 /* Embed App Extensions */,
 				CBA4E0115E7C944D2D45483B /* [CP] Embed Pods Frameworks */,
-				5A9F9DD762A57E8CB95FB9B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -500,21 +510,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5A9F9DD762A57E8CB95FB9B3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phobit/Pods-Phobit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CBA4E0115E7C944D2D45483B /* [CP] Embed Pods Frameworks */ = {
@@ -619,6 +614,7 @@
 				981B676E1FDC7B72008D9835 /* SuchenTableViewController.swift in Sources */,
 				98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */,
 				16FD6C9C20430DAD00D8B88D /* BezahlformenPickerViewController.swift in Sources */,
+				16B0434E2091CF5200D89E93 /* NeuralNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,7 +752,7 @@
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitsa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -775,7 +771,7 @@
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitsa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobitz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
