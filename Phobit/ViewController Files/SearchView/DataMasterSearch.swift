@@ -58,6 +58,7 @@ extension DataMaster {
     func Sonderzeichen(input: String) -> Bool{
         if(input != ""){
             var result: Double = -1
+            let setcomma = input.replacingOccurrences(of: ",", with: ".", options: NSString.CompareOptions.literal, range: nil)
             let deleteLeerzeichen = input.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
             if(deleteLeerzeichen.count < 3){
                 return false;
@@ -117,22 +118,93 @@ extension DataMaster {
             default:
                 switch splitary[splitary.count-1]{
                 case "€":
-                    var elements: String = "";
-                    for (index,element) in splitary.enumerated(){
-                        if Double(String(splitary[index])) != nil {
-                            elements.append(element)
+//                    if(splitary.contains("-")){
+//                        var zahl1: String = ""
+//                        var zahl2: String = ""
+//                        var stringsplitary: String = ""
+//                        for s in splitary{
+//                            stringsplitary.append(s)
+//                        }
+//
+//
+//                        let deleteEuro = stringsplitary.replacingOccurrences(of: "€", with: "", options: NSString.CompareOptions.literal, range: nil)
+//                        zahl1 = String(deleteEuro.split(separator: "-")[0])
+//                        zahl2 = String(deleteEuro.split(separator: "-")[1])
+//
+//
+//                        var a: Double = Double(zahl1)!
+//                        print(a)
+//                        if Double(zahl1) != nil && Double(zahl2) != nil{
+//                            if Double(zahl1)! <= Double(zahl2)!{
+//                                for userVar in billdata{
+//                                    if userVar.gesamtBrutto >= Double(zahl1)! && userVar.gesamtBrutto <= Double(zahl2)!{
+//                                        searchedbilldata?.append(userVar)
+//                                    }
+//                                }
+//
+//                            }else{
+//                                for userVar in billdata{
+//                                    if userVar.gesamtBrutto <= Double(zahl1)! && userVar.gesamtBrutto >= Double(zahl2)!{
+//                                        searchedbilldata?.append(userVar)
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }else{
+                        var elements: String = "";
+                        for (index,element) in splitary.enumerated(){
+                            if Double(String(splitary[index])) != nil {
+                                elements.append(element)
+                            }                else if splitary[index] == "."{
+                                elements.append(element)
+                            }
                         }
-                    }
-                    if Double(elements) != nil{
-                        result = Double(elements)!
+                        if Double(elements) != nil{
+                            result = Double(elements)!
                             for userVar in billdata{
                                 if(userVar.gesamtBrutto >= (result*0.9) && userVar.gesamtBrutto <= (result*1.1) && result != -1){
                                     searchedbilldata?.append(userVar)
                                 }
-                            
+                                
+                            }
                         }
+//                    }
+                default:
+                    if(splitary.contains("-") && splitary.last != "-"){
+                        var zahl1: Double
+                        var zahl2: Double
+                        var stringsplitary: String = ""
+                        for s in splitary{
+                            stringsplitary.append(s)
+                        }
+                        
+                        
+                        let deleteEuro = stringsplitary.replacingOccurrences(of: "€", with: "", options: NSString.CompareOptions.literal, range: nil)
+                        zahl1 = Double(String(deleteEuro.split(separator: "-")[0]))!
+                        zahl2 = Double(String(deleteEuro.split(separator: "-")[1]))!
+                        
+                        
+                        //var a: Double = Double(zahl1)!
+                       // print(a)
+                        if zahl1 != nil && zahl2 != nil{
+                            if zahl1 <= zahl2{
+                                for userVar in billdata{
+                                    if userVar.gesamtBrutto >= zahl1 && userVar.gesamtBrutto <= zahl2{
+                                        searchedbilldata?.append(userVar)
+                                    }
+                                }
+                                
+                            }else{
+                                for userVar in billdata{
+                                    if userVar.gesamtBrutto <= zahl1 && userVar.gesamtBrutto >= zahl2{
+                                        searchedbilldata?.append(userVar)
+                                    }
+                                }
+                            }
+                        }
+                    }else{
+                    return false;
                     }
-                default: return false;
                 }
             }
         }
