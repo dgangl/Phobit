@@ -38,14 +38,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
         
-        
+        //Threading the demo datas
         DispatchQueue.global(qos: .background).async {
             self.appDidInstallAndFirstRun();
         }
         
-        
+        //Picking the Users Array
         let thisArray = UserData.getWholeArray();
         print(thisArray.count);
+        
+        //making the swipe
+        let left = storyboard.instantiateViewController(withIdentifier: "Suchen")
+        let middle = storyboard.instantiateViewController(withIdentifier: "camera")
+        let right = storyboard.instantiateViewController(withIdentifier: "settings")
+        
+        
+        let snapContainer = SnapContainerViewController.containerViewWith(left, middleVC: middle, rightVC: right)
+        //makin the swipe end
         
         if (thisArray.count <= 1) /*Es ist nur der Demobenutzer vorhanden (Premium inactive)*/{
             UserDefaults.standard.set(true, forKey: "launching");
@@ -62,12 +71,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else/*Es wurde bereits ein User angelegt (Premium active)*/{
             //Zeige den mainScreen
-            vc = storyboard.instantiateInitialViewController()!
+            
+            
             //Important for the UI of Onboarding Screen
             UserDefaults.standard.set(false, forKey: "launching");
         }
         
-        self.window?.rootViewController = vc
+        self.window?.rootViewController = snapContainer;
         self.window?.makeKeyAndVisible()
         
         themeApp()

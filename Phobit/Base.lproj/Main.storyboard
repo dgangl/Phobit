@@ -886,7 +886,7 @@
         <!--Einstellungen-->
         <scene sceneID="qAT-Ca-kJ1">
             <objects>
-                <tableViewController title="Einstellungen" id="KWt-eW-RyK" customClass="EinstellungsController" customModule="Phobit" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settings" title="Einstellungen" id="KWt-eW-RyK" customClass="EinstellungsController" customModule="Phobit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JSF-CE-rSg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
