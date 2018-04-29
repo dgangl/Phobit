@@ -711,16 +711,22 @@ class SuchenTableViewController: UITableViewController {
         
         
         setDefaultSearchBar()
+    
         prepareData()
     }
     
     private func prepareData() {
+        var start = Date().millisecondsSince1970
         if let data = Memory().read() {
+            print("###### Time to read Data: \(Date().millisecondsSince1970 - start)")
             dataMaster = DataMaster.init(billdata: data)
+            print("###### Time to setup Datamaster: \(Date().millisecondsSince1970 - start)")
             dates = dataMaster?.dates
         } else {
             dataMaster = DataMaster.init()
         }
+        
+        print("###### TOTAL: \(Date().millisecondsSince1970 - start)")
     }
     
     // Data source

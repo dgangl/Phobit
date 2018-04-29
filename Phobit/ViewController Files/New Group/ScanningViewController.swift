@@ -119,8 +119,12 @@ class ScanningViewController: UIViewController, G8TesseractDelegate, UIGestureRe
         //QR-Code Metadata Output
         let metadataoutput = AVCaptureMetadataOutput()
 
+        myDevice.focusPointOfInterest = CGPoint.init(x: 0.5, y: 0.5)
         myDevice.focusMode = .continuousAutoFocus
         
+            myDevice.exposurePointOfInterest = CGPoint.init(x: 0.5, y: 0.5)
+            myDevice.exposureMode = .continuousAutoExposure
+            
         // adding it to the session
         session.addInput(deviceInput)
         session.addOutput(deviceOutput)
