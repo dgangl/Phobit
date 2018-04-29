@@ -603,6 +603,7 @@ extension UITableViewController: UISearchBarDelegate{
         }
         else{
         tool.keyboardType = UIKeyboardType.decimalPad
+        
             tempSaveForTheNextExtention.toolBar.items?.first?.title = "Normal"
         }
         

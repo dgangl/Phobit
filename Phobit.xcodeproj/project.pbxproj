@@ -19,12 +19,15 @@
 		168BD09D206F93EE00431336 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 168BD09C206F93EE00431336 /* tessdata */; };
 		169E8BAC2037295300D0C36E /* BillData2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAB2037295300D0C36E /* BillData2.0.swift */; };
 		169E8BAE20372D1200D0C36E /* Steuerzeile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAD20372D1200D0C36E /* Steuerzeile.swift */; };
+		16B0434E2091CF5200D89E93 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0434D2091CF5200D89E93 /* NeuralNetwork.swift */; };
 		16B23707204D4B5900CFD87D /* PhobitColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B23706204D4B5900CFD87D /* PhobitColorPicker.swift */; };
 		16D8DC3A202CB05D00D001C4 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8DC39202CB05D00D001C4 /* Memory.swift */; };
 		16FD6C9C20430DAD00D8B88D /* BezahlformenPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6C9B20430DAD00D8B88D /* BezahlformenPickerViewController.swift */; };
 		16FD6C9E20431B5000D8B88D /* ImageDataStorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6C9D20431B4F00D8B88D /* ImageDataStorer.swift */; };
 		16FD6CA220445A5A00D8B88D /* ZeilenPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6CA120445A5A00D8B88D /* ZeilenPickerViewController.swift */; };
 		16FD6CA6204479C100D8B88D /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */; };
+		3C2A41D82090C49B00FE1CE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A41D72090C49B00FE1CE9 /* GoogleService-Info.plist */; };
+		3C2A41DA2090C91D00FE1CE9 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A41D92090C91D00FE1CE9 /* Database.swift */; };
 		3C352B3E20447EF800117EAE /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C352B3D20447EF800117EAE /* LoginTableViewController.swift */; };
 		3C70AB9B2056C0FA002F08B0 /* SetANameOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C70AB9A2056C0FA002F08B0 /* SetANameOnboarding.swift */; };
 		3CAB9063202DDCE900453E6E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9062202DDCE800453E6E /* UserData.swift */; };
@@ -102,6 +105,7 @@
 		168BD09C206F93EE00431336 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		169E8BAB2037295300D0C36E /* BillData2.0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillData2.0.swift; sourceTree = "<group>"; };
 		169E8BAD20372D1200D0C36E /* Steuerzeile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steuerzeile.swift; sourceTree = "<group>"; };
+		16B0434D2091CF5200D89E93 /* NeuralNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
 		16B23706204D4B5900CFD87D /* PhobitColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhobitColorPicker.swift; sourceTree = "<group>"; };
 		16D8DC39202CB05D00D001C4 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		16FD6C9B20430DAD00D8B88D /* BezahlformenPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezahlformenPickerViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 		16FD6CA120445A5A00D8B88D /* ZeilenPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeilenPickerViewController.swift; sourceTree = "<group>"; };
 		16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		3867A260BF5D2352CEFE25D2 /* Pods-Phobit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.debug.xcconfig"; sourceTree = "<group>"; };
+		3C2A41D72090C49B00FE1CE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3C2A41D92090C91D00FE1CE9 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		3C352B3D20447EF800117EAE /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		3C70AB9A2056C0FA002F08B0 /* SetANameOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetANameOnboarding.swift; sourceTree = "<group>"; };
 		3CAB9062202DDCE800453E6E /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 		1603F3FD201CF041009557C1 /* Additional Files */ = {
 			isa = PBXGroup;
 			children = (
+				16B0434F2091CF6100D89E93 /* NeuralNetwork */,
 				168BD09F206F942900431336 /* BillDataFiles */,
 				168BD09E206F941500431336 /* AppSettings */,
 				16B8A1061FEEB511005E95E9 /* Saving&Reading */,
@@ -268,6 +275,14 @@
 			path = BillDataFiles;
 			sourceTree = "<group>";
 		};
+		16B0434F2091CF6100D89E93 /* NeuralNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				16B0434D2091CF5200D89E93 /* NeuralNetwork.swift */,
+			);
+			path = NeuralNetwork;
+			sourceTree = "<group>";
+		};
 		16B8A1061FEEB511005E95E9 /* Saving&Reading */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,9 +293,18 @@
 			path = "Saving&Reading";
 			sourceTree = "<group>";
 		};
+		3C2A41D62090C48800FE1CE9 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A41D92090C91D00FE1CE9 /* Database.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 		981B67491FDC7551008D9835 = {
 			isa = PBXGroup;
 			children = (
+				3C2A41D72090C49B00FE1CE9 /* GoogleService-Info.plist */,
 				981B67541FDC7551008D9835 /* Phobit */,
 				981B67531FDC7551008D9835 /* Products */,
 				1648406420074E8A0023AC43 /* Frameworks */,
@@ -299,6 +323,7 @@
 		981B67541FDC7551008D9835 /* Phobit */ = {
 			isa = PBXGroup;
 			children = (
+				3C2A41D62090C48800FE1CE9 /* DataBase */,
 				1603F3FC201CEB07009557C1 /* ViewController Files */,
 				1603F3FD201CF041009557C1 /* Additional Files */,
 				981B67551FDC7551008D9835 /* AppDelegate.swift */,
@@ -406,7 +431,6 @@
 				981B67501FDC7551008D9835 /* Resources */,
 				98AD242B1FF55E4600417176 /* Embed App Extensions */,
 				CBA4E0115E7C944D2D45483B /* [CP] Embed Pods Frameworks */,
-				5A9F9DD762A57E8CB95FB9B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -460,6 +484,7 @@
 				160C03502001864200BD3EC2 /* LaunchScreen.storyboard in Resources */,
 				98D11AF51FF5C4FF00E7CDEC /* Images.xcassets in Resources */,
 				9893AB60203B07B900249850 /* PhobitKontenplan.csv in Resources */,
+				3C2A41D82090C49B00FE1CE9 /* GoogleService-Info.plist in Resources */,
 				981B675B1FDC7551008D9835 /* Main.storyboard in Resources */,
 				984DD7A5205081330098BE0F /* sampleData.txt in Resources */,
 				168BD09D206F93EE00431336 /* tessdata in Resources */,
@@ -487,21 +512,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5A9F9DD762A57E8CB95FB9B3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phobit/Pods-Phobit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CBA4E0115E7C944D2D45483B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -510,14 +520,34 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Phobit/Pods-Phobit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/TesseractOCRiOS/TesseractOCR.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TesseractOCR.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -554,6 +584,7 @@
 				98B767232006C2E000AFE504 /* Monate.swift in Sources */,
 				3CAB9067202DDD6C00453E6E /* LoginTableViewCell.swift in Sources */,
 				983789951FEC3DD000718A32 /* TextCell.swift in Sources */,
+				3C2A41DA2090C91D00FE1CE9 /* Database.swift in Sources */,
 				163C50AC2056AE230084701B /* App_Settings.swift in Sources */,
 				980270C1208F0B1D0033E808 /* DateUtilities.swift in Sources */,
 				169E8BAE20372D1200D0C36E /* Steuerzeile.swift in Sources */,
@@ -585,6 +616,7 @@
 				981B676E1FDC7B72008D9835 /* SuchenTableViewController.swift in Sources */,
 				98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */,
 				16FD6C9C20430DAD00D8B88D /* BezahlformenPickerViewController.swift in Sources */,
+				16B0434E2091CF5200D89E93 /* NeuralNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,7 +752,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JD2YB3WD25;
 				INFOPLIST_FILE = Phobit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -739,7 +771,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JD2YB3WD25;
 				INFOPLIST_FILE = Phobit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lonos.Phobit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

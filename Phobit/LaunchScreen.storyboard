@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -26,9 +22,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phobit_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Gcj-L9-Bk0">
                                 <rect key="frame" x="0.0" y="20" width="375" height="409"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phobit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVu-BD-2Er">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phobit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVu-BD-2Er">
                                 <rect key="frame" x="16" y="408" width="343" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="51"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -36,10 +31,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.66681879759999996" green="0.1863303483" blue="0.1212185398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Gcj-L9-Bk0" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" id="40p-81-0f5"/>
-                            <constraint firstItem="Gcj-L9-Bk0" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="Myr-Sb-hdo"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="Gcj-L9-Bk0" secondAttribute="trailing" id="oah-pr-TCA"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="Gcj-L9-Bk0" secondAttribute="bottom" constant="238" id="siq-4H-eCO"/>
+                            <constraint firstItem="CVu-BD-2Er" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="388" id="2KC-GU-koZ"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="CVu-BD-2Er" secondAttribute="bottom" constant="201" id="51k-2f-rQq"/>
+                            <constraint firstItem="Gcj-L9-Bk0" firstAttribute="centerX" secondItem="CVu-BD-2Er" secondAttribute="centerX" id="BhW-D6-prB"/>
+                            <constraint firstAttribute="trailing" secondItem="Gcj-L9-Bk0" secondAttribute="trailing" id="QBK-db-UZa"/>
+                            <constraint firstItem="Gcj-L9-Bk0" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" id="R9h-j6-bvX"/>
+                            <constraint firstItem="Gcj-L9-Bk0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="WOj-cf-mwu"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="Gcj-L9-Bk0" secondAttribute="bottom" constant="238" id="gmW-o7-NAe"/>
+                            <constraint firstItem="CVu-BD-2Er" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="k6Z-Rs-6j7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>

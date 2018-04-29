@@ -14,6 +14,7 @@ class AuswertungsTableViewController: UITableViewController {
     var bill: BillData2?
     var tableDict: [IndexPath:Any]?
     var image : UIImage?
+    @IBOutlet weak var imageView: UIImageView!
     
     
     @IBOutlet weak var imagePicker: UIImageView!
@@ -24,6 +25,11 @@ class AuswertungsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        imageView.image?.accessibilityFrame = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height)
+        imageView.frame = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height)
         
         
         if let bill = bill {
@@ -62,9 +68,25 @@ class AuswertungsTableViewController: UITableViewController {
         setImage()
         mem.save(input: bill!, append: true, target: self)
         //
+        
+        //NEEDED FOR DATABASE SAVING
+        let dataBase = Database.init();
+        let companName = bill?.rechnungsersteller;
+        if(companName == nil || (companName?.elementsEqual(""))!){
+            return;
+        }
+        dataBase.addNew(wholeString: /*Here should be the OCR TEXT*/ "", companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto())
     }
     
-    
+    func getAllNetto() -> Double {
+        var all = 0.0;
+        
+        for item in (bill?.steuerzeilen)! {
+            all = all + item.getNetto();
+        }
+        
+        return all;
+    }
     
     
     
@@ -167,7 +189,35 @@ class AuswertungsTableViewController: UITableViewController {
     
     }
     
-    
+    @IBOutlet var informationSheet: UIView!
+    func customNotification() {
+      
+            // present the sheet
+            
+            informationSheet.alpha = 0
+            informationSheet.center = CGPoint.init(x: self.view.center.x, y: UIScreen.main.bounds.maxY - 90)
+            self.view.addSubview(informationSheet)
+        
+        
+            // animate in
+            UIView.animate(withDuration: 0.3) {
+                self.informationSheet.alpha = 1
+                
+            }
+            
+            
+            // animate out after 5 seconds
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+                
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.informationSheet.alpha = 0
+                }, completion: { (success) in
+                    self.informationSheet.removeFromSuperview()
+                    self.informationSheet.alpha = 1
+                })
+            }
+        
+    }
     
     
 }
