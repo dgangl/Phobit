@@ -10,5 +10,6 @@ import Foundation
 
 class App_Settings{
     static let Bill_Limit = 5
+    static let CLUSTER_LIMIT = 10
     
 }
