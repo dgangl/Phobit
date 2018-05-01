@@ -38,23 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
         
-        //Threading the demo datas
+        
         DispatchQueue.global(qos: .background).async {
             self.appDidInstallAndFirstRun();
         }
         
-        //Picking the Users Array
+        
         let thisArray = UserData.getWholeArray();
         print(thisArray.count);
-        
-        //making the swipe
-        let left = storyboard.instantiateViewController(withIdentifier: "Suchen")
-        let middle = storyboard.instantiateViewController(withIdentifier: "camera")
-        let right = storyboard.instantiateViewController(withIdentifier: "settings")
-        
-        
-        let snapContainer = SnapContainerViewController.containerViewWith(left, middleVC: middle, rightVC: right)
-        //makin the swipe end
         
         if (thisArray.count <= 1) /*Es ist nur der Demobenutzer vorhanden (Premium inactive)*/{
             UserDefaults.standard.set(true, forKey: "launching");
@@ -71,13 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else/*Es wurde bereits ein User angelegt (Premium active)*/{
             //Zeige den mainScreen
-            
-            
+            vc = storyboard.instantiateInitialViewController()!
             //Important for the UI of Onboarding Screen
             UserDefaults.standard.set(false, forKey: "launching");
         }
         
-        self.window?.rootViewController = snapContainer;
+        self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
         
         themeApp()
@@ -131,7 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ////////////////////////////////////
         
         // uncomment this method to activate sample data.
-
+        
         if UserDefaults.standard.bool(forKey: "sampleDataLoaded") == false {
             
             SampleDataLoader.loadSampleData()
@@ -141,7 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
-    } 
+    }
     
     func themeApp(){
         UINavigationBar.appearance().barTintColor = UIColor.rzlRed
@@ -154,7 +144,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance(whenContainedInInstancesOf:[UISearchBar.self]).tintColor = UIColor.white
         
         
-
+        
     }
 }
-
