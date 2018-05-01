@@ -97,14 +97,20 @@ class ChooseKontierungViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // otherwise the animatioin of the searchbar would crash the dismiss of the view.
-        searchController.isActive = false
+        
         
         let cell = tableView.cellForRow(at: indexPath) as! KontierungTableViewCell
         
         
+        // otherwise the animatioin of the searchbar would crash the dismiss of the view.
+        searchController.isActive = false
+        
+        
+        let kontonummer = cell.kontonummer.text
+        let kontobezeichnung = cell.kontobezeichnung.text
+        
         self.dismiss(animated: true) {
-            self.delegate?.userDidEdit(inIndexPath: IndexPath.init(row: 0, section: 3), changedText: "\(cell.kontonummer.text ?? "Fehler") \(cell.kontobezeichnung.text ?? "Fehler")")
+            self.delegate?.userDidEdit(inIndexPath: IndexPath.init(row: 0, section: 3), changedText: "\(kontonummer ?? "Fehler") \(kontobezeichnung ?? "Fehler")")
         }
     }
     
