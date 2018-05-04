@@ -180,13 +180,16 @@ class AuswertungsTableViewController: UITableViewController {
     func getImage(){
         let i = ImageData()
         
-        if bill?.imageURL == "" {print("no image url found"); return}
+        if bill?.imageURL == "" {print("no image url found");
+            return
+        }
         
         
         
         if let image = i.getImage(name: (bill?.imageURL)!) {
             
             imagePicker.image = image
+            self.noImgeFoundLBL.isHidden = true
         }
     
     }

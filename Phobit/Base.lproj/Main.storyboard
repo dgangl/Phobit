@@ -785,6 +785,9 @@
                                 <state key="normal" title="Aus" image="BlitzIcon">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="toggleFlashBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="hAt-4o-pMv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86266928909999996" green="0.86279368400000001" blue="0.86264199019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

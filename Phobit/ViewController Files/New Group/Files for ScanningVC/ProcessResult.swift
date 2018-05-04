@@ -12,6 +12,8 @@ import UIKit
 extension ScanningViewController {
     
     func gotImage() {
+        
+        self.session.stopRunning()
         // webservice task here.
         // user information.
         // crop image.
@@ -23,6 +25,8 @@ extension ScanningViewController {
         processor.process { (success) in
             if success {
                 let webservice = WebService.init(image: processor.getImage())
+                
+                
                 
                 let tuple = self.showLoadingScreen()
                 
@@ -49,6 +53,7 @@ extension ScanningViewController {
                         // end
                         
                         alertView.dismiss(animated: true, completion: {
+                            self.session.startRunning()
                             self.jumpToAuswertung(withImage: processor.getImage())
                         })
                     }
