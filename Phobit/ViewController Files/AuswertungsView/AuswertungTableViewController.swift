@@ -77,7 +77,7 @@ class AuswertungsTableViewController: UITableViewController {
         }
         let OCRString = UserDefaults.standard.string(forKey: "OCRstring");
         
-        dataBase.addNew(wholeString: OCRString ?? "nil", companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto())
+        dataBase.addNew(wholeString: OCRString ?? "nil", companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto(), TenProzent: 0, ThirteenProzent: 0, NineteenProzent: 0, TwentyProzent: 0, Kontierung: "");
     }
     
     func getAllNetto() -> Double {

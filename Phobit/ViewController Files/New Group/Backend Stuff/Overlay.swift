@@ -47,11 +47,6 @@ class Overlay {
     func start() {
         if !isRunning {
             
-
-            
-        
-    
-            
             shapeLayer.path = nil
             detectionView.layer.addSublayer(shapeLayer)
             
@@ -75,46 +70,46 @@ class Overlay {
     
     
     func invisible() {
-//        // clears all Layers from the Layer.
-//        let animation = CABasicAnimation.init(keyPath: "fillColor")
-//        animation.duration = 0.2
-//        animation.fromValue = shapeLayer.fillColor!
-//        animation.toValue = UIColor.clear.cgColor
-//        animation.timingFunction = CAMediaTimingFunction.init(name: "easeInEaseOut")
-//
-//        shapeLayer.add(animation, forKey: "fillColor")
-//
-//        // not sure if this will work...
-//        shapeLayer.isHidden = true
-//
-//        wasPreviousInvisible = true
+        // clears all Layers from the Layer.
+        let animation = CABasicAnimation.init(keyPath: "fillColor")
+        animation.duration = 0.2
+        animation.fromValue = shapeLayer.fillColor!
+        animation.toValue = UIColor.clear.cgColor
+        animation.timingFunction = CAMediaTimingFunction.init(name: "easeInEaseOut")
+
+        shapeLayer.add(animation, forKey: "fillColor")
+
+        // not sure if this will work...
+        shapeLayer.isHidden = true
+
+        wasPreviousInvisible = true
     }
     
     
     fileprivate func visible() {
-//        if wasPreviousInvisible == false {
-//            shapeLayer.isHidden = false
-//            shapeLayer.fillColor = UIColor.detectionOverlayColor.cgColor
-//        }
+        if wasPreviousInvisible == false {
+            shapeLayer.isHidden = false
+            shapeLayer.fillColor = UIColor.detectionOverlayColor.cgColor
+        }
     }
     
     
     fileprivate func update() {
         // update the detection layer
-//        let path = CGMutablePath.init()
-//
-//        guard let topLeft = topLeft, let topRight = topRight, let bottomRight = bottomRight, let bottomLeft = bottomLeft else {return;}
-//
-//        path.addLines(between: [topLeft, topRight, bottomRight, bottomLeft])
-//
-//
-//        let animation = CABasicAnimation.init(keyPath: "path")
-//        animation.duration = 0.2
-//        animation.fromValue = shapeLayer.path
-//        animation.toValue = path
-//        animation.timingFunction = CAMediaTimingFunction.init(name: "easeInEaseOut")
-//
-//        shapeLayer.add(animation, forKey: "path")
-//        shapeLayer.path = path
+        let path = CGMutablePath.init()
+
+        guard let topLeft = topLeft, let topRight = topRight, let bottomRight = bottomRight, let bottomLeft = bottomLeft else {return;}
+
+        path.addLines(between: [topLeft, topRight, bottomRight, bottomLeft])
+
+
+        let animation = CABasicAnimation.init(keyPath: "path")
+        animation.duration = 0.2
+        animation.fromValue = shapeLayer.path
+        animation.toValue = path
+        animation.timingFunction = CAMediaTimingFunction.init(name: "easeInEaseOut")
+
+        shapeLayer.add(animation, forKey: "path")
+        shapeLayer.path = path
     }
 }
