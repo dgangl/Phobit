@@ -37,10 +37,7 @@ class Database {
             if let _ = err {
                 print("DATABASE=> ERROR WRITING NEW DOCUMENT")
             } else {
-                print("DATABASE=> WROTE A NEW NEW DOCUMENT SUCCESSFULLY")
-                
-                
-                
+                print("DATABASE=> WROTE A NEW DOCUMENT SUCCESSFULLY")
             }
             //Block end
         }
