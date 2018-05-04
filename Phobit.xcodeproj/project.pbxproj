@@ -476,7 +476,6 @@
 				981B67501FDC7551008D9835 /* Resources */,
 				98AD242B1FF55E4600417176 /* Embed App Extensions */,
 				CBA4E0115E7C944D2D45483B /* [CP] Embed Pods Frameworks */,
-				DE60CCAACAF1549CD5AB05AA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -598,21 +597,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phobit/Pods-Phobit-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE60CCAACAF1549CD5AB05AA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phobit/Pods-Phobit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
