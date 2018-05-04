@@ -12,6 +12,65 @@ import UIKit
 class Memory{
     
     
+    public func saveInCluster(input: BillData2, append : Bool, target: UIViewController){
+        var clusternumber = UserDefaults.standard.integer(forKey: "cluster")
+        if clusternumber == 0{
+            UserDefaults.standard.set(1, forKey: "cluster")
+            clusternumber = 1
+        }
+        if(append){
+            if var dataInMemory = read(){
+                if(dataInMemory.count > App_Settings.CLUSTER_LIMIT){
+                    //SAVE IN NEW CLUSTER
+                    print("Saving Data in Cluster \(clusternumber) for User \(UserData.getChoosen().email)")
+                    dataInMemory.append(input)
+                    let encryptedData = NSKeyedArchiver.archivedData(withRootObject: dataInMemory);
+                    UserDefaults.standard.set(encryptedData, forKey:  "\(UserData.getChoosen().email) ::: \(clusternumber)")
+                    
+                }else{
+                    clusternumber + 1;
+                    print("Saving Data in new Cluster \(clusternumber) for User \(UserData.getChoosen().email)");
+                    let encryptedData = NSKeyedArchiver.archivedData(withRootObject: input);
+                    //::: as the indetifier for the clusternumber
+                    UserDefaults.standard.set(encryptedData, forKey: "\(UserData.getChoosen().email):::\(clusternumber)")
+                    UserDefaults.standard.set(clusternumber, forKey: "cluster")
+                }
+            }
+        }
+    }
+    
+    public func readFromCluster() -> [BillData2]! {
+        var clusternumber = UserDefaults.standard.integer(forKey: "cluster")
+        if(clusternumber == 0){
+            clusternumber = 1
+        }
+        if let encryptedClusterData = UserDefaults.standard.data(forKey: "\(UserData.getChoosen().email) ::: \(clusternumber))"){
+            return NSKeyedUnarchiver.unarchiveObject(with: encryptedClusterData) as! [BillData2]
+        }else{
+            print("Error while reading")
+            return nil
+        }
+    }
+    
+    public func readEverythingFromCluster() -> [BillData2]! {
+        var clusternumber = UserDefaults.standard.integer(forKey: "cluster")
+        if clusternumber == 0{
+            return readFromCluster();
+        }else{
+            var data : [BillData2] = []
+            for index in 1...clusternumber{
+                if let encryptedClusterdata = UserDefaults.standard.data(forKey: "\(UserData.getChoosen().email) ::: \(index))"){
+                    let billArray = NSKeyedUnarchiver.unarchiveObject(with: encryptedClusterdata) as! [BillData2]
+                    data.append(contentsOf: billArray)
+                }
+                
+            }
+            return data
+        }
+        
+    }
+    
+    
     public func save(input: BillData2, append : Bool, target: UIViewController?){
         
         // adds the new rechnungsersteller to the userdefaults for smart type.
