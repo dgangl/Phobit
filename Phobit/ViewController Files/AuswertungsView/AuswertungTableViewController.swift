@@ -75,7 +75,9 @@ class AuswertungsTableViewController: UITableViewController {
         if(companName == nil || (companName?.elementsEqual(""))!){
             return;
         }
-        dataBase.addNew(wholeString: /*Here should be the OCR TEXT*/ "", companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto())
+        let OCRString = UserDefaults.standard.string(forKey: "OCRstring");
+        
+        dataBase.addNew(wholeString: OCRString ?? "nil", companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto())
     }
     
     func getAllNetto() -> Double {

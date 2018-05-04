@@ -132,7 +132,10 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
         photoSettings.isAutoStillImageStabilizationEnabled = self.photoOutput.isStillImageStabilizationSupported
         
         // the user can't take a picture now because we do it.
-        cameraButton.isEnabled = false
+        DispatchQueue.main.sync {
+            cameraButton.isEnabled = false
+        }
+        
         
         self.photoOutput.capturePhoto(with: photoSettings, delegate: self)
     }

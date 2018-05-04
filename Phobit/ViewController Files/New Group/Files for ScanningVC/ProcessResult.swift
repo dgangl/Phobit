@@ -31,10 +31,19 @@ extension ScanningViewController {
                 
                 webservice.start(completion: { (response, statusCode) in
                     
+                    UserDefaults.standard.removeObject(forKey: "OCRstring")
+                    
                     print("###### completion started")
                     
                     if statusCode == 200 {
                         // perform with text in here.
+                        let tag = Tagger.init()
+                        if let rechnungsersteller = tag.recognizeOCR_Result(für: response) {
+                            self.billdata?.rechnungsersteller = rechnungsersteller
+                            UserDefaults.standard.set(response, forKey: "OCRstring")
+                        }
+                        
+                        
                         
                         
                         // end
