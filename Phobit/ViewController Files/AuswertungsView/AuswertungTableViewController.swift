@@ -95,7 +95,7 @@ class AuswertungsTableViewController: UITableViewController {
         var finalBetrag : Double = 0;
         for steuer in (bill?.steuerzeilen)!{
             if(steuer.getProzent() == value){
-                finalBetrag = steuer.getNetto();
+                finalBetrag = steuer.getProzentbetrag();
             }
         }
         
