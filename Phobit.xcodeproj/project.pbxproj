@@ -50,11 +50,7 @@
 		9844A6A0204316BE009ED46D /* DataMasterSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844A69F204316BE009ED46D /* DataMasterSearch.swift */; };
 		984DD79D205024150098BE0F /* SampleDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984DD79C205024150098BE0F /* SampleDataLoader.swift */; };
 		984DD7A5205081330098BE0F /* sampleData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 984DD7A4205081320098BE0F /* sampleData.txt */; };
-		985935AB20555A9800FB20D7 /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985935AA20555A9800FB20D7 /* ScanningViewController.swift */; };
 		985935AD205564C500FB20D7 /* VisionUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985935AC205564C500FB20D7 /* VisionUtilities.swift */; };
-		985935AF205564CC00FB20D7 /* VisionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985935AE205564CC00FB20D7 /* VisionHandler.swift */; };
-		985935B12055667B00FB20D7 /* ScanningResultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985935B02055667B00FB20D7 /* ScanningResultsHandler.swift */; };
-		985935B320556D7700FB20D7 /* ScanningVCMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985935B220556D7700FB20D7 /* ScanningVCMetadata.swift */; };
 		9893AB2F20387B2C00249850 /* AuswertungSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB2E20387B2C00249850 /* AuswertungSelectionHandler.swift */; };
 		9893AB3120387B5D00249850 /* EditingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB3020387B5D00249850 /* EditingProtocol.swift */; };
 		9893AB3420387E4200249850 /* TextPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB3320387E4200249850 /* TextPickerViewController.swift */; };
@@ -65,6 +61,14 @@
 		9893AB5E203B024100249850 /* KontierungTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB5D203B024100249850 /* KontierungTableViewCell.swift */; };
 		9893AB60203B07B900249850 /* PhobitKontenplan.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9893AB5F203B07B800249850 /* PhobitKontenplan.csv */; };
 		9893AB62203B221D00249850 /* DataMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB61203B221D00249850 /* DataMaster.swift */; };
+		98A9E0092098AC03008E142D /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0082098AC03008E142D /* WebService.swift */; };
+		98A9E00B2098AC0B008E142D /* AutoCaptureObservator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E00A2098AC0B008E142D /* AutoCaptureObservator.swift */; };
+		98A9E00E2098B18D008E142D /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E00D2098B18D008E142D /* ScanningViewController.swift */; };
+		98A9E0112098B324008E142D /* ScanningUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0102098B324008E142D /* ScanningUserInformation.swift */; };
+		98A9E0132098B48B008E142D /* ScanningCameraStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0122098B48B008E142D /* ScanningCameraStuff.swift */; };
+		98A9E0152098C216008E142D /* ScanningVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0142098C216008E142D /* ScanningVision.swift */; };
+		98A9E0172098C4B9008E142D /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0162098C4B9008E142D /* Overlay.swift */; };
+		98A9E0192098CD32008E142D /* ProcessResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0182098CD32008E142D /* ProcessResult.swift */; };
 		98B3A0082055A3C200D55CBA /* CustomRoundedEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */; };
 		98B767232006C2E000AFE504 /* Monate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B767222006C2E000AFE504 /* Monate.swift */; };
 		98B767252006D3EC00AFE504 /* SearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B767242006D3EC00AFE504 /* SearchHandler.swift */; };
@@ -73,6 +77,7 @@
 		98BA5AB720379DF7004655A0 /* GesamtBruttoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */; };
 		98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */; };
 		98D11AF51FF5C4FF00E7CDEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16162C541FF58EF5002000E1 /* Images.xcassets */; };
+		98D4ACEC2098EA2A009FD192 /* ImageEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D4ACEB2098EA2A009FD192 /* ImageEditor.swift */; };
 		98D768041FF52DDC00876B3E /* SuchfunktionDaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D768031FF52DDC00876B3E /* SuchfunktionDaten.swift */; };
 /* End PBXBuildFile section */
 
@@ -141,11 +146,7 @@
 		9844A69F204316BE009ED46D /* DataMasterSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMasterSearch.swift; sourceTree = "<group>"; };
 		984DD79C205024150098BE0F /* SampleDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataLoader.swift; sourceTree = "<group>"; };
 		984DD7A4205081320098BE0F /* sampleData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleData.txt; sourceTree = "<group>"; };
-		985935AA20555A9800FB20D7 /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
 		985935AC205564C500FB20D7 /* VisionUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionUtilities.swift; sourceTree = "<group>"; };
-		985935AE205564CC00FB20D7 /* VisionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionHandler.swift; sourceTree = "<group>"; };
-		985935B02055667B00FB20D7 /* ScanningResultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningResultsHandler.swift; sourceTree = "<group>"; };
-		985935B220556D7700FB20D7 /* ScanningVCMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningVCMetadata.swift; sourceTree = "<group>"; };
 		9893AB2E20387B2C00249850 /* AuswertungSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuswertungSelectionHandler.swift; sourceTree = "<group>"; };
 		9893AB3020387B5D00249850 /* EditingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProtocol.swift; sourceTree = "<group>"; };
 		9893AB3320387E4200249850 /* TextPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +157,14 @@
 		9893AB5D203B024100249850 /* KontierungTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontierungTableViewCell.swift; sourceTree = "<group>"; };
 		9893AB5F203B07B800249850 /* PhobitKontenplan.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PhobitKontenplan.csv; sourceTree = "<group>"; };
 		9893AB61203B221D00249850 /* DataMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMaster.swift; sourceTree = "<group>"; };
+		98A9E0082098AC03008E142D /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		98A9E00A2098AC0B008E142D /* AutoCaptureObservator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCaptureObservator.swift; sourceTree = "<group>"; };
+		98A9E00D2098B18D008E142D /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
+		98A9E0102098B324008E142D /* ScanningUserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningUserInformation.swift; sourceTree = "<group>"; };
+		98A9E0122098B48B008E142D /* ScanningCameraStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningCameraStuff.swift; sourceTree = "<group>"; };
+		98A9E0142098C216008E142D /* ScanningVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningVision.swift; sourceTree = "<group>"; };
+		98A9E0162098C4B9008E142D /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
+		98A9E0182098CD32008E142D /* ProcessResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessResult.swift; sourceTree = "<group>"; };
 		98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedEffectView.swift; sourceTree = "<group>"; };
 		98B767222006C2E000AFE504 /* Monate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monate.swift; sourceTree = "<group>"; };
 		98B767242006D3EC00AFE504 /* SearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandler.swift; sourceTree = "<group>"; };
@@ -163,6 +172,7 @@
 		98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaltenTableViewCell.swift; sourceTree = "<group>"; };
 		98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesamtBruttoTableViewCell.swift; sourceTree = "<group>"; };
 		98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSuggestions.swift; sourceTree = "<group>"; };
+		98D4ACEB2098EA2A009FD192 /* ImageEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditor.swift; sourceTree = "<group>"; };
 		98D768031FF52DDC00876B3E /* SuchfunktionDaten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchfunktionDaten.swift; sourceTree = "<group>"; };
 		B025AD47474295118F3BB1A5 /* Pods_Phobit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phobit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FD1BD6EEEA6DDC6D69466E /* Pods-Phobit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				3C8D76F72095E4D1007D5EBA /* SwipeFunction */,
+				160C034C2000B1F200BD3EC2 /* SettingsView */,
 				981B67751FDC7BE1008D9835 /* SearchView */,
 				983789911FEC3D8D00718A32 /* AuswertungsView */,
 				9822B5CE201CE3A000C36A1F /* KameraView */,
@@ -355,7 +366,6 @@
 		981B67751FDC7BE1008D9835 /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
-				160C034C2000B1F200BD3EC2 /* SettingsView */,
 				98B767222006C2E000AFE504 /* Monate.swift */,
 				98B767242006D3EC00AFE504 /* SearchHandler.swift */,
 				981B676D1FDC7B72008D9835 /* SuchenTableViewController.swift */,
@@ -382,11 +392,9 @@
 		9822B5CE201CE3A000C36A1F /* KameraView */ = {
 			isa = PBXGroup;
 			children = (
-				985935B220556D7700FB20D7 /* ScanningVCMetadata.swift */,
-				985935AC205564C500FB20D7 /* VisionUtilities.swift */,
-				985935AE205564CC00FB20D7 /* VisionHandler.swift */,
-				985935AA20555A9800FB20D7 /* ScanningViewController.swift */,
-				985935B02055667B00FB20D7 /* ScanningResultsHandler.swift */,
+				98A9E00D2098B18D008E142D /* ScanningViewController.swift */,
+				98A9E00F2098B30C008E142D /* Files for ScanningVC */,
+				98A9E00C2098AC11008E142D /* Backend Stuff */,
 			);
 			name = KameraView;
 			path = "New Group";
@@ -423,6 +431,29 @@
 			path = Pickers;
 			sourceTree = "<group>";
 		};
+		98A9E00C2098AC11008E142D /* Backend Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				985935AC205564C500FB20D7 /* VisionUtilities.swift */,
+				98A9E0082098AC03008E142D /* WebService.swift */,
+				98A9E00A2098AC0B008E142D /* AutoCaptureObservator.swift */,
+				98A9E0162098C4B9008E142D /* Overlay.swift */,
+				98D4ACEB2098EA2A009FD192 /* ImageEditor.swift */,
+			);
+			path = "Backend Stuff";
+			sourceTree = "<group>";
+		};
+		98A9E00F2098B30C008E142D /* Files for ScanningVC */ = {
+			isa = PBXGroup;
+			children = (
+				98A9E0102098B324008E142D /* ScanningUserInformation.swift */,
+				98A9E0122098B48B008E142D /* ScanningCameraStuff.swift */,
+				98A9E0142098C216008E142D /* ScanningVision.swift */,
+				98A9E0182098CD32008E142D /* ProcessResult.swift */,
+			);
+			path = "Files for ScanningVC";
+			sourceTree = "<group>";
+		};
 		C144A7D94A272256FA8F1928 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,7 +476,6 @@
 				981B67501FDC7551008D9835 /* Resources */,
 				98AD242B1FF55E4600417176 /* Embed App Extensions */,
 				CBA4E0115E7C944D2D45483B /* [CP] Embed Pods Frameworks */,
-				DE60CCAACAF1549CD5AB05AA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -569,21 +599,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phobit/Pods-Phobit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE60CCAACAF1549CD5AB05AA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phobit/Pods-Phobit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -592,35 +607,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				98B3A0082055A3C200D55CBA /* CustomRoundedEffectView.swift in Sources */,
-				985935B320556D7700FB20D7 /* ScanningVCMetadata.swift in Sources */,
 				9822B5CB201CD47B00C36A1F /* CustomToolbar.swift in Sources */,
 				98B7672B2007867D00AFE504 /* ResultTableViewCell.swift in Sources */,
 				98BA5AB720379DF7004655A0 /* GesamtBruttoTableViewCell.swift in Sources */,
 				9893AB5A203B011700249850 /* SpaltenEditingViewController.swift in Sources */,
-				985935B12055667B00FB20D7 /* ScanningResultsHandler.swift in Sources */,
 				981B67561FDC7551008D9835 /* AppDelegate.swift in Sources */,
 				9893AB2F20387B2C00249850 /* AuswertungSelectionHandler.swift in Sources */,
 				16FD6CA220445A5A00D8B88D /* ZeilenPickerViewController.swift in Sources */,
+				98A9E0192098CD32008E142D /* ProcessResult.swift in Sources */,
 				16FD6C9E20431B5000D8B88D /* ImageDataStorer.swift in Sources */,
 				98B767252006D3EC00AFE504 /* SearchHandler.swift in Sources */,
 				160C034E2000B20B00BD3EC2 /* EinstellungsController.swift in Sources */,
 				1654ED082017B7EC00529C6B /* OnboardingController.swift in Sources */,
 				3C352B3E20447EF800117EAE /* LoginTableViewController.swift in Sources */,
+				98A9E0132098B48B008E142D /* ScanningCameraStuff.swift in Sources */,
 				983789931FEC3DC400718A32 /* TwoItemsCell.swift in Sources */,
 				16B23707204D4B5900CFD87D /* PhobitColorPicker.swift in Sources */,
 				163C3343204B121B00D03E41 /* ImageUpload.swift in Sources */,
 				981B67721FDC7B9A008D9835 /* BildViewController.swift in Sources */,
 				984DD79D205024150098BE0F /* SampleDataLoader.swift in Sources */,
+				98A9E0112098B324008E142D /* ScanningUserInformation.swift in Sources */,
 				98B767232006C2E000AFE504 /* Monate.swift in Sources */,
 				3CAB9067202DDD6C00453E6E /* LoginTableViewCell.swift in Sources */,
 				983789951FEC3DD000718A32 /* TextCell.swift in Sources */,
 				3C2A41DA2090C91D00FE1CE9 /* Database.swift in Sources */,
 				163C50AC2056AE230084701B /* App_Settings.swift in Sources */,
 				980270C1208F0B1D0033E808 /* DateUtilities.swift in Sources */,
+				98A9E00B2098AC0B008E142D /* AutoCaptureObservator.swift in Sources */,
 				169E8BAE20372D1200D0C36E /* Steuerzeile.swift in Sources */,
-				985935AB20555A9800FB20D7 /* ScanningViewController.swift in Sources */,
 				3C8D76FB2095E4FB007D5EBA /* SnapContainerViewController.swift in Sources */,
 				981B676C1FDC7B61008D9835 /* AuswertungTableViewController.swift in Sources */,
+				98A9E00E2098B18D008E142D /* ScanningViewController.swift in Sources */,
 				169E8BAC2037295300D0C36E /* BillData2.0.swift in Sources */,
 				16FD6CA6204479C100D8B88D /* AccountTableViewController.swift in Sources */,
 				98BA5AB520379D31004655A0 /* SpaltenTableViewCell.swift in Sources */,
@@ -634,6 +651,7 @@
 				164840762007B2980023AC43 /* QRSplitter.swift in Sources */,
 				3C70AB9B2056C0FA002F08B0 /* SetANameOnboarding.swift in Sources */,
 				16D8DC3A202CB05D00D001C4 /* Memory.swift in Sources */,
+				98A9E0152098C216008E142D /* ScanningVision.swift in Sources */,
 				983789971FEC4B2B00718A32 /* InputType.swift in Sources */,
 				3CAB9063202DDCE900453E6E /* UserData.swift in Sources */,
 				9893AB58203A355200249850 /* SpaltenSelectionProtocol.swift in Sources */,
@@ -641,10 +659,12 @@
 				9893AB3620387E4E00249850 /* DatePickerViewController.swift in Sources */,
 				9893AB5C203B01BB00249850 /* ChooseKontierungViewController.swift in Sources */,
 				9893AB62203B221D00249850 /* DataMaster.swift in Sources */,
-				985935AF205564CC00FB20D7 /* VisionHandler.swift in Sources */,
 				98D768041FF52DDC00876B3E /* SuchfunktionDaten.swift in Sources */,
 				9893AB5E203B024100249850 /* KontierungTableViewCell.swift in Sources */,
+				98A9E0092098AC03008E142D /* WebService.swift in Sources */,
 				9844A6A0204316BE009ED46D /* DataMasterSearch.swift in Sources */,
+				98D4ACEC2098EA2A009FD192 /* ImageEditor.swift in Sources */,
+				98A9E0172098C4B9008E142D /* Overlay.swift in Sources */,
 				981B676E1FDC7B72008D9835 /* SuchenTableViewController.swift in Sources */,
 				98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */,
 				16FD6C9C20430DAD00D8B88D /* BezahlformenPickerViewController.swift in Sources */,

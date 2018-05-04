@@ -16,7 +16,7 @@ class Database {
         db = Firestore.firestore();
     }
     
-    func addNew(wholeString: String, companyName: String, Date: Date, Brutto: Double, Netto: Double) {
+    func addNew(wholeString: String, companyName: String, Date: Date, Brutto: Double, Netto: Double, TenProzent: Double,ThirteenProzent : Double, NineteenProzent : Double, TwentyProzent: Double, Kontierung: String ) {
         //Setting the Document
         let docData: [String: Any] = [
             "wholeString" : wholeString,
@@ -24,6 +24,11 @@ class Database {
             "Date" : Date,
             "Brutto" : Brutto,
             "Netto" : Netto,
+            "10 Prozent" : TenProzent,
+            "13 Prozent" : ThirteenProzent,
+            "19 Prozent" : NineteenProzent,
+            "20 Prozent" : TwentyProzent,
+            "Kontierung" : Kontierung,
             
         ]
         
@@ -32,10 +37,7 @@ class Database {
             if let _ = err {
                 print("DATABASE=> ERROR WRITING NEW DOCUMENT")
             } else {
-                print("DATABASE=> WROTE A NEW NEW DOCUMENT SUCCESSFULLY")
-                
-                
-                
+                print("DATABASE=> WROTE A NEW DOCUMENT SUCCESSFULLY")
             }
             //Block end
         }
