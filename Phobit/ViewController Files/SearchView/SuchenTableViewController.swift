@@ -655,8 +655,9 @@ extension UITableViewController: UISearchBarDelegate{
     
 }
 
-class SuchenTableViewController: UITableViewController {
-    
+
+
+class SuchenTableViewController: UITableViewController{
     var dataMaster: DataMaster?
     var dates: [String]?
     
@@ -687,7 +688,6 @@ class SuchenTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         // setup the searchController
@@ -724,7 +724,7 @@ class SuchenTableViewController: UITableViewController {
             print("###### Time to setup Datamaster: \(Date().millisecondsSince1970 - start)")
             dates = dataMaster?.dates
         } else {
-            dataMaster = DataMaster.init()
+            //dataMaster = DataMaster.init()
         }
         
         print("###### TOTAL: \(Date().millisecondsSince1970 - start)")
@@ -757,7 +757,22 @@ class SuchenTableViewController: UITableViewController {
             return dataMaster?.dates[section]
         }
     }
-    
+//    var anzahl = 10;
+//    var count = 0;
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//
+//        if indexPath.row == anzahl{
+//            for _ in 0...9{
+//                if((dataMaster?.dates.count)!-1 <= count){
+//                dataMaster?.dates[count]
+//                    count += 1;
+//                }
+//                anzahl += 10;
+//            }
+//        }
+//        self.reloadInputViews()
+//
+//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if searchController.isActive && searchController.searchBar.text != "" {
