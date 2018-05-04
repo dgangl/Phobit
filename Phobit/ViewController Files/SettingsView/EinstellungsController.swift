@@ -161,12 +161,12 @@ extension EinstellungsController: MFMailComposeViewControllerDelegate{
             mail.mailComposeDelegate = self
             mail.navigationBar.tintColor = UIColor.white
             
-            mail.setToRecipients(["phobit-support@rzlsoftware.at"])
+            mail.setToRecipients(["feedback.AlphaUser@gmail.com"])
             mail.setSubject("Feedback")
             mail.setMessageBody("<h1> Feedback </h1> <p>Feedback/ Verbesserungsvorschläge: </p>", isHTML: true)
             present(mail, animated: true)
         } else {
-            let alert = UIAlertController(title: "Hoppala", message: "Bitte überprüfe deine Einstellungen damit wir eine E-Mail erstellen können", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Hoppala", message: "Bitte überprüfe deine Einstellungen damit wir eine E-Mail erstellen können.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { action in
                 alert.dismiss(animated: true, completion: nil)
             }))
