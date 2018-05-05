@@ -76,9 +76,13 @@ class Database {
         goAhead = false;
         var endThread = false;
         
+        
+        
+        
+        
+        
         //Try to find the cirtain document
         let docRef = db.collection("Nutzer").document(name);
-        
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 //Document exists! Now we get the values of the Document!
@@ -92,19 +96,20 @@ class Database {
                         if(test.elementsEqual(passwort)){
                             //THE PASSWORT MATCHED TO OUR USER!
                             self.goAhead = true;
-                            endThread = true;
+                            
                            
                         }
                     }
                 }
-                endThread = true;
+            
                 
             } else {
-                endThread = true;
+                
                 //There is no User with this name
                 print("Document does not exist")
+                }
             }
-        }
+        
         
         
         

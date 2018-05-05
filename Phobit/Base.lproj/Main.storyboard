@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -712,107 +711,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cee-hL-40Q">
-                                <rect key="frame" x="0.0" y="577" width="375" height="90"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="het-U2-2Nf">
+                                <rect key="frame" x="16" y="587" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="SearchIcon"/>
+                                <connections>
+                                    <action selector="segueToSuchenBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="KiV-zd-wF5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuL-Gp-sC5">
+                                <rect key="frame" x="299" y="587" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="EinstellungsButton"/>
+                                <connections>
+                                    <action selector="segueToEinstellungenBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="Nkv-Ma-TIg"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Phobit_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="8ne-mQ-d1E">
+                                <rect key="frame" x="75" y="178" width="275" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="redraw" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PpB-9f-dgN">
-                                <rect key="frame" x="16" y="577" width="343" height="90"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="het-U2-2Nf">
-                                        <rect key="frame" x="0.0" y="15" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="8IR-Ax-7KO"/>
-                                            <constraint firstAttribute="width" constant="60" id="wzy-mk-TDK"/>
-                                        </constraints>
-                                        <state key="normal" image="SearchIcon"/>
-                                        <connections>
-                                            <action selector="segueToSuchenBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="KiV-zd-wF5"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsa-hU-4wb">
-                                        <rect key="frame" x="126.5" y="0.0" width="90" height="90"/>
-                                        <color key="backgroundColor" red="0.4962614467" green="0.47131527909999998" blue="0.49874514250000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="JP1-QA-IQM"/>
-                                            <constraint firstAttribute="width" constant="90" id="ell-2G-id8"/>
-                                        </constraints>
-                                        <size key="titleShadowOffset" width="-8" height="6"/>
-                                        <state key="normal" image="KameraButton_1.0"/>
-                                        <connections>
-                                            <action selector="cameraBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="cud-AA-ce7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuL-Gp-sC5">
-                                        <rect key="frame" x="283" y="15" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="Mzv-1d-8MX"/>
-                                            <constraint firstAttribute="width" constant="60" id="siF-WN-IFI"/>
-                                        </constraints>
-                                        <state key="normal" image="EinstellungsButton"/>
-                                        <connections>
-                                            <action selector="segueToEinstellungenBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="Nkv-Ma-TIg"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="het-U2-2Nf" firstAttribute="centerY" secondItem="PpB-9f-dgN" secondAttribute="centerY" id="5ai-ES-Q7c"/>
-                                    <constraint firstItem="rsa-hU-4wb" firstAttribute="centerY" secondItem="PpB-9f-dgN" secondAttribute="centerY" id="5fb-qu-Vch"/>
-                                    <constraint firstItem="AuL-Gp-sC5" firstAttribute="centerY" secondItem="PpB-9f-dgN" secondAttribute="centerY" id="ZWF-6A-g8a"/>
-                                    <constraint firstItem="AuL-Gp-sC5" firstAttribute="top" secondItem="het-U2-2Nf" secondAttribute="top" id="j5Z-Ua-6VG"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halte die Kamera über den zu scannenden Beleg." textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dV-U4-Uc7">
-                                <rect key="frame" x="0.0" y="561" width="375" height="16"/>
-                                <color key="backgroundColor" white="0.75185783930000005" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-1024" translatesAutoresizingMaskIntoConstraints="NO" id="8ne-mQ-d1E">
-                                <rect key="frame" x="123" y="225" width="128" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="1io-4d-OYK"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-UO-Mqe">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-UO-Mqe">
                                 <rect key="frame" x="0.0" y="506" width="135" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Aus" image="BlitzIcon">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsa-hU-4wb">
+                                <rect key="frame" x="134" y="464" width="157" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.4962614467" green="0.47131527909999998" blue="0.49874514250000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="titleShadowOffset" width="-8" height="6"/>
+                                <state key="normal" image="KameraButton_1.0"/>
+                                <connections>
+                                    <action selector="cameraBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="cud-AA-ce7"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.86266928909999996" green="0.86279368400000001" blue="0.86264199019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="PpB-9f-dgN" secondAttribute="bottom" id="6Bm-bn-NYv"/>
-                            <constraint firstItem="cee-hL-40Q" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="6Q1-ps-hG0"/>
-                            <constraint firstItem="cee-hL-40Q" firstAttribute="trailing" secondItem="fZK-gE-YHv" secondAttribute="trailing" id="9cD-Q9-H6d"/>
-                            <constraint firstItem="9dV-U4-Uc7" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="A4B-rm-TLt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PpB-9f-dgN" secondAttribute="trailing" id="Dqs-Ta-PdL"/>
-                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="DuT-da-HJE"/>
-                            <constraint firstItem="cee-hL-40Q" firstAttribute="top" secondItem="9dV-U4-Uc7" secondAttribute="bottom" id="Ea8-kW-Qmp"/>
-                            <constraint firstItem="9dV-U4-Uc7" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="Iaw-df-HbE"/>
-                            <constraint firstItem="cee-hL-40Q" firstAttribute="top" secondItem="9dV-U4-Uc7" secondAttribute="bottom" id="LM9-h7-7EM"/>
-                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="trailing" secondItem="fZK-gE-YHv" secondAttribute="trailing" constant="-240" id="QTc-RP-UK8"/>
-                            <constraint firstItem="PpB-9f-dgN" firstAttribute="leading" secondItem="SQf-lj-RL4" secondAttribute="leadingMargin" id="SYn-XW-pjU"/>
-                            <constraint firstItem="cee-hL-40Q" firstAttribute="trailing" secondItem="fZK-gE-YHv" secondAttribute="trailing" id="Zsn-cv-V4U"/>
-                            <constraint firstAttribute="bottom" secondItem="cee-hL-40Q" secondAttribute="bottom" id="c5u-Hg-f7s"/>
-                            <constraint firstItem="9dV-U4-Uc7" firstAttribute="top" secondItem="1ic-UO-Mqe" secondAttribute="bottom" constant="8" id="dVX-Bw-pH7"/>
-                            <constraint firstItem="8ne-mQ-d1E" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" constant="123" id="dg0-wl-FD6"/>
-                            <constraint firstItem="PpB-9f-dgN" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="eLg-OS-6ba"/>
-                            <constraint firstAttribute="bottom" secondItem="cee-hL-40Q" secondAttribute="bottom" id="jCX-1c-tyc"/>
-                            <constraint firstItem="8ne-mQ-d1E" firstAttribute="top" secondItem="fZK-gE-YHv" secondAttribute="top" constant="161" id="knh-i2-QzQ"/>
-                            <constraint firstItem="8ne-mQ-d1E" firstAttribute="centerX" secondItem="9dV-U4-Uc7" secondAttribute="centerX" id="nDB-x6-9gw"/>
-                            <constraint firstItem="PpB-9f-dgN" firstAttribute="top" secondItem="9dV-U4-Uc7" secondAttribute="bottom" id="qCa-zE-Yii"/>
-                            <constraint firstItem="9dV-U4-Uc7" firstAttribute="trailing" secondItem="fZK-gE-YHv" secondAttribute="trailing" id="sIc-PV-iXd"/>
-                            <constraint firstItem="cee-hL-40Q" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" id="ue6-bf-Ldk"/>
-                            <constraint firstItem="9dV-U4-Uc7" firstAttribute="trailing" secondItem="fZK-gE-YHv" secondAttribute="trailing" id="zJm-ok-tEk"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.66274509800000003" green="0.18039215689999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="fZK-gE-YHv"/>
                     </view>
                     <navigationItem key="navigationItem" id="eGj-De-36d">
@@ -823,10 +760,7 @@
                         <outlet property="cameraButton" destination="rsa-hU-4wb" id="2ZX-a8-7h4"/>
                         <outlet property="einstellungenSegueButton" destination="AuL-Gp-sC5" id="dN2-AQ-fYn"/>
                         <outlet property="foundQRCodeBanner" destination="bhQ-67-4YQ" id="tNK-c6-2Jy"/>
-                        <outlet property="infolabel" destination="9dV-U4-Uc7" id="jpP-7a-GxC"/>
-                        <outlet property="stackView" destination="PpB-9f-dgN" id="sb4-bJ-XHt"/>
                         <outlet property="suchenSegueButton" destination="het-U2-2Nf" id="Wfl-BJ-GXy"/>
-                        <outlet property="whiteboard" destination="cee-hL-40Q" id="Uls-Xc-4t1"/>
                         <segue destination="KWt-eW-RyK" kind="show" identifier="einstellungen" id="8Pa-Zx-LIW"/>
                         <segue destination="lPM-u0-jSi" kind="show" identifier="suchen" id="c0w-qF-i1f"/>
                     </connections>
@@ -881,7 +815,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1318" y="177"/>
+            <point key="canvasLocation" x="1317.5999999999999" y="176.76161919040482"/>
         </scene>
         <!--Einstellungen-->
         <scene sceneID="qAT-Ca-kJ1">
@@ -1861,7 +1795,6 @@ Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit
         <image name="AbrrechenIcon" width="30" height="29"/>
         <image name="BlitzIcon" width="38" height="47"/>
         <image name="EinstellungsButton" width="300" height="300"/>
-        <image name="Icon-1024" width="1024" height="1024"/>
         <image name="KameraButton_1.0" width="95" height="95"/>
         <image name="OnboardingImage_2" width="500" height="500"/>
         <image name="Phobit_Logo" width="2000" height="2000"/>
