@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
+        
         let thisArray = UserData.getWholeArray();
         print(thisArray.count);
         

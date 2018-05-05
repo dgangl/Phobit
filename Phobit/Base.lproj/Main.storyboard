@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableHeaderView" hidden="YES" contentMode="scaleToFill" id="Ocx-N6-Pb2">
+                        <view key="tableHeaderView" hidden="YES" contentMode="scaleToFill" misplaced="YES" id="Ocx-N6-Pb2">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -39,7 +39,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wir konnten Leider kein Bild zu dieser Rechnung finden." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gf-de-QuU">
-                                    <rect key="frame" x="76" y="196.5" width="167" height="35.5"/>
+                                    <rect key="frame" x="76" y="196.5" width="167" height="222.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -138,7 +138,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MwSt" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQe-j2-1tQ">
-                                                    <rect key="frame" x="130" y="0.0" width="90" height="20.5"/>
+                                                    <rect key="frame" x="130" y="0.0" width="35" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="zoE-2S-hyX"/>
                                                     </constraints>
@@ -147,7 +147,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brutto" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="52" translatesAutoresizingMaskIntoConstraints="NO" id="FGG-RL-65Q">
-                                                    <rect key="frame" x="227" y="0.0" width="35" height="20.5"/>
+                                                    <rect key="frame" x="172" y="0.0" width="90" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="NUT-ng-dPx"/>
                                                     </constraints>
@@ -197,7 +197,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX,XX" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ek9-XW-ZnP">
-                                                    <rect key="frame" x="130" y="0.0" width="90" height="30"/>
+                                                    <rect key="frame" x="130" y="0.0" width="35" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="2nR-pW-oHV"/>
                                                         <constraint firstAttribute="height" constant="30" id="H3d-K3-oyB"/>
@@ -207,7 +207,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX,XX" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="52" translatesAutoresizingMaskIntoConstraints="NO" id="kfv-qx-7Qg">
-                                                    <rect key="frame" x="227" y="0.0" width="35" height="30"/>
+                                                    <rect key="frame" x="172" y="0.0" width="90" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="1ej-az-imF"/>
                                                         <constraint firstAttribute="height" constant="30" id="O5B-JN-Dv7"/>
@@ -563,10 +563,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="sa5-2o-Et2">
-                                                    <rect key="frame" x="21" y="9" width="333" height="26"/>
+                                                    <rect key="frame" x="28" y="12" width="319" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMw-cz-Yxq">
-                                                            <rect key="frame" x="0.0" y="3" width="26" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="26" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="26" id="bMG-LW-lmS"/>
                                                             </constraints>
@@ -575,7 +575,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Netto" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7g-Jf-OaA">
-                                                            <rect key="frame" x="38.5" y="3" width="90" height="20.5"/>
+                                                            <rect key="frame" x="33.5" y="0.0" width="90" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="HLy-uK-nd6"/>
                                                             </constraints>
@@ -584,7 +584,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MwSt" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBC-OC-5EN">
-                                                            <rect key="frame" x="140.5" y="3" width="90" height="20.5"/>
+                                                            <rect key="frame" x="131.5" y="0.0" width="90" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="NLb-3A-MYZ"/>
                                                             </constraints>
@@ -593,7 +593,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brutto" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="52" translatesAutoresizingMaskIntoConstraints="NO" id="kme-ZT-1TU">
-                                                            <rect key="frame" x="243" y="3" width="90" height="20.5"/>
+                                                            <rect key="frame" x="229" y="0.0" width="90" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="ur7-vZ-xze"/>
                                                             </constraints>
@@ -620,7 +620,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="caY-b4-3RE">
-                                                    <rect key="frame" x="22" y="4" width="333" height="30"/>
+                                                    <rect key="frame" x="29" y="7" width="319" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVG-Oe-2Ht">
                                                             <rect key="frame" x="0.0" y="0.0" width="26" height="30"/>
@@ -633,7 +633,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX,XX" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QX-P7-HLW">
-                                                            <rect key="frame" x="38.5" y="0.0" width="90" height="30"/>
+                                                            <rect key="frame" x="33.5" y="0.0" width="90" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="cwE-0D-yS4"/>
                                                                 <constraint firstAttribute="width" constant="90" id="mX4-zO-YZD"/>
@@ -643,7 +643,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX,XX" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkx-w3-QKl">
-                                                            <rect key="frame" x="140.5" y="0.0" width="90" height="30"/>
+                                                            <rect key="frame" x="131.5" y="0.0" width="90" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="Fbo-WH-Btk"/>
                                                                 <constraint firstAttribute="height" constant="30" id="Im0-x5-FER"/>
@@ -653,7 +653,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX,XX" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="52" translatesAutoresizingMaskIntoConstraints="NO" id="IQe-VE-cPJ">
-                                                            <rect key="frame" x="243" y="0.0" width="90" height="30"/>
+                                                            <rect key="frame" x="229" y="0.0" width="90" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="OoM-dw-GXJ"/>
                                                                 <constraint firstAttribute="width" constant="90" id="mh0-Lq-uwl"/>
@@ -713,7 +713,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="het-U2-2Nf">
-                                <rect key="frame" x="20" y="597" width="50" height="50"/>
+                                <rect key="frame" x="20" y="498" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="het-U2-2Nf" secondAttribute="height" multiplier="1:1" id="Sly-o3-4vK"/>
                                     <constraint firstAttribute="height" constant="50" id="a7U-7n-GxK"/>
@@ -724,7 +724,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuL-Gp-sC5">
-                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <rect key="frame" x="250" y="498" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0ad-ZK-ymx"/>
                                     <constraint firstAttribute="width" secondItem="AuL-Gp-sC5" secondAttribute="height" multiplier="1:1" id="paR-7f-5qq"/>
@@ -742,7 +742,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsa-hU-4wb">
-                                <rect key="frame" x="137.5" y="503" width="100" height="100"/>
+                                <rect key="frame" x="110" y="404" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.4962614467" green="0.47131527909999998" blue="0.49874514250000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Qy3-Qg-ghO"/>
@@ -755,7 +755,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-UO-Mqe">
-                                <rect key="frame" x="153" y="613" width="69" height="47"/>
+                                <rect key="frame" x="125.5" y="514" width="69" height="47"/>
                                 <state key="normal" title="Aus" image="BlitzIcon">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1049,6 +1049,36 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Rechtliches" id="JWc-cS-Ila">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sQM-A8-MVw">
+                                        <rect key="frame" x="0.0" y="455.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sQM-A8-MVw" id="Q9z-OJ-xda">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnw-LE-m4o">
+                                                    <rect key="frame" x="16" y="7" width="288" height="30"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <state key="normal" title="Privacy Policy">
+                                                        <color key="titleColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="clearMemory:" destination="KWt-eW-RyK" eventType="touchUpInside" id="51O-jn-0TF"/>
+                                                        <segue destination="1zx-uf-inB" kind="show" id="a5T-cw-hFb"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pnw-LE-m4o" firstAttribute="centerY" secondItem="Q9z-OJ-xda" secondAttribute="centerY" id="3xx-RI-F9m"/>
+                                                <constraint firstItem="pnw-LE-m4o" firstAttribute="trailing" secondItem="Q9z-OJ-xda" secondAttribute="trailingMargin" id="77m-Hr-nmb"/>
+                                                <constraint firstItem="pnw-LE-m4o" firstAttribute="leading" secondItem="Q9z-OJ-xda" secondAttribute="leadingMargin" id="jhH-jr-16N"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="KWt-eW-RyK" id="5wJ-yV-G7p"/>
@@ -1067,6 +1097,94 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufd-YH-BNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1317.5999999999999" y="1210.344827586207"/>
+        </scene>
+        <!--PrivacyPolicy-->
+        <scene sceneID="zib-Ba-vvy">
+            <objects>
+                <viewController title="PrivacyPolicy" id="1zx-uf-inB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ozT-Cd-dbA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rAe-JE-OsA">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Privacy Policy
+LAB73 built the Phobit app as a Free app. This SERVICE is provided by LAB73 at no cost and is intended for use as is.
+
+This page is used to inform website visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+
+If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
+
+The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at Phobit unless otherwise defined in this Privacy Policy.
+
+Information Collection and Use
+
+For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information, including but not limited to OCR-Scans, Names. The information that I request is retained on your device and is not collected by me in any way
+
+The app does use third party services that may collect information used to identify you.
+
+Link to privacy policy of third party service providers used by the app
+
+Firebase Analytics
+Log Data
+
+I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
+
+Cookies
+
+Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.
+
+This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.
+
+Service Providers
+
+I may employ third-party companies and individuals due to the following reasons:
+
+To facilitate our Service;
+To provide the Service on our behalf;
+To perform Service-related services; or
+To assist us in analyzing how our Service is used.
+I want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.
+
+Security
+
+I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.
+
+Links to Other Sites
+
+This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+
+Children’s Privacy
+
+These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.
+
+Changes to This Privacy Policy
+
+I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
+
+Contact Us
+
+If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me.
+
+This privacy policy page was created at privacypolicytemplate.net and modified/generated by App Privacy Policy Generator</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rAe-JE-OsA" firstAttribute="top" secondItem="2WZ-Sh-Zbq" secondAttribute="top" id="R2A-A8-90o"/>
+                            <constraint firstItem="rAe-JE-OsA" firstAttribute="trailing" secondItem="2WZ-Sh-Zbq" secondAttribute="trailing" id="Rbb-sW-9NL"/>
+                            <constraint firstItem="2WZ-Sh-Zbq" firstAttribute="bottom" secondItem="rAe-JE-OsA" secondAttribute="bottom" id="VIj-u2-9DL"/>
+                            <constraint firstItem="rAe-JE-OsA" firstAttribute="leading" secondItem="2WZ-Sh-Zbq" secondAttribute="leading" id="Ydy-d1-U5o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2WZ-Sh-Zbq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDd-Rr-icz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2446.875" y="1057.3943661971832"/>
         </scene>
         <!--Aktive Firmen-->
         <scene sceneID="r2F-ca-AKw">
@@ -1307,11 +1425,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8S-R2-hO6">
-                                <rect key="frame" x="20" y="232" width="280" height="251"/>
-                                <string key="text">In dieser ersten öffentlichen Testreihe geht es darum uns Feedback zu geben, Bugs zu entdecken und Daten zu sammeln. Wir betonen das diese Testreihe in erste Linie uns dient und wir daher keinerlei Haftung für all die Daten die von dir in dieser Zeit gesammelt werden. All deine gesammelten Daten werden von uns analysiert und sind somit nicht privat. Es kann durchaus sein das nach oder während dieser Alpha Phase all deine in der App gesammelten Daten verloren gehen.
-
-Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit.</string>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <rect key="frame" x="20" y="214" width="280" height="269"/>
+                                <mutableString key="text">In dieser ersten öffentlichen Testreihe geht es darum uns Feedback zu geben, Bugs zu entdecken und Daten zu sammeln. All deine gesammelten Daten werden von uns analysiert und sind somit nicht privat. Es kann durchaus sein das nach oder während dieser Alpha Phase all deine in der App gesammelten Daten verloren gehen.        
+Derzeit ist es leider nur möglich Rechnungen mit QR-Code zu scannnen. Dies wird in der Beta bereits anders sein.                              Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit.</mutableString>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <color key="textColor" red="0.98099706543430376" green="0.95790691976523623" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1367,17 +1484,13 @@ Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anmelden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYi-Wc-HdH">
-                                <rect key="frame" x="0.0" y="217" width="320" height="42"/>
+                                <rect key="frame" x="0.0" y="187" width="320" height="42"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Phobit_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Mxw-aZ-IJQ">
-                                <rect key="frame" x="0.0" y="108" width="320" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail Adresse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClQ-Ur-Q0p">
-                                <rect key="frame" x="20" y="298.5" width="280" height="30"/>
+                                <rect key="frame" x="20" y="268.5" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no"/>
@@ -1403,7 +1516,7 @@ Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit
                                 </state>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Überprüfe deine Eingabe oder klicke auf Testen!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M11-h7-F99">
-                                <rect key="frame" x="50" y="263.5" width="220" height="15"/>
+                                <rect key="frame" x="20" y="234" width="280" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1415,7 +1528,7 @@ Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bestätigungscode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uXV-GW-qvn">
-                                <rect key="frame" x="20" y="348.5" width="280" height="30"/>
+                                <rect key="frame" x="20" y="318.5" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" smartInsertDeleteType="no"/>
@@ -1429,17 +1542,21 @@ Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Phobit_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Mxw-aZ-IJQ">
+                                <rect key="frame" x="0.0" y="90" width="320" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.66666666666666663" green="0.1863303483" blue="0.1212185398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WTS-Ar-F2T" firstAttribute="trailing" secondItem="uXV-GW-qvn" secondAttribute="trailing" constant="20" id="0Iy-2s-A7p"/>
                             <constraint firstItem="ClQ-Ur-Q0p" firstAttribute="centerX" secondItem="70l-C4-wAU" secondAttribute="centerX" id="8wI-QU-D9e"/>
                             <constraint firstItem="uXV-GW-qvn" firstAttribute="centerX" secondItem="70l-C4-wAU" secondAttribute="centerX" id="FSe-ou-ipW"/>
-                            <constraint firstItem="M11-h7-F99" firstAttribute="leading" secondItem="WTS-Ar-F2T" secondAttribute="leading" constant="50" id="Fjg-gj-YGx"/>
+                            <constraint firstItem="M11-h7-F99" firstAttribute="leading" secondItem="WTS-Ar-F2T" secondAttribute="leading" constant="20" id="Fjg-gj-YGx"/>
                             <constraint firstItem="ClQ-Ur-Q0p" firstAttribute="top" secondItem="M11-h7-F99" secondAttribute="bottom" constant="20" id="GJS-Vs-SEd"/>
                             <constraint firstItem="Eg0-6I-mLw" firstAttribute="centerX" secondItem="70l-C4-wAU" secondAttribute="centerX" id="Gd4-bt-Axo"/>
                             <constraint firstItem="M11-h7-F99" firstAttribute="top" secondItem="hYi-Wc-HdH" secondAttribute="bottom" constant="4.5" id="IW3-wt-Cyy"/>
-                            <constraint firstItem="WTS-Ar-F2T" firstAttribute="trailing" secondItem="M11-h7-F99" secondAttribute="trailing" constant="50" id="Jva-NF-nHq"/>
+                            <constraint firstItem="WTS-Ar-F2T" firstAttribute="trailing" secondItem="M11-h7-F99" secondAttribute="trailing" constant="20" id="Jva-NF-nHq"/>
                             <constraint firstItem="WTS-Ar-F2T" firstAttribute="trailing" secondItem="F3H-mF-g1b" secondAttribute="trailing" id="M28-0p-uwg"/>
                             <constraint firstItem="F3H-mF-g1b" firstAttribute="centerX" secondItem="70l-C4-wAU" secondAttribute="centerX" id="MKH-uR-K6N"/>
                             <constraint firstItem="b6E-46-eDR" firstAttribute="leading" secondItem="WTS-Ar-F2T" secondAttribute="leading" constant="30" id="NAO-gD-G36"/>
@@ -1447,7 +1564,7 @@ Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit
                             <constraint firstItem="uXV-GW-qvn" firstAttribute="leading" secondItem="WTS-Ar-F2T" secondAttribute="leading" constant="20" id="ORA-9a-3Ws"/>
                             <constraint firstItem="5xY-H6-IqE" firstAttribute="top" secondItem="b6E-46-eDR" secondAttribute="bottom" constant="8" id="Sej-oQ-NKJ"/>
                             <constraint firstItem="WTS-Ar-F2T" firstAttribute="trailing" secondItem="hYi-Wc-HdH" secondAttribute="trailing" id="UXs-1C-69I"/>
-                            <constraint firstItem="Eg0-6I-mLw" firstAttribute="top" secondItem="uXV-GW-qvn" secondAttribute="bottom" constant="40" id="V92-Yi-sX6"/>
+                            <constraint firstItem="Eg0-6I-mLw" firstAttribute="top" secondItem="uXV-GW-qvn" secondAttribute="bottom" constant="70" id="V92-Yi-sX6"/>
                             <constraint firstItem="F3H-mF-g1b" firstAttribute="leading" secondItem="WTS-Ar-F2T" secondAttribute="leading" id="XJV-F5-bk3"/>
                             <constraint firstItem="uXV-GW-qvn" firstAttribute="top" secondItem="ClQ-Ur-Q0p" secondAttribute="bottom" constant="20" id="Y2j-Iz-Qkf"/>
                             <constraint firstItem="b6E-46-eDR" firstAttribute="centerX" secondItem="70l-C4-wAU" secondAttribute="centerX" id="YDZ-vu-l8z"/>
@@ -1476,7 +1593,7 @@ Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvT-T5-lOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318" y="-2976"/>
+            <point key="canvasLocation" x="1316.25" y="-2976.7605633802818"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LuP-F3-VSv">

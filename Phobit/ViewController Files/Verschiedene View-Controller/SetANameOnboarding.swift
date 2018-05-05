@@ -18,7 +18,8 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
         TextField.returnKeyType = UIReturnKeyType.done
         goOn.layer.cornerRadius = 10;
         TextField.becomeFirstResponder();
-        
+        let removeKeyboardListener = UITapGestureRecognizer.init(target: self, action: #selector(removeKeyboard))
+        self.view.addGestureRecognizer(removeKeyboardListener)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -34,6 +35,11 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
         ClickedButton(self)
         
     }
+    
+    @objc func removeKeyboard(){
+        self.TextField.resignFirstResponder()
+    }
+    
     @IBAction func checkIt(_ sender: Any) {
         print("checkStringLength called")
         if(TextField.text == nil){
@@ -74,6 +80,8 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
         //Check later wheater the Account is already used!
         if(true){
             UserData.saveNew(newArray: users)
+            let db = Database.init();
+            db.setTheNameForTheUser(nameOfTheUser: TextField.text!);
             self.performSegue(withIdentifier: "toStart", sender: self);
         }
         else{
