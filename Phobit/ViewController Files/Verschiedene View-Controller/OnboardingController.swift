@@ -132,8 +132,11 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
 //        alert.addAction(okayAction)
         //END REMOVE
         alert.addAction(cancelAction)
-        
+        if(UserDefaults.standard.bool(forKey: "launching") == true){
         present(alert, animated: true, completion: nil)
+        }else{
+            self.performSegue(withIdentifier: "toStart", sender: self)
+        }
         
     }
     @objc func goOn() {

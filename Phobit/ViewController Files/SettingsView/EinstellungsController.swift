@@ -133,7 +133,21 @@ class EinstellungsController: UITableViewController{
         self.checkState.setOn(UD_Slider_On, animated: false)
     }
     
+
     
+    @IBAction func reactivateTipps(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "infoView")
+        let doneView = UIAlertController.init(title: "Deine Tipps werden wieder angezeigt", message: nil, preferredStyle: .alert)
+        present(doneView, animated: true, completion: nil)
+        
+        // change to desired number of seconds (in this case 5 seconds)
+        let when = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: when){
+            // your code with delay
+            doneView.dismiss(animated: true, completion: nil)
+        }
+        
+    }
     
     
     

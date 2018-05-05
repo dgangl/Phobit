@@ -923,7 +923,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Sicherheit" id="hrh-7E-j8G">
+                            <tableViewSection headerTitle="App-Einstellungen" id="hrh-7E-j8G">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Imb-vI-OAa">
                                         <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
@@ -951,12 +951,34 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="o9P-nt-awU">
+                                        <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o9P-nt-awU" id="fWw-FD-S4V">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ama-R0-vud">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                                    <state key="normal" title="Tipps wieder anzeigen"/>
+                                                    <connections>
+                                                        <action selector="reactivateTipps:" destination="KWt-eW-RyK" eventType="touchUpInside" id="rJR-Cg-jnm"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ama-R0-vud" secondAttribute="trailing" constant="20" id="C2f-i5-oIv"/>
+                                                <constraint firstItem="ama-R0-vud" firstAttribute="leading" secondItem="fWw-FD-S4V" secondAttribute="leading" constant="20" id="vtr-eB-gbM"/>
+                                                <constraint firstItem="ama-R0-vud" firstAttribute="centerY" secondItem="fWw-FD-S4V" secondAttribute="centerY" id="zh9-FS-Yxx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Feedback" id="33e-Sp-lWU">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="1JP-sE-Hqi">
-                                        <rect key="frame" x="0.0" y="155.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="199.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1JP-sE-Hqi" id="Uy7-pm-6nh">
                                             <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
@@ -981,7 +1003,7 @@
                             <tableViewSection headerTitle="Login" id="J0N-0g-Mca">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Ysq-dT-rQD">
-                                        <rect key="frame" x="0.0" y="255.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="299.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ysq-dT-rQD" id="XZk-cC-dCM">
                                             <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
@@ -1023,7 +1045,7 @@
                             <tableViewSection headerTitle="Speicher" id="ged-pl-TgX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="a4k-L5-3vo">
-                                        <rect key="frame" x="0.0" y="355.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="399.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a4k-L5-3vo" id="7I5-Cs-Hmq">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -1052,7 +1074,7 @@
                             <tableViewSection headerTitle="Rechtliches" id="JWc-cS-Ila">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sQM-A8-MVw">
-                                        <rect key="frame" x="0.0" y="455.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="499.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sQM-A8-MVw" id="Q9z-OJ-xda">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -1065,7 +1087,6 @@
                                                         <color key="titleColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="clearMemory:" destination="KWt-eW-RyK" eventType="touchUpInside" id="51O-jn-0TF"/>
                                                         <segue destination="1zx-uf-inB" kind="show" id="a5T-cw-hFb"/>
                                                     </connections>
                                                 </button>
@@ -1106,7 +1127,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rAe-JE-OsA">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rAe-JE-OsA">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <mutableString key="text">Privacy Policy
@@ -1167,7 +1188,7 @@ Contact Us
 
 If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me.
 
-This privacy policy page was created at privacypolicytemplate.net and modified/generated by App Privacy Policy Generator</mutableString>
+You can either contact us via the Feedback Option in the Settings-Menu or directly at: lonosgames@gmail.com</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1593,7 +1614,7 @@ Derzeit ist es leider nur möglich Rechnungen mit QR-Code zu scannnen. Dies wird
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvT-T5-lOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316.25" y="-2976.7605633802818"/>
+            <point key="canvasLocation" x="2186" y="-3058"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LuP-F3-VSv">
@@ -2017,6 +2038,6 @@ Derzeit ist es leider nur möglich Rechnungen mit QR-Code zu scannnen. Dies wird
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c0w-qF-i1f"/>
-        <segue reference="PWm-AX-LGn"/>
+        <segue reference="Dwg-cM-EkN"/>
     </inferredMetricsTieBreakers>
 </document>
