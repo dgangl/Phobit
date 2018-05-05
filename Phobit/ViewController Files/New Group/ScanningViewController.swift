@@ -21,6 +21,13 @@ class ScanningViewController: UIViewController {
 //    @IBOutlet weak var stackView: UIStackView!
     
     
+    
+    //InfoView
+    @IBOutlet var infoView: UIView!
+    @IBOutlet weak var closeAndNeverShowUpAgain: UIButton!
+    @IBOutlet weak var close: UIButton!
+    
+    
     // AVFoundation Stuff
     var sessionCanRun = false
     
@@ -102,6 +109,9 @@ class ScanningViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        addTheInfoView()
+        
+        
         if sessionCanRun == false {
             
             DispatchQueue.global().async {
@@ -144,7 +154,43 @@ class ScanningViewController: UIViewController {
         }
     }
     
+    func addTheInfoView(){
+        let infoViewBool = UserDefaults.standard.bool(forKey: "infoView")
+        if infoViewBool{
+                
+        }else if infoViewBool == false{
+            infoView.center = self.view.center
+            infoView.alpha = 0.0
+            self.view.addSubview(infoView)
+            UIView.animate(withDuration: 0.7) {
+                self.infoView.alpha = 0.9
+                self.infoView.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y - 10)
+            }
+            
+        }
+        
+        
+        
+        
+    }
+    func removeInfoViewAnimation() -> Void{
+        
+        UIView.animate(withDuration: 0.8, animations:
+            {   self.infoView.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y + 10)
+                self.infoView.alpha = 0.0})
+            {(result) in
+                self.infoView.removeFromSuperview()
+            }
+        
+    }
     
+    
+    @IBAction func showNeverAgain(_ sender: Any) {
+        removeInfoViewAnimation()
+    }
+    @IBAction func close(_ sender: Any) {
+        removeInfoViewAnimation()
+    }
     
     
     @IBAction func segueToSuchenBTN(_ sender: Any) {
