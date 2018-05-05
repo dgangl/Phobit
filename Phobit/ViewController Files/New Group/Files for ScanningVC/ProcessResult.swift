@@ -20,7 +20,7 @@ extension ScanningViewController {
         // filter image.
         
         
-        let processor = ImageEditor.init(image: self.image!)
+        let processor = ImageProcessor.init(image: self.image!)
         
         processor.process { (success) in
             if success {
@@ -53,15 +53,22 @@ extension ScanningViewController {
                         // end
                         
                         alertView.dismiss(animated: true, completion: {
+                            self.overlay?.invisible()
                             self.session.startRunning()
                             self.jumpToAuswertung(withImage: processor.getImage())
                         })
                     }
                 }, progressView: progressView)
-            }
+            } else {
             
+            self.autoCapture?.resumeStop()
+            self.autoCapture?.resumeQR()
+            self.image = nil
+            self.billdata = nil
+            self.session.startRunning()
             self.cameraButton.isEnabled = true
             self.canDeleteQR = true
+            }
         }
     }
     
