@@ -26,6 +26,9 @@ extension ScanningViewController {
         // present the sheet
         DispatchQueue.main.async {
             self.foundQRCodeBanner.alpha = 0
+            
+            self.foundQRCodeBanner.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width - 10, height: 87)
+            
             self.foundQRCodeBanner.center = CGPoint.init(x: self.view.center.x, y: self.view.safeAreaInsets.top + 45)
             self.view.addSubview(self.foundQRCodeBanner)
             
