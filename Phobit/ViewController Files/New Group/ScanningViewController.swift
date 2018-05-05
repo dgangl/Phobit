@@ -103,6 +103,10 @@ class ScanningViewController: UIViewController {
         overlay?.start()
         canDeleteQR = true
         billdata = nil
+        autoCapture?.resumeQR()
+        autoCapture?.resumeStop()
+        self.image = nil
+        
         self.navigationController?.isNavigationBarHidden = true
     }
     

@@ -50,6 +50,14 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
             UserDefaults.standard.set(false, forKey: "launching");
         }
         
+        let removeKeyboardListener = UITapGestureRecognizer.init(target: self, action: #selector(removeKeyboard))
+        self.view.addGestureRecognizer(removeKeyboardListener)
+        
+    }
+    
+    @objc func removeKeyboard(){
+        self.EmailBenutzer.resignFirstResponder();
+        self.CodeBenutzer.resignFirstResponder();
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer? = nil) {
