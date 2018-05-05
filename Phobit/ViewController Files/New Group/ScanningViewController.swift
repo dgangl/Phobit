@@ -62,6 +62,20 @@ class ScanningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        let swipeToSearch = UISwipeGestureRecognizer.init(target: self, action: #selector(segueToSuchenBTN(_:)))
+        let swipeToEinstellungen = UISwipeGestureRecognizer.init(target: self, action: #selector(segueToEinstellungenBTN(_:)))
+        
+        swipeToEinstellungen.direction = .left
+        swipeToSearch.direction = .right
+        
+        
+        
+        self.view.addGestureRecognizer(swipeToSearch)
+        self.view.addGestureRecognizer(swipeToEinstellungen)
+        
+        
+        
         detectionOverlay.frame = view.frame
         detectionOverlay.center = view.center
         detectionOverlay.backgroundColor = UIColor.clear

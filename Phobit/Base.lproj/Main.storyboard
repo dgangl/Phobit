@@ -713,10 +713,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="het-U2-2Nf">
-                                <rect key="frame" x="20" y="578" width="69" height="69"/>
+                                <rect key="frame" x="20" y="597" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="het-U2-2Nf" secondAttribute="height" multiplier="1:1" id="0OL-xQ-Ewt"/>
-                                    <constraint firstAttribute="height" constant="69" id="33Q-gs-Pf0"/>
+                                    <constraint firstAttribute="width" secondItem="het-U2-2Nf" secondAttribute="height" multiplier="1:1" id="Sly-o3-4vK"/>
+                                    <constraint firstAttribute="height" constant="50" id="a7U-7n-GxK"/>
                                 </constraints>
                                 <state key="normal" image="SearchIcon"/>
                                 <connections>
@@ -724,10 +724,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuL-Gp-sC5">
-                                <rect key="frame" x="286" y="578" width="69" height="69"/>
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="OGW-nF-0xM"/>
-                                    <constraint firstAttribute="width" secondItem="AuL-Gp-sC5" secondAttribute="height" multiplier="1:1" id="aWW-jO-8qf"/>
+                                    <constraint firstAttribute="height" constant="50" id="0ad-ZK-ymx"/>
+                                    <constraint firstAttribute="width" secondItem="AuL-Gp-sC5" secondAttribute="height" multiplier="1:1" id="paR-7f-5qq"/>
                                 </constraints>
                                 <state key="normal" image="EinstellungsButton"/>
                                 <connections>
@@ -741,21 +741,12 @@
                                     <constraint firstAttribute="width" constant="300" id="nd7-DP-XsT"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-UO-Mqe">
-                                <rect key="frame" x="153" y="615" width="69" height="47"/>
-                                <state key="normal" title="Aus" image="BlitzIcon">
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="toggleFlashBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="hAt-4o-pMv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsa-hU-4wb">
-                                <rect key="frame" x="127" y="485" width="120" height="120"/>
+                                <rect key="frame" x="137.5" y="503" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.4962614467" green="0.47131527909999998" blue="0.49874514250000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="0vN-VZ-5uW"/>
-                                    <constraint firstAttribute="width" secondItem="rsa-hU-4wb" secondAttribute="height" multiplier="1:1" id="3wc-xr-vFv"/>
+                                    <constraint firstAttribute="height" constant="100" id="Qy3-Qg-ghO"/>
+                                    <constraint firstAttribute="width" secondItem="rsa-hU-4wb" secondAttribute="height" multiplier="1:1" id="qMy-vm-glv"/>
                                 </constraints>
                                 <size key="titleShadowOffset" width="-8" height="6"/>
                                 <state key="normal" backgroundImage="KameraButton_1.0"/>
@@ -763,19 +754,28 @@
                                     <action selector="cameraBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="cud-AA-ce7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-UO-Mqe">
+                                <rect key="frame" x="153" y="613" width="69" height="47"/>
+                                <state key="normal" title="Aus" image="BlitzIcon">
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleFlashBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="hAt-4o-pMv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66274509800000003" green="0.18039215689999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fZK-gE-YHv" firstAttribute="trailing" secondItem="AuL-Gp-sC5" secondAttribute="trailing" constant="20" id="7uM-7c-8Wa"/>
-                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="1ic-UO-Mqe" secondAttribute="bottom" constant="5" id="IlC-oc-eyH"/>
-                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="top" secondItem="rsa-hU-4wb" secondAttribute="bottom" constant="10" id="J7T-mO-agj"/>
-                            <constraint firstItem="rsa-hU-4wb" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="YH7-Fm-lAD"/>
+                            <constraint firstItem="rsa-hU-4wb" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="7lI-8g-eKg"/>
+                            <constraint firstItem="fZK-gE-YHv" firstAttribute="trailing" secondItem="AuL-Gp-sC5" secondAttribute="trailing" constant="20" id="DQJ-aV-3Zw"/>
+                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="1ic-UO-Mqe" secondAttribute="bottom" constant="7" id="IlC-oc-eyH"/>
+                            <constraint firstItem="het-U2-2Nf" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" constant="20" id="UrD-L8-blD"/>
                             <constraint firstItem="8ne-mQ-d1E" firstAttribute="centerY" secondItem="SQf-lj-RL4" secondAttribute="centerY" id="aNa-Xn-nqc"/>
+                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="top" secondItem="rsa-hU-4wb" secondAttribute="bottom" constant="10" id="avp-b4-kQx"/>
+                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="het-U2-2Nf" secondAttribute="bottom" constant="20" id="bTj-7r-lFb"/>
                             <constraint firstItem="1ic-UO-Mqe" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="hZL-5D-n4N"/>
                             <constraint firstItem="8ne-mQ-d1E" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="jGn-Mi-zDM"/>
-                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="het-U2-2Nf" secondAttribute="bottom" constant="20" id="nJe-li-tGf"/>
-                            <constraint firstItem="het-U2-2Nf" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" constant="20" id="v8N-23-u5K"/>
-                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="AuL-Gp-sC5" secondAttribute="bottom" constant="20" id="wi0-xk-coA"/>
+                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="AuL-Gp-sC5" secondAttribute="bottom" constant="20" id="z5f-MJ-pyn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fZK-gE-YHv"/>
                     </view>
@@ -789,7 +789,7 @@
                         <outlet property="foundQRCodeBanner" destination="bhQ-67-4YQ" id="tNK-c6-2Jy"/>
                         <outlet property="suchenSegueButton" destination="het-U2-2Nf" id="Wfl-BJ-GXy"/>
                         <segue destination="KWt-eW-RyK" kind="show" identifier="einstellungen" id="8Pa-Zx-LIW"/>
-                        <segue destination="lPM-u0-jSi" kind="show" identifier="suchen" id="c0w-qF-i1f"/>
+                        <segue destination="lPM-u0-jSi" kind="show" identifier="suchen" customClass="SegueFromLeftNav" customModule="Phobit" customModuleProvider="target" id="c0w-qF-i1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZM-AK-LqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
