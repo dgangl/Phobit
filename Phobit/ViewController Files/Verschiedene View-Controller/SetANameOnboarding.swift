@@ -74,6 +74,8 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
         //Check later wheater the Account is already used!
         if(true){
             UserData.saveNew(newArray: users)
+            let db = Database.init();
+            db.setTheNameForTheUser(nameOfTheUser: TextField.text!);
             self.performSegue(withIdentifier: "toStart", sender: self);
         }
         else{
