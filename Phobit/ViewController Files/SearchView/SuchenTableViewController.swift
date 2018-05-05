@@ -713,11 +713,20 @@ class SuchenTableViewController: UITableViewController {
         
         setDefaultSearchBar()
     
-        prepareData()
+        
+        // this should make it faster...
+        DispatchQueue.global().async {
+            self.prepareData()
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
     }
     
     private func prepareData() {
-        var start = Date().millisecondsSince1970
+        let start = Date().millisecondsSince1970
         if let data = Memory().read() {
             print("###### Time to read Data: \(Date().millisecondsSince1970 - start)")
             dataMaster = DataMaster.init(billdata: data)
