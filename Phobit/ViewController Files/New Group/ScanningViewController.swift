@@ -187,6 +187,7 @@ class ScanningViewController: UIViewController {
     
     @IBAction func showNeverAgain(_ sender: Any) {
         removeInfoViewAnimation()
+        UserDefaults.standard.set(true, forKey: "infoView")
     }
     @IBAction func close(_ sender: Any) {
         removeInfoViewAnimation()
