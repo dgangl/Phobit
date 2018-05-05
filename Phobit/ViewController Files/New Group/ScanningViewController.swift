@@ -12,13 +12,13 @@ import Vision
 
 class ScanningViewController: UIViewController {
     
-    @IBOutlet weak var infolabel: UILabel!
+//    @IBOutlet weak var infolabel: UILabel!
     @IBOutlet weak var blitzButton: UIButton!
     @IBOutlet weak var suchenSegueButton: UIButton!
     @IBOutlet weak var einstellungenSegueButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var whiteboard: UIImageView!
-    @IBOutlet weak var stackView: UIStackView!
+//    @IBOutlet weak var whiteboard: UIImageView!
+//    @IBOutlet weak var stackView: UIStackView!
     
     
     // AVFoundation Stuff

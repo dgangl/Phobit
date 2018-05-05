@@ -118,10 +118,12 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         
         
         let alert = UIAlertController(title: "Alpha Version", message: "Leider musst du uns bestätigen, das du zu den Alpha Testern gehörst. Logge dich deshalb bitte ein!", preferredStyle: .alert)
-       
+        let okayAction = UIAlertAction(title: "Trotzdem Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)})
+
         let cancelAction = UIAlertAction(title: "Okay", style: .default, handler: { action in alert.dismiss(animated: true, completion: nil)})
-        
-        
+        //REMOVE LATER!!!
+        alert.addAction(okayAction)
+        //END REMOVE
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
