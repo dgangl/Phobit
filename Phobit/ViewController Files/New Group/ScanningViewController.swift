@@ -27,6 +27,8 @@ class ScanningViewController: UIViewController {
     var session = AVCaptureSession.init()
     var device: AVCaptureDevice?
     var photoOutput = AVCapturePhotoOutput.init()
+    
+    var flashIsRunning = false
     // end
     
     
@@ -78,6 +80,8 @@ class ScanningViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         overlay?.start()
+        canDeleteQR = true
+        billdata = nil
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -113,6 +117,17 @@ class ScanningViewController: UIViewController {
         
         session.stopRunning()
         overlay?.stop()
+        blitzButton.setTitle("Aus", for: .normal)
+        
+        flashIsRunning = false
+        
+        do {
+            try device?.lockForConfiguration()
+            device?.torchMode = .off
+            device?.unlockForConfiguration()
+        } catch {
+            print(error)
+        }
     }
     
     
@@ -131,4 +146,29 @@ class ScanningViewController: UIViewController {
         captureImage()
     }
     
+    @IBAction func toggleFlashBTN(_ sender: Any) {
+        if flashIsRunning {
+            do {
+                try device?.lockForConfiguration()
+                device?.torchMode = .off
+                device?.unlockForConfiguration()
+                flashIsRunning = false
+                
+                blitzButton.setTitle("Aus", for: .normal)
+            } catch {
+                print(error)
+            }
+        } else {
+            do {
+                try device?.lockForConfiguration()
+                try device?.setTorchModeOn(level: 1)
+                device?.unlockForConfiguration()
+                flashIsRunning = true
+                
+                blitzButton.setTitle("Ein", for: .normal)
+            } catch {
+                print(error)
+            }
+        }
+    }
 }

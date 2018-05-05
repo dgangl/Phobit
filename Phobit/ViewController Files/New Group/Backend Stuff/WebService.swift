@@ -104,6 +104,9 @@ class WebService {
     
     
     fileprivate func send(completion: @escaping (_ result: String, _ statusCode: Int)->(), progressView: UIProgressView?) {
+        
+        
+        
         Alamofire.upload(
             multipartFormData: { multipartFormData in
                 multipartFormData.append("0".data(using: .utf8)!, withName: "ocrEngine")
@@ -116,6 +119,9 @@ class WebService {
                 switch encodingResult {
                 case .success(request: let upload, streamingFromDisk: _, streamFileURL: _):
                     
+                
+                    
+                    
                     if let progressView = progressView {
                         upload.uploadProgress { progress in
                             progressView.setProgress(Float(progress.fractionCompleted), animated: true)
@@ -126,7 +132,6 @@ class WebService {
                             print("#################\(progress.fractionCompleted)")
                         }
                     }
-                    
                     
                     
                     upload.responseData(completionHandler: { (data) in

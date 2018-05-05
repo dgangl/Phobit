@@ -20,7 +20,7 @@ class Overlay {
     var bottomLeft: CGPoint? = nil
     var bottomRight: CGPoint? = nil
     
-    fileprivate var updateTime: TimeInterval = 1
+    fileprivate var updateTime: TimeInterval = 0.2
     fileprivate var shapeLayer = CAShapeLayer.init()
     
     fileprivate var isRunning = false
@@ -31,7 +31,7 @@ class Overlay {
     
     init(detectionView: UIView) {
         self.detectionView = detectionView
-        
+//
         shapeLayer.fillColor = UIColor.detectionOverlayColor.cgColor
     }
     
@@ -39,31 +39,41 @@ class Overlay {
     func stop() {
         isRunning = false
         timer?.invalidate()
-        
+
         detectionView.layer.sublayers?.removeAll()
     }
     
     
     func start() {
         if !isRunning {
-            
+
             shapeLayer.path = nil
             detectionView.layer.addSublayer(shapeLayer)
-            
+
             timer = Timer.scheduledTimer(withTimeInterval: updateTime, repeats: true, block: { (timer) in
                 self.update()
             })
-            
+
             isRunning = true
         }
     }
     
     
     func updatePositionValues(topLeft: CGPoint, topRight: CGPoint, bottomLeft: CGPoint, bottomRight: CGPoint) {
-        self.topLeft = topLeft
-        self.topRight = topRight
-        self.bottomLeft = bottomLeft
-        self.bottomRight = bottomRight
+        
+       
+        var sizeOptional: CGSize? = nil
+        
+        DispatchQueue.main.sync {
+            sizeOptional = self.detectionView.frame.size
+        }
+        
+        guard let size = sizeOptional else {return;}
+        
+        self.topLeft = topLeft.scaledToUIKitCoordinatSystem(of: size)
+        self.topRight = topRight.scaledToUIKitCoordinatSystem(of: size)
+        self.bottomLeft = bottomLeft.scaledToUIKitCoordinatSystem(of: size)
+        self.bottomRight = bottomRight.scaledToUIKitCoordinatSystem(of: size)
         
         visible()
     }
@@ -87,7 +97,7 @@ class Overlay {
     
     
     fileprivate func visible() {
-        if wasPreviousInvisible == false {
+        if wasPreviousInvisible {
             shapeLayer.isHidden = false
             shapeLayer.fillColor = UIColor.detectionOverlayColor.cgColor
         }
@@ -95,7 +105,7 @@ class Overlay {
     
     
     fileprivate func update() {
-        // update the detection layer
+        //update the detection layer
         let path = CGMutablePath.init()
 
         guard let topLeft = topLeft, let topRight = topRight, let bottomRight = bottomRight, let bottomLeft = bottomLeft else {return;}
