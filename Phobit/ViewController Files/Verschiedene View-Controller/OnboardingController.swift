@@ -88,8 +88,14 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         if(EmailBenutzer.text == "" || CodeBenutzer.text == ""){
             AchtungLabel.isHidden = false
             goOn()
-        }
-        else{
+        }else{
+            
+            if(isAlpha() != true){
+                AchtungLabel.isHidden = false
+                goOn()
+                return;
+            }
+            
             let thisUser = UserData.init(name: EmailBenutzer.text!,email: EmailBenutzer.text!, passwort: CodeBenutzer.text!, loginDate: Date.init(), uniqueString: UUID.init().uuidString);
             
                 UserData.addAccount(newUser: thisUser);
@@ -99,16 +105,26 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     @IBAction func skipTouched(_ sender: Any) {
-        let alert = UIAlertController(title: "Testversion", message: "Falls du dich nicht einloggen kannst, kannst du Phobit nur ausprobieren! Logge dich ein, um das volle Potenzial von Phobit auszuschöpfen!", preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Trotzdem Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)})
-        let cancelAction = UIAlertAction(title: "Anmelden", style: .default, handler: { action in alert.dismiss(animated: true, completion: nil)})
+        ///THE FOLLOWING IS UNCOMMENTED BECAUSE OF ALPHA///
         
-        alert.addAction(okayAction)
+//        let alert = UIAlertController(title: "Testversion", message: "Falls du dich nicht einloggen kannst, kannst du Phobit nur ausprobieren! Logge dich ein, um das volle Potenzial von Phobit auszuschöpfen!", preferredStyle: .alert)
+//        let okayAction = UIAlertAction(title: "Trotzdem Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)})
+//        let cancelAction = UIAlertAction(title: "Anmelden", style: .default, handler: { action in alert.dismiss(animated: true, completion: nil)})
+//
+//        alert.addAction(okayAction)
+//        alert.addAction(cancelAction)
+//
+//        present(alert, animated: true, completion: nil)
+        
+        
+        let alert = UIAlertController(title: "Alpha Version", message: "Leider musst du uns bestätigen, das du zu den Alpha Testern gehörst. Logge dich deshalb bitte ein!", preferredStyle: .alert)
+       
+        let cancelAction = UIAlertAction(title: "Okay", style: .default, handler: { action in alert.dismiss(animated: true, completion: nil)})
+        
+        
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
-        
-        
         
     }
     @objc func goOn() {
@@ -116,9 +132,14 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         self.CodeBenutzer.resignFirstResponder()
     }
     
-    
+    func isAlpha() -> Bool {
+        let db = Database.init();
+        return db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!);
+    }
     
 }
+
+
 
 
 extension OnbordingController: UITextFieldDelegate {
