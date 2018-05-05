@@ -713,10 +713,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="het-U2-2Nf">
-                                <rect key="frame" x="20" y="479" width="69" height="69"/>
+                                <rect key="frame" x="20" y="597" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="het-U2-2Nf" secondAttribute="height" multiplier="1:1" id="0OL-xQ-Ewt"/>
-                                    <constraint firstAttribute="height" constant="69" id="33Q-gs-Pf0"/>
+                                    <constraint firstAttribute="width" secondItem="het-U2-2Nf" secondAttribute="height" multiplier="1:1" id="Sly-o3-4vK"/>
+                                    <constraint firstAttribute="height" constant="50" id="a7U-7n-GxK"/>
                                 </constraints>
                                 <state key="normal" image="SearchIcon"/>
                                 <connections>
@@ -724,10 +724,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuL-Gp-sC5">
-                                <rect key="frame" x="231" y="479" width="69" height="69"/>
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="OGW-nF-0xM"/>
-                                    <constraint firstAttribute="width" secondItem="AuL-Gp-sC5" secondAttribute="height" multiplier="1:1" id="aWW-jO-8qf"/>
+                                    <constraint firstAttribute="height" constant="50" id="0ad-ZK-ymx"/>
+                                    <constraint firstAttribute="width" secondItem="AuL-Gp-sC5" secondAttribute="height" multiplier="1:1" id="paR-7f-5qq"/>
                                 </constraints>
                                 <state key="normal" image="EinstellungsButton"/>
                                 <connections>
@@ -741,21 +741,12 @@
                                     <constraint firstAttribute="width" constant="300" id="nd7-DP-XsT"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-UO-Mqe">
-                                <rect key="frame" x="125.5" y="516" width="69" height="47"/>
-                                <state key="normal" title="Aus" image="BlitzIcon">
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="toggleFlashBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="hAt-4o-pMv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsa-hU-4wb">
-                                <rect key="frame" x="100" y="386" width="120" height="120"/>
+                                <rect key="frame" x="137.5" y="503" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.4962614467" green="0.47131527909999998" blue="0.49874514250000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="0vN-VZ-5uW"/>
-                                    <constraint firstAttribute="width" secondItem="rsa-hU-4wb" secondAttribute="height" multiplier="1:1" id="3wc-xr-vFv"/>
+                                    <constraint firstAttribute="height" constant="100" id="Qy3-Qg-ghO"/>
+                                    <constraint firstAttribute="width" secondItem="rsa-hU-4wb" secondAttribute="height" multiplier="1:1" id="qMy-vm-glv"/>
                                 </constraints>
                                 <size key="titleShadowOffset" width="-8" height="6"/>
                                 <state key="normal" backgroundImage="KameraButton_1.0"/>
@@ -763,19 +754,28 @@
                                     <action selector="cameraBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="cud-AA-ce7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-UO-Mqe">
+                                <rect key="frame" x="153" y="613" width="69" height="47"/>
+                                <state key="normal" title="Aus" image="BlitzIcon">
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleFlashBTN:" destination="HRO-ck-iqc" eventType="touchUpInside" id="hAt-4o-pMv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66274509800000003" green="0.18039215689999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fZK-gE-YHv" firstAttribute="trailing" secondItem="AuL-Gp-sC5" secondAttribute="trailing" constant="20" id="7uM-7c-8Wa"/>
-                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="1ic-UO-Mqe" secondAttribute="bottom" constant="5" id="IlC-oc-eyH"/>
-                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="top" secondItem="rsa-hU-4wb" secondAttribute="bottom" constant="10" id="J7T-mO-agj"/>
-                            <constraint firstItem="rsa-hU-4wb" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="YH7-Fm-lAD"/>
+                            <constraint firstItem="rsa-hU-4wb" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="7lI-8g-eKg"/>
+                            <constraint firstItem="fZK-gE-YHv" firstAttribute="trailing" secondItem="AuL-Gp-sC5" secondAttribute="trailing" constant="20" id="DQJ-aV-3Zw"/>
+                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="1ic-UO-Mqe" secondAttribute="bottom" constant="7" id="IlC-oc-eyH"/>
+                            <constraint firstItem="het-U2-2Nf" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" constant="20" id="UrD-L8-blD"/>
                             <constraint firstItem="8ne-mQ-d1E" firstAttribute="centerY" secondItem="SQf-lj-RL4" secondAttribute="centerY" id="aNa-Xn-nqc"/>
+                            <constraint firstItem="1ic-UO-Mqe" firstAttribute="top" secondItem="rsa-hU-4wb" secondAttribute="bottom" constant="10" id="avp-b4-kQx"/>
+                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="het-U2-2Nf" secondAttribute="bottom" constant="20" id="bTj-7r-lFb"/>
                             <constraint firstItem="1ic-UO-Mqe" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="hZL-5D-n4N"/>
                             <constraint firstItem="8ne-mQ-d1E" firstAttribute="centerX" secondItem="SQf-lj-RL4" secondAttribute="centerX" id="jGn-Mi-zDM"/>
-                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="het-U2-2Nf" secondAttribute="bottom" constant="20" id="nJe-li-tGf"/>
-                            <constraint firstItem="het-U2-2Nf" firstAttribute="leading" secondItem="fZK-gE-YHv" secondAttribute="leading" constant="20" id="v8N-23-u5K"/>
-                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="AuL-Gp-sC5" secondAttribute="bottom" constant="20" id="wi0-xk-coA"/>
+                            <constraint firstItem="fZK-gE-YHv" firstAttribute="bottom" secondItem="AuL-Gp-sC5" secondAttribute="bottom" constant="20" id="z5f-MJ-pyn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fZK-gE-YHv"/>
                     </view>
@@ -785,14 +785,84 @@
                     <connections>
                         <outlet property="blitzButton" destination="1ic-UO-Mqe" id="S2f-BE-kXG"/>
                         <outlet property="cameraButton" destination="rsa-hU-4wb" id="2ZX-a8-7h4"/>
+                        <outlet property="close" destination="W9N-dl-GlO" id="UB2-KT-lTF"/>
+                        <outlet property="closeAndNeverShowUpAgain" destination="neF-PG-H3m" id="MWi-2P-kZG"/>
                         <outlet property="einstellungenSegueButton" destination="AuL-Gp-sC5" id="dN2-AQ-fYn"/>
                         <outlet property="foundQRCodeBanner" destination="bhQ-67-4YQ" id="tNK-c6-2Jy"/>
+                        <outlet property="infoView" destination="5b5-NL-9kU" id="bZ7-Pc-utb"/>
                         <outlet property="suchenSegueButton" destination="het-U2-2Nf" id="Wfl-BJ-GXy"/>
                         <segue destination="KWt-eW-RyK" kind="show" identifier="einstellungen" id="8Pa-Zx-LIW"/>
-                        <segue destination="lPM-u0-jSi" kind="show" identifier="suchen" id="c0w-qF-i1f"/>
+                        <segue destination="lPM-u0-jSi" kind="show" identifier="suchen" customClass="SegueFromLeftNav" customModule="Phobit" customModuleProvider="target" id="c0w-qF-i1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZM-AK-LqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view alpha="0.75" contentMode="scaleToFill" id="5b5-NL-9kU">
+                    <rect key="frame" x="0.0" y="0.0" width="315" height="459"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="So funktionierts:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVS-Ce-PrF">
+                            <rect key="frame" x="48" y="20" width="218" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OnboardingImage_1" translatesAutoresizingMaskIntoConstraints="NO" id="zr9-tK-wb7">
+                            <rect key="frame" x="37" y="58" width="240" height="117"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neF-PG-H3m">
+                            <rect key="frame" x="37" y="371" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <state key="normal" title="Diesen Hinweis nicht mehr anzeigen.">
+                                <color key="titleColor" red="0.66666666669999997" green="0.1863303483" blue="0.1212185398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="showNeverAgain:" destination="HRO-ck-iqc" eventType="touchUpInside" id="sc7-F4-J0w"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9N-dl-GlO">
+                            <rect key="frame" x="37" y="409" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <state key="normal" title="Okay.">
+                                <color key="titleColor" red="0.66666666669999997" green="0.1863303483" blue="0.1212185398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="close:" destination="HRO-ck-iqc" eventType="touchUpInside" id="buN-xD-cbZ"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgz-dd-hJa">
+                            <rect key="frame" x="37" y="183" width="240" height="180"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">Du musst nur deine Kamera über die Rechnung halten. Die Kamera löst automatisch aus wenn es perfekt ist. So kann es nie passieren das etwas verwackelt. Den Rest macht Phobit für dich.                       Also lehn dich zurück.</string>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.66666666669999997" green="0.1863303483" blue="0.1212185398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="NXt-dU-Bja"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <searchDisplayController searchResultsTitle="" id="NY7-oc-Bmd"/>
                 <view contentMode="scaleToFill" id="bhQ-67-4YQ">
                     <rect key="frame" x="0.0" y="0.0" width="363" height="87"/>
@@ -1823,6 +1893,7 @@ Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit
         <image name="BlitzIcon" width="38" height="47"/>
         <image name="EinstellungsButton" width="300" height="300"/>
         <image name="KameraButton_1.0" width="95" height="95"/>
+        <image name="OnboardingImage_1" width="500" height="500"/>
         <image name="OnboardingImage_2" width="500" height="500"/>
         <image name="Phobit_Logo" width="2000" height="2000"/>
         <image name="SearchIcon" width="300" height="300"/>
