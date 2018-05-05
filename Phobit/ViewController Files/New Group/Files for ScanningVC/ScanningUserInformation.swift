@@ -11,7 +11,7 @@ import UIKit
 extension ScanningViewController {
     
     func errorWithCameraAuthorization() {
-        let alert = UIAlertController.init(title: "Da stimmt etwas nicht!", message: "Wir können nicht auf deine Kamera zugreifen da uns der Zugriff durch die Einstellungen verwährt wird. Gehe in die Einstellungen und erlaube uns den Zugriff auf deine Kamera.", preferredStyle: .alert)
+        let alert = UIAlertController.init(title: "Da stimmt etwas nicht!", message: "Wir können nicht auf deine Kamera zugreifen, da uns der Zugriff durch die Einstellungen verwährt wird. Gehe in die Einstellungen und erlaube uns den Zugriff auf deine Kamera.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction.init(title: "zu den Einstellungen", style: .default, handler: { (_) in
             UIApplication.shared.open(URL.init(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
@@ -26,6 +26,9 @@ extension ScanningViewController {
         // present the sheet
         DispatchQueue.main.async {
             self.foundQRCodeBanner.alpha = 0
+            
+            self.foundQRCodeBanner.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width - 10, height: 87)
+            
             self.foundQRCodeBanner.center = CGPoint.init(x: self.view.center.x, y: self.view.safeAreaInsets.top + 45)
             self.view.addSubview(self.foundQRCodeBanner)
             

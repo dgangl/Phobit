@@ -97,13 +97,13 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
     
     func bringAllElementsToFront() {
         view.bringSubview(toFront: detectionOverlay)
-        view.bringSubview(toFront: whiteboard)
-        view.bringSubview(toFront: infolabel)
+//        view.bringSubview(toFront: whiteboard)
+//        view.bringSubview(toFront: infolabel)
         view.bringSubview(toFront: cameraButton)
         view.bringSubview(toFront: suchenSegueButton)
         view.bringSubview(toFront: einstellungenSegueButton)
         view.bringSubview(toFront: blitzButton)
-        view.bringSubview(toFront: stackView)
+//        view.bringSubview(toFront: stackView)
     }
     
     

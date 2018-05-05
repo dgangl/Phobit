@@ -12,17 +12,21 @@ import UIKit
 extension ScanningViewController {
     
     func gotImage() {
+        
+        self.session.stopRunning()
         // webservice task here.
         // user information.
         // crop image.
         // filter image.
         
         
-        let processor = ImageEditor.init(image: self.image!)
+        let processor = ImageProcessor.init(image: self.image!)
         
         processor.process { (success) in
             if success {
                 let webservice = WebService.init(image: processor.getImage())
+                
+                
                 
                 let tuple = self.showLoadingScreen()
                 
@@ -49,14 +53,22 @@ extension ScanningViewController {
                         // end
                         
                         alertView.dismiss(animated: true, completion: {
+                            self.overlay?.invisible()
+                            self.session.startRunning()
                             self.jumpToAuswertung(withImage: processor.getImage())
                         })
                     }
                 }, progressView: progressView)
-            }
+            } else {
             
+            self.autoCapture?.resumeStop()
+            self.autoCapture?.resumeQR()
+            self.image = nil
+            self.billdata = nil
+            self.session.startRunning()
             self.cameraButton.isEnabled = true
             self.canDeleteQR = true
+            }
         }
     }
     

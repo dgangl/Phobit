@@ -89,9 +89,13 @@ class Database {
         var goAhead = false;
         var endThread = false;
         
+        
+        
+        
+        
+        
         //Try to find the cirtain document
         let docRef = db.collection("Nutzer").document(name);
-        
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 print("Document exists")
@@ -126,7 +130,7 @@ class Database {
                 print("Document does not exist")
                 completion(goAhead);
             }
-        }
+        
         
     }
     
