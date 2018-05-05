@@ -157,6 +157,7 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
                 let thisUser = UserData.init(name: self.EmailBenutzer.text!,email: self.EmailBenutzer.text!, passwort: self.CodeBenutzer.text!, loginDate: Date.init(), uniqueString: UUID.init().uuidString);
                 
                     UserData.addAccount(newUser: thisUser);
+                
                     self.performSegue(withIdentifier: "toName", sender: self);
             }
             else{

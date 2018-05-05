@@ -23,10 +23,11 @@ extension ScanningViewController {
         let processor = ImageProcessor.init(image: self.image!)
         
         processor.process { (success) in
-            if success {
+            
+            let qrResult = self.isQRok()
+            
+            if success && qrResult {
                 let webservice = WebService.init(image: processor.getImage())
-                
-                
                 
                 let tuple = self.showLoadingScreen()
                 
@@ -56,8 +57,18 @@ extension ScanningViewController {
                             self.overlay?.invisible()
                             self.session.startRunning()
                             self.jumpToAuswertung(withImage: processor.getImage())
+                            
+                            
+                            self.autoCapture?.resumeStop()
+                            self.autoCapture?.resumeQR()
+                            self.image = nil
+                            self.billdata = nil
+                            self.session.startRunning()
+                            self.cameraButton.isEnabled = true
+                            self.canDeleteQR = true
                         })
                     }
+                    
                 }, progressView: progressView)
             } else {
             
@@ -68,6 +79,7 @@ extension ScanningViewController {
             self.session.startRunning()
             self.cameraButton.isEnabled = true
             self.canDeleteQR = true
+                
             }
         }
     }
@@ -75,7 +87,7 @@ extension ScanningViewController {
     
     
     func jumpToAuswertung(withImage correctedImage: UIImage) {
-        
+        /*
         guard let billdata = billdata else {
             let alert = UIAlertController.init(title: "Keinen passenden QR-Code gefunden!", message: nil, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
@@ -86,7 +98,7 @@ extension ScanningViewController {
             
             return
         }
-        
+        */
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "Auswertung") as! AuswertungsTableViewController
         
@@ -103,4 +115,22 @@ extension ScanningViewController {
             self.foundQRCodeBanner.removeFromSuperview()
         }
     }
+    
+    
+    func isQRok() -> Bool{
+        
+        guard billdata != nil else {
+            let alert = UIAlertController.init(title: "Keinen passenden QR-Code gefunden!", message: nil, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let dispatchAfter = DispatchTime.now() + 2.5
+            DispatchQueue.main.asyncAfter(deadline: dispatchAfter){
+                alert.dismiss(animated: true, completion: nil)
+            }
+
+            return false
+        }
+        
+        return true
+    }
 }
+
