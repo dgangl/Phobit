@@ -99,13 +99,20 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     @IBAction func skipTouched(_ sender: Any) {
-        let alert = UIAlertController(title: "Testversion", message: "Falls du dich nicht einloggen kannst, kannst du Phobit nur ausprobieren! Logge dich ein, um das volle Potenzial von Phobit auszuschöpfen!", preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Trotzdem Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)})
-        let cancelAction = UIAlertAction(title: "Anmelden", style: .default, handler: { action in alert.dismiss(animated: true, completion: nil)})
+//        let alert = UIAlertController(title: "Testversion", message: "Falls du dich nicht einloggen kannst, kannst du Phobit nur ausprobieren! Logge dich ein, um das volle Potenzial von Phobit auszuschöpfen!", preferredStyle: .alert)
+//
+//
+//
+//
+//        let okayAction = UIAlertAction(title: "Trotzdem Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)})
+//        let cancelAction = UIAlertAction(title: "Anmelden", style: .default, handler: { action in alert.dismiss(animated: true, completion: nil)})
+//
+//        alert.addAction(okayAction)
+//        alert.addAction(cancelAction)
         
+        let alert = UIAlertController(title: "Tut uns leid.", message: "Die Testversion ist während der Alpha-Phase deaktiviert. Bitte melde dich mit deinem Alpha-Account an. Falls du dein Password vergessen hast, wende dich an die Entwickler von Phobit.", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .cancel, handler: { action in alert.dismiss(animated: true, completion: nil)})
         alert.addAction(okayAction)
-        alert.addAction(cancelAction)
-        
         present(alert, animated: true, completion: nil)
         
         
