@@ -19,6 +19,10 @@ class Database {
     }
     
     func addNew(wholeString: String, companyName: String, Date: Date, Brutto: Double, Netto: Double, TenProzent: Double,ThirteenProzent : Double, NineteenProzent : Double, TwentyProzent: Double, Kontierung: String ) {
+        
+        //If no OCR Text is here - do not upload
+        
+        
         //Setting the Document
         let docData: [String: Any] = [
             "wholeString" : wholeString,
@@ -132,6 +136,7 @@ class Database {
             }
         
         
+        }
     }
     
     func setTheNameForTheUser(nameOfTheUser: String) {
@@ -141,4 +146,5 @@ class Database {
     
    
     
-}
+    }
+
