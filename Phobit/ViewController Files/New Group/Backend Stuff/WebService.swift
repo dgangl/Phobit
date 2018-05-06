@@ -17,6 +17,10 @@ class WebService {
     let urlBasic = "https://services.rzlsoftware.at/rzlocrservice"
     
     
+    fileprivate var uploadRequest: Request?
+    fileprivate var isAllowedToCancel = true
+    fileprivate var systemCancelled = false
+    
     // the image to be sent.
     let image: UIImage
     
@@ -27,7 +31,7 @@ class WebService {
     }
     
     
-    func start(completion: @escaping (_ result: String, _ statusCode: Int) -> (), progressView: UIProgressView? = nil) {
+    func start(completion: @escaping (_ result: String, _ statusCode: WebServiceStatus) -> (), progressView: UIProgressView? = nil) {
         // 1. get the current token from the server
         
         getRequestVerificationToken { (data) in
@@ -54,9 +58,7 @@ class WebService {
     
     
     
-    fileprivate func getRequestVerificationToken(completion: @escaping (_ tokenData: Data) -> ()) {
-
-        var dataToReturn: Data? = nil
+    fileprivate func getRequestVerificationToken(completion: @escaping (_ tokenData: Data?) -> ()) {
         
         let task = URLSession.shared.dataTask(with: URL.init(string: urlBasic)!) { (data, response, error) in
             if let error = error {
@@ -69,11 +71,10 @@ class WebService {
             
             
             guard let data = data else {
-                print("WEBSERVICE: Error in getRequestVerificationToken()")
-                print("---------------")
-                print()
+                print("WEBSERVICE: Error in getRequestVerificationToken(): data is nil")
                 print("---------------")
         
+                completion(nil)
                 return
             }
             
@@ -90,28 +91,42 @@ class WebService {
     
     
     
-    fileprivate func setDataToToken(token: Data) {
+    fileprivate func setDataToToken(token: Data?) {
+        
+        guard let token = token else {
+            return
+        }
+        
         let rawString = String.init(data: token, encoding: String.Encoding.utf8)
         
         let rawSplitArray = rawString?.components(separatedBy: "<input name=\"__RequestVerificationToken\" type=\"hidden\" value=\"")
-        let token = rawSplitArray![1].components(separatedBy: "\"")[0]
+        let finishedToken = rawSplitArray![1].components(separatedBy: "\"")[0]
         
-        self.token = token
+        self.token = finishedToken
     }
     
     
     
     
-    
-    fileprivate func send(completion: @escaping (_ result: String, _ statusCode: Int)->(), progressView: UIProgressView?) {
+ 
+    fileprivate func send(completion: @escaping (_ result: String, _ statusCode: WebServiceStatus)->(), progressView: UIProgressView?) {
+      
+        guard let token = self.token else {
+            print("WEBSERVICE: it seems that we have no Internet connection.")
+            completion("", WebServiceStatus.systemCancelled)
+            return
+        }
         
         
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 15) {
+            self.cancelUploadInternal()
+        }
         
         Alamofire.upload(
             multipartFormData: { multipartFormData in
                 multipartFormData.append("0".data(using: .utf8)!, withName: "ocrEngine")
                 multipartFormData.append("Upload".data(using: .utf8)!, withName: "submit")
-                multipartFormData.append("\(self.token!)".data(using: .utf8)!, withName: "__RequestVerificationToken")
+                multipartFormData.append("\(token)".data(using: .utf8)!, withName: "__RequestVerificationToken")
                 multipartFormData.append(UIImagePNGRepresentation(self.image)!, withName: "file", fileName: "3391_001.png", mimeType: "image/png")
         },
             to: urlOCR,
@@ -119,7 +134,8 @@ class WebService {
                 switch encodingResult {
                 case .success(request: let upload, streamingFromDisk: _, streamFileURL: _):
                     
-                
+                    
+                    self.uploadRequest = upload
                     
                     
                     if let progressView = progressView {
@@ -136,12 +152,27 @@ class WebService {
                     
                     upload.responseData(completionHandler: { (data) in
                         
+                        self.isAllowedToCancel = false
+                        
                         print("RZL-Server Response")
                         print("----------------")
                         print(String.init(data: data.data!, encoding: .utf8)!)
                         print("----------------")
                         
-                        completion(String.init(data: data.data!, encoding: .utf8)!, upload.response!.statusCode)
+                        let statusCode: Int? = upload.response?.statusCode
+                        
+                        var status: WebServiceStatus? = nil
+                        
+                        if let statusCode = statusCode {
+                            status = WebServiceStatus.normal
+                        } else if self.systemCancelled {
+                            status = WebServiceStatus.timeout
+                        } else {
+                            status = WebServiceStatus.userCancelled
+                        }
+                        
+                        
+                        completion(String.init(data: data.data!, encoding: .utf8)!, status!)
                     })
                 case .failure(let encodingError):
                     print(encodingError)
@@ -150,4 +181,32 @@ class WebService {
         )
         
     }
+    
+    
+    func cancelUploadFromUser() {
+        if isAllowedToCancel {
+            uploadRequest?.cancel()
+            uploadRequest = nil
+        }
+    }
+    
+    
+    fileprivate func cancelUploadInternal() {
+        if isAllowedToCancel {
+            uploadRequest?.cancel()
+            uploadRequest = nil
+            systemCancelled = true
+        }
+    }
+    
+    
+}
+
+
+// response...
+enum WebServiceStatus {
+    case normal
+    case userCancelled
+    case systemCancelled
+    case timeout
 }
