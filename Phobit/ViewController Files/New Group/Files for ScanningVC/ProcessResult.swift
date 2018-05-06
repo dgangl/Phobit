@@ -84,9 +84,10 @@ extension ScanningViewController {
                     
                 }, progressView: progressView)
             } else {
-                self.session.startRunning()
-                self.cleanUp()
-                
+                DispatchQueue.main.async {
+                    self.session.startRunning()
+                    self.cleanUp()
+                }
             }
         }
     }

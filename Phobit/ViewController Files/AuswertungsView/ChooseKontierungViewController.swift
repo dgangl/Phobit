@@ -35,13 +35,13 @@ class ChooseKontierungViewController: UITableViewController {
         }
         
         self.definesPresentationContext = true
-            searchController.searchBar.tintColor = .white
-            
+//            searchController.searchBar.tintColor = .white
+        
             
             if #available(iOS 11.0, *) {
                
                 let scb = searchController.searchBar
-                scb.tintColor = UIColor.white
+//                scb.tintColor = UIColor.white
                 scb.barTintColor = UIColor.white
                 
                 if let textfield = scb.value(forKey: "searchField") as? UITextField {

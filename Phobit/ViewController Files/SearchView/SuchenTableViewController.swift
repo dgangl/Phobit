@@ -787,12 +787,12 @@ class SuchenTableViewController: UITableViewController {
         }
     }
     func setDefaultSearchBar(){
-        searchController.searchBar.tintColor = .white
+//        searchController.searchBar.tintColor = .white
 
         if #available(iOS 11.0, *) {
             let sc = searchController
             let scb = sc.searchBar
-            scb.tintColor = UIColor.white
+//            scb.tintColor = UIColor.white
             scb.barTintColor = UIColor.white
             
             if let textfield = scb.value(forKey: "searchField") as? UITextField {

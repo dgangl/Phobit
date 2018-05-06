@@ -118,7 +118,7 @@ class WebService {
         }
         
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 15) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 20) {
             self.cancelUploadInternal()
         }
         
