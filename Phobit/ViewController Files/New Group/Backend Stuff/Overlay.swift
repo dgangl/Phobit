@@ -31,7 +31,6 @@ class Overlay {
     
     init(detectionView: UIView) {
         self.detectionView = detectionView
-//
         shapeLayer.fillColor = UIColor.detectionOverlayColor.cgColor
     }
     

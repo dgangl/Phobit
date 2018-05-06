@@ -64,9 +64,9 @@ extension ScanningViewController {
             print(castedResult.payloadStringValue ?? "no value.")
             
             if let payload = castedResult.payloadStringValue {
-                if payload.contains("_R1") && billdata == nil{
+                if payload.contains("_R1") && canTakeNextQR {
                     informUserAboutQR()
-                    
+                    canTakeNextQR = false
                     autoCapture?.foundQR()
                     
                     billdata = QRSplitter.split(qrCode: payload)

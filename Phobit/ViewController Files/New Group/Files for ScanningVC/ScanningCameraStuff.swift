@@ -114,7 +114,7 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
     
     
     func captureImage() {
-        self.canDeleteQR = false
+        self.canTakeNextQR = false
         
         overlay?.invisible()
         

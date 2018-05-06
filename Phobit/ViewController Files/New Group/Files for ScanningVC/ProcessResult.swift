@@ -29,7 +29,7 @@ extension ScanningViewController {
             if success && qrResult {
                 let webservice = WebService.init(image: processor.getImage())
                 
-                let tuple = self.showLoadingScreen()
+                let tuple = self.showLoadingScreen(webservice: webservice)
                 
                 let progressView = tuple.0
                 let alertView = tuple.1
@@ -40,7 +40,7 @@ extension ScanningViewController {
                     
                     print("###### completion started")
                     
-                    if statusCode == 200 {
+                    if statusCode == WebServiceStatus.normal {
                         // perform with text in here.
                         let tag = Tagger.init()
                         if let rechnungsersteller = tag.recognizeOCR_Result(für: response) {
@@ -59,31 +59,48 @@ extension ScanningViewController {
                             self.jumpToAuswertung(withImage: processor.getImage())
                             
                             
-                            self.autoCapture?.resumeStop()
-                            self.autoCapture?.resumeQR()
-                            self.image = nil
-                            self.billdata = nil
-                            self.session.startRunning()
-                            self.cameraButton.isEnabled = true
-                            self.canDeleteQR = true
+                            self.cleanUp()
                         })
+                    } else if statusCode == WebServiceStatus.systemCancelled || statusCode == WebServiceStatus.timeout {
+                        // dissmissing the loading alertView...
+                        alertView.dismiss(animated: true, completion: {
+                            DispatchQueue.main.async {
+                                self.overlay?.invisible()
+                                self.cleanUp()
+                            }
+                            
+                            
+                            self.infromUserAboutWebserviceFailure(webservicestatus: statusCode)
+                        })
+   
+                    } else {
+                        // userCancelled...
+                        
+                        DispatchQueue.main.async {
+                            self.cleanUp()
+                            self.session.startRunning()
+                        }
                     }
                     
                 }, progressView: progressView)
             } else {
-            
-            self.autoCapture?.resumeStop()
-            self.autoCapture?.resumeQR()
-            self.image = nil
-            self.billdata = nil
-            self.session.startRunning()
-            self.cameraButton.isEnabled = true
-            self.canDeleteQR = true
+                self.session.startRunning()
+                self.cleanUp()
                 
             }
         }
     }
     
+    
+    
+    func cleanUp() {
+        self.autoCapture?.resumeStop()
+        self.autoCapture?.resumeQR()
+        self.image = nil
+        self.billdata = nil
+        self.cameraButton.isEnabled = true
+        self.canTakeNextQR = true
+    }
     
     
     func jumpToAuswertung(withImage correctedImage: UIImage) {
