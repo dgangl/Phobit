@@ -126,11 +126,6 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
         self.session.startRunning()
         */
         
-        // Time for the exposure and the focus.
-        sleep(1)
-        
-        
-        
         let photoSettings: AVCapturePhotoSettings = AVCapturePhotoSettings()
         
         photoSettings.flashMode = .auto

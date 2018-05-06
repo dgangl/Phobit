@@ -104,7 +104,7 @@ extension ScanningViewController {
     }
     
     
-    func jumpToAuswertung(withImage correctedImage: UIImage) {
+    @objc func jumpToAuswertung(withImage correctedImage: UIImage?) {
         /*
         guard let billdata = billdata else {
             let alert = UIAlertController.init(title: "Keinen passenden QR-Code gefunden!", message: nil, preferredStyle: .alert)
@@ -121,8 +121,11 @@ extension ScanningViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "Auswertung") as! AuswertungsTableViewController
         
         vc.bill = billdata
-        vc.image = correctedImage
         
+        if let image = image {
+            vc.image = correctedImage
+        }
+    
         let nvc = UINavigationController.init(rootViewController: vc)
         
         self.present(nvc, animated: true) {
