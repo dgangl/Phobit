@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //WE ARE USING THIS FOR OUR DATABASE. DO NOT DELETE! VERY IMPORTANT
         FirebaseApp.configure();
         
+        UISearchBar.appearance().tintColor = UIColor.lightGray
+        
         UserData.FIXED_DEMO_USER = UserDefaults.standard.object(forKey: "DemoUserUniqueNumber") as? String ?? ""
         
         //Initializing the User Data Array

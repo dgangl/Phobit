@@ -69,6 +69,9 @@ class ScanningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(jumpToAuswertung(withImage:)))
+        foundQRCodeBanner.addGestureRecognizer(tapRecognizer)
+        
         
         let swipeToSearch = UISwipeGestureRecognizer.init(target: self, action: #selector(segueToSuchenBTN(_:)))
         let swipeToEinstellungen = UISwipeGestureRecognizer.init(target: self, action: #selector(segueToEinstellungenBTN(_:)))
@@ -116,6 +119,7 @@ class ScanningViewController: UIViewController {
         addTheInfoView()
         
         
+        
         if sessionCanRun == false {
             
             DispatchQueue.global().async {
@@ -157,6 +161,7 @@ class ScanningViewController: UIViewController {
             print(error)
         }
     }
+    
     
     func addTheInfoView(){
         let infoViewBool = UserDefaults.standard.bool(forKey: "infoView")
