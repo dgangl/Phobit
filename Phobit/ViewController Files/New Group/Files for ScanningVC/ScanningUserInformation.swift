@@ -49,9 +49,7 @@ extension ScanningViewController {
                     self.foundQRCodeBanner.alpha = 1
                     self.autoCapture?.resumeQR()
                     
-                    if self.canDeleteQR {
-                        // self.billdata = nil
-                    }
+                    self.canTakeNextQR = true
                 })
             }
         }
@@ -59,7 +57,7 @@ extension ScanningViewController {
     
     
     // returns the progress view for loading progress to fill with data.
-    func showLoadingScreen() -> (UIProgressView, UIAlertController) {
+    func showLoadingScreen(webservice: WebService) -> (UIProgressView, UIAlertController) {
         
         let alertView = UIAlertController(title: "Bitte warten", message: " ", preferredStyle: .alert)
         let progressView = UIProgressView.init()
@@ -70,9 +68,38 @@ extension ScanningViewController {
         
         alertView.view.addSubview(progressView)
         
+        alertView.addAction(UIAlertAction.init(title: "Abbrechen", style: .cancel, handler: { (action) in
+            webservice.cancelUploadFromUser()
+            alertView.dismiss(animated: true, completion: nil)
+        }))
+        
         
         self.present(alertView, animated: true, completion: nil)
         
         return (progressView, alertView)
+    }
+    
+    
+    func infromUserAboutWebserviceFailure(webservicestatus: WebServiceStatus) {
+
+            var reasonString: String? = nil
+            
+            switch webservicestatus {
+            case .systemCancelled:
+                reasonString = "Wir können leider unsere Server nicht erreichen. Falls du über eine funktionierende Internetverbindung verfügst, liegt das Problem bei uns. Versuche es später bitte erneut."
+            case .timeout:
+                reasonString = "Deine Internetverbindung ist leider zu langsam. Verbinde dich nach möglichkeit mit einem schnelleren WLAN oder suche einen besseren Standort auf um deinen Empfang zu verbessern."
+            default:
+                break
+            }
+            
+            let alertView = UIAlertController.init(title: "Fehler bei der Internetverbindung", message: reasonString, preferredStyle: .alert)
+            alertView.addAction(UIAlertAction.init(title: "Okay", style: .default, handler: { (action) in
+                self.session.startRunning()
+                alertView.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alertView, animated: true, completion: nil)
+        
     }
 }

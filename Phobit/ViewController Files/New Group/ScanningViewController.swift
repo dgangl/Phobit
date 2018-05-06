@@ -48,7 +48,7 @@ class ScanningViewController: UIViewController {
     let detectionOverlay = UIView()
     var overlay: Overlay?
     var autoCapture: AutoCaptureObservator?
-    var canDeleteQR = true
+    var canTakeNextQR = true
     // end
     
     
@@ -101,7 +101,7 @@ class ScanningViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         overlay?.start()
-        canDeleteQR = true
+        canTakeNextQR = true
         billdata = nil
         autoCapture?.resumeQR()
         autoCapture?.resumeStop()
