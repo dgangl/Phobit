@@ -142,12 +142,25 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func isAlpha() {
+        
+        let alert = UIAlertController(title: nil, message: "Überprüfe Eingabe...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
         let db = Database.init();
         var okay: Bool = false;
+        
         
         //return db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!);
         
         db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!) { (goAhead) in
+            alert.removeFromParentViewController();
             okay = goAhead;
             
             if(goAhead){
@@ -158,6 +171,7 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
                     self.performSegue(withIdentifier: "toName", sender: self);
             }
             else{
+                alert.removeFromParentViewController();
                 self.AchtungLabel.isHidden = false
                 self.goOn();
             }
