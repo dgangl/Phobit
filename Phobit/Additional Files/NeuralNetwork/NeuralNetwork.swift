@@ -20,7 +20,7 @@ class Tagger{
     func recognizeOCR_Result(für text: String) -> String? {
         let words = namedEntityRecognition(for: text)
         for name in words{
-            if(name.value == .organizationName || name.value == .personalName){
+            if(name.value == .organizationName){
                 print("Rechnungsersteller könnte: \(name.key) sein")
                 return name.key
             }

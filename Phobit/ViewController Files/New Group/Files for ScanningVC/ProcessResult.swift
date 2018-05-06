@@ -12,19 +12,24 @@ import UIKit
 extension ScanningViewController {
     
     func gotImage() {
+        
+        self.session.stopRunning()
         // webservice task here.
         // user information.
         // crop image.
         // filter image.
         
         
-        let processor = ImageEditor.init(image: self.image!)
+        let processor = ImageProcessor.init(image: self.image!)
         
         processor.process { (success) in
-            if success {
+            
+            let qrResult = self.isQRok()
+            
+            if success && qrResult {
                 let webservice = WebService.init(image: processor.getImage())
                 
-                let tuple = self.showLoadingScreen()
+                let tuple = self.showLoadingScreen(webservice: webservice)
                 
                 let progressView = tuple.0
                 let alertView = tuple.1
@@ -35,7 +40,7 @@ extension ScanningViewController {
                     
                     print("###### completion started")
                     
-                    if statusCode == 200 {
+                    if statusCode == WebServiceStatus.normal {
                         // perform with text in here.
                         let tag = Tagger.init()
                         if let rechnungsersteller = tag.recognizeOCR_Result(für: response) {
@@ -49,21 +54,57 @@ extension ScanningViewController {
                         // end
                         
                         alertView.dismiss(animated: true, completion: {
+                            self.overlay?.invisible()
+                            self.session.startRunning()
                             self.jumpToAuswertung(withImage: processor.getImage())
+                            
+                            
+                            self.cleanUp()
                         })
+                    } else if statusCode == WebServiceStatus.systemCancelled || statusCode == WebServiceStatus.timeout {
+                        // dissmissing the loading alertView...
+                        alertView.dismiss(animated: true, completion: {
+                            DispatchQueue.main.async {
+                                self.overlay?.invisible()
+                                self.cleanUp()
+                            }
+                            
+                            
+                            self.infromUserAboutWebserviceFailure(webservicestatus: statusCode)
+                        })
+   
+                    } else {
+                        // userCancelled...
+                        
+                        DispatchQueue.main.async {
+                            self.cleanUp()
+                            self.session.startRunning()
+                        }
                     }
+                    
                 }, progressView: progressView)
+            } else {
+                self.session.startRunning()
+                self.cleanUp()
+                
             }
-            
-            self.cameraButton.isEnabled = true
-            self.canDeleteQR = true
         }
     }
     
     
     
+    func cleanUp() {
+        self.autoCapture?.resumeStop()
+        self.autoCapture?.resumeQR()
+        self.image = nil
+        self.billdata = nil
+        self.cameraButton.isEnabled = true
+        self.canTakeNextQR = true
+    }
+    
+    
     func jumpToAuswertung(withImage correctedImage: UIImage) {
-        
+        /*
         guard let billdata = billdata else {
             let alert = UIAlertController.init(title: "Keinen passenden QR-Code gefunden!", message: nil, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
@@ -74,7 +115,7 @@ extension ScanningViewController {
             
             return
         }
-        
+        */
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "Auswertung") as! AuswertungsTableViewController
         
@@ -91,4 +132,22 @@ extension ScanningViewController {
             self.foundQRCodeBanner.removeFromSuperview()
         }
     }
+    
+    
+    func isQRok() -> Bool{
+        
+        guard billdata != nil else {
+            let alert = UIAlertController.init(title: "Keinen passenden QR-Code gefunden!", message: nil, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let dispatchAfter = DispatchTime.now() + 2.5
+            DispatchQueue.main.asyncAfter(deadline: dispatchAfter){
+                alert.dismiss(animated: true, completion: nil)
+            }
+
+            return false
+        }
+        
+        return true
+    }
 }
+

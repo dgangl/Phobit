@@ -77,10 +77,14 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
         
         
         
-        if session.canSetSessionPreset(.hd1280x720) {
+        if session.canSetSessionPreset(.hd4K3840x2160) {
+            session.sessionPreset = .hd4K3840x2160
+        } else if session.canSetSessionPreset(.hd1920x1080){
+            session.sessionPreset = .hd1920x1080
+        } else if session.canSetSessionPreset(.hd1280x720){
             session.sessionPreset = .hd1280x720
         } else {
-            print("unsupported resolution.")
+            print("unsupported session Preset.")
         }
         
         session.addOutput(photoOutput)
@@ -97,29 +101,30 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
     
     func bringAllElementsToFront() {
         view.bringSubview(toFront: detectionOverlay)
-        view.bringSubview(toFront: whiteboard)
-        view.bringSubview(toFront: infolabel)
+//        view.bringSubview(toFront: whiteboard)
+//        view.bringSubview(toFront: infolabel)
         view.bringSubview(toFront: cameraButton)
         view.bringSubview(toFront: suchenSegueButton)
         view.bringSubview(toFront: einstellungenSegueButton)
         view.bringSubview(toFront: blitzButton)
-        view.bringSubview(toFront: stackView)
+//        view.bringSubview(toFront: stackView)
     }
     
     
     
     
     func captureImage() {
-        self.canDeleteQR = false
+        self.canTakeNextQR = false
         
         overlay?.invisible()
         
-        
+        /*
         self.session.stopRunning()
         self.session.beginConfiguration()
         self.session.sessionPreset = .hd4K3840x2160
         self.session.commitConfiguration()
         self.session.startRunning()
+        */
         
         // Time for the exposure and the focus.
         sleep(1)

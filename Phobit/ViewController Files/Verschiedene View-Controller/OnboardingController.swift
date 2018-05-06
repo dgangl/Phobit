@@ -50,6 +50,14 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
             UserDefaults.standard.set(false, forKey: "launching");
         }
         
+        let removeKeyboardListener = UITapGestureRecognizer.init(target: self, action: #selector(removeKeyboard))
+        self.view.addGestureRecognizer(removeKeyboardListener)
+        
+    }
+    
+    @objc func removeKeyboard(){
+        self.EmailBenutzer.resignFirstResponder();
+        self.CodeBenutzer.resignFirstResponder();
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer? = nil) {
@@ -88,27 +96,47 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         if(EmailBenutzer.text == "" || CodeBenutzer.text == ""){
             AchtungLabel.isHidden = false
             goOn()
-        }
-        else{
-            let thisUser = UserData.init(name: EmailBenutzer.text!,email: EmailBenutzer.text!, passwort: CodeBenutzer.text!, loginDate: Date.init(), uniqueString: UUID.init().uuidString);
+        }else{
             
-                UserData.addAccount(newUser: thisUser);
-            performSegue(withIdentifier: "toName", sender: self);
+            isAlpha();
+            
+            
         }
         
         
     }
     @IBAction func skipTouched(_ sender: Any) {
-        let alert = UIAlertController(title: "Testversion", message: "Falls du dich nicht einloggen kannst, kannst du Phobit nur ausprobieren! Logge dich ein, um das volle Potenzial von Phobit auszuschöpfen!", preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Trotzdem Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)})
-        let cancelAction = UIAlertAction(title: "Anmelden", style: .default, handler: { action in alert.dismiss(animated: true, completion: nil)})
+        ///THE FOLLOWING IS UNCOMMENTED BECAUSE OF ALPHA///
         
-        alert.addAction(okayAction)
+//        let alert = UIAlertController(title: "Testversion", message: "Falls du dich nicht einloggen kannst, kannst du Phobit nur ausprobieren! Logge dich ein, um das volle Potenzial von Phobit auszuschöpfen!", preferredStyle: .alert)
+//
+//
+//
+//
+//        let okayAction = UIAlertAction(title: "Trotzdem Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)})
+//        let cancelAction = UIAlertAction(title: "Anmelden", style: .default, handler: { action in alert.dismiss(animated: true, completion: nil)})
+//
+//        alert.addAction(okayAction)
+//        alert.addAction(cancelAction)
+//
+//        present(alert, animated: true, completion: nil)
+        
+        
+        let alert = UIAlertController(title: "Alpha Version", message: "Leider musst du uns bestätigen, das du zu den Alpha Testern gehörst. Logge dich deshalb bitte ein!", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Trotzdem Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)
+            UserDefaults.standard.set(true, forKey: "InfoView")
+        })
+
+        let cancelAction = UIAlertAction(title: "Okay", style: .default, handler: { action in alert.dismiss(animated: true, completion: nil)})
+        //REMOVE LATER!!!
+//        alert.addAction(okayAction)
+        //END REMOVE
         alert.addAction(cancelAction)
-        
+        if(UserDefaults.standard.bool(forKey: "launching") == true){
         present(alert, animated: true, completion: nil)
-        
-        
+        }else{
+            self.performSegue(withIdentifier: "toStart", sender: self)
+        }
         
     }
     @objc func goOn() {
@@ -116,9 +144,48 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         self.CodeBenutzer.resignFirstResponder()
     }
     
-    
+    func isAlpha() {
+        
+        let alert = UIAlertController(title: nil, message: "Überprüfe Eingabe...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+        let db = Database.init();
+        var okay: Bool = false;
+        
+        
+        //return db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!);
+        
+        db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!) { (goAhead) in
+            alert.removeFromParentViewController();
+            okay = goAhead;
+            
+            if(goAhead){
+                let thisUser = UserData.init(name: self.EmailBenutzer.text!,email: self.EmailBenutzer.text!, passwort: self.CodeBenutzer.text!, loginDate: Date.init(), uniqueString: UUID.init().uuidString);
+                
+                    UserData.addAccount(newUser: thisUser);
+                
+                    self.performSegue(withIdentifier: "toName", sender: self);
+            }
+            else{
+                alert.removeFromParentViewController();
+                self.AchtungLabel.isHidden = false
+                self.goOn();
+            }
+        }
+        
+       
+    }
     
 }
+
+
 
 
 extension OnbordingController: UITextFieldDelegate {

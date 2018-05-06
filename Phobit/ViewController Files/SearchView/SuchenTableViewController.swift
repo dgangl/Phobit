@@ -682,7 +682,6 @@ class SuchenTableViewController: UITableViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationItem.searchController?.isActive = true
-        
     }
     
     override func viewDidLoad() {
@@ -691,7 +690,6 @@ class SuchenTableViewController: UITableViewController{
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         // setup the searchController
-        searchController.delegate = self
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Gib den Suchbegriff ein"
@@ -713,11 +711,20 @@ class SuchenTableViewController: UITableViewController{
         
         setDefaultSearchBar()
     
-        prepareData()
+        
+        // this should make it faster...
+        DispatchQueue.global().async {
+            self.prepareData()
+        
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    
     }
     
     private func prepareData() {
-        var start = Date().millisecondsSince1970
+        let start = Date().millisecondsSince1970
         if let data = Memory().read() {
             print("###### Time to read Data: \(Date().millisecondsSince1970 - start)")
             dataMaster = DataMaster.init(billdata: data)
@@ -799,7 +806,6 @@ class SuchenTableViewController: UITableViewController{
 
         if #available(iOS 11.0, *) {
             let sc = searchController
-            sc.delegate = self
             let scb = sc.searchBar
             scb.tintColor = UIColor.white
             scb.barTintColor = UIColor.white
@@ -834,16 +840,3 @@ extension SuchenTableViewController: UISearchResultsUpdating {
     }
     
 }
-
-extension SuchenTableViewController: UISearchControllerDelegate {
-    func didPresentSearchController(_ searchController: UISearchController) {
-        // in order to change UI we have to do it on the main thread.
-        
-        DispatchQueue.main.async {
-            // show the keyboard
-            searchController.searchBar.becomeFirstResponder()
-        }
-    }
-}
-
-

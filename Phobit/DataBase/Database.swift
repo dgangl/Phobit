@@ -11,12 +11,18 @@ import Firebase
 class Database {
     let db:Firestore;
     
+   //The UserName of the Database is declared in UserDefaults "DatabaseUserName"
     
     init() {
         db = Firestore.firestore();
+        
     }
     
     func addNew(wholeString: String, companyName: String, Date: Date, Brutto: Double, Netto: Double, TenProzent: Double,ThirteenProzent : Double, NineteenProzent : Double, TwentyProzent: Double, Kontierung: String ) {
+        
+        //If no OCR Text is here - do not upload
+        
+        
         //Setting the Document
         let docData: [String: Any] = [
             "wholeString" : wholeString,
@@ -41,6 +47,7 @@ class Database {
             }
             //Block end
         }
+        
     }
     
     func getWholeString() -> [String] {
@@ -70,4 +77,62 @@ class Database {
         return array;
     }
     
-}
+    func checkUser(name: String, passwort: String, completion: @escaping (Bool)->())  {
+        var goAhead = false;
+        var endThread = false;
+        
+        
+        
+        
+        
+        
+        //Try to find the cirtain document
+        let docRef = db.collection("Nutzer").document(name);
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                print("Document exists")
+                //Document exists! Now we get the values of the Document!
+                let values = document.data()?.values;
+                
+                 //Run through all Datas in the Document
+                for val in values!{
+                    print("Schleife Start")
+                   //Passwort is a String -> If String -> It should be the password!
+                    if let test = val as? String{
+                        //Is the given Password equals the correct Password?
+                        if(test.elementsEqual(passwort)){
+                            //THE PASSWORT MATCHED TO OUR USER!
+                            print("Matched")
+                            //We have to save the UserName for later Use
+                            UserDefaults.standard.set(name, forKey: "DatabaseUserName");
+                            
+                            goAhead = true;
+                            endThread = true;
+                            completion(goAhead)
+                        }
+                    }
+                }
+                print("Schleife Fertig")
+                endThread = true;
+                completion(goAhead);
+            } else {
+                
+                endThread = true;
+                //There is no User with this name
+                print("Document does not exist")
+                completion(goAhead);
+            }
+        
+        
+        }
+    }
+    
+    func setTheNameForTheUser(nameOfTheUser: String) {
+        let userName = UserDefaults.standard.string(forKey: "DatabaseUserName") ?? "";
+        db.collection("Nutzer").document(userName).updateData(["Name" : nameOfTheUser]);
+    }
+    
+   
+    
+    }
+
