@@ -1448,9 +1448,9 @@ You can either contact us via the Feedback Option in the Settings-Menu or direct
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8S-R2-hO6">
                                 <rect key="frame" x="20" y="214" width="280" height="269"/>
                                 <mutableString key="text">In dieser ersten öffentlichen Testreihe geht es darum uns Feedback zu geben, Bugs zu entdecken und Daten zu sammeln. All deine gesammelten Daten werden von uns analysiert und sind somit nicht privat. Es kann durchaus sein das nach oder während dieser Alpha Phase all deine in der App gesammelten Daten verloren gehen.        
-Derzeit ist es leider nur möglich Rechnungen mit QR-Code zu scannnen. Dies wird in der Beta bereits anders sein.                              Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit.</mutableString>
+Derzeit ist es leider nur möglich Rechnungen mit QR-Code zu scannnen. Dies wird in der Beta bereits anders sein. Für deine Mithilfe an Phobit bekommst du im Gegenzug Zugang zur Beta von Phobit.</mutableString>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <color key="textColor" red="0.98099706543430376" green="0.95790691976523623" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvf-PA-Fgg">
@@ -2038,6 +2038,6 @@ Derzeit ist es leider nur möglich Rechnungen mit QR-Code zu scannnen. Dies wird
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c0w-qF-i1f"/>
-        <segue reference="Dwg-cM-EkN"/>
+        <segue reference="PWm-AX-LGn"/>
     </inferredMetricsTieBreakers>
 </document>
