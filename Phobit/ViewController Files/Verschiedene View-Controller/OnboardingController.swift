@@ -160,6 +160,8 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         var okay: Bool = false;
         
         
+        
+        
         //return db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!);
         
         db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!) { (goAhead) in
