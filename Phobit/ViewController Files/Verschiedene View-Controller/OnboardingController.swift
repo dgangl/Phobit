@@ -132,8 +132,11 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
 //        alert.addAction(okayAction)
         //END REMOVE
         alert.addAction(cancelAction)
-        
+        if(UserDefaults.standard.bool(forKey: "launching") == true){
         present(alert, animated: true, completion: nil)
+        }else{
+            self.performSegue(withIdentifier: "toStart", sender: self)
+        }
         
     }
     @objc func goOn() {
@@ -142,21 +145,36 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func isAlpha() {
+        
+        let alert = UIAlertController(title: nil, message: "Überprüfe Eingabe...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
         let db = Database.init();
         var okay: Bool = false;
+        
         
         //return db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!);
         
         db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!) { (goAhead) in
+            alert.removeFromParentViewController();
             okay = goAhead;
             
             if(goAhead){
                 let thisUser = UserData.init(name: self.EmailBenutzer.text!,email: self.EmailBenutzer.text!, passwort: self.CodeBenutzer.text!, loginDate: Date.init(), uniqueString: UUID.init().uuidString);
                 
                     UserData.addAccount(newUser: thisUser);
+                
                     self.performSegue(withIdentifier: "toName", sender: self);
             }
             else{
+                alert.removeFromParentViewController();
                 self.AchtungLabel.isHidden = false
                 self.goOn();
             }

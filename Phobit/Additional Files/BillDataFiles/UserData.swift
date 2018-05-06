@@ -114,7 +114,7 @@ class UserData: NSObject, NSCoding {
         
         for test in nsarr{
             
-            if(thisUser == test){
+            if(thisUser.email == test.email){
                 return false;
             }
             
