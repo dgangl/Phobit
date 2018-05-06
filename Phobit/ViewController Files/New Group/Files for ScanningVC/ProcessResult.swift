@@ -47,10 +47,6 @@ extension ScanningViewController {
                             self.billdata?.rechnungsersteller = rechnungsersteller
                             UserDefaults.standard.set(response, forKey: "OCRstring")
                         }
-                        
-                        
-                        
-                        
                         // end
                         
                         alertView.dismiss(animated: true, completion: {
