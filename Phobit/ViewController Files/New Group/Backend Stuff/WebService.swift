@@ -108,8 +108,7 @@ class WebService {
     
     
     
-    // -1 error code for no internet connection...
-    // 0 user cancelled...
+ 
     fileprivate func send(completion: @escaping (_ result: String, _ statusCode: WebServiceStatus)->(), progressView: UIProgressView?) {
       
         guard let token = self.token else {
