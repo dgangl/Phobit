@@ -671,8 +671,6 @@ class SuchenTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         
-        
-        
         addToolbar(textField: searchController.searchBar)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -680,7 +678,6 @@ class SuchenTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationItem.searchController?.isActive = true
     }
     
     override func viewDidLoad() {
