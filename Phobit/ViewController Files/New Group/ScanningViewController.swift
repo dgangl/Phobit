@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 import Vision
+import LocalAuthentication
+
 
 class ScanningViewController: UIViewController {
     
@@ -204,12 +206,53 @@ class ScanningViewController: UIViewController {
     
     
     @IBAction func segueToSuchenBTN(_ sender: Any) {
-        self.performSegue(withIdentifier: "suchen", sender: nil)
+        if getAuthStatus() == true {
+            authentifizierung(seague: "suchen")
+        } else {
+            self.performSegue(withIdentifier: "suchen", sender: nil)
+        }
     }
     
     @IBAction func segueToEinstellungenBTN(_ sender: Any) {
-        self.performSegue(withIdentifier: "einstellungen", sender: nil)
+        if getAuthStatus() == true {
+            authentifizierung(seague: "einstellungen")
+        } else {
+            self.performSegue(withIdentifier: "einstellungen", sender: nil)
+        }
     }
+    
+    
+    // authentication
+    fileprivate func getAuthStatus() -> Bool{
+        return UserDefaults.standard.bool(forKey: "slider")
+    }
+
+    
+    fileprivate func authentifizierung(seague : String) {
+        
+        let myContext = LAContext()
+        let myLocalizedReasonString = "Authentifiziere dich um fortzufahren."
+        var authError: NSError?
+        
+        if myContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
+            myContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: myLocalizedReasonString) { success, evaluateError in
+                if success {
+                    DispatchQueue.main.async {
+                        // Code did match
+                        self.performSegue(withIdentifier: seague, sender: self)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        // Code did not match
+                    }
+                }
+            }
+        } else {
+            // No code on iPhone set... we continue...
+            self.performSegue(withIdentifier: seague, sender: nil)
+        }
+    }
+    // authentication end
     
    
     @IBAction func cameraBTN(_ sender: Any) {
