@@ -1551,6 +1551,9 @@ Derzeit ist es leider nur möglich Rechnungen mit QR-Code zu scannnen. Dies wird
                                 <state key="normal" title="Noch keinen Code angefordert?">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="noCode:" destination="gbT-bA-8Ka" eventType="touchUpInside" id="cWt-8S-D2D"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Überprüfe deine Eingabe oder klicke auf Testen!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M11-h7-F99">
                                 <rect key="frame" x="20" y="234" width="280" height="15"/>
@@ -2054,6 +2057,6 @@ Derzeit ist es leider nur möglich Rechnungen mit QR-Code zu scannnen. Dies wird
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c0w-qF-i1f"/>
-        <segue reference="PWm-AX-LGn"/>
+        <segue reference="Dwg-cM-EkN"/>
     </inferredMetricsTieBreakers>
 </document>
