@@ -141,6 +141,7 @@ class AutoCaptureObservator {
     
     func resumeStop() {
         stop = false
+        counter = 0
     }
     
     func foundQR() {
@@ -149,6 +150,7 @@ class AutoCaptureObservator {
     
     func resumeQR() {
         QRCodeFound = false
+        counter = 0
     }
 }
 

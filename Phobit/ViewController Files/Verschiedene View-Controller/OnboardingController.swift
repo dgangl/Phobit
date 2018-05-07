@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
     //TextFields//
@@ -184,8 +185,14 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         
        
     }
+    @IBAction func noCode(_ sender: Any) {
+        sendEmail()
+        
+    }
     
 }
+
+
 
 
 
@@ -197,4 +204,31 @@ extension OnbordingController: UITextFieldDelegate {
         return true
     }
 }
+
+
+extension OnbordingController: MFMailComposeViewControllerDelegate{
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.navigationBar.tintColor = UIColor.white
+            
+            mail.setToRecipients(["feedback.AlphaUser@gmail.com"])
+            mail.setSubject("Ich habe noch keinen Alpha-Zugang")
+            mail.setMessageBody("<h1> Alpha-Code </h1> <p> Name: </p> <p> Von wem hast du den Alpha-Zugang? </p>", isHTML: true)
+            present(mail, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Hoppala", message: "Bitte überprüfe deine Einstellungen damit wir eine E-Mail erstellen können.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { action in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+}
+
 

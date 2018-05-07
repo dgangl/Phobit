@@ -22,8 +22,6 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
             AVCaptureDevice.requestAccess(for: .video) { (success) in
                 if success == false {
                     self.errorWithCameraAuthorization()
-                } else {
-                    self.setupSession()
                 }
             }
         default:
@@ -42,13 +40,19 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
     func setupSession() {
         configureSession()
         setupVision()
-        let previewLayer = AVCaptureVideoPreviewLayer.init(session: session)
-        previewLayer.frame = view.frame
-        view.layer.addSublayer(previewLayer)
+        
+        DispatchQueue.main.async {
+            let previewLayer = AVCaptureVideoPreviewLayer.init(session: self.session)
+            
+            previewLayer.frame = self.view.frame
+            self.view.layer.addSublayer(previewLayer)
+            self.bringAllElementsToFront()
+        }
+        
     
         autoCapture = AutoCaptureObservator.init(device: device!)
         
-        bringAllElementsToFront()
+        
     }
  
     
@@ -125,11 +129,6 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
         self.session.commitConfiguration()
         self.session.startRunning()
         */
-        
-        // Time for the exposure and the focus.
-        sleep(1)
-        
-        
         
         let photoSettings: AVCapturePhotoSettings = AVCapturePhotoSettings()
         
