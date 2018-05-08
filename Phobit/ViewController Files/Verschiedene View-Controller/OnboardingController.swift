@@ -227,7 +227,7 @@ extension OnbordingController: MFMailComposeViewControllerDelegate{
             
             mail.setToRecipients(["feedback.AlphaUser@gmail.com"])
             mail.setSubject("Ich habe noch keinen Alpha-Zugang")
-            mail.setMessageBody("<h1> Alpha-Code </h1> <p> Name: </p> <p> Von wem hast du den Alpha-Zugang? </p>", isHTML: true)
+            mail.setMessageBody("<h1> Alpha-Code </h1> <p> Ich habe noch keinen Alpha-Code, bitte sendet mir einen. </p>", isHTML: true)
             present(mail, animated: true)
         } else {
             let alert = UIAlertController(title: "Hoppala", message: "Bitte überprüfe deine Einstellungen damit wir eine E-Mail erstellen können.", preferredStyle: UIAlertControllerStyle.alert)

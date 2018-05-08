@@ -71,7 +71,6 @@
 		98A9E0192098CD32008E142D /* ProcessResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0182098CD32008E142D /* ProcessResult.swift */; };
 		98B3A0082055A3C200D55CBA /* CustomRoundedEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */; };
 		98B767232006C2E000AFE504 /* Monate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B767222006C2E000AFE504 /* Monate.swift */; };
-		98B767252006D3EC00AFE504 /* SearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B767242006D3EC00AFE504 /* SearchHandler.swift */; };
 		98B7672B2007867D00AFE504 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */; };
 		98BA5AB520379D31004655A0 /* SpaltenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */; };
 		98BA5AB720379DF7004655A0 /* GesamtBruttoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */; };
@@ -167,7 +166,6 @@
 		98A9E0182098CD32008E142D /* ProcessResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessResult.swift; sourceTree = "<group>"; };
 		98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedEffectView.swift; sourceTree = "<group>"; };
 		98B767222006C2E000AFE504 /* Monate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monate.swift; sourceTree = "<group>"; };
-		98B767242006D3EC00AFE504 /* SearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandler.swift; sourceTree = "<group>"; };
 		98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaltenTableViewCell.swift; sourceTree = "<group>"; };
 		98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesamtBruttoTableViewCell.swift; sourceTree = "<group>"; };
@@ -367,7 +365,6 @@
 			isa = PBXGroup;
 			children = (
 				98B767222006C2E000AFE504 /* Monate.swift */,
-				98B767242006D3EC00AFE504 /* SearchHandler.swift */,
 				981B676D1FDC7B72008D9835 /* SuchenTableViewController.swift */,
 				9816171F2042E85100A3C29E /* SuchenTableViewSelectionHandler.swift */,
 				9893AB61203B221D00249850 /* DataMaster.swift */,
@@ -616,7 +613,6 @@
 				16FD6CA220445A5A00D8B88D /* ZeilenPickerViewController.swift in Sources */,
 				98A9E0192098CD32008E142D /* ProcessResult.swift in Sources */,
 				16FD6C9E20431B5000D8B88D /* ImageDataStorer.swift in Sources */,
-				98B767252006D3EC00AFE504 /* SearchHandler.swift in Sources */,
 				160C034E2000B20B00BD3EC2 /* EinstellungsController.swift in Sources */,
 				1654ED082017B7EC00529C6B /* OnboardingController.swift in Sources */,
 				3C352B3E20447EF800117EAE /* LoginTableViewController.swift in Sources */,

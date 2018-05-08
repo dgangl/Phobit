@@ -175,6 +175,11 @@ class AuswertungsTableViewController: UITableViewController {
     }
     
     func setImage(){
+        guard let image = image else {
+            print("no image to be saved")
+            return;
+        }
+        
         //ImageSaving Class
         let i = ImageData()
         //Setting a new UUID for each image so we dont have anything twice.
@@ -182,7 +187,8 @@ class AuswertungsTableViewController: UITableViewController {
         //Writing image to the document directory
         let string = uuid.uuidString
         bill?.imageURL = string
-        i.writeImageTo(name: string, imageToWrite: image!)
+        
+        i.writeImageTo(name: string, imageToWrite: image)
         print("UUID FROM SETTING THE IMAGE \(uuid)")
     }
     

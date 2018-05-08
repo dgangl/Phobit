@@ -51,6 +51,7 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
             let previewLayer = AVCaptureVideoPreviewLayer.init(session: self.session!)
             
             previewLayer.frame = self.view.frame
+            previewLayer.videoGravity = .resizeAspectFill
             self.view.layer.addSublayer(previewLayer)
             self.bringAllElementsToFront()
         }
@@ -129,6 +130,7 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
         view.bringSubview(toFront: einstellungenSegueButton)
         view.bringSubview(toFront: blitzButton)
 //        view.bringSubview(toFront: stackView)
+        view.bringSubview(toFront: infoView)
     }
     
     
