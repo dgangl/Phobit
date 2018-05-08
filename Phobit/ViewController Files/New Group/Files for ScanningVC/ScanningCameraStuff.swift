@@ -42,22 +42,33 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
         setupVision()
         
         DispatchQueue.main.async {
-            let previewLayer = AVCaptureVideoPreviewLayer.init(session: self.session)
+            
+            guard let _ = self.session else {
+                print("session is not available.")
+                return
+            }
+            
+            let previewLayer = AVCaptureVideoPreviewLayer.init(session: self.session!)
             
             previewLayer.frame = self.view.frame
             self.view.layer.addSublayer(previewLayer)
             self.bringAllElementsToFront()
         }
         
+        guard let device = device else {
+            print("no device found.")
+            self.session = nil
+            return
+        }
     
-        autoCapture = AutoCaptureObservator.init(device: device!)
+        autoCapture = AutoCaptureObservator.init(device: device)
         
         
     }
  
     
     func configureSession() {
-        session.beginConfiguration()
+        session?.beginConfiguration()
         
         device = AVCaptureDevice.default(for: .video)
         
@@ -72,8 +83,14 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
             
             device?.unlockForConfiguration()
             
-            let deviceInput = try AVCaptureDeviceInput.init(device: device!)
-            session.addInput(deviceInput)
+            guard let device = device else {
+                self.session = nil
+                print("could not find camera.")
+                return
+            }
+            
+            let deviceInput = try AVCaptureDeviceInput.init(device: device )
+            session?.addInput(deviceInput)
             
         } catch {
             print(error)
@@ -81,25 +98,25 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
         
         
         
-        if session.canSetSessionPreset(.hd4K3840x2160) {
-            session.sessionPreset = .hd4K3840x2160
-        } else if session.canSetSessionPreset(.hd1920x1080){
-            session.sessionPreset = .hd1920x1080
-        } else if session.canSetSessionPreset(.hd1280x720){
-            session.sessionPreset = .hd1280x720
+        if (session?.canSetSessionPreset(.hd4K3840x2160))! {
+            session?.sessionPreset = .hd4K3840x2160
+        } else if (session?.canSetSessionPreset(.hd1920x1080))!{
+            session?.sessionPreset = .hd1920x1080
+        } else if (session?.canSetSessionPreset(.hd1280x720))!{
+            session?.sessionPreset = .hd1280x720
         } else {
             print("unsupported session Preset.")
         }
         
-        session.addOutput(photoOutput)
+        session?.addOutput(photoOutput)
         photoOutput.isHighResolutionCaptureEnabled = true
         
         let deviceOutput = AVCaptureVideoDataOutput.init()
         deviceOutput.setSampleBufferDelegate(self, queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive))
         
-        session.addOutput(deviceOutput)
+        session?.addOutput(deviceOutput)
         
-        session.commitConfiguration()
+        session?.commitConfiguration()
     }
     
     

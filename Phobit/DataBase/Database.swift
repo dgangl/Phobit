@@ -137,9 +137,9 @@ class Database {
                 completion(goAhead);
             }
         
-        completion(goAhead);
+        
         }
-        completion(goAhead);
+       
     }
     
     func setTheNameForTheUser(nameOfTheUser: String) {
