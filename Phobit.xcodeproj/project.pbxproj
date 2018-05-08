@@ -56,7 +56,6 @@
 		9893AB3420387E4200249850 /* TextPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB3320387E4200249850 /* TextPickerViewController.swift */; };
 		9893AB3620387E4E00249850 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB3520387E4E00249850 /* DatePickerViewController.swift */; };
 		9893AB58203A355200249850 /* SpaltenSelectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB57203A355200249850 /* SpaltenSelectionProtocol.swift */; };
-		9893AB5A203B011700249850 /* SpaltenEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB59203B011700249850 /* SpaltenEditingViewController.swift */; };
 		9893AB5C203B01BB00249850 /* ChooseKontierungViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB5B203B01BB00249850 /* ChooseKontierungViewController.swift */; };
 		9893AB5E203B024100249850 /* KontierungTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB5D203B024100249850 /* KontierungTableViewCell.swift */; };
 		9893AB60203B07B900249850 /* PhobitKontenplan.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9893AB5F203B07B800249850 /* PhobitKontenplan.csv */; };
@@ -151,7 +150,6 @@
 		9893AB3320387E4200249850 /* TextPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerViewController.swift; sourceTree = "<group>"; };
 		9893AB3520387E4E00249850 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		9893AB57203A355200249850 /* SpaltenSelectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaltenSelectionProtocol.swift; sourceTree = "<group>"; };
-		9893AB59203B011700249850 /* SpaltenEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaltenEditingViewController.swift; sourceTree = "<group>"; };
 		9893AB5B203B01BB00249850 /* ChooseKontierungViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKontierungViewController.swift; sourceTree = "<group>"; };
 		9893AB5D203B024100249850 /* KontierungTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontierungTableViewCell.swift; sourceTree = "<group>"; };
 		9893AB5F203B07B800249850 /* PhobitKontenplan.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PhobitKontenplan.csv; sourceTree = "<group>"; };
@@ -403,7 +401,6 @@
 				9893AB3220387E1500249850 /* Pickers */,
 				98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */,
 				9893AB2E20387B2C00249850 /* AuswertungSelectionHandler.swift */,
-				9893AB59203B011700249850 /* SpaltenEditingViewController.swift */,
 				9893AB3020387B5D00249850 /* EditingProtocol.swift */,
 				981B676B1FDC7B61008D9835 /* AuswertungTableViewController.swift */,
 				98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */,
@@ -607,7 +604,6 @@
 				9822B5CB201CD47B00C36A1F /* CustomToolbar.swift in Sources */,
 				98B7672B2007867D00AFE504 /* ResultTableViewCell.swift in Sources */,
 				98BA5AB720379DF7004655A0 /* GesamtBruttoTableViewCell.swift in Sources */,
-				9893AB5A203B011700249850 /* SpaltenEditingViewController.swift in Sources */,
 				981B67561FDC7551008D9835 /* AppDelegate.swift in Sources */,
 				9893AB2F20387B2C00249850 /* AuswertungSelectionHandler.swift in Sources */,
 				16FD6CA220445A5A00D8B88D /* ZeilenPickerViewController.swift in Sources */,

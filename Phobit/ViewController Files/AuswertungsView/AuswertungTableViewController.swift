@@ -14,6 +14,7 @@ class AuswertungsTableViewController: UITableViewController {
     var bill: BillData2?
     var tableDict: [IndexPath:Any]?
     var image : UIImage?
+    
     @IBOutlet weak var imageView: UIImageView!
     
     
