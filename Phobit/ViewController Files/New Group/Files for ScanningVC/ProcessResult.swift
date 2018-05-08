@@ -45,8 +45,8 @@ extension ScanningViewController {
                         let tag = Tagger.init()
                         if let rechnungsersteller = tag.recognizeOCR_Result(für: response) {
                             self.billdata?.rechnungsersteller = rechnungsersteller
-                            UserDefaults.standard.set(response, forKey: "OCRstring")
                         }
+                        UserDefaults.standard.set(response, forKey: "OCRstring")
                         // end
                         
                         alertView.dismiss(animated: true, completion: {
