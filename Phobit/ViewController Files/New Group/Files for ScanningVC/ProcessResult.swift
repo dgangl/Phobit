@@ -13,7 +13,7 @@ extension ScanningViewController {
     
     func gotImage() {
         
-        self.session.stopRunning()
+        self.session?.stopRunning()
         // webservice task here.
         // user information.
         // crop image.
@@ -51,7 +51,7 @@ extension ScanningViewController {
                         
                         alertView.dismiss(animated: true, completion: {
                             self.overlay?.invisible()
-                            self.session.startRunning()
+                            self.session?.startRunning()
                             self.jumpToAuswertung(withImage: processor.getImage())
                             
                             
@@ -74,14 +74,14 @@ extension ScanningViewController {
                         
                         DispatchQueue.main.async {
                             self.cleanUp()
-                            self.session.startRunning()
+                            self.session?.startRunning()
                         }
                     }
                     
                 }, progressView: progressView)
             } else {
                 DispatchQueue.main.async {
-                    self.session.startRunning()
+                    self.session?.startRunning()
                     self.cleanUp()
                 }
             }

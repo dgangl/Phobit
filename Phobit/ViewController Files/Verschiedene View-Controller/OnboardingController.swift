@@ -154,33 +154,47 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         loadingIndicator.startAnimating();
         
+        
+        //SET ALERT VIEW HERE
+        
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
+ 
+        
         
         let db = Database.init();
         var okay: Bool = false;
         
         
+        
+        
         //return db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!);
         
         db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!) { (goAhead) in
-            alert.removeFromParentViewController();
+            
             okay = goAhead;
             
             if(goAhead){
                 let thisUser = UserData.init(name: self.EmailBenutzer.text!,email: self.EmailBenutzer.text!, passwort: self.CodeBenutzer.text!, loginDate: Date.init(), uniqueString: UUID.init().uuidString);
                 
-                    UserData.addAccount(newUser: thisUser);
-                
+                UserData.addAccount(newUser: thisUser);
+                    //Clear Alert View here
+                alert.dismiss(animated: true, completion: {
                     self.performSegue(withIdentifier: "toName", sender: self);
+                })
+
             }
             else{
-                alert.removeFromParentViewController();
+                
                 self.AchtungLabel.isHidden = false
-                self.goOn();
+                //Clear Alert View here
+                alert.dismiss(animated: true, completion: {
+                    self.goOn();
+                })
             }
         }
         
+        //Clear Alert View here
        
     }
     @IBAction func noCode(_ sender: Any) {

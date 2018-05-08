@@ -33,7 +33,7 @@ class ScanningViewController: UIViewController {
     // AVFoundation Stuff
     var sessionCanRun = false
     
-    var session = AVCaptureSession.init()
+    var session: AVCaptureSession? = AVCaptureSession.init()
     var device: AVCaptureDevice?
     var photoOutput = AVCapturePhotoOutput.init()
     
@@ -136,12 +136,16 @@ class ScanningViewController: UIViewController {
                 }
                 
                 self.setupSession()
-                self.session.startRunning()
+                self.session?.startRunning()
             }
 
 
         } else {
-            session.startRunning()
+            if let session = session {
+                session.startRunning()
+            } else {
+                print("error in settung up capture session.")
+            }
         }
     }
     
@@ -149,7 +153,7 @@ class ScanningViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        session.stopRunning()
+        session?.stopRunning()
         overlay?.stop()
         blitzButton.setTitle("Aus", for: .normal)
         
