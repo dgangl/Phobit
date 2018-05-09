@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class AuswertungsTableViewController: UITableViewController {
     
@@ -59,6 +60,7 @@ class AuswertungsTableViewController: UITableViewController {
     }
     
     @objc func returnHome() {
+        Analytics.logEvent("Rechnung gescanned und abgebrochen", parameters: [:])
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -77,6 +79,9 @@ class AuswertungsTableViewController: UITableViewController {
             return;
         }
         let OCRString = UserDefaults.standard.string(forKey: "OCRstring");
+        
+        Analytics.logEvent("Rechnung gescanned und hochgeladen", parameters: [:])
+        
         
         dataBase.addNew(wholeString: OCRString, companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto(), TenProzent: getProzentsatz(value: 10), ThirteenProzent: getProzentsatz(value: 13), NineteenProzent: getProzentsatz(value: 19), TwentyProzent: getProzentsatz(value: 20), Kontierung: (bill?.kontierung)!);
     }
