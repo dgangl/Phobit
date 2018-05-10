@@ -44,20 +44,26 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQQ-h1-1eC">
-                                    <rect key="frame" x="0.0" y="18" width="375" height="1325"/>
-                                </imageView>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="agq-12-tQf">
+                                    <rect key="frame" x="67" y="191" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQQ-h1-1eC">
+                                            <rect key="frame" x="-68" y="-599" width="375" height="1325"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <connections>
+                                        <outlet property="delegate" destination="3mh-ot-eQ9" id="MZ0-KD-Ykq"/>
+                                    </connections>
+                                </scrollView>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="8Gf-de-QuU" firstAttribute="top" secondItem="WWt-HA-ZZB" secondAttribute="top" constant="197" id="K4m-hb-lBl"/>
-                                <constraint firstAttribute="trailing" secondItem="kQQ-h1-1eC" secondAttribute="trailing" id="LXQ-VZ-Xxi"/>
                                 <constraint firstAttribute="bottom" secondItem="8Gf-de-QuU" secondAttribute="bottom" constant="179" id="MD0-0d-ZW1"/>
-                                <constraint firstItem="kQQ-h1-1eC" firstAttribute="top" secondItem="WWt-HA-ZZB" secondAttribute="top" constant="43" id="TfI-z8-Vra"/>
                                 <constraint firstAttribute="trailing" secondItem="8Gf-de-QuU" secondAttribute="trailing" constant="77" id="ZVX-bI-E5m"/>
                                 <constraint firstItem="8Gf-de-QuU" firstAttribute="leading" secondItem="WWt-HA-ZZB" secondAttribute="leading" constant="76" id="cIb-i0-5Bf"/>
-                                <constraint firstItem="kQQ-h1-1eC" firstAttribute="leading" secondItem="WWt-HA-ZZB" secondAttribute="leading" id="ezC-FF-hmt"/>
-                                <constraint firstAttribute="bottom" secondItem="kQQ-h1-1eC" secondAttribute="bottom" constant="49" id="sWu-9c-PIK"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -272,6 +278,7 @@
                         <outlet property="imageView" destination="kQQ-h1-1eC" id="7r5-PX-dmi"/>
                         <outlet property="informationSheet" destination="NVb-0g-FXp" id="5c9-eI-ckC"/>
                         <outlet property="noImgeFoundLBL" destination="8Gf-de-QuU" id="Xd5-5V-pHX"/>
+                        <outlet property="scrollView" destination="agq-12-tQf" id="8J5-9C-Ab8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kP7-Ub-8t0" userLabel="First Responder" sceneMemberID="firstResponder"/>

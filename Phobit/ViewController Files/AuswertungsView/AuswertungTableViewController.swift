@@ -9,7 +9,9 @@
 import UIKit
 import FirebaseAnalytics
 
-class AuswertungsTableViewController: UITableViewController {
+class AuswertungsTableViewController: UITableViewController{
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let sections = ["Rechnungsersteller", " ", "Steueraufstellung", "Kontierungsvorschlag", "Bezahlung"]
     var bill: BillData2?
@@ -28,6 +30,9 @@ class AuswertungsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        //zooming for image
+        self.scrollView.minimumZoomScale = 1.0
+        self.scrollView.maximumZoomScale = 6.0
         
         let screenSize: CGRect = UIScreen.main.bounds
         imageView.image?.accessibilityFrame = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height)
@@ -57,6 +62,12 @@ class AuswertungsTableViewController: UITableViewController {
 //            self.navigationController?.navigationBar.backItem?.backBarButtonItem?.title = "Zurück"
             self.navigationController?.navigationBar.backItem?.title = "Zurück"
         }
+    }
+    override func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.imagePicker
+    }
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?{
+        return self.imagePicker
     }
     
     @objc func returnHome() {
@@ -247,4 +258,6 @@ class AuswertungsTableViewController: UITableViewController {
     
     
 }
+
+
 
