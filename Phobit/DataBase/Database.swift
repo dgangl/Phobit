@@ -38,7 +38,7 @@ class Database {
             
         ]
         
-        db.collection("Nutzer").adedDocument(data: docData)/*Error Handling*/{ err in
+        db.collection("Daten").addDocument(data: docData)/*Error Handling*/{ err in
             //Block Start
             if let _ = err {
                 print("DATABASE=> ERROR WRITING NEW DOCUMENT")
@@ -55,7 +55,7 @@ class Database {
         let dispatch = DispatchGroup();
         
         DispatchQueue.global().sync {
-            db.collection("Alpha3").getDocuments() { (querySnapshot, err) in
+            db.collection("Daten").getDocuments() { (querySnapshot, err) in
                 if let _ = err {
                     print("DATABASE=> ERROR Reading NEW DOCUMENT")
                 } else {
