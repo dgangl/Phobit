@@ -40,18 +40,7 @@ class Database {
             
         ]
         
-//        db.collection("Daten").addDocument(data: docData)/*Error Handling*/{ err in
-//            //Block Start
-//            if let _ = err {
-//                print("DATABASE=> ERROR WRITING NEW DOCUMENT")
-//            } else {
-//                print("DATABASE=> WROTE A NEW DOCUMENT SUCCESSFULLY")
-//            }
-//            //Block end
-//        }
-        let UserName = UserDefaults.standard.string(forKey: "DatabaseUserName") ?? "";
-        
-        let messageRef = db.collection("Nutzer").document(UserName).collection("Daten").addDocument(data: docData)/*Error Handling*/{ err in
+        db.collection("Daten").addDocument(data: docData)/*Error Handling*/{ err in
             //Block Start
             if let _ = err {
                 print("DATABASE=> ERROR WRITING NEW DOCUMENT")

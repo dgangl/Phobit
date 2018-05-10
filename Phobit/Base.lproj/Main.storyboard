@@ -1278,6 +1278,7 @@ You can either contact us via the Feedback Option in the Settings-Menu or direct
                     <tabBarItem key="tabBarItem" systemItem="search" id="7QY-sM-kDC"/>
                     <navigationItem key="navigationItem" id="ZAg-i7-U0H"/>
                     <connections>
+                        <outlet property="tableView" destination="d0m-cY-1kE" id="7oA-xb-i4s"/>
                         <segue destination="3mh-ot-eQ9" kind="show" identifier="showDetail" id="7yB-fR-1xs"/>
                     </connections>
                 </tableViewController>

@@ -180,9 +180,12 @@ extension DataMaster {
                         
                         
                         let deleteEuro = stringsplitary.replacingOccurrences(of: "€", with: "", options: NSString.CompareOptions.literal, range: nil)
+                        zahl1 = -1
+                        zahl2 = -1
+                        if(deleteEuro.split(separator: "-").count == 2){
                         zahl1 = Double(String(deleteEuro.split(separator: "-")[0]))!
                         zahl2 = Double(String(deleteEuro.split(separator: "-")[1]))!
-                        
+                        }
                         
                         //var a: Double = Double(zahl1)!
                        // print(a)
