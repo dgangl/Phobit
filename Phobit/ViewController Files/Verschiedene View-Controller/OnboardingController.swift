@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
     //TextFields//
@@ -132,10 +133,10 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
 //        alert.addAction(okayAction)
         //END REMOVE
         alert.addAction(cancelAction)
-        if(UserDefaults.standard.bool(forKey: "launching") == true){
-        present(alert, animated: true, completion: nil)
-        }else{
+        if(Skip.currentTitle! == "Abbrechen"){
             self.performSegue(withIdentifier: "toStart", sender: self)
+        }else{
+            present(alert, animated: true, completion: nil)
         }
         
     }
@@ -153,37 +154,57 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         loadingIndicator.startAnimating();
         
+        
+        //SET ALERT VIEW HERE
+        
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
+ 
+        
         
         let db = Database.init();
         var okay: Bool = false;
         
         
+        
+        
         //return db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!);
         
         db.checkUser(name: EmailBenutzer.text!, passwort: CodeBenutzer.text!) { (goAhead) in
-            alert.removeFromParentViewController();
+            
             okay = goAhead;
             
             if(goAhead){
                 let thisUser = UserData.init(name: self.EmailBenutzer.text!,email: self.EmailBenutzer.text!, passwort: self.CodeBenutzer.text!, loginDate: Date.init(), uniqueString: UUID.init().uuidString);
                 
-                    UserData.addAccount(newUser: thisUser);
-                
+                UserData.addAccount(newUser: thisUser);
+                    //Clear Alert View here
+                alert.dismiss(animated: true, completion: {
                     self.performSegue(withIdentifier: "toName", sender: self);
+                })
+
             }
             else{
-                alert.removeFromParentViewController();
+                
                 self.AchtungLabel.isHidden = false
-                self.goOn();
+                //Clear Alert View here
+                alert.dismiss(animated: true, completion: {
+                    self.goOn();
+                })
             }
         }
         
+        //Clear Alert View here
        
+    }
+    @IBAction func noCode(_ sender: Any) {
+        sendEmail()
+        
     }
     
 }
+
+
 
 
 
@@ -195,4 +216,31 @@ extension OnbordingController: UITextFieldDelegate {
         return true
     }
 }
+
+
+extension OnbordingController: MFMailComposeViewControllerDelegate{
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.navigationBar.tintColor = UIColor.white
+            
+            mail.setToRecipients(["feedback.AlphaUser@gmail.com"])
+            mail.setSubject("Ich habe noch keinen Alpha-Zugang")
+            mail.setMessageBody("<h1> Alpha-Code </h1> <p> Ich habe noch keinen Alpha-Code, bitte sendet mir einen. </p>", isHTML: true)
+            present(mail, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Hoppala", message: "Bitte überprüfe deine Einstellungen damit wir eine E-Mail erstellen können.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { action in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+}
+
 

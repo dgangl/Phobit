@@ -95,7 +95,7 @@ extension ScanningViewController {
             
             let alertView = UIAlertController.init(title: "Fehler bei der Internetverbindung", message: reasonString, preferredStyle: .alert)
             alertView.addAction(UIAlertAction.init(title: "Okay", style: .default, handler: { (action) in
-                self.session.startRunning()
+                self.session?.startRunning()
                 alertView.dismiss(animated: true, completion: nil)
             }))
             

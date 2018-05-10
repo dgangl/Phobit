@@ -18,14 +18,16 @@ class Database {
         
     }
     
-    func addNew(wholeString: String, companyName: String, Date: Date, Brutto: Double, Netto: Double, TenProzent: Double,ThirteenProzent : Double, NineteenProzent : Double, TwentyProzent: Double, Kontierung: String ) {
+    func addNew(wholeString: String?, companyName: String, Date: Date, Brutto: Double, Netto: Double, TenProzent: Double,ThirteenProzent : Double, NineteenProzent : Double, TwentyProzent: Double, Kontierung: String ) {
         
         //If no OCR Text is here - do not upload
-        
+        if(wholeString == nil){
+            return;
+        }
         
         //Setting the Document
         let docData: [String: Any] = [
-            "wholeString" : wholeString,
+            "wholeString" : wholeString ?? "",
             "companyName" : companyName,
             "Date" : Date,
             "Brutto" : Brutto,
@@ -116,7 +118,7 @@ class Database {
                 endThread = true;
                 completion(goAhead);
             } else {
-                
+                goAhead = false;
                 endThread = true;
                 //There is no User with this name
                 print("Document does not exist")
@@ -125,6 +127,7 @@ class Database {
         
         
         }
+       
     }
     
     func setTheNameForTheUser(nameOfTheUser: String) {

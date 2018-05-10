@@ -13,7 +13,7 @@ extension ScanningViewController {
     
     func gotImage() {
         
-        self.session.stopRunning()
+        self.session?.stopRunning()
         // webservice task here.
         // user information.
         // crop image.
@@ -45,17 +45,13 @@ extension ScanningViewController {
                         let tag = Tagger.init()
                         if let rechnungsersteller = tag.recognizeOCR_Result(für: response) {
                             self.billdata?.rechnungsersteller = rechnungsersteller
-                            UserDefaults.standard.set(response, forKey: "OCRstring")
                         }
-                        
-                        
-                        
-                        
+                        UserDefaults.standard.set(response, forKey: "OCRstring")
                         // end
                         
                         alertView.dismiss(animated: true, completion: {
                             self.overlay?.invisible()
-                            self.session.startRunning()
+                            self.session?.startRunning()
                             self.jumpToAuswertung(withImage: processor.getImage())
                             
                             
@@ -78,15 +74,16 @@ extension ScanningViewController {
                         
                         DispatchQueue.main.async {
                             self.cleanUp()
-                            self.session.startRunning()
+                            self.session?.startRunning()
                         }
                     }
                     
                 }, progressView: progressView)
             } else {
-                self.session.startRunning()
-                self.cleanUp()
-                
+                DispatchQueue.main.async {
+                    self.session?.startRunning()
+                    self.cleanUp()
+                }
             }
         }
     }
@@ -103,7 +100,7 @@ extension ScanningViewController {
     }
     
     
-    func jumpToAuswertung(withImage correctedImage: UIImage) {
+    @objc func jumpToAuswertung(withImage correctedImage: UIImage?) {
         /*
         guard let billdata = billdata else {
             let alert = UIAlertController.init(title: "Keinen passenden QR-Code gefunden!", message: nil, preferredStyle: .alert)
@@ -120,8 +117,11 @@ extension ScanningViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "Auswertung") as! AuswertungsTableViewController
         
         vc.bill = billdata
-        vc.image = correctedImage
         
+        if let image = image {
+            vc.image = correctedImage
+        }
+    
         let nvc = UINavigationController.init(rootViewController: vc)
         
         self.present(nvc, animated: true) {

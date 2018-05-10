@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 import Vision
+import LocalAuthentication
+
 
 class ScanningViewController: UIViewController {
     
@@ -31,7 +33,7 @@ class ScanningViewController: UIViewController {
     // AVFoundation Stuff
     var sessionCanRun = false
     
-    var session = AVCaptureSession.init()
+    var session: AVCaptureSession? = AVCaptureSession.init()
     var device: AVCaptureDevice?
     var photoOutput = AVCapturePhotoOutput.init()
     
@@ -68,6 +70,9 @@ class ScanningViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(jumpToAuswertung(withImage:)))
+        foundQRCodeBanner.addGestureRecognizer(tapRecognizer)
         
         
         let swipeToSearch = UISwipeGestureRecognizer.init(target: self, action: #selector(segueToSuchenBTN(_:)))
@@ -116,6 +121,7 @@ class ScanningViewController: UIViewController {
         addTheInfoView()
         
         
+        
         if sessionCanRun == false {
             
             DispatchQueue.global().async {
@@ -130,12 +136,16 @@ class ScanningViewController: UIViewController {
                 }
                 
                 self.setupSession()
-                self.session.startRunning()
+                self.session?.startRunning()
             }
 
 
         } else {
-            session.startRunning()
+            if let session = session {
+                session.startRunning()
+            } else {
+                print("error in settung up capture session.")
+            }
         }
     }
     
@@ -143,7 +153,7 @@ class ScanningViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        session.stopRunning()
+        session?.stopRunning()
         overlay?.stop()
         blitzButton.setTitle("Aus", for: .normal)
         
@@ -157,6 +167,7 @@ class ScanningViewController: UIViewController {
             print(error)
         }
     }
+    
     
     func addTheInfoView(){
         let infoViewBool = UserDefaults.standard.bool(forKey: "infoView")
@@ -199,12 +210,53 @@ class ScanningViewController: UIViewController {
     
     
     @IBAction func segueToSuchenBTN(_ sender: Any) {
-        self.performSegue(withIdentifier: "suchen", sender: nil)
+        if getAuthStatus() == true {
+            authentifizierung(seague: "suchen")
+        } else {
+            self.performSegue(withIdentifier: "suchen", sender: nil)
+        }
     }
     
     @IBAction func segueToEinstellungenBTN(_ sender: Any) {
-        self.performSegue(withIdentifier: "einstellungen", sender: nil)
+        if getAuthStatus() == true {
+            authentifizierung(seague: "einstellungen")
+        } else {
+            self.performSegue(withIdentifier: "einstellungen", sender: nil)
+        }
     }
+    
+    
+    // authentication
+    fileprivate func getAuthStatus() -> Bool{
+        return UserDefaults.standard.bool(forKey: "slider")
+    }
+
+    
+    fileprivate func authentifizierung(seague : String) {
+        
+        let myContext = LAContext()
+        let myLocalizedReasonString = "Authentifiziere dich um fortzufahren."
+        var authError: NSError?
+        
+        if myContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
+            myContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: myLocalizedReasonString) { success, evaluateError in
+                if success {
+                    DispatchQueue.main.async {
+                        // Code did match
+                        self.performSegue(withIdentifier: seague, sender: self)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        // Code did not match
+                    }
+                }
+            }
+        } else {
+            // No code on iPhone set... we continue...
+            self.performSegue(withIdentifier: seague, sender: nil)
+        }
+    }
+    // authentication end
     
    
     @IBAction func cameraBTN(_ sender: Any) {

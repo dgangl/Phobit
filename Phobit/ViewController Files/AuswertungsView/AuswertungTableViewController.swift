@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class AuswertungsTableViewController: UITableViewController {
     
@@ -14,6 +15,7 @@ class AuswertungsTableViewController: UITableViewController {
     var bill: BillData2?
     var tableDict: [IndexPath:Any]?
     var image : UIImage?
+    
     @IBOutlet weak var imageView: UIImageView!
     
     
@@ -58,6 +60,7 @@ class AuswertungsTableViewController: UITableViewController {
     }
     
     @objc func returnHome() {
+        Analytics.logEvent("Rechnung gescanned und abgebrochen", parameters: [:])
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -77,7 +80,10 @@ class AuswertungsTableViewController: UITableViewController {
         }
         let OCRString = UserDefaults.standard.string(forKey: "OCRstring");
         
-        dataBase.addNew(wholeString: OCRString ?? "nil", companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto(), TenProzent: getProzentsatz(value: 10), ThirteenProzent: getProzentsatz(value: 13), NineteenProzent: getProzentsatz(value: 19), TwentyProzent: getProzentsatz(value: 20), Kontierung: (bill?.kontierung)!);
+        Analytics.logEvent("Rechnung gescanned und hochgeladen", parameters: [:])
+        
+        
+        dataBase.addNew(wholeString: OCRString, companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto(), TenProzent: getProzentsatz(value: 10), ThirteenProzent: getProzentsatz(value: 13), NineteenProzent: getProzentsatz(value: 19), TwentyProzent: getProzentsatz(value: 20), Kontierung: (bill?.kontierung)!);
     }
     
     func getAllNetto() -> Double {
@@ -175,6 +181,11 @@ class AuswertungsTableViewController: UITableViewController {
     }
     
     func setImage(){
+        guard let image = image else {
+            print("no image to be saved")
+            return;
+        }
+        
         //ImageSaving Class
         let i = ImageData()
         //Setting a new UUID for each image so we dont have anything twice.
@@ -182,7 +193,8 @@ class AuswertungsTableViewController: UITableViewController {
         //Writing image to the document directory
         let string = uuid.uuidString
         bill?.imageURL = string
-        i.writeImageTo(name: string, imageToWrite: image!)
+        
+        i.writeImageTo(name: string, imageToWrite: image)
         print("UUID FROM SETTING THE IMAGE \(uuid)")
     }
     

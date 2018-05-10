@@ -46,8 +46,10 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
         default: print("Fehler")
         }
-        tableView.reloadData()
         
+        
+        
+        tableView.reloadData()
     }
     
 
