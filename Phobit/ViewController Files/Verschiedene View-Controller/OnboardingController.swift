@@ -25,6 +25,17 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        EmailBenutzer.addTarget(self, action: #selector(moveUp), for: .editingDidBegin)
+        CodeBenutzer.addTarget(self, action: #selector(moveUp), for: .editingDidBegin)
+        EmailBenutzer.addTarget(self, action: #selector(moveDown), for: .editingDidEnd)
+        CodeBenutzer.addTarget(self, action: #selector(moveDown), for: .editingDidEnd)
+        EmailBenutzer.addTarget(self, action: #selector(removeAchtungLabel), for: .editingDidBegin)
+        CodeBenutzer.addTarget(self, action: #selector(removeAchtungLabel), for: .editingDidBegin)
+        
+//        redesignTextFields()
+        
+        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         // Login.layer.cornerRadius = 20
@@ -55,6 +66,19 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(removeKeyboardListener)
         
     }
+    
+    @objc func moveUp(){
+        UIView.animate(withDuration: 0.2){
+            self.view.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y - 100)
+        }
+    }
+    
+    @objc func moveDown(){
+        UIView.animate(withDuration: 0.2){
+            self.view.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y + 100)
+        }
+    }
+    
     
     @objc func removeKeyboard(){
         self.EmailBenutzer.resignFirstResponder();
@@ -106,6 +130,12 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         
         
     }
+    
+    
+    
+    @objc func removeAchtungLabel(){
+        AchtungLabel.isHidden = true
+    }
     @IBAction func skipTouched(_ sender: Any) {
         ///THE FOLLOWING IS UNCOMMENTED BECAUSE OF ALPHA///
         
@@ -121,7 +151,10 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
 //        alert.addAction(cancelAction)
 //
 //        present(alert, animated: true, completion: nil)
-        
+        if(Skip.currentTitle == "Abbrechen"){
+            self.performSegue(withIdentifier: "toStart", sender: self)
+            
+        }else{
         
         let alert = UIAlertController(title: "Alpha Version", message: "Leider musst du uns bestätigen, das du zu den Alpha Testern gehörst. Logge dich deshalb bitte ein!", preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "Trotzdem Testen", style: .cancel, handler: { action in   self.performSegue(withIdentifier: "toStart", sender: nil)
@@ -133,12 +166,12 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
 //        alert.addAction(okayAction)
         //END REMOVE
         alert.addAction(cancelAction)
-        if(Skip.currentTitle! == "Abbrechen"){
+        if(Skip.currentTitle! == ""){
             self.performSegue(withIdentifier: "toStart", sender: self)
         }else{
             present(alert, animated: true, completion: nil)
         }
-        
+        }
     }
     @objc func goOn() {
         self.EmailBenutzer.resignFirstResponder()
@@ -202,6 +235,40 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
+    
+    
+    
+    
+    func redesignTextFields(){
+        let border = CALayer()
+        let border2 = CALayer()
+        
+        let width = CGFloat(2.0)
+        
+        
+        
+        border.borderColor = UIColor.white.cgColor
+        border2.borderColor = UIColor.white.cgColor
+        
+        
+        border.frame = CGRect(x: 0, y: CodeBenutzer.frame.size.height - width, width:  CodeBenutzer.frame.size.width, height: CodeBenutzer.frame.size.height)
+        border2.frame = CGRect(x: 0, y: EmailBenutzer.frame.size.height - width, width:  EmailBenutzer.frame.size.width, height: EmailBenutzer.frame.size.height)
+        
+        border.borderWidth = width
+        border2.borderWidth = width
+        
+        CodeBenutzer.layer.addSublayer(border)
+        EmailBenutzer.layer.addSublayer(border2)
+        
+        
+        CodeBenutzer.layer.masksToBounds = true
+        EmailBenutzer.layer.masksToBounds = true
+        
+
+        
+        
+    }
+    
 }
 
 
@@ -242,5 +309,6 @@ extension OnbordingController: MFMailComposeViewControllerDelegate{
         controller.dismiss(animated: true)
     }
 }
+
 
 
