@@ -58,9 +58,14 @@ extension UITableViewController: UISearchBarDelegate{
         textField.inputAccessoryView = toolBar
         
         tempSaveForTheNextExtention.toolBar = toolBar;
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
-    
+    @objc private func reloadData(){
+        self.tableView.reloadData()
+    }
     
     @objc func setToBetragSearch(){
         let tool = tempSaveForTheNextExtention.searchBar;

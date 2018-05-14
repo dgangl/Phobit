@@ -57,6 +57,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
         
         
         tableView.reloadData()
+        
     }
     
     
@@ -76,7 +77,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
     
     
     func textFieldInCellSelected(matrixNumber matrix: (Int, Int)) {
-        if isDetail == false {
+//        if is isDetail == false{
             let pickerView = storyboard?.instantiateViewController(withIdentifier: "SpaltenPicker") as! ZeilenPickerViewController
             pickerView.delegate = self
             pickerView.matrix = matrix
@@ -90,7 +91,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             }
             pickerView.modalPresentationStyle = .overCurrentContext
             present(pickerView, animated: false, completion: nil)
-        } // else do nothing
+//        }
         print(matrix)
     }
     
@@ -131,7 +132,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // we dont want the user to edit now.
-        if isDetail {return}
+//        if isDetail {return}
         
         
         tableView.deselectRow(at: indexPath, animated: true)
