@@ -65,8 +65,8 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
     func reloadBruttoGesamt(){
         var gesamtBrutto = 0.00
         
-        for i in 0 ... bill!.getNumberOfSteuerzeilen(){
-            let steuerzeile = tableDict![IndexPath.init(row: i, section: 2)] as! Steuerzeile
+        for zahl in 0 ..< bill!.getNumberOfSteuerzeilen(){
+            let steuerzeile = tableDict![IndexPath.init(row: zahl+1, section: 2)] as! Steuerzeile
             gesamtBrutto = gesamtBrutto + steuerzeile.getBrutto()
             
             
