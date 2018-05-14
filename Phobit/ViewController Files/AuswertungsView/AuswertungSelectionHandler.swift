@@ -35,15 +35,22 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             steuerzeile.setBrutto(brutto: steuerzeile.getNetto()*(1+(Double(steuerzeile.getProzent())/100)))//Brutto
             steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
             
+            reloadBruttoGesamt()
+            
+            
         case 2:
             steuerzeile.setProzentbetrag(prozentbetrag: doubleString)
             steuerzeile.setNetto(netto: steuerzeile.getProzentbetrag()/Double(steuerzeile.getProzent())*100)//Netto
             steuerzeile.setBrutto(brutto: steuerzeile.getProzentbetrag()+steuerzeile.getNetto())//Brutto
+            
+            reloadBruttoGesamt()
 
         case 3:
             steuerzeile.setBrutto(brutto: doubleString)
             steuerzeile.setNetto(netto: Double(steuerzeile.getBrutto()/(100+Double(steuerzeile.getProzent()))*100))//Nettto
             steuerzeile.setProzentbetrag(prozentbetrag: steuerzeile.getBrutto()-steuerzeile.getNetto())//MwSt
+            
+            reloadBruttoGesamt()
         default: print("Fehler")
         }
         
@@ -52,8 +59,20 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
         tableView.reloadData()
     }
     
-
     
+    /// Reloads the gesamt Brutto field on behold of all the others.
+    func reloadBruttoGesamt(){
+        var gesamtBrutto = 0.00
+        
+        for i in 0 ... bill!.getNumberOfSteuerzeilen(){
+            let steuerzeile = tableDict![IndexPath.init(row: i, section: 2)] as! Steuerzeile
+            gesamtBrutto = gesamtBrutto + steuerzeile.getBrutto()
+            
+            
+        }
+        bill?.gesamtBrutto = gesamtBrutto
+        
+    }
     
     
     func textFieldInCellSelected(matrixNumber matrix: (Int, Int)) {
