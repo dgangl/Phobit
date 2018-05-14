@@ -37,9 +37,8 @@ class SampleDataLoader {
         
         let mem = Memory()
         
-        for bill in billData {
-            mem.save(input: bill, append: true, target: nil)
-        }
+        //Saves and sorts the Array
+        mem.saveArray(inputArray: mem.sortBillData(array_to_sort: billData))
     }
     
     

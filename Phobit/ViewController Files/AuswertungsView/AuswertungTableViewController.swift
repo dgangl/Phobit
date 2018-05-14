@@ -55,6 +55,7 @@ class AuswertungsTableViewController: UITableViewController{
             imagePicker.image = image
             noImgeFoundLBL.isHidden = true
         } else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Speichern", style: .done, target: self, action: #selector(speichern))
             
             getImage()
             // navBar für detail vorbereiten
@@ -75,13 +76,63 @@ class AuswertungsTableViewController: UITableViewController{
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc public func speichern(){
+        bill?.merchChanges(tableDict: tableDict!)
+        print("saving BillData")
+        
+        if(bill?.rechnungsersteller.elementsEqual("Bitte Rechnungsersteller eingeben."))!{
+            let alert = UIAlertController.init(title: "Hoppala", message: "Leider können wir die Rechnung nicht speichern wenn du den Rechnungsersteller nicht eingegeben hast.", preferredStyle: .alert)
+            let okayAction = UIAlertAction.init(title: "Okay", style: .cancel, handler: {action in alert.dismiss(animated: true, completion: nil)})
+            alert.addAction(okayAction)
+            present(alert, animated: true, completion: nil)
+        }else{
+            
+            let mem = Memory.init()
+            guard let allBills = mem.read() else { print("Bills is empty."); return}
+            var newArray : [BillData2] = []
+            for bill in allBills{
+                if(bill.imageURL == self.bill?.imageURL && bill.datum == self.bill?.datum && bill.gesamtBrutto == self.bill?.gesamtBrutto){
+                    print("\(bill.rechnungsersteller) was the right one")
+                    newArray.append(self.bill!)
+                    
+                }else{
+                    newArray.append(bill)
+                }
+            }
+            print("THE NEW ARRAY HAS \(newArray.count) BILL DATAS IN IT. \n THE OLD HAD \(allBills.count)")
+            mem.saveArray(inputArray: mem.sortBillData(array_to_sort: newArray))
+            self.navigationItem.title = self.bill?.rechnungsersteller
+            //sends a notification to the tableView to reload its data after it got changed.
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+            
+            
+            
+            //NEEDED FOR DATABASE SAVING
+            //OVERWRITE EXISTING BILL.
+            
+            
+        }
+        
+    }
+    
     @objc func returnHomeAndSave() {
         bill?.merchChanges(tableDict: tableDict!)
         print("saving BillData")
+        
+        if(bill?.rechnungsersteller.elementsEqual("Bitte Rechnungsersteller eingeben."))!{
+            let alert = UIAlertController.init(title: "Hoppala", message: "Leider können wir die Rechnung nicht speichern wenn du den Rechnungsersteller nicht eingegeben hast.", preferredStyle: .alert)
+            let okayAction = UIAlertAction.init(title: "Okay", style: .cancel, handler: {action in alert.dismiss(animated: true, completion: nil)})
+            alert.addAction(okayAction)
+            present(alert, animated: true, completion: nil)
+        }else{
+        
         let mem = Memory.init()
         setImage()
         mem.save(input: bill!, append: true, target: self)
-        //
+            
+        //SORTING THE ARRAY RIGHT AT THE BEGINNING
+        if let array = mem.read(){mem.saveArray(inputArray: mem.sortBillData(array_to_sort: array))} else {return}
+            
         
         //NEEDED FOR DATABASE SAVING
         let dataBase = Database.init();
@@ -95,6 +146,9 @@ class AuswertungsTableViewController: UITableViewController{
         
         
         dataBase.addNew(wholeString: OCRString, companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto(), TenProzent: getProzentsatz(value: 10), ThirteenProzent: getProzentsatz(value: 13), NineteenProzent: getProzentsatz(value: 19), TwentyProzent: getProzentsatz(value: 20), Kontierung: (bill?.kontierung)!);
+            
+            
+        }
     }
     
     func getAllNetto() -> Double {
@@ -177,14 +231,14 @@ class AuswertungsTableViewController: UITableViewController{
                 cell.leftItem.text = object.value
                 cell.rightItem.text = descr
                 
-                if(isDetail) {cell.accessoryType = .none; cell.isUserInteractionEnabled = false}
+//                if(isDetail) {cell.accessoryType = .none; cell.isUserInteractionEnabled = false}
                 
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "oneItem") as! TextCell
                 cell.textField.text = object.value
                 
-                if(isDetail) {cell.accessoryType = .none; cell.isUserInteractionEnabled = false}
+//                if(isDetail) {cell.accessoryType = .none; cell.isUserInteractionEnabled = false}
                 
                 return cell
             }
