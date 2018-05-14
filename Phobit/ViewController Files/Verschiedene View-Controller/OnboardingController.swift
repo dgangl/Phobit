@@ -133,7 +133,7 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
 //        alert.addAction(okayAction)
         //END REMOVE
         alert.addAction(cancelAction)
-        if(Skip.currentTitle! == "Abbrechen"){
+        if(Skip.currentTitle! == ""){
             self.performSegue(withIdentifier: "toStart", sender: self)
         }else{
             present(alert, animated: true, completion: nil)
