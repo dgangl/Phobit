@@ -296,5 +296,6 @@ class ScanningViewController: UIViewController {
     
     @objc func appMovedToBackground() {
         self.blitzButton.setTitle("Aus", for: .normal)
+        self.billdata = nil
     }
 }
