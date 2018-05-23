@@ -70,6 +70,26 @@ class Memory{
         
     }
     
+    public func saveArray(inputArray: [BillData2]){
+        let encryptedArray = NSKeyedArchiver.archivedData(withRootObject: inputArray)
+        UserDefaults.standard.set(encryptedArray, forKey: String("\(UserData.getChoosen().email)"))
+    }
+    
+    
+    /// Sorts your BillData array depending on the Dates of all BillDatas
+    ///
+    /// - Parameter array_to_sort: your array to be sorted
+    /// - Returns: the sorted array
+    public func sortBillData(array_to_sort : [BillData2]) -> [BillData2]{
+        var array = array_to_sort
+//        array.sort(by: {$0.datum.compare($1.datum) == .orderedAscending})
+//        return array
+        array.sort { (s1, s2) -> Bool in
+            return s1.getDate() > s2.getDate()
+        }
+        return array
+    }
+    
     
     public func save(input: BillData2, append : Bool, target: UIViewController?){
         
