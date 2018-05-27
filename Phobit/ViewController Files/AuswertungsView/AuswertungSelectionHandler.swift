@@ -143,7 +143,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             pickerView.indexPath = indexPath
             pickerView.label = "Bitte gib den Rechnungsersteller ein."
             pickerView.modalPresentationStyle = .overCurrentContext
-            present(pickerView, animated: false, completion: nil)
+            present(pickerView, animated: true, completion: nil)
             
         case 1:
             let pickerView = storyboard?.instantiateViewController(withIdentifier: "DatePicker") as! DatePickerViewController
@@ -152,7 +152,9 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             let datum = tableDict![indexPath] as! Item
             pickerView.date = datum.value
             pickerView.modalPresentationStyle = .overCurrentContext
-            present(pickerView, animated: false, completion: nil)
+            present(pickerView, animated: true, completion: nil)
+            
+            
         case 3:
             let pickerView = storyboard?.instantiateViewController(withIdentifier: "KontierungsPicker") as! ChooseKontierungViewController
             pickerView.modalPresentationStyle = .overCurrentContext

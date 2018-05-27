@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Phobit/ViewController Files/AuswertungsView/AuswertungTableViewController.swift"
-            timestampString = "548020825.741658"
+            timestampString = "549140114.287935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -109,6 +109,22 @@
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "handleRectangles(request:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phobit/ViewController Files/AuswertungsView/AuswertungTableViewController.swift"
+            timestampString = "549140114.2880141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "speichern()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
