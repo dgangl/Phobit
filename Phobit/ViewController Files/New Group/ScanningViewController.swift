@@ -239,7 +239,7 @@ class ScanningViewController: UIViewController {
     fileprivate func authentifizierung(seague : String) {
         
         let myContext = LAContext()
-        let myLocalizedReasonString = "Authentifiziere dich um fortzufahren."
+        let myLocalizedReasonString = "Authentifiziere dich, um fortzufahren."
         var authError: NSError?
         
         if myContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {

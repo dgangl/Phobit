@@ -143,6 +143,9 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             pickerView.indexPath = indexPath
             pickerView.label = "Bitte gib den Rechnungsersteller ein."
             pickerView.modalPresentationStyle = .overCurrentContext
+            pickerView.textField.placeholder = bill?.rechnungsersteller
+            
+            pickerView.textField.setMarkedText(bill?.rechnungsersteller, selectedRange: NSRange.init((bill?.rechnungsersteller)!)!)
             present(pickerView, animated: true, completion: nil)
             
         case 1:

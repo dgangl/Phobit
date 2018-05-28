@@ -177,7 +177,7 @@ extension EinstellungsController: MFMailComposeViewControllerDelegate{
             
             mail.setToRecipients(["feedback.AlphaUser@gmail.com"])
             mail.setSubject("Feedback")
-            mail.setMessageBody("<h1> Feedback </h1> <p>Feedback/ Verbesserungsvorschläge: </p>", isHTML: true)
+            mail.setMessageBody("<h1> Mein User Feedback </h1> <br> <br> <br> <h3> In welchem Programmschritt / Bildschirm / Menü ist was aufgefallen? </h3>     <br> <br>                  <h3> Um Welche Uhrzeit hast du das beobachtet? </h3>  <br> <br> <h3> Was hab ich falsch gemacht, welches Verhalten des Programmes erstaunt dich, verwundert oder verärgert dich? </h3> <h3> Was hättest du erwartet? </h3> <br> <br> <h3> Kannst du die Situation nachstellen, wiederholen, kommt der Fehler / das unerwartete Ergebnis immer wieder an der selben Stelle, bei den selben Eingaben oder nach den gleiche. Bedienschritten? </h3> <br> <br> <p> Danke für deinen Einsatz und deine Zeit, diese Rückmeldung so detailliert auszufüllen! Mit deinem Feedback trägst du zur Weiterentwicklung von Phobit bei, gemeinsam machen wir die Welt ein klitzekleines bisschen besser. </p>", isHTML: true)
             present(mail, animated: true)
         } else {
             let alert = UIAlertController(title: "Hoppala", message: "Bitte überprüfe deine Einstellungen damit wir eine E-Mail erstellen können.", preferredStyle: UIAlertControllerStyle.alert)
