@@ -22,6 +22,10 @@ class DatePickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        pickerView.backgroundColor = .clear
+        datepicker.isHidden = false
 
         if let date = date {
             let df = DateFormatter()
@@ -41,7 +45,13 @@ class DatePickerViewController: UIViewController {
         
         pickerView.center = self.view.center
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.175){
+            self.pickerView.backgroundColor = .white
+            self.datepicker.isHidden = false
+            
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
