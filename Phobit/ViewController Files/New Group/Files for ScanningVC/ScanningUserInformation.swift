@@ -88,7 +88,7 @@ extension ScanningViewController {
             case .systemCancelled:
                 reasonString = "Wir können leider unsere Server nicht erreichen. Falls du über eine funktionierende Internetverbindung verfügst, liegt das Problem bei uns. Versuche es später bitte erneut."
             case .timeout:
-                reasonString = "Deine Internetverbindung ist leider zu langsam. Verbinde dich nach möglichkeit mit einem schnelleren WLAN oder suche einen besseren Standort auf um deinen Empfang zu verbessern."
+                reasonString = "Deine Internetverbindung ist leider zu langsam. Verbinde dich nach Möglichkeit mit einem schnelleren WLAN oder suche einen besseren Standort auf, um deinen Empfang zu verbessern."
             default:
                 break
             }

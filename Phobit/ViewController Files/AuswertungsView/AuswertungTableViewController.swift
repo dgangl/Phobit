@@ -54,7 +54,7 @@ class AuswertungsTableViewController: UITableViewController{
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Zurück", style: .plain, target: self, action: #selector(returnHome))
             imagePicker.image = image
             noImgeFoundLBL.isHidden = true
-        } else {
+        } else if(!UserData.getChoosen().name.elementsEqual("Demo Benutzer")){
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Speichern", style: .done, target: self, action: #selector(speichern))
             
             getImage()
@@ -62,6 +62,10 @@ class AuswertungsTableViewController: UITableViewController{
             self.title = bill?.rechnungsersteller
 //            self.navigationController?.navigationBar.backItem?.backBarButtonItem?.title = "Zurück"
             self.navigationController?.navigationBar.backItem?.title = "Zurück"
+        }else if(UserData.getChoosen().name.elementsEqual("Demo Benutzer")){
+            tableView.allowsSelection = false
+            tableView.isUserInteractionEnabled = false
+            
         }
     }
     override func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -91,7 +95,7 @@ class AuswertungsTableViewController: UITableViewController{
             guard let allBills = mem.read() else { print("Bills is empty."); return}
             var newArray : [BillData2] = []
             for bill in allBills{
-                if(bill.imageURL == self.bill?.imageURL && bill.datum == self.bill?.datum && bill.gesamtBrutto == self.bill?.gesamtBrutto){
+                if(bill.imageURL == self.bill?.imageURL){
                     print("\(bill.rechnungsersteller) was the right one")
                     newArray.append(self.bill!)
                     

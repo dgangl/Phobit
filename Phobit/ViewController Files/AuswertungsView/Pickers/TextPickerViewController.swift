@@ -14,6 +14,8 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     var label = "Bitte gib den ... ein"
     
+    var textFieldString : String = ""
+    
     // has to be set...
     var delegate: EditingProtocol?
     var indexPath: IndexPath?
@@ -22,6 +24,13 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pickerView.backgroundColor = UIColor.clear
+        textField.isHidden = true
+        informationLabel.isHidden = true
+        
+       
+        
 
         // tap anywhere to exit...
         let tapToExit = UITapGestureRecognizer.init(target: self, action: #selector(cancelSheet(_:)))
@@ -32,7 +41,9 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
         
         view.bringSubview(toFront: pickerView)
         informationLabel.text = label
-        
+        let range = NSRange.init(location: 0, length: textFieldString.count)
+        print(range)
+        textField.setMarkedText(textFieldString, selectedRange: range)
         
         
         
@@ -65,7 +76,7 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
         }
         
         
-        
+       
         
     }
 
@@ -76,6 +87,14 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
         
         // making the textfield selected...
         self.textField.becomeFirstResponder()
+        
+        UIView.animate(withDuration: 0.175){
+            self.pickerView.backgroundColor = UIColor.white
+            self.textField.isHidden = false
+            self.informationLabel.isHidden = false
+            
+        }
+        
     }
     
     
