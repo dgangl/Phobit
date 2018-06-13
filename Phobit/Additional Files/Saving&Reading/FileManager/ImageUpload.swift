@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import TesseractOCR
 
 class ImageUpload{
    
@@ -36,8 +35,9 @@ class ImageUpload{
     static func requestWith(endUrl: String, image: UIImage){
        
         let url = endUrl
-        var image = image.g8_blackAndWhite()
-        let imageData = UIImagePNGRepresentation((image?.g8_blackAndWhite())!)
+//        var image = image.g8_blackAndWhite()
+//        let imageData = UIImagePNGRepresentation((image?.g8_blackAndWhite())!)
+        let imageData = UIImagePNGRepresentation(image)
         let headers = [
             
             "ocrEngine" : "0",

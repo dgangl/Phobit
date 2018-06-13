@@ -6,7 +6,6 @@
 //  Copyright © 2018 LonoS. All rights reserved.
 //
 
-import TesseractOCR
 import UIKit
 import Vision
 
@@ -51,7 +50,7 @@ class ImageProcessor {
             if let cgImage = context.createCGImage(image!, from: (image?.extent)!) {
                 self.image = UIImage.init(cgImage: cgImage)
                 
-                self.image = self.image.g8_blackAndWhite()
+//                self.image = self.image.g8_blackAndWhite()
 
 
                 completion(true)
