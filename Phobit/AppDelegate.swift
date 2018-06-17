@@ -74,6 +74,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         themeApp()
+        var db = Database.init();
+        
+        db.getDicOfData { (diction : [String : Any]) in
+            print("Bla Bla Number ", diction.count.description)
+        }
+        //print(file);
+        
         return true
     }
     
