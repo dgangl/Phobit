@@ -215,12 +215,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Phobit/ViewController Files/AuswertungsView/Kontierung/ChooseKontierungViewController.swift"
-            timestampString = "551370850.4344521"
+            timestampString = "551373307.374601"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "addVerwendungszweck()"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "createNewVerwendungszweckEntry(verwendungszweck:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -231,13 +231,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Phobit/ViewController Files/AuswertungsView/Kontierung/ChooseKontierungViewController.swift"
-            timestampString = "551370850.435117"
+            timestampString = "551373307.37525"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "ChooseKontierungViewController"
-            landmarkType = "3">
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "prepareData()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -247,44 +247,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Phobit/ViewController Files/AuswertungsView/Kontierung/ChooseKontierungViewController.swift"
-            timestampString = "551370850.435465"
+            timestampString = "551373307.375668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "ChooseKontierungViewController"
-            landmarkType = "3">
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "prepareData()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Phobit/ViewController Files/AuswertungsView/Kontierung/ChooseKontierungViewController.swift"
-            timestampString = "551370976.4592659"
+            timestampString = "551373307.376086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
             endingLineNumber = "87"
             landmarkName = "enterPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Phobit/ViewController Files/AuswertungsView/Kontierung/ChooseKontierungViewController.swift"
-            timestampString = "551371031.701501"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

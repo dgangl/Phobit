@@ -33,8 +33,8 @@ class ChooseKontierungViewController: UITableViewController {
         searchController.searchBar.placeholder = "Gib deinen Suchbegriff ein"
         
         
-        
-        blackView?.addGestureRecognizer(UIGestureRecognizer.init(target: self, action: #selector(removeFromSuperview)))
+        blackView = UIView.init(frame: self.view.frame)
+        blackView?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(removeFromSuperview)))
         
         
         if #available(iOS 11.0, *) {
@@ -86,6 +86,7 @@ class ChooseKontierungViewController: UITableViewController {
     @IBAction func enterPressed(_ sender: Any) {
         createNewVerwendungszweckEntry(verwendungszweck: textField.text!)
         removeFromSuperview()
+        
     }
     
     @objc func removeFromSuperview(){
@@ -99,7 +100,6 @@ class ChooseKontierungViewController: UITableViewController {
     
     @objc func addVerwendungszweck(){
         
-        blackView = UIView.init(frame: self.view.frame)
         blackView?.backgroundColor = .black
         
         newVerwendung.center = (self.navigationController?.view.center)!
@@ -139,6 +139,15 @@ class ChooseKontierungViewController: UITableViewController {
         prepareData()
         sortTableView()
         tableView.reloadData()
+        
+        searchController.isActive = false
+        
+        
+        let kontobezeichnung = verwendungszweck
+        
+        self.dismiss(animated: true) {
+            self.delegate?.userDidEdit(inIndexPath: IndexPath.init(row: 0, section: 3), changedText: "\(kontobezeichnung ?? "Fehler")")
+        }
         
 
         
@@ -250,7 +259,7 @@ class ChooseKontierungViewController: UITableViewController {
             let setting = MGSwipeExpansionSettings.init()
             setting.buttonIndex = 0
             setting.fillOnTrigger = true
-            setting.threshold = 1.0
+            setting.threshold = 1.5
             cell.leftExpansion = setting
             cell.kontobezeichnung.text = konten[indexPath.row]
             
