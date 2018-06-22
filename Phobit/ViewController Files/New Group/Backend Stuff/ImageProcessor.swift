@@ -41,8 +41,11 @@ class ImageProcessor {
                 "inputBottomRight" : CIVector.init(cgPoint: castedResult.bottomRight.scale(to: imageSize!))
                 ]).applyingFilter("CIColorControls", parameters: [
                     kCIInputSaturationKey: 0,
-                    kCIInputContrastKey: 2
-                    ]).applyingFilter("CIUnsharpMask").applyingFilter("CISharpenLuminance")
+                    kCIInputContrastKey: 1.1,
+                    kCIInputBrightnessKey: 0
+                    ]).applyingFilter("CIExposureAdjust", parameters: [
+                        kCIInputEVKey: 0.7
+                        ])
             
             image = image?.oriented(forExifOrientation: Int32(CGImagePropertyOrientation.right.rawValue))
             

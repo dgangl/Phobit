@@ -7,8 +7,11 @@
 //
 
 import Foundation
-import Firebase
-class Database {
+import FirebaseFirestore
+
+
+class Database{
+
     let db:Firestore;
     
    //The UserName of the Database is declared in UserDefaults "DatabaseUserName"
@@ -19,6 +22,8 @@ class Database {
     }
     
     func addNew(wholeString: String?, companyName: String, Date: Date, Brutto: Double, Netto: Double, TenProzent: Double,ThirteenProzent : Double, NineteenProzent : Double, TwentyProzent: Double, Kontierung: String ) {
+        
+        let userName = UserDefaults.standard.string(forKey: "DatabaseUserName") ?? "";
         
         //If no OCR Text is here - do not upload
         if(wholeString == nil){
@@ -38,9 +43,9 @@ class Database {
             "20 Prozent" : TwentyProzent,
             "Kontierung" : Kontierung,
             
-        ]
+            ]
         
-        db.collection("Daten").addDocument(data: docData)/*Error Handling*/{ err in
+        db.collection("Nutzer").document(userName).collection("Daten").addDocument(data: docData)/*Error Handling*/{ err in
             //Block Start
             if let _ = err {
                 print("DATABASE=> ERROR WRITING NEW DOCUMENT")
@@ -49,7 +54,6 @@ class Database {
             }
             //Block end
         }
-        
     }
     
     func getWholeString() -> [String] {
@@ -82,10 +86,6 @@ class Database {
     func checkUser(name: String, passwort: String, completion: @escaping (Bool)->())  {
         var goAhead = false;
         var endThread = false;
-        
-        
-        
-        
         
         
         //Try to find the cirtain document
@@ -135,6 +135,80 @@ class Database {
         db.collection("Nutzer").document(userName).updateData(["Name" : nameOfTheUser]);
     }
     
+    func getDicOfData(completion: @escaping ([String : [String : Any]]) -> ()) {
+        var dictionary: [String: [String:Any]] = [:];
+        db.collection("Daten").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    dictionary[UUID.init().uuidString] = document.data();
+                    
+                }
+                completion(dictionary);
+            }
+            
+            
+        }
+    }
+    
+    func getDicOfUser() -> [String : Any]{
+        var names : [String] = [];
+        var sucCollected : Bool = false;
+        var dictionary: [String:Any] = [:];
+        
+        db.collection("Nutzer").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("Running through the names")
+                    for doc in document.data(){
+                        
+                        names.append(doc.key);
+                    }
+                    print("Got the Users Name")
+                    sucCollected = true;
+                }
+            }
+            
+        }
+        
+        while(sucCollected != true){
+            sleep(3);
+            print("Waiting for the Users Name")
+        }
+        var counter : Int = 0;
+        
+        for nutzer in names{
+            
+            db.collection("Nutzer").document(nutzer).collection("Daten").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        for doc in document.data(){
+                            dictionary[doc.key] = doc.value;
+                        }
+                    }
+                }
+                counter = counter + 1;
+                print("Read a Doc")
+            }
+            
+        }
+        
+        while(counter <= names.count){
+            
+            sleep(3);
+            print("Waiting for the DATAS")
+            
+        }
+        
+        return dictionary;
+        
+    }
    
     
     }
