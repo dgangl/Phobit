@@ -13,7 +13,7 @@ class AuswertungsTableViewController: UITableViewController{
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    let sections = ["Rechnungsersteller", " ", "Steueraufstellung", "Kontierungsvorschlag", "Bezahlung"]
+    let sections = ["Rechnungsersteller", " ", "Steueraufstellung", "Verwendungszweck", "Bezahlung"]
     var bill: BillData2?
     var tableDict: [IndexPath:Any]?
     var image : UIImage?
@@ -24,11 +24,16 @@ class AuswertungsTableViewController: UITableViewController{
     @IBOutlet weak var imagePicker: UIImageView!
     @IBOutlet weak var noImgeFoundLBL: UILabel!
     
+    
+    
     // falls der VC als DetailView benutzt wird. (defaultmäßig false)
     var isDetail = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(bill?.rechnungsersteller != "Bitte Rechnungsersteller eigeben"){
+            self.navigationItem.title = bill?.rechnungsersteller
+        }
     
         //zooming for image
         self.scrollView.minimumZoomScale = 1.0
@@ -60,12 +65,15 @@ class AuswertungsTableViewController: UITableViewController{
             getImage()
             // navBar für detail vorbereiten
             self.title = bill?.rechnungsersteller
-//            self.navigationController?.navigationBar.backItem?.backBarButtonItem?.title = "Zurück"
             self.navigationController?.navigationBar.backItem?.title = "Zurück"
         }else if(UserData.getChoosen().name.elementsEqual("Demo Benutzer")){
             tableView.allowsSelection = false
             tableView.isUserInteractionEnabled = false
             
+        }
+        if(!isDetail){
+            self.navigationItem.title = "Auswertung"
+
         }
     }
     override func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -76,7 +84,7 @@ class AuswertungsTableViewController: UITableViewController{
     }
     
     @objc func returnHome() {
-        Analytics.logEvent("Rechnung gescanned und abgebrochen", parameters: [:])
+        Analytics.logEvent("Rechnung_gescanned_und_abgebrochen", parameters: [:])
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -95,7 +103,12 @@ class AuswertungsTableViewController: UITableViewController{
             guard let allBills = mem.read() else { print("Bills is empty."); return}
             var newArray : [BillData2] = []
             for bill in allBills{
-                if(bill.imageURL == self.bill?.imageURL){
+                
+                print(bill.uuid)
+                print(self.bill?.uuid)
+                
+                if(bill.uuid == self.bill?.uuid && bill.imageURL == self.bill?.imageURL){
+                    print("SAVED NEW BILL DATA")
                     print("\(bill.rechnungsersteller) was the right one")
                     newArray.append(self.bill!)
                     
@@ -105,7 +118,12 @@ class AuswertungsTableViewController: UITableViewController{
             }
             print("THE NEW ARRAY HAS \(newArray.count) BILL DATAS IN IT. \n THE OLD HAD \(allBills.count)")
             mem.saveArray(inputArray: mem.sortBillData(array_to_sort: newArray))
-            self.navigationItem.title = self.bill?.rechnungsersteller
+            
+            
+            
+            
+                self.navigationItem.title = self.bill?.rechnungsersteller
+            
             //sends a notification to the tableView to reload its data after it got changed.
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
             
@@ -120,6 +138,17 @@ class AuswertungsTableViewController: UITableViewController{
     }
     
     @objc func returnHomeAndSave() {
+        let mem = Memory.init()
+        if(mem.duplicateProver(input: bill!)){
+            let alert = UIAlertController.init(title: "Vorsicht.", message: "Du hast diese Rechnung bereits eingescanned. Bist du dir sicher das du sie ein zweites Mal speichern willst?", preferredStyle: .alert)
+            let jaAction = UIAlertAction.init(title: "Ja", style: .cancel, handler: {action in alert.dismiss(animated: true, completion: nil)})
+            let neinAction = UIAlertAction.init(title: "Diese Rechnung verwerfen", style: .destructive, handler: {action in self.returnHome(); alert.dismiss(animated: true, completion: nil)})
+            alert.addAction(jaAction)
+            alert.addAction(neinAction)
+            present(alert, animated: true, completion: nil)
+        }
+        
+        
         bill?.merchChanges(tableDict: tableDict!)
         print("saving BillData")
         
@@ -130,7 +159,7 @@ class AuswertungsTableViewController: UITableViewController{
             present(alert, animated: true, completion: nil)
         }else{
         
-        let mem = Memory.init()
+        
         setImage()
         mem.save(input: bill!, append: true, target: self)
             
@@ -146,7 +175,7 @@ class AuswertungsTableViewController: UITableViewController{
         }
         let OCRString = UserDefaults.standard.string(forKey: "OCRstring");
         
-        Analytics.logEvent("Rechnung gescanned und hochgeladen", parameters: [:])
+            Analytics.logEvent("Rechnung_gescanned_und_hochgeladen", parameters: [:])
         
         
         dataBase.addNew(wholeString: OCRString, companyName: (bill?.rechnungsersteller)!, Date: (bill?.getDate())!, Brutto: (bill?.gesamtBrutto)!, Netto: getAllNetto(), TenProzent: getProzentsatz(value: 10), ThirteenProzent: getProzentsatz(value: 13), NineteenProzent: getProzentsatz(value: 19), TwentyProzent: getProzentsatz(value: 20), Kontierung: (bill?.kontierung)!);

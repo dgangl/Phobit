@@ -90,6 +90,19 @@ class Memory{
         return array
     }
     
+    public func duplicateProver(input: BillData2) -> Bool{
+        var allMems = read()
+        
+        for bill in allMems!{
+            if(bill.uuid == input.uuid){
+                return true
+            }
+        }
+        return false
+        
+        
+    }
+    
     
     public func save(input: BillData2, append : Bool, target: UIViewController?){
         

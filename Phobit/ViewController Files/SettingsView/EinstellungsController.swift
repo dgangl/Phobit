@@ -137,6 +137,7 @@ class EinstellungsController: UITableViewController{
     
     @IBAction func reactivateTipps(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "infoView")
+        UserDefaults.standard.set(false, forKey: "infoViewSearch")
         let doneView = UIAlertController.init(title: "Deine Tipps werden wieder angezeigt", message: nil, preferredStyle: .alert)
         present(doneView, animated: true, completion: nil)
         
@@ -177,15 +178,16 @@ extension EinstellungsController: MFMailComposeViewControllerDelegate{
             
             mail.setToRecipients(["feedback.AlphaUser@gmail.com"])
             mail.setSubject("Feedback")
-            mail.setMessageBody("<h1> Mein User Feedback </h1> <br> <br> <br> <h3> In welchem Programmschritt / Bildschirm / Menü ist was aufgefallen? </h3>     <br> <br>                  <h3> Um Welche Uhrzeit hast du das beobachtet? </h3>  <br> <br> <h3> Was hab ich falsch gemacht, welches Verhalten des Programmes erstaunt dich, verwundert oder verärgert dich? </h3> <h3> Was hättest du erwartet? </h3> <br> <br> <h3> Kannst du die Situation nachstellen, wiederholen, kommt der Fehler / das unerwartete Ergebnis immer wieder an der selben Stelle, bei den selben Eingaben oder nach den gleiche. Bedienschritten? </h3> <br> <br> <p> Danke für deinen Einsatz und deine Zeit, diese Rückmeldung so detailliert auszufüllen! Mit deinem Feedback trägst du zur Weiterentwicklung von Phobit bei, gemeinsam machen wir die Welt ein klitzekleines bisschen besser. </p>", isHTML: true)
+            mail.setMessageBody("<h1> Mein User Feedback </h1> <br> <br> <br> <h3> In welchem Programmschritt / Bildschirm / Menü ist was aufgefallen? </h3>     <br> <br>                  <h3> Um Welche Uhrzeit hast du das beobachtet? </h3>  <br> <br> <h3> Was hab ich falsch gemacht, welches Verhalten des Programmes erstaunt dich, verwundert oder verärgert dich? </h3> <h3> Was hättest du erwartet? </h3> <br> <br> <h3> Kannst du die Situation nachstellen, wiederholen, kommt der Fehler / das unerwartete Ergebnis immer wieder an der selben Stelle, bei den selben Eingaben oder nach den gleichen Bedienschritten? </h3> <br> <br> <p> Danke für deinen Einsatz und deine Zeit, diese Rückmeldung so detailliert auszufüllen! Mit deinem Feedback trägst du zur Weiterentwicklung von Phobit bei, gemeinsam machen wir die Welt ein klitzekleines bisschen besser. </p>", isHTML: true)
             present(mail, animated: true)
         } else {
-            let alert = UIAlertController(title: "Hoppala", message: "Bitte überprüfe deine Einstellungen damit wir eine E-Mail erstellen können.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Hoppala", message: "Wir konnten leider keine E-Mail erstellen. Überprüfe deinen Mail Account.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { action in
                 alert.dismiss(animated: true, completion: nil)
             }))
             self.present(alert, animated: true, completion: nil)
         }
+        
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {

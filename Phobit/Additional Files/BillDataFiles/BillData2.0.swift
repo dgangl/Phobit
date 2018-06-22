@@ -30,7 +30,8 @@ class BillData2: NSObject, NSCoding {
     var kontierung: String = ""
     var bezahlung: String = ""
     var imageURL: String = ""
-    var uploaded: Bool = false;
+    var uploaded: Bool = false
+    var uuid : String = ""
     
     //ENCODE
     func encode(with aCoder: NSCoder) {
@@ -42,6 +43,7 @@ class BillData2: NSObject, NSCoding {
         aCoder.encode(bezahlung, forKey: "bezahlung")
         aCoder.encode(imageURL, forKey: "url")
         aCoder.encode(uploaded, forKey: "status")
+        aCoder.encode(uuid, forKey: "uuid")
     }
     //DECODE
     required init?(coder aDecoder: NSCoder) {
@@ -53,6 +55,8 @@ class BillData2: NSObject, NSCoding {
         self.bezahlung = aDecoder.decodeObject(forKey: "bezahlung") as? String ?? ""
         self.imageURL = aDecoder.decodeObject(forKey: "url") as? String ?? ""
         self.uploaded = aDecoder.decodeBool(forKey: "status")
+        self.uuid = aDecoder.decodeObject(forKey: "uuid") as? String ?? ""
+        
     }
     
     
@@ -67,7 +71,7 @@ class BillData2: NSObject, NSCoding {
         
     }
     //New Init
-    init(steuerzeilen: [Steuerzeile], gesamtBrutto: Double, datum : String, rechnungsersteller: String, kontierung: String, bezahlung: String, uploaded: Bool) {
+    init(steuerzeilen: [Steuerzeile], gesamtBrutto: Double, datum : String, rechnungsersteller: String, kontierung: String, bezahlung: String, uploaded: Bool, uuid: String) {
         self.steuerzeilen = steuerzeilen
         self.gesamtBrutto = gesamtBrutto
         self.datum = datum
@@ -75,7 +79,7 @@ class BillData2: NSObject, NSCoding {
         self.kontierung = kontierung
         self.bezahlung = bezahlung
         self.uploaded = uploaded
-        
+        self.uuid = uuid
     }
     
     //EMPTY INIT

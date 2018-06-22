@@ -9,13 +9,21 @@
 /* Begin PBXBuildFile section */
 		160C034E2000B20B00BD3EC2 /* EinstellungsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160C034D2000B20B00BD3EC2 /* EinstellungsController.swift */; };
 		160C03502001864200BD3EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */; };
+		1618676920D69C1E0031FC87 /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618676820D69C1E0031FC87 /* ScanningViewController.swift */; };
 		1638DE2F2075597300FD069C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1638DE2E2075597300FD069C /* libz.tbd */; };
 		163C3343204B121B00D03E41 /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C3342204B121B00D03E41 /* ImageUpload.swift */; };
 		163C50AC2056AE230084701B /* App_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C50AB2056AE230084701B /* App_Settings.swift */; };
 		164809BA2075264E00B44A60 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164809B92075264E00B44A60 /* CustomSegue.swift */; };
 		164840762007B2980023AC43 /* QRSplitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164840752007B2980023AC43 /* QRSplitter.swift */; };
 		1654ED082017B7EC00529C6B /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1654ED072017B7EB00529C6B /* OnboardingController.swift */; };
-		168BD09D206F93EE00431336 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 168BD09C206F93EE00431336 /* tessdata */; };
+		1666D96C20D18C6E00F48AE6 /* Phobit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666D96B20D18C6E00F48AE6 /* Phobit_Tests.swift */; };
+		1666D97420D18D5100F48AE6 /* Phobit_UI_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666D97320D18D5100F48AE6 /* Phobit_UI_Tests.swift */; };
+		1666D97520D1917E00F48AE6 /* BillData2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAB2037295300D0C36E /* BillData2.0.swift */; };
+		1666D97620D1940800F48AE6 /* Steuerzeile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAD20372D1200D0C36E /* Steuerzeile.swift */; };
+		1666D97720D1942400F48AE6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9062202DDCE800453E6E /* UserData.swift */; };
+		1666D97820D1942400F48AE6 /* CustomFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983DEB1420166C0C00F98A9C /* CustomFormat.swift */; };
+		1666D97D20D54C9D00F48AE6 /* VerwendungszweckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666D97C20D54C9D00F48AE6 /* VerwendungszweckTests.swift */; };
+		1666D97E20D68FA700F48AE6 /* EditingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB3020387B5D00249850 /* EditingProtocol.swift */; };
 		169E8BAC2037295300D0C36E /* BillData2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAB2037295300D0C36E /* BillData2.0.swift */; };
 		169E8BAE20372D1200D0C36E /* Steuerzeile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAD20372D1200D0C36E /* Steuerzeile.swift */; };
 		16B0434E2091CF5200D89E93 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0434D2091CF5200D89E93 /* NeuralNetwork.swift */; };
@@ -61,7 +69,6 @@
 		9893AB62203B221D00249850 /* DataMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB61203B221D00249850 /* DataMaster.swift */; };
 		98A9E0092098AC03008E142D /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0082098AC03008E142D /* WebService.swift */; };
 		98A9E00B2098AC0B008E142D /* AutoCaptureObservator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E00A2098AC0B008E142D /* AutoCaptureObservator.swift */; };
-		98A9E00E2098B18D008E142D /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E00D2098B18D008E142D /* ScanningViewController.swift */; };
 		98A9E0112098B324008E142D /* ScanningUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0102098B324008E142D /* ScanningUserInformation.swift */; };
 		98A9E0132098B48B008E142D /* ScanningCameraStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0122098B48B008E142D /* ScanningCameraStuff.swift */; };
 		98A9E0152098C216008E142D /* ScanningVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0142098C216008E142D /* ScanningVision.swift */; };
@@ -78,6 +85,16 @@
 		98D4ACEC2098EA2A009FD192 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D4ACEB2098EA2A009FD192 /* ImageProcessor.swift */; };
 		98D768041FF52DDC00876B3E /* SuchfunktionDaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D768031FF52DDC00876B3E /* SuchfunktionDaten.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1666D96E20D18C6E00F48AE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 981B674A1FDC7551008D9835 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 981B67511FDC7551008D9835;
+			remoteInfo = Phobit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		98AD242B1FF55E4600417176 /* Embed App Extensions */ = {
@@ -96,6 +113,7 @@
 		160C034D2000B20B00BD3EC2 /* EinstellungsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinstellungsController.swift; sourceTree = "<group>"; };
 		160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16162C541FF58EF5002000E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Phobit/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		1618676820D69C1E0031FC87 /* ScanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanningViewController.swift; path = "Phobit/ViewController Files/AuswertungsView/ScanningViewController.swift"; sourceTree = SOURCE_ROOT; };
 		1638DE28207551E600FD069C /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		1638DE2A207551F100FD069C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		1638DE2C207551FF00FD069C /* TesseractOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +125,13 @@
 		1648406620074E8B0023AC43 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		164840752007B2980023AC43 /* QRSplitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRSplitter.swift; sourceTree = "<group>"; };
 		1654ED072017B7EB00529C6B /* OnboardingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
-		168BD09C206F93EE00431336 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		1666D96920D18C6E00F48AE6 /* Phobit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Phobit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1666D96B20D18C6E00F48AE6 /* Phobit_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phobit_Tests.swift; sourceTree = "<group>"; };
+		1666D96D20D18C6E00F48AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1666D97320D18D5100F48AE6 /* Phobit_UI_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phobit_UI_Tests.swift; sourceTree = "<group>"; };
+		1666D97C20D54C9D00F48AE6 /* VerwendungszweckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerwendungszweckTests.swift; sourceTree = "<group>"; };
+		1666D98020D6903C00F48AE6 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		1666D98120D6908400F48AE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		169E8BAB2037295300D0C36E /* BillData2.0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillData2.0.swift; sourceTree = "<group>"; };
 		169E8BAD20372D1200D0C36E /* Steuerzeile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steuerzeile.swift; sourceTree = "<group>"; };
 		16B0434D2091CF5200D89E93 /* NeuralNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
@@ -149,14 +173,13 @@
 		9893AB3020387B5D00249850 /* EditingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProtocol.swift; sourceTree = "<group>"; };
 		9893AB3320387E4200249850 /* TextPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerViewController.swift; sourceTree = "<group>"; };
 		9893AB3520387E4E00249850 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
-		9893AB57203A355200249850 /* SpaltenSelectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaltenSelectionProtocol.swift; sourceTree = "<group>"; };
+		9893AB57203A355200249850 /* SpaltenSelectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpaltenSelectionProtocol.swift; path = "../New Group/SpaltenSelectionProtocol.swift"; sourceTree = "<group>"; };
 		9893AB5B203B01BB00249850 /* ChooseKontierungViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKontierungViewController.swift; sourceTree = "<group>"; };
 		9893AB5D203B024100249850 /* KontierungTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontierungTableViewCell.swift; sourceTree = "<group>"; };
 		9893AB5F203B07B800249850 /* PhobitKontenplan.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PhobitKontenplan.csv; sourceTree = "<group>"; };
 		9893AB61203B221D00249850 /* DataMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMaster.swift; sourceTree = "<group>"; };
 		98A9E0082098AC03008E142D /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		98A9E00A2098AC0B008E142D /* AutoCaptureObservator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCaptureObservator.swift; sourceTree = "<group>"; };
-		98A9E00D2098B18D008E142D /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
 		98A9E0102098B324008E142D /* ScanningUserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningUserInformation.swift; sourceTree = "<group>"; };
 		98A9E0122098B48B008E142D /* ScanningCameraStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningCameraStuff.swift; sourceTree = "<group>"; };
 		98A9E0142098C216008E142D /* ScanningVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningVision.swift; sourceTree = "<group>"; };
@@ -165,7 +188,7 @@
 		98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedEffectView.swift; sourceTree = "<group>"; };
 		98B767222006C2E000AFE504 /* Monate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monate.swift; sourceTree = "<group>"; };
 		98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
-		98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaltenTableViewCell.swift; sourceTree = "<group>"; };
+		98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpaltenTableViewCell.swift; path = "../New Group/SpaltenTableViewCell.swift"; sourceTree = "<group>"; };
 		98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesamtBruttoTableViewCell.swift; sourceTree = "<group>"; };
 		98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSuggestions.swift; sourceTree = "<group>"; };
 		98CFEDBB20A233E80045ADF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -175,6 +198,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1666D96620D18C6E00F48AE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		981B674F1FDC7551008D9835 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,6 +270,15 @@
 			path = Splitter;
 			sourceTree = "<group>";
 		};
+		1618676A20D69D480031FC87 /* Kontierung */ = {
+			isa = PBXGroup;
+			children = (
+				9893AB5B203B01BB00249850 /* ChooseKontierungViewController.swift */,
+				9893AB5D203B024100249850 /* KontierungTableViewCell.swift */,
+			);
+			path = Kontierung;
+			sourceTree = "<group>";
+		};
 		1648406420074E8A0023AC43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +291,26 @@
 				47D9359019092BBE9AE0841F /* Pods_Phobit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16564D2320D69B20003F57A4 /* Steueraufstellung */ = {
+			isa = PBXGroup;
+			children = (
+				9893AB57203A355200249850 /* SpaltenSelectionProtocol.swift */,
+				98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */,
+			);
+			path = Steueraufstellung;
+			sourceTree = "<group>";
+		};
+		1666D96A20D18C6E00F48AE6 /* Phobit_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1666D97C20D54C9D00F48AE6 /* VerwendungszweckTests.swift */,
+				1666D97320D18D5100F48AE6 /* Phobit_UI_Tests.swift */,
+				1666D96B20D18C6E00F48AE6 /* Phobit_Tests.swift */,
+				1666D96D20D18C6E00F48AE6 /* Info.plist */,
+			);
+			path = Phobit_Tests;
 			sourceTree = "<group>";
 		};
 		1687771B1FEEAFFB00A3B2AC /* Verschiedene View-Controller */ = {
@@ -336,6 +395,7 @@
 			children = (
 				98CFEDBB20A233E80045ADF2 /* GoogleService-Info.plist */,
 				981B67541FDC7551008D9835 /* Phobit */,
+				1666D96A20D18C6E00F48AE6 /* Phobit_Tests */,
 				981B67531FDC7551008D9835 /* Products */,
 				1648406420074E8A0023AC43 /* Frameworks */,
 				56E48559D369FC81A17F8AD9 /* Pods */,
@@ -346,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				981B67521FDC7551008D9835 /* Phobit.app */,
+				1666D96920D18C6E00F48AE6 /* Phobit_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -362,7 +423,6 @@
 				981B67591FDC7551008D9835 /* Main.storyboard */,
 				160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */,
 				981B67611FDC7551008D9835 /* Info.plist */,
-				168BD09C206F93EE00431336 /* tessdata */,
 				16162C541FF58EF5002000E1 /* Images.xcassets */,
 			);
 			path = Phobit;
@@ -396,7 +456,7 @@
 		9822B5CE201CE3A000C36A1F /* KameraView */ = {
 			isa = PBXGroup;
 			children = (
-				98A9E00D2098B18D008E142D /* ScanningViewController.swift */,
+				1618676820D69C1E0031FC87 /* ScanningViewController.swift */,
 				98A9E00F2098B30C008E142D /* Files for ScanningVC */,
 				98A9E00C2098AC11008E142D /* Backend Stuff */,
 			);
@@ -410,15 +470,13 @@
 				9893AB3220387E1500249850 /* Pickers */,
 				98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */,
 				9893AB2E20387B2C00249850 /* AuswertungSelectionHandler.swift */,
-				9893AB3020387B5D00249850 /* EditingProtocol.swift */,
 				981B676B1FDC7B61008D9835 /* AuswertungTableViewController.swift */,
-				98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */,
-				9893AB57203A355200249850 /* SpaltenSelectionProtocol.swift */,
-				9893AB5B203B01BB00249850 /* ChooseKontierungViewController.swift */,
+				9893AB3020387B5D00249850 /* EditingProtocol.swift */,
+				16564D2320D69B20003F57A4 /* Steueraufstellung */,
 				983789921FEC3DC400718A32 /* TwoItemsCell.swift */,
 				983789941FEC3DD000718A32 /* TextCell.swift */,
-				9893AB5D203B024100249850 /* KontierungTableViewCell.swift */,
 				983789961FEC4B2B00718A32 /* InputType.swift */,
+				1618676A20D69D480031FC87 /* Kontierung */,
 			);
 			path = AuswertungsView;
 			sourceTree = "<group>";
@@ -460,6 +518,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1666D96820D18C6E00F48AE6 /* Phobit_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1666D97020D18C6E00F48AE6 /* Build configuration list for PBXNativeTarget "Phobit_Tests" */;
+			buildPhases = (
+				1666D96520D18C6E00F48AE6 /* Sources */,
+				1666D96620D18C6E00F48AE6 /* Frameworks */,
+				1666D96720D18C6E00F48AE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1666D96F20D18C6E00F48AE6 /* PBXTargetDependency */,
+			);
+			name = Phobit_Tests;
+			productName = Phobit_Tests;
+			productReference = 1666D96920D18C6E00F48AE6 /* Phobit_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		981B67511FDC7551008D9835 /* Phobit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 981B67641FDC7551008D9835 /* Build configuration list for PBXNativeTarget "Phobit" */;
@@ -487,10 +563,15 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = "";
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = LonoS;
 				TargetAttributes = {
+					1666D96820D18C6E00F48AE6 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 981B67511FDC7551008D9835;
+					};
 					981B67511FDC7551008D9835 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -502,7 +583,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 981B67491FDC7551008D9835;
@@ -511,11 +591,19 @@
 			projectRoot = "";
 			targets = (
 				981B67511FDC7551008D9835 /* Phobit */,
+				1666D96820D18C6E00F48AE6 /* Phobit_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1666D96720D18C6E00F48AE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		981B67501FDC7551008D9835 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -525,7 +613,6 @@
 				9893AB60203B07B900249850 /* PhobitKontenplan.csv in Resources */,
 				981B675B1FDC7551008D9835 /* Main.storyboard in Resources */,
 				984DD7A5205081330098BE0F /* sampleData.txt in Resources */,
-				168BD09D206F93EE00431336 /* tessdata in Resources */,
 				98CFEDBC20A233E80045ADF2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +681,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1666D96520D18C6E00F48AE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1666D96C20D18C6E00F48AE6 /* Phobit_Tests.swift in Sources */,
+				1666D97620D1940800F48AE6 /* Steuerzeile.swift in Sources */,
+				1666D97520D1917E00F48AE6 /* BillData2.0.swift in Sources */,
+				1666D97E20D68FA700F48AE6 /* EditingProtocol.swift in Sources */,
+				1666D97720D1942400F48AE6 /* UserData.swift in Sources */,
+				1666D97D20D54C9D00F48AE6 /* VerwendungszweckTests.swift in Sources */,
+				1666D97420D18D5100F48AE6 /* Phobit_UI_Tests.swift in Sources */,
+				1666D97820D1942400F48AE6 /* CustomFormat.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		981B674E1FDC7551008D9835 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -621,13 +723,13 @@
 				3CAB9067202DDD6C00453E6E /* LoginTableViewCell.swift in Sources */,
 				983789951FEC3DD000718A32 /* TextCell.swift in Sources */,
 				3C2A41DA2090C91D00FE1CE9 /* Database.swift in Sources */,
+				1618676920D69C1E0031FC87 /* ScanningViewController.swift in Sources */,
 				163C50AC2056AE230084701B /* App_Settings.swift in Sources */,
 				980270C1208F0B1D0033E808 /* DateUtilities.swift in Sources */,
 				98A9E00B2098AC0B008E142D /* AutoCaptureObservator.swift in Sources */,
 				169E8BAE20372D1200D0C36E /* Steuerzeile.swift in Sources */,
 				3C8D76FB2095E4FB007D5EBA /* SnapContainerViewController.swift in Sources */,
 				981B676C1FDC7B61008D9835 /* AuswertungTableViewController.swift in Sources */,
-				98A9E00E2098B18D008E142D /* ScanningViewController.swift in Sources */,
 				169E8BAC2037295300D0C36E /* BillData2.0.swift in Sources */,
 				16FD6CA6204479C100D8B88D /* AccountTableViewController.swift in Sources */,
 				98BA5AB520379D31004655A0 /* SpaltenTableViewCell.swift in Sources */,
@@ -664,11 +766,21 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1666D96F20D18C6E00F48AE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 981B67511FDC7551008D9835 /* Phobit */;
+			targetProxy = 1666D96E20D18C6E00F48AE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		981B67591FDC7551008D9835 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				981B675A1FDC7551008D9835 /* Base */,
+				1666D98020D6903C00F48AE6 /* de */,
+				1666D98120D6908400F48AE6 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -676,10 +788,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1666D97120D18C6E00F48AE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4365VP3HP5;
+				INFOPLIST_FILE = Phobit_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = "lab73.Phobit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Phobit.app/Phobit";
+			};
+			name = Debug;
+		};
+		1666D97220D18C6E00F48AE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4365VP3HP5;
+				INFOPLIST_FILE = Phobit_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lab73.Phobit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Phobit.app/Phobit";
+			};
+			name = Release;
+		};
 		981B67621FDC7551008D9835 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -738,6 +892,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -828,6 +983,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1666D97020D18C6E00F48AE6 /* Build configuration list for PBXNativeTarget "Phobit_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1666D97120D18C6E00F48AE6 /* Debug */,
+				1666D97220D18C6E00F48AE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		981B674D1FDC7551008D9835 /* Build configuration list for PBXProject "Phobit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

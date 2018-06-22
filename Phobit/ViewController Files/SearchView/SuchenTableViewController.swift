@@ -133,6 +133,10 @@ class SuchenTableViewController: UITableViewController{
     var dataMaster: DataMaster?
     var dates: [String]?
     
+    
+    var blackView : UIView?
+    
+    @IBOutlet var infoView: UIView!
     var isSearchActive = false
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -147,6 +151,8 @@ class SuchenTableViewController: UITableViewController{
         addToolbar(textField: searchController.searchBar)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        self.navigationItem.title = "Suchen"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -163,7 +169,7 @@ class SuchenTableViewController: UITableViewController{
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Gib den Suchbegriff ein"
         
-        
+        addTheInfoView()
         
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = searchController
@@ -191,6 +197,66 @@ class SuchenTableViewController: UITableViewController{
         }
     
     }
+    
+    func addTheInfoView(){
+       
+        
+        
+        
+        let infoViewBool = UserDefaults.standard.bool(forKey: "infoViewSearch")
+        if infoViewBool{
+            
+        }else if infoViewBool == false{
+            blackView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: (self.navigationController?.view.frame.width)!, height: (self.navigationController?.view.frame.height)!))
+            blackView?.backgroundColor = .black
+            blackView?.alpha = 0.0
+            
+            self.navigationController?.view.addSubview(blackView!)
+            UIView.animate(withDuration: 0.7){
+                self.blackView?.alpha = 0.7
+            }
+            
+            
+            infoView.center = (self.navigationController?.view.center)!
+            infoView.alpha = 0.0
+            self.navigationController?.view.addSubview(infoView)
+            UIView.animate(withDuration: 0.7) {
+                self.infoView.alpha = 0.85
+                self.infoView.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y - 10)
+            }
+            
+        }
+        
+        
+        
+        
+    }
+    func removeInfoViewAnimation() -> Void{
+        UIView.animate(withDuration: 0.8, animations: {
+            self.blackView?.alpha = 0.0
+        }){(result) in
+            self.blackView?.removeFromSuperview()
+        }
+        
+        
+        UIView.animate(withDuration: 0.8, animations:
+            {   self.infoView.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y + 10)
+                self.infoView.alpha = 0.0})
+        {(result) in
+            self.infoView.removeFromSuperview()
+        }
+        
+    }
+    
+    @IBAction func nichtMehrAnzeigen(_ sender: Any) {
+        removeInfoViewAnimation()
+        UserDefaults.standard.set(true, forKey: "infoViewSearch")
+    }
+    
+    @IBAction func okayAction(_ sender: Any) {
+        removeInfoViewAnimation()
+    }
+    
     
     private func prepareData() {
         let start = Date().millisecondsSince1970

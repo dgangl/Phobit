@@ -41,9 +41,11 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
         
         view.bringSubview(toFront: pickerView)
         informationLabel.text = label
+        
+        
         let range = NSRange.init(location: 0, length: textFieldString.count)
-        print(range)
         textField.setMarkedText(textFieldString, selectedRange: range)
+       
         
         
         
@@ -79,6 +81,10 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
        
         
     }
+    
+//    func textFieldDidBeginEditing(textField: UITextField) {
+//        textField.selectedTextRange = textField.textRange(from: textField.beginningOfDocument, to: textField.endOfDocument)
+//    }
 
     
     override func viewDidAppear(_ animated: Bool) {

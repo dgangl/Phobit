@@ -71,7 +71,7 @@ class QRSplitter{
                 
                 
                 
-            var steuerzeile = Steuerzeile.init(prozent: Int.init(steuersatzArr[count]), prozentbetrag: steuerBetragArr[count], netto: betragsArrDouble[count] - steuerBetragArr[count], brutto: betragsArrDouble[count])
+                let steuerzeile = Steuerzeile.init(prozent: Int.init(steuersatzArr[count]), prozentbetrag: steuerBetragArr[count], netto: betragsArrDouble[count] - steuerBetragArr[count], brutto: betragsArrDouble[count])
             steuerZeileArray.append(steuerzeile)
             print(steuerzeile)
                 
@@ -93,7 +93,9 @@ class QRSplitter{
         
         print("Datum: \(fertigDatum)")
         print(steuersatzArr)
-        let billDataToReturn = BillData2.init(steuerzeilen: steuerZeileArray, gesamtBrutto: gesamtBrutto, datum: formattedDatum, rechnungsersteller: "Bitte Rechnungsersteller eingeben.", kontierung: "Kontierung auswählen.", bezahlung: "Bezahlart auswählen.")
+//        let billDataToReturn = BillData2.init(steuerzeilen: steuerZeileArray, gesamtBrutto: gesamtBrutto, datum: formattedDatum, rechnungsersteller: "Bitte Rechnungsersteller eingeben.", kontierung: "Kontierung auswählen.", bezahlung: "Bezahlart auswählen.", uploaded: false, uuid: qrCodeArr[qrCodeArr.count-1])
+        
+        let billDataToReturn = BillData2.init(steuerzeilen: steuerZeileArray, gesamtBrutto: gesamtBrutto, datum: formattedDatum, rechnungsersteller: "Bitte Rechnungsersteller eingeben.", kontierung: "Verwendungszweck auswählen", bezahlung: "Bezahlungsart auswählen.", uploaded: false, uuid: qrCodeArr[13])
 
  
         

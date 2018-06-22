@@ -141,8 +141,10 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             let pickerView = storyboard?.instantiateViewController(withIdentifier: "TextPicker") as! TextPickerViewController
             pickerView.delegate = self
             pickerView.indexPath = indexPath
+            
             pickerView.label = "Bitte gib den Rechnungsersteller ein."
             pickerView.textFieldString = (self.bill?.rechnungsersteller)!
+            
             pickerView.modalPresentationStyle = .overCurrentContext
             print(bill?.rechnungsersteller)
             present(pickerView, animated: false, completion: nil)
