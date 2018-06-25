@@ -197,7 +197,16 @@ class ChooseKontierungViewController: UITableViewController {
     
     func deleteCell(cellToDelete: String){
         var array = UserDefaults.standard.array(forKey: "verwendung") as? [String]
-        array?.removeAll(where: {$0.elementsEqual(cellToDelete)})
+        
+        
+        var count = 0;
+        for string in array!{
+            if(string.elementsEqual(cellToDelete)){
+                array!.remove(at: count)
+                break;
+            }
+            count++
+        }
         UserDefaults.standard.set(array, forKey: "verwendung")
         konten = array
         sortTableView()
