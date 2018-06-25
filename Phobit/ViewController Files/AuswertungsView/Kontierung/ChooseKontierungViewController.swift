@@ -205,7 +205,7 @@ class ChooseKontierungViewController: UITableViewController {
                 array!.remove(at: count)
                 break;
             }
-            count++
+            count = count + 1
         }
         UserDefaults.standard.set(array, forKey: "verwendung")
         konten = array
