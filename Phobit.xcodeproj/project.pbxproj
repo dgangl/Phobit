@@ -173,7 +173,7 @@
 		9893AB3020387B5D00249850 /* EditingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProtocol.swift; sourceTree = "<group>"; };
 		9893AB3320387E4200249850 /* TextPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerViewController.swift; sourceTree = "<group>"; };
 		9893AB3520387E4E00249850 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
-		9893AB57203A355200249850 /* SpaltenSelectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpaltenSelectionProtocol.swift; path = "../New Group/SpaltenSelectionProtocol.swift"; sourceTree = "<group>"; };
+		9893AB57203A355200249850 /* SpaltenSelectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaltenSelectionProtocol.swift; sourceTree = "<group>"; };
 		9893AB5B203B01BB00249850 /* ChooseKontierungViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKontierungViewController.swift; sourceTree = "<group>"; };
 		9893AB5D203B024100249850 /* KontierungTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontierungTableViewCell.swift; sourceTree = "<group>"; };
 		9893AB5F203B07B800249850 /* PhobitKontenplan.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PhobitKontenplan.csv; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 		98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedEffectView.swift; sourceTree = "<group>"; };
 		98B767222006C2E000AFE504 /* Monate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monate.swift; sourceTree = "<group>"; };
 		98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
-		98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpaltenTableViewCell.swift; path = "../New Group/SpaltenTableViewCell.swift"; sourceTree = "<group>"; };
+		98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaltenTableViewCell.swift; sourceTree = "<group>"; };
 		98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesamtBruttoTableViewCell.swift; sourceTree = "<group>"; };
 		98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSuggestions.swift; sourceTree = "<group>"; };
 		98CFEDBB20A233E80045ADF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -299,7 +299,8 @@
 				9893AB57203A355200249850 /* SpaltenSelectionProtocol.swift */,
 				98BA5AB420379D31004655A0 /* SpaltenTableViewCell.swift */,
 			);
-			path = Steueraufstellung;
+			name = Steueraufstellung;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		1666D96A20D18C6E00F48AE6 /* Phobit_Tests */ = {
@@ -798,7 +799,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4365VP3HP5;
 				INFOPLIST_FILE = Phobit_Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				PRODUCT_BUNDLE_IDENTIFIER = "lab73.Phobit-Tests";
@@ -819,7 +820,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4365VP3HP5;
 				INFOPLIST_FILE = Phobit_Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lab73.Phobit-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -948,11 +949,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4365VP3HP5;
+				DEVELOPMENT_TEAM = 2JQL7NUGQB;
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lab73.Phobitz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lab73.Phobit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -968,11 +969,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4365VP3HP5;
+				DEVELOPMENT_TEAM = 2JQL7NUGQB;
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lab73.Phobitz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lab73.Phobit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
