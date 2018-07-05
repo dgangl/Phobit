@@ -59,7 +59,7 @@ extension ScanningViewController {
     // returns the progress view for loading progress to fill with data.
     func showLoadingScreen(webservice: WebService) -> (UIProgressView, UIAlertController) {
         
-        let alertView = UIAlertController(title: "Bitte warten", message: " ", preferredStyle: .alert)
+        let alertView = UIAlertController(title: RandomLoadingMessages().message, message: " ", preferredStyle: .alert)
         let progressView = UIProgressView.init()
         
         progressView.progress = 0
