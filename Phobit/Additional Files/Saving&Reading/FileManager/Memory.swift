@@ -93,12 +93,18 @@ class Memory{
     public func duplicateProver(input: BillData2) -> Bool{
         var allMems = read()
         
-        for bill in allMems!{
-            if(bill.uuid == input.uuid){
-                return true
+        if let mems = allMems{
+            for bill in allMems!{
+                if(bill.uuid == input.uuid){
+                    return true
+                }
             }
+        }else{
+            return false
         }
+        
         return false
+    
         
         
     }
