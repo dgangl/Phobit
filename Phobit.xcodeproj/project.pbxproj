@@ -60,6 +60,7 @@
 		9844A6A0204316BE009ED46D /* DataMasterSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844A69F204316BE009ED46D /* DataMasterSearch.swift */; };
 		984DD79D205024150098BE0F /* SampleDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984DD79C205024150098BE0F /* SampleDataLoader.swift */; };
 		984DD7A5205081330098BE0F /* sampleData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 984DD7A4205081320098BE0F /* sampleData.txt */; };
+		9858B76120EEAB11007C0844 /* NeuralNetDataGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9858B76020EEAB10007C0844 /* NeuralNetDataGetter.swift */; };
 		985935AD205564C500FB20D7 /* VisionUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985935AC205564C500FB20D7 /* VisionUtilities.swift */; };
 		9893AB2F20387B2C00249850 /* AuswertungSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB2E20387B2C00249850 /* AuswertungSelectionHandler.swift */; };
 		9893AB3120387B5D00249850 /* EditingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB3020387B5D00249850 /* EditingProtocol.swift */; };
@@ -172,6 +173,7 @@
 		9844A69F204316BE009ED46D /* DataMasterSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMasterSearch.swift; sourceTree = "<group>"; };
 		984DD79C205024150098BE0F /* SampleDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataLoader.swift; sourceTree = "<group>"; };
 		984DD7A4205081320098BE0F /* sampleData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleData.txt; sourceTree = "<group>"; };
+		9858B76020EEAB10007C0844 /* NeuralNetDataGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNetDataGetter.swift; sourceTree = "<group>"; };
 		985935AC205564C500FB20D7 /* VisionUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionUtilities.swift; sourceTree = "<group>"; };
 		9893AB2E20387B2C00249850 /* AuswertungSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuswertungSelectionHandler.swift; sourceTree = "<group>"; };
 		9893AB3020387B5D00249850 /* EditingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProtocol.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 		98AFA57B20EE4D1500043FCF /* NeuralNet */ = {
 			isa = PBXGroup;
 			children = (
+				9858B76020EEAB10007C0844 /* NeuralNetDataGetter.swift */,
 			);
 			path = NeuralNet;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				3C8D76FA2095E4FB007D5EBA /* VerticalScrollViewController.swift in Sources */,
 				981617202042E85100A3C29E /* SuchenTableViewSelectionHandler.swift in Sources */,
 				981B67741FDC7BBC008D9835 /* SuchenTableViewCell.swift in Sources */,
+				9858B76120EEAB11007C0844 /* NeuralNetDataGetter.swift in Sources */,
 				164809BA2075264E00B44A60 /* CustomSegue.swift in Sources */,
 				9893AB3420387E4200249850 /* TextPickerViewController.swift in Sources */,
 				164840762007B2980023AC43 /* QRSplitter.swift in Sources */,
