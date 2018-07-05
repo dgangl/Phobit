@@ -72,6 +72,7 @@ class ScanningViewController: UIViewController {
         super.viewDidLoad()
         
         
+        let nndg = NeuralNetDataGetter.init()
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)

@@ -137,14 +137,27 @@ class AuswertungsTableViewController: UITableViewController{
         
     }
     
+    private func showAlert(title : String, message: String, type : UIAlertControllerStyle){
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: type)
+        let okayAction = UIAlertAction.init(title: "Okay", style: .cancel, handler: {action in alert.dismiss(animated: true, completion: nil)})
+        alert.addAction(okayAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    var goOn = false;
     @objc func returnHomeAndSave() {
         let mem = Memory.init()
-        if(mem.duplicateProver(input: bill!)){
+        
+        if(mem.duplicateProver(input: bill!) && !goOn){
+            
             let alert = UIAlertController.init(title: "Vorsicht.", message: "Du hast diese Rechnung bereits eingescanned. Bist du dir sicher das du sie ein zweites Mal speichern willst?", preferredStyle: .alert)
-            let jaAction = UIAlertAction.init(title: "Ja", style: .cancel, handler: {action in alert.dismiss(animated: true, completion: nil)})
             let neinAction = UIAlertAction.init(title: "Diese Rechnung verwerfen", style: .destructive, handler: {action in self.returnHome(); alert.dismiss(animated: true, completion: nil)})
-            alert.addAction(jaAction)
+            let vlltAction = UIAlertAction.init(title: "Diese Rechnung trotzdem speichern.", style: .default, handler: {action in
+                self.goOn = true; self.returnHomeAndSave(); alert.dismiss(animated: true, completion: nil)
+            })
+            
             alert.addAction(neinAction)
+            alert.addAction(vlltAction)
             present(alert, animated: true, completion: nil)
         }
         
@@ -153,10 +166,14 @@ class AuswertungsTableViewController: UITableViewController{
         print("saving BillData")
         
         if(bill?.rechnungsersteller.elementsEqual("Bitte Rechnungsersteller eingeben."))!{
-            let alert = UIAlertController.init(title: "Hoppala", message: "Leider können wir die Rechnung nicht speichern wenn du den Rechnungsersteller nicht eingegeben hast.", preferredStyle: .alert)
-            let okayAction = UIAlertAction.init(title: "Okay", style: .cancel, handler: {action in alert.dismiss(animated: true, completion: nil)})
-            alert.addAction(okayAction)
-            present(alert, animated: true, completion: nil)
+            showAlert(title: "Vorsicht", message: "Wir können diese Rechnung nicht ohne einen Rechnungsersteller speichern", type: .alert)
+        }else if bill?.getNumberOfSteuerzeilen() == 0{
+            showAlert(title: "Warte", message: "Wir können diese Rechnung leider nicht speichern da diese Rechnung leer ist und noch keine Beträge hat.", type: .alert)
+        }else if (bill?.kontierung.elementsEqual("Verwendungszweck auswählen"))!{
+            showAlert(title: "Ups", message: "Leider kann diese Rechnung nicht gespeichert werden da du noch keinen Verwendungszweck eingegeben hast.", type: .alert)
+        }else if (bill?.bezahlung.elementsEqual("Bezahlungsart auswählen."))!{
+            showAlert(title: "Oh nein", message: "Du hast noch nicht angegeben wie du diese Rechnung beglichen hast. Bitte mach das bevor wir deine Rechnung speichern.", type: .alert)
+            
         }else{
         
         
@@ -231,8 +248,13 @@ class AuswertungsTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 2 {
+            if(bill?.getNumberOfSteuerzeilen() == 0){
+                let cell = tableView.dequeueReusableCell(withIdentifier: "addLine") as! UITableViewCell
+                return cell
+            }else{
+                
+           
             // steuerzeile
-            // userInteraction is disabled in main.storyboard
             if indexPath.row == 0 {
                 // erste Zeile Überschriften
                 
@@ -255,6 +277,7 @@ class AuswertungsTableViewController: UITableViewController{
                 cell.delegate = self
                 return cell
             }
+         }
         } else {
             // item
             let object = tableDict![indexPath] as! Item
