@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Phobit/ViewController Files/AuswertungsView/AuswertungTableViewController.swift"
-            timestampString = "552481831.279161"
+            timestampString = "552485770.2523431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -151,7 +151,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Phobit/ViewController Files/AuswertungsView/AuswertungTableViewController.swift"
-            timestampString = "552481831.2800879"
+            timestampString = "552485770.2527159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -167,7 +167,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Phobit/ViewController Files/AuswertungsView/AuswertungTableViewController.swift"
-            timestampString = "552481831.280665"
+            timestampString = "552485770.2528729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -183,7 +183,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Phobit/ViewController Files/AuswertungsView/AuswertungTableViewController.swift"
-            timestampString = "552481831.281214"
+            timestampString = "552485770.252998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -253,6 +253,22 @@
             startingLineNumber = "87"
             endingLineNumber = "87"
             landmarkName = "enterPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phobit/DataBase/NeuralNetDataGetter.swift"
+            timestampString = "552485770.253325"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

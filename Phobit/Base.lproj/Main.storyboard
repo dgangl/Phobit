@@ -1168,50 +1168,55 @@ You can either contact us via the Feedback Option in the Settings-Menu or direct
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="60" id="TxJ-pE-ftn" customClass="SuchenTableViewCell" customModule="Phobit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="70" id="TxJ-pE-ftn" customClass="SuchenTableViewCell" customModule="Phobit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TxJ-pE-ftn" id="ASX-0A-q7N">
-                                    <rect key="frame" x="0.0" y="0.0" width="376" height="59.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="69.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hofer KG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyn-hM-2ZE">
-                                            <rect key="frame" x="25" y="19.333333333333332" width="72.666666666666671" height="20.999999999999996"/>
+                                            <rect key="frame" x="43.000000000000007" y="24.333333333333329" width="72.666666666666686" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AgN-Si-kd6">
-                                            <rect key="frame" x="9" y="0.0" width="6" height="59.666666666666664"/>
-                                            <color key="backgroundColor" red="1" green="0.0" blue="0.045438516565105225" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="6" id="Nib-cs-87m"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.340,99 €" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whW-JV-y1h">
-                                            <rect key="frame" x="288" y="20" width="80" height="20"/>
+                                            <rect key="frame" x="288" y="25" width="80" height="20"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AgN-Si-kd6">
+                                            <rect key="frame" x="20" y="30" width="10" height="10"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="M96-yh-oPh"/>
+                                                <constraint firstAttribute="width" constant="10" id="v5R-jV-bC9"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="AgN-Si-kd6" firstAttribute="leading" secondItem="ASX-0A-q7N" secondAttribute="leadingMargin" constant="-11" id="GEu-uv-HRE"/>
+                                        <constraint firstItem="AgN-Si-kd6" firstAttribute="leading" secondItem="ASX-0A-q7N" secondAttribute="leading" constant="20" id="TLV-Sk-MCa"/>
+                                        <constraint firstItem="Eyn-hM-2ZE" firstAttribute="leading" secondItem="AgN-Si-kd6" secondAttribute="trailing" constant="13.000000000000007" id="U5P-5G-Cuz"/>
                                         <constraint firstItem="whW-JV-y1h" firstAttribute="trailing" secondItem="ASX-0A-q7N" secondAttribute="trailingMargin" id="Uj7-Ht-kZH"/>
-                                        <constraint firstItem="Eyn-hM-2ZE" firstAttribute="leading" secondItem="AgN-Si-kd6" secondAttribute="trailing" constant="10" id="VDo-3g-rbK"/>
+                                        <constraint firstItem="AgN-Si-kd6" firstAttribute="centerY" secondItem="ASX-0A-q7N" secondAttribute="centerY" id="VeA-AN-Y5e"/>
                                         <constraint firstItem="whW-JV-y1h" firstAttribute="centerY" secondItem="ASX-0A-q7N" secondAttribute="centerY" id="aTp-88-uUy"/>
                                         <constraint firstItem="Eyn-hM-2ZE" firstAttribute="centerY" secondItem="ASX-0A-q7N" secondAttribute="centerY" id="bNu-wq-aV4"/>
-                                        <constraint firstItem="AgN-Si-kd6" firstAttribute="centerY" secondItem="Eyn-hM-2ZE" secondAttribute="centerY" id="chu-EN-ZAw"/>
-                                        <constraint firstItem="AgN-Si-kd6" firstAttribute="top" secondItem="ASX-0A-q7N" secondAttribute="top" id="ydO-zX-TXL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="betrag" destination="whW-JV-y1h" id="iGk-bA-xqf"/>
                                     <outlet property="firmenname" destination="Eyn-hM-2ZE" id="fHk-cG-VES"/>
+                                    <outlet property="indicator" destination="AgN-Si-kd6" id="aWW-FW-M8m"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="result" rowHeight="60" id="tPH-es-LMi" customClass="ResultTableViewCell" customModule="Phobit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tPH-es-LMi" id="r11-rS-TlV">
                                     <rect key="frame" x="0.0" y="0.0" width="376" height="59.666666666666664"/>
@@ -1247,7 +1252,7 @@ You can either contact us via the Feedback Option in the Settings-Menu or direct
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="nothing" id="0uK-SJ-j3x">
-                                <rect key="frame" x="0.0" y="148" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="158" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0uK-SJ-j3x" id="9Sn-Pq-hHu">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -1274,8 +1279,7 @@ You can either contact us via the Feedback Option in the Settings-Menu or direct
                             <outlet property="delegate" destination="lPM-u0-jSi" id="sU1-Sh-8XP"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="7QY-sM-kDC"/>
-                    <navigationItem key="navigationItem" id="ZAg-i7-U0H"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="infoView" destination="TK7-VJ-Fyg" id="7Nn-hw-Gpm"/>
                         <outlet property="tableView" destination="d0m-cY-1kE" id="7oA-xb-i4s"/>
@@ -1353,7 +1357,7 @@ You can either contact us via the Feedback Option in the Settings-Menu or direct
                 </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28e-e1-G1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256.80000000000001" y="176.76161919040482"/>
+            <point key="canvasLocation" x="256.52173913043481" y="176.08695652173915"/>
         </scene>
         <!--ABG_Controller-->
         <scene sceneID="QIU-YA-BXn">

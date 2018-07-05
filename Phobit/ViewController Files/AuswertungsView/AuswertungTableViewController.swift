@@ -168,11 +168,12 @@ class AuswertungsTableViewController: UITableViewController{
         if(bill?.rechnungsersteller.elementsEqual("Bitte Rechnungsersteller eingeben."))!{
             showAlert(title: "Vorsicht", message: "Wir können diese Rechnung nicht ohne einen Rechnungsersteller speichern", type: .alert)
         }else if bill?.getNumberOfSteuerzeilen() == 0{
-            showAlert(title: "Warte.", message: "Wir können diese Rechnung leider nicht speichern da diese Rechnung leer ist und noch keine Beträge hat.", type: .alert)
+            showAlert(title: "Warte", message: "Wir können diese Rechnung leider nicht speichern da diese Rechnung leer ist und noch keine Beträge hat.", type: .alert)
         }else if (bill?.kontierung.elementsEqual("Verwendungszweck auswählen"))!{
-            showAlert(title: "Ups.", message: "Leider kann diese Rechnung nicht gespeichert werden da du noch keinen Verwendungszweck eingegeben hast.", type: .alert)
+            showAlert(title: "Ups", message: "Leider kann diese Rechnung nicht gespeichert werden da du noch keinen Verwendungszweck eingegeben hast.", type: .alert)
         }else if (bill?.bezahlung.elementsEqual("Bezahlungsart auswählen."))!{
-            showAlert(title: "Oh nein", message: "Du hast noch nicht angegeben mit was du diese Rechnung beglichen hast. Bitte mach das bevor wir deine Rechnung speichern.", type: .alert)
+            showAlert(title: "Oh nein", message: "Du hast noch nicht angegeben wie du diese Rechnung beglichen hast. Bitte mach das bevor wir deine Rechnung speichern.", type: .alert)
+            
         }else{
         
         

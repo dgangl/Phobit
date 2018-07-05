@@ -11,6 +11,7 @@ import UIKit
 class SuchenTableViewCell: UITableViewCell {
     @IBOutlet weak var firmenname: UILabel!
     @IBOutlet weak var betrag: UILabel!
+    @IBOutlet weak var indicator: UIImageView!
     
     // the cellID to get the data model from the SearchObject
     var cellID: Int?
@@ -18,7 +19,9 @@ class SuchenTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        indicator.layer.cornerRadius = indicator.frame.width/2
+        indicator.clipsToBounds = true
+        indicator.backgroundColor = .red
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

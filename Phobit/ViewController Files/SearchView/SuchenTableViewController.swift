@@ -137,6 +137,7 @@ class SuchenTableViewController: UITableViewController{
     var blackView : UIView?
     
     @IBOutlet var infoView: UIView!
+    
     var isSearchActive = false
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -147,11 +148,15 @@ class SuchenTableViewController: UITableViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+
+        
         
         addToolbar(textField: searchController.searchBar)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
+//        let backButton = UIBarButtonItem.init(title: "Zurück", style: .plain, target: self, action: nil)
+//        self.navigationController?.navigationItem.setRightBarButton(backButton, animated: false)
+//        self.navigationItem.setRightBarButton(backButton, animated: false)
         self.navigationItem.title = "Suchen"
     }
     
