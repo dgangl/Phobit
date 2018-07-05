@@ -95,7 +95,7 @@ class QRSplitter{
         print(steuersatzArr)
 //        let billDataToReturn = BillData2.init(steuerzeilen: steuerZeileArray, gesamtBrutto: gesamtBrutto, datum: formattedDatum, rechnungsersteller: "Bitte Rechnungsersteller eingeben.", kontierung: "Kontierung auswählen.", bezahlung: "Bezahlart auswählen.", uploaded: false, uuid: qrCodeArr[qrCodeArr.count-1])
         
-        let billDataToReturn = BillData2.init(steuerzeilen: steuerZeileArray, gesamtBrutto: gesamtBrutto, datum: formattedDatum, rechnungsersteller: "Bitte Rechnungsersteller eingeben.", kontierung: "Verwendungszweck auswählen", bezahlung: "Bezahlungsart auswählen.", uploaded: false, uuid: qrCodeArr[13])
+        let billDataToReturn = BillData2.init(steuerzeilen: steuerZeileArray, gesamtBrutto: gesamtBrutto, datum: formattedDatum, rechnungsersteller: "Bitte Rechnungsersteller eingeben", kontierung: "Verwendungszweck auswählen", bezahlung: "Bezahlungsart auswählen", uploaded: false, uuid: qrCodeArr[13])
 
  
         

@@ -248,7 +248,7 @@
                                     <outlet property="textfield" destination="h0r-B2-YcS" id="jgt-bE-mMo"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addLIne" id="8fk-cn-gN8" customClass="addSteuerzeileTableViewCell" customModule="Phobit" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addLine" id="8fk-cn-gN8" customClass="addSteuerzeileTableViewCell" customModule="Phobit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="275.33333333333337" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8fk-cn-gN8" id="Wyf-ck-CI6">
@@ -263,11 +263,14 @@
                                                 <action selector="addSteuerzeile:" destination="8fk-cn-gN8" eventType="touchUpInside" id="7zi-Nd-H9h"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaI-0O-iIR">
-                                            <rect key="frame" x="360" y="11.000000000000114" width="22" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaI-0O-iIR">
+                                            <rect key="frame" x="360" y="11" width="22" height="22"/>
                                         </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="EaI-0O-iIR" secondAttribute="trailing" constant="32" id="ZBx-wA-FmY"/>
+                                        <constraint firstItem="EaI-0O-iIR" firstAttribute="centerY" secondItem="Wyf-ck-CI6" secondAttribute="centerY" id="oji-Tc-4P0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
