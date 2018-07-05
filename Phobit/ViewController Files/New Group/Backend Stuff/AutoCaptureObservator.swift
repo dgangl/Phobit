@@ -25,7 +25,7 @@ class AutoCaptureObservator {
     var snapValue = 5
     
     // the values that are compared have to be within this degree of deviations.
-    var percentageTolerance: CGFloat = 0.03
+    var percentageTolerance: CGFloat = 0.06
  
     
     fileprivate var takeShot = false
