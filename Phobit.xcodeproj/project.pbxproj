@@ -77,6 +77,8 @@
 		98A9E0152098C216008E142D /* ScanningVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0142098C216008E142D /* ScanningVision.swift */; };
 		98A9E0172098C4B9008E142D /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0162098C4B9008E142D /* Overlay.swift */; };
 		98A9E0192098CD32008E142D /* ProcessResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E0182098CD32008E142D /* ProcessResult.swift */; };
+		98AFA57D20EE4F1400043FCF /* RandomLoadingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFA57C20EE4F1400043FCF /* RandomLoadingMessage.swift */; };
+		98AFA58320EE509600043FCF /* LoadingMessages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98AFA58220EE509600043FCF /* LoadingMessages.plist */; };
 		98B3A0082055A3C200D55CBA /* CustomRoundedEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */; };
 		98B767232006C2E000AFE504 /* Monate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B767222006C2E000AFE504 /* Monate.swift */; };
 		98B7672B2007867D00AFE504 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */; };
@@ -188,6 +190,8 @@
 		98A9E0142098C216008E142D /* ScanningVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningVision.swift; sourceTree = "<group>"; };
 		98A9E0162098C4B9008E142D /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		98A9E0182098CD32008E142D /* ProcessResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessResult.swift; sourceTree = "<group>"; };
+		98AFA57C20EE4F1400043FCF /* RandomLoadingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomLoadingMessage.swift; sourceTree = "<group>"; };
+		98AFA58220EE509600043FCF /* LoadingMessages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LoadingMessages.plist; sourceTree = "<group>"; };
 		98B3A0072055A3C200D55CBA /* CustomRoundedEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedEffectView.swift; sourceTree = "<group>"; };
 		98B767222006C2E000AFE504 /* Monate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monate.swift; sourceTree = "<group>"; };
 		98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
@@ -235,11 +239,13 @@
 		1603F3FD201CF041009557C1 /* Additional Files */ = {
 			isa = PBXGroup;
 			children = (
+				98AFA57C20EE4F1400043FCF /* RandomLoadingMessage.swift */,
 				16B0434F2091CF6100D89E93 /* NeuralNetwork */,
 				168BD09F206F942900431336 /* BillDataFiles */,
 				168BD09E206F941500431336 /* AppSettings */,
 				16B8A1061FEEB511005E95E9 /* Saving&Reading */,
 				9822B5C9201CD46900C36A1F /* Custom User Interface */,
+				98AFA58220EE509600043FCF /* LoadingMessages.plist */,
 			);
 			path = "Additional Files";
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				9893AB60203B07B900249850 /* PhobitKontenplan.csv in Resources */,
 				981B675B1FDC7551008D9835 /* Main.storyboard in Resources */,
 				984DD7A5205081330098BE0F /* sampleData.txt in Resources */,
+				98AFA58320EE509600043FCF /* LoadingMessages.plist in Resources */,
 				98CFEDBC20A233E80045ADF2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,6 +755,7 @@
 				16FD6CA6204479C100D8B88D /* AccountTableViewController.swift in Sources */,
 				983DEB1520166C0C00F98A9C /* CustomFormat.swift in Sources */,
 				985935AD205564C500FB20D7 /* VisionUtilities.swift in Sources */,
+				98AFA57D20EE4F1400043FCF /* RandomLoadingMessage.swift in Sources */,
 				3C8D76FA2095E4FB007D5EBA /* VerticalScrollViewController.swift in Sources */,
 				981617202042E85100A3C29E /* SuchenTableViewSelectionHandler.swift in Sources */,
 				981B67741FDC7BBC008D9835 /* SuchenTableViewCell.swift in Sources */,
