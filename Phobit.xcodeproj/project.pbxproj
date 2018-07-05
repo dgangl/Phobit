@@ -140,7 +140,7 @@
 		16B23706204D4B5900CFD87D /* PhobitColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhobitColorPicker.swift; sourceTree = "<group>"; };
 		16D8DC39202CB05D00D001C4 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		16DB778A20ECB72F00BCF591 /* addSteuerzeileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSteuerzeileTableViewCell.swift; sourceTree = "<group>"; };
-		16DB778C20EE35BB00BCF591 /* NeuralNetDataGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NeuralNetDataGetter.swift; path = ../DataBase/NeuralNetDataGetter.swift; sourceTree = "<group>"; };
+		16DB778C20EE35BB00BCF591 /* NeuralNetDataGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetDataGetter.swift; sourceTree = "<group>"; };
 		16FD6C9B20430DAD00D8B88D /* BezahlformenPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezahlformenPickerViewController.swift; sourceTree = "<group>"; };
 		16FD6C9D20431B4F00D8B88D /* ImageDataStorer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataStorer.swift; sourceTree = "<group>"; };
 		16FD6CA120445A5A00D8B88D /* ZeilenPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeilenPickerViewController.swift; sourceTree = "<group>"; };
@@ -367,14 +367,6 @@
 			path = "Saving&Reading";
 			sourceTree = "<group>";
 		};
-		16DB778E20EE35C500BCF591 /* NeuralNet */ = {
-			isa = PBXGroup;
-			children = (
-				16DB778C20EE35BB00BCF591 /* NeuralNetDataGetter.swift */,
-			);
-			path = NeuralNet;
-			sourceTree = "<group>";
-		};
 		3C2A41D62090C48800FE1CE9 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,7 +417,7 @@
 		981B67541FDC7551008D9835 /* Phobit */ = {
 			isa = PBXGroup;
 			children = (
-				16DB778E20EE35C500BCF591 /* NeuralNet */,
+				98AFA57B20EE4D1500043FCF /* NeuralNet */,
 				3C2A41D62090C48800FE1CE9 /* DataBase */,
 				1603F3FC201CEB07009557C1 /* ViewController Files */,
 				1603F3FD201CF041009557C1 /* Additional Files */,
@@ -526,6 +518,14 @@
 				98A9E0182098CD32008E142D /* ProcessResult.swift */,
 			);
 			path = "Files for ScanningVC";
+			sourceTree = "<group>";
+		};
+		98AFA57B20EE4D1500043FCF /* NeuralNet */ = {
+			isa = PBXGroup;
+			children = (
+				16DB778C20EE35BB00BCF591 /* NeuralNetDataGetter.swift */,
+			);
+			path = NeuralNet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
