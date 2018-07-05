@@ -107,8 +107,11 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             tableDict![indexPath] = Item.init(value: text!, description: nil)
         case 1:
             // datum
-            tableDict![indexPath] = Item.init(value: text!, description: "Datum")
+            tableDict![indexPath] = Item.init(value: text!, description: nil)
         case 2:
+            
+            
+            
             // steuerzeilen (einziger mehrzeiler)
             // neue Objekte Speichern...
             // eigenes Protokoll
@@ -178,4 +181,6 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             return
         }
     }
+    
+    
 }

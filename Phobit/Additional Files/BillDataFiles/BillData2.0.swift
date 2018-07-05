@@ -151,9 +151,12 @@ extension BillData2 {
         }
         
         // now checking the steuerzeilen, with flex-size
+        if(!steuerzeilen.isEmpty){
         for number in 1...(steuerzeilen.count) {
             let object = tableDict[IndexPath.init(row: number, section: 2)] as! Steuerzeile
             steuerzeilen[number - 1] = object
+            }
+            
         }
         
         for number in 3...4 {
@@ -183,6 +186,7 @@ extension BillData2 {
     public func getDate() -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
+        if(datum.elementsEqual("Datum eingeben")){return Date.init()}
         return dateFormatter.date(from: datum)!
     }
 }

@@ -30,8 +30,12 @@ class DatePickerViewController: UIViewController {
         if let date = date {
             let df = DateFormatter()
             df.dateFormat = "d.M.yyyy"
+            if date.elementsEqual("Datum eingeben"){
+                datepicker.date = Date.init()
+            }else{
+                datepicker.date = df.date(from: date)!
+            }
             
-            datepicker.date = df.date(from: date)!
         }
         
         
@@ -63,6 +67,7 @@ class DatePickerViewController: UIViewController {
         
         delegate?.userDidEdit(inIndexPath: indexPath!, changedText: dateFormatter.string(from: datepicker.date))
         self.dismiss(animated: false, completion: nil)
+        print(datepicker.date)
     }
     
     @IBAction func cancelButton(_ sender: Any) {

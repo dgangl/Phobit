@@ -13,7 +13,7 @@ class AuswertungsTableViewController: UITableViewController{
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    let sections = ["Rechnungsersteller", " ", "Steueraufstellung", "Verwendungszweck", "Bezahlung"]
+    let sections = ["Rechnungsersteller", "Datum", "Steueraufstellung", "Verwendungszweck", "Bezahlung"]
     var bill: BillData2?
     var tableDict: [IndexPath:Any]?
     var image : UIImage?
@@ -28,9 +28,18 @@ class AuswertungsTableViewController: UITableViewController{
     
     // falls der VC als DetailView benutzt wird. (defaultmäßig false)
     var isDetail = false
+    var noBillData = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(noBillData){
+            self.bill = BillData2.init(datum: "Datum eingeben", rechnungsersteller: "Bitte Rechnungsersteller eingeben", kontierung: "Verwendungszweck auswählen", bezahlung: "Bezahlungsart auswählen")
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(addSteuerzeile), name: NSNotification.Name(rawValue: "addSteuerzeile"), object: nil)
+        
+        
         if(bill?.rechnungsersteller != "Bitte Rechnungsersteller eigeben"){
             self.navigationItem.title = bill?.rechnungsersteller
         }
@@ -76,13 +85,26 @@ class AuswertungsTableViewController: UITableViewController{
 
         }
     }
+    
+    
+    
+    
     override func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.imagePicker
     }
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?{
         return self.imagePicker
     }
-    
+    @objc func addSteuerzeile(){
+        self.bill?.steuerzeilen.append(Steuerzeile.init(prozent: 0, prozentbetrag: 0.0, netto: 0.0, brutto: 0.0))
+        self.tableDict![IndexPath.init(row: (bill?.getNumberOfSteuerzeilen())!, section: 2)] = Steuerzeile.init(prozent: 0, prozentbetrag: 0.0, netto: 0.0, brutto: 0.0)
+        print("Added steuerzeile")
+        self.tableView.reloadData()
+        
+        
+        
+        
+    }
     @objc func returnHome() {
         Analytics.logEvent("Rechnung_gescanned_und_abgebrochen", parameters: [:])
         self.dismiss(animated: true, completion: nil)
@@ -126,7 +148,7 @@ class AuswertungsTableViewController: UITableViewController{
             
             //sends a notification to the tableView to reload its data after it got changed.
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
-            
+
             
             
             //NEEDED FOR DATABASE SAVING
@@ -147,8 +169,8 @@ class AuswertungsTableViewController: UITableViewController{
     var goOn = false;
     @objc func returnHomeAndSave() {
         let mem = Memory.init()
-        
-        if(mem.duplicateProver(input: bill!) && !goOn){
+        if(!noBillData){
+        if((mem.duplicateProver(input: bill!) && !goOn)){
             
             let alert = UIAlertController.init(title: "Vorsicht.", message: "Du hast diese Rechnung bereits eingescanned. Bist du dir sicher das du sie ein zweites Mal speichern willst?", preferredStyle: .alert)
             let neinAction = UIAlertAction.init(title: "Diese Rechnung verwerfen", style: .destructive, handler: {action in self.returnHome(); alert.dismiss(animated: true, completion: nil)})
@@ -159,29 +181,33 @@ class AuswertungsTableViewController: UITableViewController{
             alert.addAction(neinAction)
             alert.addAction(vlltAction)
             present(alert, animated: true, completion: nil)
+            }
+            
         }
         
         
         bill?.merchChanges(tableDict: tableDict!)
-        print("saving BillData")
+
         
-        if(bill?.rechnungsersteller.elementsEqual("Bitte Rechnungsersteller eingeben."))!{
+        if(bill?.rechnungsersteller.elementsEqual("Bitte Rechnungsersteller eingeben"))!{
             showAlert(title: "Vorsicht", message: "Wir können diese Rechnung nicht ohne einen Rechnungsersteller speichern", type: .alert)
         }else if bill?.getNumberOfSteuerzeilen() == 0{
             showAlert(title: "Warte", message: "Wir können diese Rechnung leider nicht speichern da diese Rechnung leer ist und noch keine Beträge hat.", type: .alert)
         }else if (bill?.kontierung.elementsEqual("Verwendungszweck auswählen"))!{
             showAlert(title: "Ups", message: "Leider kann diese Rechnung nicht gespeichert werden da du noch keinen Verwendungszweck eingegeben hast.", type: .alert)
-        }else if (bill?.bezahlung.elementsEqual("Bezahlungsart auswählen."))!{
+        }else if (bill?.bezahlung.elementsEqual("Bezahlungsart auswählen"))!{
             showAlert(title: "Oh nein", message: "Du hast noch nicht angegeben wie du diese Rechnung beglichen hast. Bitte mach das bevor wir deine Rechnung speichern.", type: .alert)
-            
+        }else if (bill?.datum.elementsEqual("Datum eingeben"))!{
+            showAlert(title: "Schade", message: "Du musst leider ein Datum für deinen Beleg angeben. Was für ein Chaos eine Welt ohne Datum wäre...", type: .alert)
         }else{
         
-        
+        bill?.merchChanges(tableDict: tableDict!)
+        print("saving BillData")
         setImage()
         mem.save(input: bill!, append: true, target: self)
             
         //SORTING THE ARRAY RIGHT AT THE BEGINNING
-        if let array = mem.read(){mem.saveArray(inputArray: mem.sortBillData(array_to_sort: array))} else {return}
+           // if let array = mem.read(){mem.saveArray(inputArray: array)} else {return}
             
         
         //NEEDED FOR DATABASE SAVING
@@ -232,7 +258,16 @@ class AuswertungsTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 2 {
-            return (bill?.getNumberOfSteuerzeilen())! + 2
+            if(noBillData){
+                if(bill?.steuerzeilen.isEmpty)!{
+                    return 1
+                }else{
+                    return (bill?.getNumberOfSteuerzeilen())! + 3
+                }
+                
+            }else if(!noBillData){
+                return (bill?.getNumberOfSteuerzeilen())! + 2
+            }
         }
         
         return 1
@@ -248,11 +283,13 @@ class AuswertungsTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 2 {
-            if(bill?.getNumberOfSteuerzeilen() == 0){
-                let cell = tableView.dequeueReusableCell(withIdentifier: "addLine") as! UITableViewCell
-                return cell
+            if(bill?.steuerzeilen.isEmpty)!{
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "addLine") as! addSteuerzeileTableViewCell
+                    return cell
             }else{
                 
+            
+            
            
             // steuerzeile
             if indexPath.row == 0 {
@@ -260,12 +297,20 @@ class AuswertungsTableViewController: UITableViewController{
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "spaltenÜberschriften")
                 return cell!
+            }   else if indexPath.row == (bill?.getNumberOfSteuerzeilen())!+2 && !noBillData{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "addLine") as! addSteuerzeileTableViewCell
+                return cell
+                
             } else if indexPath.row == (bill?.getNumberOfSteuerzeilen())!+1 {
                 
                 // gesamtBrutto Zelle
                 let cell = tableView.dequeueReusableCell(withIdentifier: "gesamtBrutto") as! GesamtBruttoTableViewCell
                 cell.textfield.text = "Gesamt-Brutto        \(CFormat.correctGeldbetrag(zahl: String(describing: (bill?.gesamtBrutto)!)))"
                 return cell
+            }else if indexPath.row == (bill?.getNumberOfSteuerzeilen())! + 2 && noBillData {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "addLine") as! addSteuerzeileTableViewCell
+                return cell
+                
             } else {
                 let object = tableDict![indexPath] as! Steuerzeile
                 let cell = tableView.dequeueReusableCell(withIdentifier: "spalten") as! SpaltenTableViewCell
@@ -276,28 +321,19 @@ class AuswertungsTableViewController: UITableViewController{
                 cell.row = indexPath.row-1
                 cell.delegate = self
                 return cell
+            
+                }
             }
-         }
         } else {
             // item
             let object = tableDict![indexPath] as! Item
-            
-            if let descr = object.description {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "twoItem") as! TwoItemsCell
-                cell.leftItem.text = object.value
-                cell.rightItem.text = descr
-                
-//                if(isDetail) {cell.accessoryType = .none; cell.isUserInteractionEnabled = false}
-                
-                return cell
-            } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "oneItem") as! TextCell
                 cell.textField.text = object.value
                 
 //                if(isDetail) {cell.accessoryType = .none; cell.isUserInteractionEnabled = false}
                 
                 return cell
-            }
+            
         }
     }
     

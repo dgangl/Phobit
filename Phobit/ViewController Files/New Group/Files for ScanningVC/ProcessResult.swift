@@ -52,7 +52,7 @@ extension ScanningViewController {
                         alertView.dismiss(animated: true, completion: {
                             self.overlay?.invisible()
                             self.session?.startRunning()
-                            self.jumpToAuswertung(withImage: processor.getImage())
+                            self.jumpToAuswertung(withImage: processor.getImage(), noBillData: nil)
                             
                             
                             self.cleanUp()
@@ -100,7 +100,7 @@ extension ScanningViewController {
     }
     
     
-    @objc func jumpToAuswertung(withImage correctedImage: UIImage?) {
+    @objc func jumpToAuswertung(withImage correctedImage: UIImage?, noBillData : String?) {
         /*
         guard let billdata = billdata else {
             let alert = UIAlertController.init(title: "Keinen passenden QR-Code gefunden!", message: nil, preferredStyle: .alert)
@@ -118,6 +118,9 @@ extension ScanningViewController {
         
         vc.bill = billdata
         
+        if let noBillData = noBillData{
+            vc.noBillData = true
+        }
         if let image = image {
             vc.image = correctedImage
         }
@@ -137,13 +140,35 @@ extension ScanningViewController {
     func isQRok() -> Bool{
         
         guard billdata != nil else {
+            //IN DEVELOPMENT ..
+            //DO NOT DELETE OR CHANGE
+            
+            
+             
+            let alert = UIAlertController.init(title: "Keinen passenden QR-Code gefunden", message: "Willst du deine Rechnung selber ausfüllen?", preferredStyle: .alert)
+            
+            //Jump to Auswertung without BillData, let's see if this works ..
+            let jaAction = UIAlertAction.init(title: "Ja, ich will meine Rechnung selber eingeben", style: .default, handler: {action in  self.jumpToAuswertung(withImage: self.image, noBillData: "true")})
+            
+            let neinAction = UIAlertAction.init(title: "Nein, ich versuche es erneut.", style: .destructive, handler: nil)
+            alert.addAction(jaAction)
+            alert.addAction(neinAction)
+            self.present(alert, animated: false, completion: nil)
+            
+
+            
+            
+            
+            //UNCOMMENT THESE LINES IN CASE OF FAILURE AND COMMENT THE LINES ABOVE
+            
+            /**
             let alert = UIAlertController.init(title: "Keinen passenden QR-Code gefunden!", message: nil, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
             let dispatchAfter = DispatchTime.now() + 2.5
             DispatchQueue.main.asyncAfter(deadline: dispatchAfter){
                 alert.dismiss(animated: true, completion: nil)
             }
-
+            **/
             return false
         }
         
