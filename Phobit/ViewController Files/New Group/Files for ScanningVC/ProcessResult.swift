@@ -133,6 +133,7 @@ extension ScanningViewController {
             self.autoCapture?.resumeStop()
             self.billdata = nil
             self.foundQRCodeBanner.removeFromSuperview()
+            self.blitzButton.setTitle("Aus", for: .normal)
         }
     }
     
