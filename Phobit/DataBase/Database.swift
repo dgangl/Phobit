@@ -2,8 +2,8 @@
 //  Database.swift
 //  Notically
 //
-//  Created by Paul Krenn on 24.04.18.
-//  Copyright © 2018 Paul Krenn. All rights reserved.
+//  Created by 73 on 24.04.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import Foundation

@@ -2,8 +2,8 @@
 //  ChooseKontierungViewController.swift
 //  Phobit
 //
-//  Created by Paul Wiesinger on 19.02.18.
-//  Copyright © 2018 Paul Wiesinger. All rights reserved.
+//  Created by 73 on 19.02.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import UIKit

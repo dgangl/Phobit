@@ -2,8 +2,8 @@
 //  AuswertungTableViewController.swift
 //  Phobit
 //
-//  Created by LonoS on 09.12.17.
-//  Copyright © 2017 LonoS. All rights reserved.
+//  Created by 73 on 09.12.17.
+//  Copyright © 2017 73. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ class AuswertungsTableViewController: UITableViewController{
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    let sections = ["Rechnungsersteller", "Datum", "Steueraufstellung", "Verwendungszweck", "Bezahlung"]
+    let sections = ["Rechnungsersteller", "Datum", "Betrag und Steuer", "Verwendungszweck", "Bezahlung"]
     var bill: BillData2?
     var tableDict: [IndexPath:Any]?
     var image : UIImage?
@@ -192,11 +192,11 @@ class AuswertungsTableViewController: UITableViewController{
         if(bill?.rechnungsersteller.elementsEqual("Bitte Rechnungsersteller eingeben"))!{
             showAlert(title: "Vorsicht", message: "Wir können diese Rechnung nicht ohne einen Rechnungsersteller speichern", type: .alert)
         }else if bill?.getNumberOfSteuerzeilen() == 0{
-            showAlert(title: "Warte", message: "Wir können diese Rechnung leider nicht speichern da diese Rechnung leer ist und noch keine Beträge hat.", type: .alert)
+            showAlert(title: "Warte", message: "Wir können diese Rechnung leider nicht speichern, da diese Rechnung leer ist und noch keine Summe hat.", type: .alert)
         }else if (bill?.kontierung.elementsEqual("Verwendungszweck auswählen"))!{
-            showAlert(title: "Ups", message: "Leider kann diese Rechnung nicht gespeichert werden da du noch keinen Verwendungszweck eingegeben hast.", type: .alert)
+            showAlert(title: "Ups", message: "Leider kann diese Rechnung nicht gespeichert werden, da du noch keinen Verwendungszweck eingegeben hast.", type: .alert)
         }else if (bill?.bezahlung.elementsEqual("Bezahlungsart auswählen"))!{
-            showAlert(title: "Oh nein", message: "Du hast noch nicht angegeben wie du diese Rechnung beglichen hast. Bitte mach das bevor wir deine Rechnung speichern.", type: .alert)
+            showAlert(title: "Oh nein!", message: "Du hast noch nicht angegeben, wie du diese Rechnung beglichen hast. Bitte mach das bevor wir deine Rechnung speichern.", type: .alert)
         }else if (bill?.datum.elementsEqual("Datum eingeben"))!{
             showAlert(title: "Schade", message: "Du musst leider ein Datum für deinen Beleg angeben. Was für ein Chaos eine Welt ohne Datum wäre...", type: .alert)
         }else{

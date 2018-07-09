@@ -2,8 +2,8 @@
 //  SampleDataLoader.swift
 //  Phobit
 //
-//  Created by Paul Wiesinger on 07.03.18.
-//  Copyright © 2018 LonoS. All rights reserved.
+//  Created by 73 on 07.03.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import Foundation

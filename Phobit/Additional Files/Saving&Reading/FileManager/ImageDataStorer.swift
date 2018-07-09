@@ -2,8 +2,8 @@
 //  ImageDataStorer.swift
 //  Phobit
 //
-//  Created by Julian Kronlachner on 24.02.18.
-//  Copyright © 2018 Paul Wiesinger. All rights reserved.
+//  Created by 73 on 24.02.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import Foundation

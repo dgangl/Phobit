@@ -415,7 +415,6 @@
 		981B67541FDC7551008D9835 /* Phobit */ = {
 			isa = PBXGroup;
 			children = (
-				98AFA57B20EE4D1500043FCF /* NeuralNet */,
 				3C2A41D62090C48800FE1CE9 /* DataBase */,
 				1603F3FC201CEB07009557C1 /* ViewController Files */,
 				1603F3FD201CF041009557C1 /* Additional Files */,
@@ -516,13 +515,6 @@
 				98A9E0182098CD32008E142D /* ProcessResult.swift */,
 			);
 			path = "Files for ScanningVC";
-			sourceTree = "<group>";
-		};
-		98AFA57B20EE4D1500043FCF /* NeuralNet */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NeuralNet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

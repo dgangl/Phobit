@@ -2,8 +2,8 @@
 //  Monate.swift
 //  Phobit
 //
-//  Created by Paul Wiesinger on 10.01.18.
-//  Copyright © 2018 Paul Wiesinger. All rights reserved.
+//  Created by 73 on 10.01.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import Foundation

@@ -2,8 +2,8 @@
 //  OnboardingController.swift
 //  OnboardingScreen
 //
-//  Created by Paul Krenn on 12.01.18.
-//  Copyright © 2018 Paul Krenn. All rights reserved.
+//  Created by 73 on 12.01.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import UIKit

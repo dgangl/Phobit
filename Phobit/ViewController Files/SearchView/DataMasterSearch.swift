@@ -2,8 +2,8 @@
 //  DataMasterSearch.swift
 //  Phobit
 //
-//  Created by Paul Wiesinger on 25.02.18.
-//  Copyright © 2018 Paul Wiesinger. All rights reserved.
+//  Created by 73 on 25.02.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import Foundation
@@ -33,8 +33,8 @@ extension DataMaster {
     //  DatumConvert.swift
     //  ConverterSearch
     //
-    //  Created by Paul Krenn on 03.03.18.
-    //  Copyright © 2018 Paul Krenn. All rights reserved.
+    //  Created by 73 on 03.03.18.
+    //  Copyright © 2018 73. All rights reserved.
     //
     
     func zeitraumsuche(text: String) -> Bool {

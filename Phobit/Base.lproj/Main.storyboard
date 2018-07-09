@@ -256,21 +256,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGV-4p-otd">
-                                            <rect key="frame" x="20" y="7" width="168" height="30"/>
+                                            <rect key="frame" x="20" y="7" width="219" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="+ Steuersatz hinzufügen"/>
+                                            <state key="normal" title="+ Betrag und Steuer hinzufügen"/>
                                             <connections>
                                                 <action selector="addSteuerzeile:" destination="8fk-cn-gN8" eventType="touchUpInside" id="7zi-Nd-H9h"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaI-0O-iIR">
-                                            <rect key="frame" x="360" y="11" width="22" height="22"/>
-                                        </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="EaI-0O-iIR" secondAttribute="trailing" constant="32" id="ZBx-wA-FmY"/>
-                                        <constraint firstItem="EaI-0O-iIR" firstAttribute="centerY" secondItem="Wyf-ck-CI6" secondAttribute="centerY" id="oji-Tc-4P0"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -1084,7 +1077,7 @@ Contact Us
 
 If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me.
 
-You can either contact us via the Feedback Option in the Settings-Menu or directly at: lonosgames@gmail.com</string>
+You can either contact us via the Feedback Option in the Settings-Menu or directly at: 73games@gmail.com</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

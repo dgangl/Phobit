@@ -2,8 +2,8 @@
 //  UserStructure.swift
 //  Phobit
 //
-//  Created by Paul Krenn on 05.02.18.
-//  Copyright © 2018 Paul Wiesinger. All rights reserved.
+//  Created by 73 on 05.02.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import Foundation
