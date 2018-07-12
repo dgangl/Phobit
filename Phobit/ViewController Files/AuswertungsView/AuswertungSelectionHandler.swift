@@ -55,6 +55,7 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
         }
         
         
+        bill?.merchChanges(tableDict: tableDict!)
         
         tableView.reloadData()
         
@@ -105,13 +106,24 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
         case 0:
             // rechnungsersteller
             tableDict![indexPath] = Item.init(value: text!, description: nil)
+            
+            
+            // reload the table and also update the headline
+            // merching it directly into the billdata object
+            bill?.merchChanges(tableDict: tableDict!)
+            
+            if isDetail && (bill?.rechnungsersteller != "Bitte Rechnungsersteller eigeben.") {
+                self.navigationItem.title = bill?.rechnungsersteller
+            }
+            
+            tableView.reloadData()
+            
+            return
+            
         case 1:
             // datum
             tableDict![indexPath] = Item.init(value: text!, description: nil)
         case 2:
-            
-            
-            
             // steuerzeilen (einziger mehrzeiler)
             // neue Objekte Speichern...
             // eigenes Protokoll
@@ -127,6 +139,9 @@ extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProto
             // something went wrong but seems to be not possible
             return
         }
+        
+        // merching it directly into the billdata object
+        bill?.merchChanges(tableDict: tableDict!)
         
         tableView.reloadData()
     }

@@ -28,9 +28,7 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
         pickerView.backgroundColor = UIColor.clear
         textField.isHidden = true
         informationLabel.isHidden = true
-        
-       
-        
+
 
         // tap anywhere to exit...
         let tapToExit = UITapGestureRecognizer.init(target: self, action: #selector(cancelSheet(_:)))
@@ -42,13 +40,10 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
         view.bringSubview(toFront: pickerView)
         informationLabel.text = label
         
-        
+        /*
         let range = NSRange.init(location: 0, length: textFieldString.count)
         textField.setMarkedText(textFieldString, selectedRange: range)
-       
-        
-        
-        
+        */
         
         pickerView.center = CGPoint.init(x: self.view.frame.midX, y: self.view.frame.height/2.5)
         
@@ -67,8 +62,8 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
             textField.keyboardType = .default
         case 3:
             textField.keyboardType = .asciiCapableNumberPad
+           
             // setting up the toolbar...
-            
             textField.inputAccessoryView = CustomToolbar.getAuswertungsToolbar(action: #selector(callDelegate), target: self)
             textField.autocorrectionType = .no
         case 4:
@@ -76,31 +71,30 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
         default:
             textField.keyboardType = .default
         }
-        
-        
-       
-        
     }
-    
-//    func textFieldDidBeginEditing(textField: UITextField) {
-//        textField.selectedTextRange = textField.textRange(from: textField.beginningOfDocument, to: textField.endOfDocument)
-//    }
 
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
+
         // making the textfield selected...
         self.textField.becomeFirstResponder()
+        
+        // checking if it isn't the template
+        if textFieldString == "Bitte Rechnungsersteller eingeben." {
+            textFieldString = ""
+        }
+        
+        textField.text = textFieldString
+        
+        // selecting the text...
+        textField.selectAll(nil)
         
         UIView.animate(withDuration: 0.175){
             self.pickerView.backgroundColor = UIColor.white
             self.textField.isHidden = false
             self.informationLabel.isHidden = false
-            
         }
-        
     }
     
     
@@ -134,7 +128,6 @@ class TextPickerViewController: UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // only critical if we would want to add decimal numbers...
-        
         return true
     }
     

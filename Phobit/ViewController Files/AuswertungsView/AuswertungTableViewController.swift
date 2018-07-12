@@ -34,13 +34,13 @@ class AuswertungsTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         if(noBillData){
-            self.bill = BillData2.init(datum: "Datum eingeben", rechnungsersteller: "Bitte Rechnungsersteller eingeben", kontierung: "Verwendungszweck auswählen", bezahlung: "Bezahlungsart auswählen")
+            self.bill = BillData2.init(datum: "Datum eingeben", rechnungsersteller: "Bitte Rechnungsersteller eingeben.", kontierung: "Verwendungszweck auswählen", bezahlung: "Bezahlungsart auswählen")
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(addSteuerzeile), name: NSNotification.Name(rawValue: "addSteuerzeile"), object: nil)
         
         
-        if(bill?.rechnungsersteller != "Bitte Rechnungsersteller eigeben"){
+        if(bill?.rechnungsersteller != "Bitte Rechnungsersteller eigeben."){
             self.navigationItem.title = bill?.rechnungsersteller
         }
     
@@ -153,10 +153,7 @@ class AuswertungsTableViewController: UITableViewController{
             
             //NEEDED FOR DATABASE SAVING
             //OVERWRITE EXISTING BILL.
-            
-            
         }
-        
     }
     
     private func showAlert(title : String, message: String, type : UIAlertControllerStyle){
@@ -189,7 +186,7 @@ class AuswertungsTableViewController: UITableViewController{
         bill?.merchChanges(tableDict: tableDict!)
 
         
-        if(bill?.rechnungsersteller.elementsEqual("Bitte Rechnungsersteller eingeben"))!{
+        if(bill?.rechnungsersteller.elementsEqual("Bitte Rechnungsersteller eingeben."))!{
             showAlert(title: "Vorsicht", message: "Wir können diese Rechnung nicht ohne einen Rechnungsersteller speichern", type: .alert)
         }else if bill?.getNumberOfSteuerzeilen() == 0{
             showAlert(title: "Warte", message: "Wir können diese Rechnung leider nicht speichern, da diese Rechnung leer ist und noch keine Summe hat.", type: .alert)

@@ -9,7 +9,7 @@
 import UIKit
 
 class BezahlformenPickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    let data = ["Bar", "Bank", "PSK", "Online Bezahlung" ,"Kreditkarte", "Andere"]
+    let data = ["Bar", "Bank","Online Bezahlung" ,"Kreditkarte", "Andere"]
     var indexPath: IndexPath?
     var delegate: EditingProtocol?
     var returnTypeBezahlung = ""

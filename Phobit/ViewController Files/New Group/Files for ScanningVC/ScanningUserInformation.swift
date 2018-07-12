@@ -60,15 +60,13 @@ extension ScanningViewController {
     func showLoadingScreen(webservice: WebService) -> (UIProgressView, UIAlertController) {
         
         let alertView = UIAlertController(title: "\n" + RandomLoadingMessages().message, message: nil, preferredStyle: .alert)
+    
+        
         let progressView = UIProgressView.init()
-        
         progressView.progress = 0
-        
-        
-        
         progressView.frame = CGRect.init(x: 10, y: 20, width: 250, height: 0)
-        
         alertView.view.addSubview(progressView)
+ 
         
         alertView.addAction(UIAlertAction.init(title: "Abbrechen", style: .cancel, handler: { (action) in
             webservice.cancelUploadFromUser()
@@ -76,7 +74,10 @@ extension ScanningViewController {
         }))
         
         
+  
+        
         self.present(alertView, animated: true, completion: nil)
+        
         
         return (progressView, alertView)
     }
