@@ -57,8 +57,10 @@ extension ScanningViewController {
     
     
     // returns the progress view for loading progress to fill with data.
-    func showLoadingScreen(webservice: WebService) -> (UIProgressView, UIAlertController) {
-        
+    
+    // in former times this function returned a UIAlertController
+    func showLoadingScreen(webservice: WebService) -> (UIProgressView, UIViewController) {
+        /*
         let alertView = UIAlertController(title: "\n" + RandomLoadingMessages().message, message: nil, preferredStyle: .alert)
     
         
@@ -77,9 +79,19 @@ extension ScanningViewController {
   
         
         self.present(alertView, animated: true, completion: nil)
+        */
         
+        let vc = storyboard?.instantiateViewController(withIdentifier: "LoadingAlertVC") as! LoadingAlertViewController
         
-        return (progressView, alertView)
+        vc.loadView() // god's function
+        let progressView = vc.progressView
+        vc.webservice = webservice
+        
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: false, completion: nil)
+        
+        // former times: alertView instead of vc
+        return (progressView!, vc)
     }
     
     

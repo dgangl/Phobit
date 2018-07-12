@@ -82,6 +82,7 @@
 		98B767232006C2E000AFE504 /* Monate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B767222006C2E000AFE504 /* Monate.swift */; };
 		98B7672B2007867D00AFE504 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */; };
 		98BA5AB720379DF7004655A0 /* GesamtBruttoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */; };
+		98C40BFD20F6EABD00888859 /* LoadingAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C40BFC20F6EABD00888859 /* LoadingAlertViewController.swift */; };
 		98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */; };
 		98CFEDBC20A233E80045ADF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98CFEDBB20A233E80045ADF2 /* GoogleService-Info.plist */; };
 		98D11AF51FF5C4FF00E7CDEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16162C541FF58EF5002000E1 /* Images.xcassets */; };
@@ -194,6 +195,7 @@
 		98B767222006C2E000AFE504 /* Monate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monate.swift; sourceTree = "<group>"; };
 		98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesamtBruttoTableViewCell.swift; sourceTree = "<group>"; };
+		98C40BFC20F6EABD00888859 /* LoadingAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAlertViewController.swift; sourceTree = "<group>"; };
 		98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSuggestions.swift; sourceTree = "<group>"; };
 		98CFEDBB20A233E80045ADF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		98D4ACEB2098EA2A009FD192 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				1618676820D69C1E0031FC87 /* ScanningViewController.swift */,
 				98A9E00F2098B30C008E142D /* Files for ScanningVC */,
 				98A9E00C2098AC11008E142D /* Backend Stuff */,
+				98C40BFC20F6EABD00888859 /* LoadingAlertViewController.swift */,
 			);
 			name = KameraView;
 			path = "New Group";
@@ -751,6 +754,7 @@
 				3C8D76FB2095E4FB007D5EBA /* SnapContainerViewController.swift in Sources */,
 				981B676C1FDC7B61008D9835 /* AuswertungTableViewController.swift in Sources */,
 				169E8BAC2037295300D0C36E /* BillData2.0.swift in Sources */,
+				98C40BFD20F6EABD00888859 /* LoadingAlertViewController.swift in Sources */,
 				16FD6CA6204479C100D8B88D /* AccountTableViewController.swift in Sources */,
 				983DEB1520166C0C00F98A9C /* CustomFormat.swift in Sources */,
 				985935AD205564C500FB20D7 /* VisionUtilities.swift in Sources */,

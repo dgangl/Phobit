@@ -49,7 +49,7 @@ extension ScanningViewController {
                         UserDefaults.standard.set(response, forKey: "OCRstring")
                         // end
                         
-                        alertView.dismiss(animated: true, completion: {
+                        alertView.dismiss(animated: false, completion: {
                             self.overlay?.invisible()
                             self.session?.startRunning()
                             self.jumpToAuswertung(withImage: processor.getImage(), noBillData: nil)
@@ -59,7 +59,7 @@ extension ScanningViewController {
                         })
                     } else if statusCode == WebServiceStatus.systemCancelled || statusCode == WebServiceStatus.timeout {
                         // dissmissing the loading alertView...
-                        alertView.dismiss(animated: true, completion: {
+                        alertView.dismiss(animated: false, completion: {
                             DispatchQueue.main.async {
                                 self.overlay?.invisible()
                                 self.cleanUp()
