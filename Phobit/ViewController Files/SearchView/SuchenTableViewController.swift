@@ -328,6 +328,7 @@ class SuchenTableViewController: UITableViewController{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SuchenTableViewCell
             cell.firmenname.text = data?.rechnungsersteller
             cell.betrag.text = CFormat.correctGeldbetrag(zahl: String(data!.gesamtBrutto))
+
             
             return cell
         } else {
@@ -341,6 +342,7 @@ class SuchenTableViewController: UITableViewController{
             return cell
         }
     }
+    
     func setDefaultSearchBar(){
 //        searchController.searchBar.tintColor = .white
 
