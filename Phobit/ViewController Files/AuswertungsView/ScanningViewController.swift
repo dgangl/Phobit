@@ -153,6 +153,10 @@ class ScanningViewController: UIViewController {
                 print("error in settung up capture session.")
             }
         }
+        
+        
+        // we call it here in general. so it will work in the simulator too.
+        bringAllElementsToFront()
     }
     
     

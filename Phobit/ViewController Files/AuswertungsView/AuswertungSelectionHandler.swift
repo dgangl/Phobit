@@ -13,7 +13,10 @@ import UIKit
 extension AuswertungsTableViewController: EditingProtocol, SpaltenSelectionProtocol {
     
     func finishedEditing(forMatrix: (Int, Int), text: String) {
-       
+        if text == "" {
+            return
+        }
+        
         updateNumbers(forMatrix: forMatrix, text: text)
         print(forMatrix)
         print(text)
