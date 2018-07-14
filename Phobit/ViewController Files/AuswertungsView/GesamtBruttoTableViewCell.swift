@@ -10,7 +10,11 @@ import UIKit
 
 class GesamtBruttoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var textfield: UILabel!
+    @IBOutlet weak var textfield: UILabel! {
+        didSet {
+            textfield.font = UIFont.monospacedDigitSystemFont(ofSize: textfield.font.pointSize, weight: .regular)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
