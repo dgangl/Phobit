@@ -120,6 +120,15 @@ class ScanningViewController: UIViewController {
         self.image = nil
         
         self.navigationController?.isNavigationBarHidden = true
+        
+        
+        if sessionCanRun {
+            if let session = session {
+                session.startRunning()
+            } else {
+                print("error in settung up capture session.")
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -147,11 +156,13 @@ class ScanningViewController: UIViewController {
 
 
         } else {
+            /*
             if let session = session {
                 session.startRunning()
             } else {
                 print("error in settung up capture session.")
             }
+            */
         }
         
         
