@@ -2,14 +2,14 @@
 //  BezahlformenPickerViewController.swift
 //  Phobit
 //
-//  Created by Julian Kronlachner on 25.02.18.
-//  Copyright © 2018 Paul Wiesinger. All rights reserved.
+//  Created by 73 on 25.02.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import UIKit
 
 class BezahlformenPickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    let data = ["Bar", "Bank", "PSK", "Online Bezahlung" ,"Kreditkarte", "Andere"]
+    let data = ["Bar", "Bank","Online Bezahlung" ,"Kreditkarte", "Andere"]
     var indexPath: IndexPath?
     var delegate: EditingProtocol?
     var returnTypeBezahlung = ""

@@ -2,8 +2,8 @@
 //  CustomFormat.swift
 //  Phobit
 //
-//  Created by Paul Wiesinger on 22.01.18.
-//  Copyright © 2018 Paul Wiesinger. All rights reserved.
+//  Created by 73 on 22.01.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import Foundation

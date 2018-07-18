@@ -2,8 +2,8 @@
 //  PhobitColorPicker.swift
 //  Phobit
 //
-//  Created by Julian Kronlachner on 05.03.18.
-//  Copyright © 2018 LonoS. All rights reserved.
+//  Created by 73 on 05.03.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import Foundation

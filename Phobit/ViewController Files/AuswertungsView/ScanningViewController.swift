@@ -2,8 +2,8 @@
 //  ScanningViewController.swift
 //  Phobit
 //
-//  Created by Paul Wiesinger on 01.05.18.
-//  Copyright © 2018 LonoS. All rights reserved.
+//  Created by 73 on 01.05.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import UIKit
@@ -65,6 +65,7 @@ class ScanningViewController: UIViewController {
     
     
     var blackView : UIView?
+    var blurView : UIVisualEffectView?
     
     
     
@@ -120,6 +121,15 @@ class ScanningViewController: UIViewController {
         self.image = nil
         
         self.navigationController?.isNavigationBarHidden = true
+        
+        
+        if sessionCanRun {
+            if let session = session {
+                session.startRunning()
+            } else {
+                print("error in settung up capture session.")
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -147,12 +157,18 @@ class ScanningViewController: UIViewController {
 
 
         } else {
+            /*
             if let session = session {
                 session.startRunning()
             } else {
                 print("error in settung up capture session.")
             }
+            */
         }
+        
+        
+        // we call it here in general. so it will work in the simulator too.
+        bringAllElementsToFront()
     }
     
     
@@ -174,7 +190,6 @@ class ScanningViewController: UIViewController {
         }
     }
     
-    
     func addTheInfoView(){
         
         
@@ -183,20 +198,28 @@ class ScanningViewController: UIViewController {
         if infoViewBool{
                 
         }else if infoViewBool == false{
-            
+            let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            blurView = UIVisualEffectView(effect: darkBlur)
+            blurView!.frame = self.view.frame
+            blurView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blurView!.alpha = 0.0
             
             
             blackView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
             blackView?.backgroundColor = .black
             blackView?.alpha = 0.0
             
+            self.view.addSubview(blurView!)
             self.view.addSubview(blackView!)
             UIView.animate(withDuration: 0.7){
                 self.blackView?.alpha = 0.7
+                self.blurView?.alpha = 0.7
             }
             
             infoView.center = self.view.center
             infoView.alpha = 0.0
+            
+            
             self.view.addSubview(infoView)
             UIView.animate(withDuration: 0.7) {
                 self.infoView.alpha = 0.9
@@ -214,8 +237,10 @@ class ScanningViewController: UIViewController {
        
         UIView.animate(withDuration: 0.8, animations: {
             self.blackView?.alpha = 0.0
+            self.blurView?.alpha = 0.0
         }){(result) in
             self.blackView?.removeFromSuperview()
+            self.blurView?.removeFromSuperview()
         }
         UIView.animate(withDuration: 0.8, animations:
             {   self.infoView.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y + 10)

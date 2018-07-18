@@ -2,8 +2,8 @@
 //  EinstellungsController.swift
 //  Phobit
 //
-//  Created by Julian Kronlachner on 06.01.18.
-//  Copyright © 2018 Lonos. All rights reserved.
+//  Created by 73 on 06.01.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import UIKit

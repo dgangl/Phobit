@@ -2,8 +2,8 @@
 //  VerwendungszweckTests.swift
 //  Phobit_Tests
 //
-//  Created by Julian Kronlachner on 16.06.18.
-//  Copyright © 2018 LonoS. All rights reserved.
+//  Created by 73 on 16.06.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import XCTest

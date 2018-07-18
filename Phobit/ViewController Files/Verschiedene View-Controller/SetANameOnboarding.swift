@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  newLoginScreen
 //
-//  Created by Paul Krenn on 07.03.18.
-//  Copyright © 2018 Paul Krenn. All rights reserved.
+//  Created by 73 on 07.03.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import UIKit

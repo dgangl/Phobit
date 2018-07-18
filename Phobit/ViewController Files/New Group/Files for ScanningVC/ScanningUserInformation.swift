@@ -2,8 +2,8 @@
 //  ScanningUserInformation.swift
 //  Phobit
 //
-//  Created by Paul Wiesinger on 01.05.18.
-//  Copyright © 2018 LonoS. All rights reserved.
+//  Created by 73 on 01.05.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import UIKit
@@ -57,18 +57,18 @@ extension ScanningViewController {
     
     
     // returns the progress view for loading progress to fill with data.
-    func showLoadingScreen(webservice: WebService) -> (UIProgressView, UIAlertController) {
-        
+    
+    // in former times this function returned a UIAlertController
+    func showLoadingScreen(webservice: WebService) -> (UIProgressView, UIViewController) {
+        /*
         let alertView = UIAlertController(title: "\n" + RandomLoadingMessages().message, message: nil, preferredStyle: .alert)
+    
+        
         let progressView = UIProgressView.init()
-        
         progressView.progress = 0
-        
-        
-        
         progressView.frame = CGRect.init(x: 10, y: 20, width: 250, height: 0)
-        
         alertView.view.addSubview(progressView)
+ 
         
         alertView.addAction(UIAlertAction.init(title: "Abbrechen", style: .cancel, handler: { (action) in
             webservice.cancelUploadFromUser()
@@ -76,9 +76,22 @@ extension ScanningViewController {
         }))
         
         
-        self.present(alertView, animated: true, completion: nil)
+  
         
-        return (progressView, alertView)
+        self.present(alertView, animated: true, completion: nil)
+        */
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "LoadingAlertVC") as! LoadingAlertViewController
+        
+        vc.loadView() // god's function
+        let progressView = vc.progressView
+        vc.webservice = webservice
+        
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: false, completion: nil)
+        
+        // former times: alertView instead of vc
+        return (progressView!, vc)
     }
     
     

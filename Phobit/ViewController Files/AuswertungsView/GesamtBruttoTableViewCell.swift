@@ -2,15 +2,19 @@
 //  GesamtBruttoTableViewCell.swift
 //  Phobit
 //
-//  Created by Paul Wiesinger on 17.02.18.
-//  Copyright © 2018 Paul Wiesinger. All rights reserved.
+//  Created by 73 on 17.02.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import UIKit
 
 class GesamtBruttoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var textfield: UILabel!
+    @IBOutlet weak var textfield: UILabel! {
+        didSet {
+            textfield.font = UIFont.monospacedDigitSystemFont(ofSize: textfield.font.pointSize, weight: .regular)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

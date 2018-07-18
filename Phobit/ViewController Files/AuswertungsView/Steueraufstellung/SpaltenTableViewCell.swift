@@ -10,10 +10,29 @@ import UIKit
 
 class SpaltenTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var prozent: UILabel!
-    @IBOutlet weak var mwst: UILabel!
-    @IBOutlet weak var netto: UILabel!
-    @IBOutlet weak var brutto: UILabel!
+    @IBOutlet weak var prozent: UILabel! {
+        didSet {
+            prozent.font = UIFont.monospacedDigitSystemFont(ofSize: prozent.font.pointSize, weight: .regular)
+        }
+    }
+    
+    @IBOutlet weak var mwst: UILabel!{
+        didSet {
+            mwst.font = UIFont.monospacedDigitSystemFont(ofSize: mwst.font.pointSize, weight: .regular)
+        }
+    }
+    
+    @IBOutlet weak var netto: UILabel!{
+        didSet {
+            netto.font = UIFont.monospacedDigitSystemFont(ofSize: netto.font.pointSize, weight: .regular)
+        }
+    }
+    
+    @IBOutlet weak var brutto: UILabel!{
+        didSet {
+            brutto.font = UIFont.monospacedDigitSystemFont(ofSize: brutto.font.pointSize, weight: .regular)
+        }
+    }
     
     var delegate: SpaltenSelectionProtocol?
     var row: Int?

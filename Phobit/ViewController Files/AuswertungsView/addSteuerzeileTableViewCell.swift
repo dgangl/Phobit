@@ -2,8 +2,8 @@
 //  addSteuerzeileTableViewCell.swift
 //  Phobit
 //
-//  Created by Julian Kronlachner on 04.07.18.
-//  Copyright © 2018 LonoS. All rights reserved.
+//  Created by 73 on 04.07.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import UIKit

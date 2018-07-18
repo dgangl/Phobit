@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Phobit
 //
-//  Created by Paul Wiesinger on 09.12.17.
-//  Copyright © 2017 Paul Wiesinger. All rights reserved.
+//  Created by 73 on 09.12.17.
+//  Copyright © 2017 73. All rights reserved.
 //
 
 import UIKit

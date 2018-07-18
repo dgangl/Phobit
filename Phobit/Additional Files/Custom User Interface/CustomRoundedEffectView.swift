@@ -2,8 +2,8 @@
 //  CustomRoundedEffectView.swift
 //  Phobit
 //
-//  Created by Paul Wiesinger on 11.03.18.
-//  Copyright © 2018 LonoS. All rights reserved.
+//  Created by 73 on 11.03.18.
+//  Copyright © 2018 73. All rights reserved.
 //
 
 import UIKit
