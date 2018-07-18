@@ -60,13 +60,13 @@ extension DataMaster {
             var result: Double = -1
             let setcomma = input.replacingOccurrences(of: ",", with: ".", options: NSString.CompareOptions.literal, range: nil)
             let deleteLeerzeichen = input.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
-            if(deleteLeerzeichen.count < 3){
-                return false;
-            }
             var splitary = Array(deleteLeerzeichen)
             
             switch splitary[0] {
             case "<":
+                if(deleteLeerzeichen.count <= 1){
+                    return false;
+                }
                 var elements: String = "";
                 for (index,element) in splitary.enumerated(){
                     if Double(String(splitary[index])) != nil {
@@ -84,6 +84,9 @@ extension DataMaster {
                     
                 }
             case ">":
+                if(deleteLeerzeichen.count <= 1){
+                    return false;
+                }
                 var elements: String = "";
                 for (index,element) in splitary.enumerated(){
                     if Double(String(splitary[index])) != nil {
@@ -104,8 +107,11 @@ extension DataMaster {
                 for (index,element) in splitary.enumerated(){
                     if Double(String(splitary[index])) != nil {
                         elements.append(element)
+                    }                else if splitary[index] == "." || splitary[index] == ","{
+                        elements.append(".")
                     }
                 }
+            
                 if Double(elements) != nil{
                     result = Double(elements)!
                         for userVar in billdata{
@@ -155,10 +161,11 @@ extension DataMaster {
                         for (index,element) in splitary.enumerated(){
                             if Double(String(splitary[index])) != nil {
                                 elements.append(element)
-                            }                else if splitary[index] == "."{
-                                elements.append(element)
+                            }                else if splitary[index] == "." || splitary[index] == ","{
+                                elements.append(".")
                             }
                         }
+                        
                         if Double(elements) != nil{
                             result = Double(elements)!
                             for userVar in billdata{
@@ -182,13 +189,14 @@ extension DataMaster {
                         let deleteEuro = stringsplitary.replacingOccurrences(of: "€", with: "", options: NSString.CompareOptions.literal, range: nil)
                         zahl1 = -1
                         zahl2 = -1
+                        
                         if(deleteEuro.split(separator: "-").count == 2){
-                        zahl1 = Double(String(deleteEuro.split(separator: "-")[0]))!
-                        zahl2 = Double(String(deleteEuro.split(separator: "-")[1]))!
+                        var v1: String = String(deleteEuro.split(separator: "-")[0])
+                        zahl1 = Double(v1.replacingOccurrences(of: ",", with: ".", options: NSString.CompareOptions.literal, range: nil))!
+                        var v2: String = String(deleteEuro.split(separator: "-")[1])
+                        zahl2 = Double(v2.replacingOccurrences(of: ",", with: ".", options: NSString.CompareOptions.literal, range: nil))!
                         }
                         
-                        //var a: Double = Double(zahl1)!
-                       // print(a)
                         if zahl1 != nil && zahl2 != nil{
                             if zahl1 <= zahl2{
                                 for userVar in billdata{
