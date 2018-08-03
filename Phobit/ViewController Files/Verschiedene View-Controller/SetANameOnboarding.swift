@@ -14,6 +14,11 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var goOn: UIButton!
     @IBOutlet weak var FehlerMeldung: UILabel!
     override func viewDidLoad() {
+        TextField.addTarget(self, action: #selector(moveUp), for: .editingDidBegin)
+        TextField.addTarget(self, action: #selector(moveDown), for: .editingDidEnd)
+
+        
+        
         super.viewDidLoad()
         TextField.returnKeyType = UIReturnKeyType.done
         goOn.layer.cornerRadius = 10;
@@ -96,8 +101,22 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
         
             //Presenting Alert View End//
         }
+    
+    @objc func moveUp(){
+        UIView.animate(withDuration: 0.2){
+            self.view.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y - 100)
+        }
+    }
+    
+    @objc func moveDown(){
+        UIView.animate(withDuration: 0.2){
+            self.view.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y + 100)
+        }
+    }
+    
         
     }
+
     
     
 

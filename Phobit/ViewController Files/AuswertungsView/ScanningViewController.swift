@@ -72,8 +72,11 @@ class ScanningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("----- START NEURAL NET OUTPUT -----")
+        _ = NeuralNet();
+        print("----- END NEURAL NET OUTPUT -----")
         
-       
+        
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
