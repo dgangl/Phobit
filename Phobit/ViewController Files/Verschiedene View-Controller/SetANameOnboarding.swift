@@ -99,7 +99,8 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
             }
             
         
-            //Presenting Alert View End//
+        //Presenting Alert View End//
+            swipeViewSetup()
         }
     
     @objc func moveUp(){
@@ -114,6 +115,23 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    
+    func swipeViewSetup(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let left = storyboard.instantiateViewController(withIdentifier: "left")
+        let middle = storyboard.instantiateViewController(withIdentifier: "middle")
+        let right = storyboard.instantiateViewController(withIdentifier: "right")
+        
+        
+        let snapContainer = SnapContainerViewController.containerViewWith(left, middleVC: middle, rightVC: right)
+        
+        self.view.window?.rootViewController = snapContainer
+        self.view.window?.makeKeyAndVisible()
+        print("MADE SC View Visible")
+        
+        
+    }
         
     }
 

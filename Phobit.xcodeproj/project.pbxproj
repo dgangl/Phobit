@@ -256,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				160C034D2000B20B00BD3EC2 /* EinstellungsController.swift */,
+				16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -315,7 +316,6 @@
 		1687771B1FEEAFFB00A3B2AC /* Verschiedene View-Controller */ = {
 			isa = PBXGroup;
 			children = (
-				16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */,
 				3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */,
 				3C352B3D20447EF800117EAE /* LoginTableViewController.swift */,
 				1654ED072017B7EB00529C6B /* OnboardingController.swift */,

@@ -86,16 +86,16 @@ class ScanningViewController: UIViewController {
         foundQRCodeBanner.addGestureRecognizer(tapRecognizer)
         
         
-        let swipeToSearch = UISwipeGestureRecognizer.init(target: self, action: #selector(segueToSuchenBTN(_:)))
-        let swipeToEinstellungen = UISwipeGestureRecognizer.init(target: self, action: #selector(segueToEinstellungenBTN(_:)))
+//        let swipeToSearch = UISwipeGestureRecognizer.init(target: self, action: #selector(segueToSuchenBTN(_:)))
+//        let swipeToEinstellungen = UISwipeGestureRecognizer.init(target: self, action: #selector(segueToEinstellungenBTN(_:)))
+//
+//        swipeToEinstellungen.direction = .left
+//        swipeToSearch.direction = .right
         
-        swipeToEinstellungen.direction = .left
-        swipeToSearch.direction = .right
         
         
-        
-        self.view.addGestureRecognizer(swipeToSearch)
-        self.view.addGestureRecognizer(swipeToEinstellungen)
+//        self.view.addGestureRecognizer(swipeToSearch)
+//        self.view.addGestureRecognizer(swipeToEinstellungen)
         
         
         
@@ -268,7 +268,8 @@ class ScanningViewController: UIViewController {
         if getAuthStatus() == true {
             authentifizierung(seague: "suchen")
         } else {
-            self.performSegue(withIdentifier: "suchen", sender: nil)
+            AppDelegate.snapContainer.scrollToPage(0)
+//            self.performSegue(withIdentifier: "suchen", sender: nil)
         }
     }
     
@@ -276,7 +277,8 @@ class ScanningViewController: UIViewController {
         if getAuthStatus() == true {
             authentifizierung(seague: "einstellungen")
         } else {
-            self.performSegue(withIdentifier: "einstellungen", sender: nil)
+            AppDelegate.snapContainer.scrollToPage(2)
+//            self.performSegue(withIdentifier: "einstellungen", sender: nil)
         }
     }
     

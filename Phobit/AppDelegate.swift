@@ -15,13 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     var window: UIWindow?
-    
+    public static var snapContainer : SnapContainerViewController = .init()
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //WE ARE USING THIS FOR OUR DATABASE. DO NOT DELETE! VERY IMPORTANT
         FirebaseApp.configure();
-        
         UISearchBar.appearance().tintColor = UIColor.lightGray
         
         UserData.FIXED_DEMO_USER = UserDefaults.standard.object(forKey: "DemoUserUniqueNumber") as? String ?? ""
@@ -59,19 +58,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             //Zeige den Onboarding Screen
             vc = storyboard.instantiateViewController(withIdentifier: "BoardingScreen")
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
             //Adding the Base File
             
             
         }
         else/*Es wurde bereits ein User angelegt (Premium active)*/{
             //Zeige den mainScreen
-            vc = storyboard.instantiateInitialViewController()!
+            swipeViewSetup()
+
             //Important for the UI of Onboarding Screen
             UserDefaults.standard.set(false, forKey: "launching");
         }
         
-        self.window?.rootViewController = vc
-        self.window?.makeKeyAndVisible()
+       
         
         themeApp()
         var db = Database.init();
@@ -80,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Bla Bla Number ", diction.count.description)
         }
         //print(file);
-        
+
         return true
     }
     
@@ -153,6 +154,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIBarButtonItem.appearance(whenContainedInInstancesOf:[UISearchBar.self]).tintColor = UIColor.white
         
+        
+        
+    }
+    
+    
+    func swipeViewSetup(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let left = storyboard.instantiateViewController(withIdentifier: "left")
+        let middle = storyboard.instantiateViewController(withIdentifier: "middle")
+        let right = storyboard.instantiateViewController(withIdentifier: "right")
+      
+        
+        AppDelegate.snapContainer = SnapContainerViewController.containerViewWith(left, middleVC: middle, rightVC: right)
+        
+        self.window?.rootViewController = AppDelegate.snapContainer
+        self.window?.makeKeyAndVisible()
+        print("MADE SC View Visible")
         
         
     }
