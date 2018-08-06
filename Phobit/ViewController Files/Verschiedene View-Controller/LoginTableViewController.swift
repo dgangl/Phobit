@@ -146,7 +146,8 @@ class LoginTableViewController: UITableViewController {
         
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: thisArray)
         UserDefaults.standard.set(encodedData, forKey: "UserData");
-        
+        NotificationCenter.default.post(name: Notification.Name("loadTableView"), object: nil)
+        print("RELOADING TABLE DATA")
         
     }
     

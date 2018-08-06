@@ -24,6 +24,7 @@
 		1666D97820D1942400F48AE6 /* CustomFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983DEB1420166C0C00F98A9C /* CustomFormat.swift */; };
 		1666D97D20D54C9D00F48AE6 /* VerwendungszweckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1666D97C20D54C9D00F48AE6 /* VerwendungszweckTests.swift */; };
 		1666D97E20D68FA700F48AE6 /* EditingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893AB3020387B5D00249850 /* EditingProtocol.swift */; };
+		166FE90C21142DD700F78DA4 /* NeuralNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166FE90B21142DD600F78DA4 /* NeuralNet.swift */; };
 		169E8BAC2037295300D0C36E /* BillData2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAB2037295300D0C36E /* BillData2.0.swift */; };
 		169E8BAE20372D1200D0C36E /* Steuerzeile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169E8BAD20372D1200D0C36E /* Steuerzeile.swift */; };
 		16B0434E2091CF5200D89E93 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0434D2091CF5200D89E93 /* NeuralNetwork.swift */; };
@@ -118,9 +119,7 @@
 		160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16162C541FF58EF5002000E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Phobit/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		1618676820D69C1E0031FC87 /* ScanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanningViewController.swift; path = "Phobit/ViewController Files/AuswertungsView/ScanningViewController.swift"; sourceTree = SOURCE_ROOT; };
-		1638DE28207551E600FD069C /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		1638DE2A207551F100FD069C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		1638DE2C207551FF00FD069C /* TesseractOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1638DE2E2075597300FD069C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		163C3342204B121B00D03E41 /* ImageUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
 		163C50AB2056AE230084701B /* App_Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App_Settings.swift; sourceTree = "<group>"; };
@@ -134,6 +133,7 @@
 		1666D96D20D18C6E00F48AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1666D97320D18D5100F48AE6 /* Phobit_UI_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phobit_UI_Tests.swift; sourceTree = "<group>"; };
 		1666D97C20D54C9D00F48AE6 /* VerwendungszweckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerwendungszweckTests.swift; sourceTree = "<group>"; };
+		166FE90B21142DD600F78DA4 /* NeuralNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNet.swift; sourceTree = "<group>"; };
 		169E8BAB2037295300D0C36E /* BillData2.0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillData2.0.swift; sourceTree = "<group>"; };
 		169E8BAD20372D1200D0C36E /* Steuerzeile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steuerzeile.swift; sourceTree = "<group>"; };
 		16B0434D2091CF5200D89E93 /* NeuralNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
@@ -146,6 +146,8 @@
 		16FD6C9D20431B4F00D8B88D /* ImageDataStorer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataStorer.swift; sourceTree = "<group>"; };
 		16FD6CA120445A5A00D8B88D /* ZeilenPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeilenPickerViewController.swift; sourceTree = "<group>"; };
 		16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
+		23835C0691AB2B1F30C28EBF /* Pods-Phobit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.debug.xcconfig"; sourceTree = "<group>"; };
+		2ADE838C62786052B40E007B /* Pods-Phobit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.release.xcconfig"; sourceTree = "<group>"; };
 		3C2A41D92090C91D00FE1CE9 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		3C352B3D20447EF800117EAE /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		3C70AB9A2056C0FA002F08B0 /* SetANameOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetANameOnboarding.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				160C034D2000B20B00BD3EC2 /* EinstellungsController.swift */,
+				16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -291,9 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				1638DE2E2075597300FD069C /* libz.tbd */,
-				1638DE2C207551FF00FD069C /* TesseractOCR.framework */,
 				1638DE2A207551F100FD069C /* CoreImage.framework */,
-				1638DE28207551E600FD069C /* libstdc++.tbd */,
 				1648406620074E8B0023AC43 /* AVFoundation.framework */,
 				1648406520074E8B0023AC43 /* AVKit.framework */,
 				9E030FECDF40C06234EFF7C9 /* Pods_Phobit.framework */,
@@ -315,7 +316,6 @@
 		1687771B1FEEAFFB00A3B2AC /* Verschiedene View-Controller */ = {
 			isa = PBXGroup;
 			children = (
-				16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */,
 				3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */,
 				3C352B3D20447EF800117EAE /* LoginTableViewController.swift */,
 				1654ED072017B7EB00529C6B /* OnboardingController.swift */,
@@ -377,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2A41D92090C91D00FE1CE9 /* Database.swift */,
+				166FE90B21142DD600F78DA4 /* NeuralNet.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -390,10 +391,20 @@
 			path = SwipeFunction;
 			sourceTree = "<group>";
 		};
+		978CAF27116001CDDB8DDAFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23835C0691AB2B1F30C28EBF /* Pods-Phobit.debug.xcconfig */,
+				2ADE838C62786052B40E007B /* Pods-Phobit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		981423DC20F4E91100E5CAE4 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				9858B76020EEAB10007C0844 /* NeuralNetDataGetter.swift */,
+				5CF8659DA78F31BBFF54DC69 /* Pods-Phobit.debug.xcconfig */,
+				9E99BD1EC530CCE81E177DCF /* Pods-Phobit.release.xcconfig */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -407,7 +418,7 @@
 				981B67531FDC7551008D9835 /* Products */,
 				1648406420074E8A0023AC43 /* Frameworks */,
 				981423DC20F4E91100E5CAE4 /* Recovered References */,
-				C73B3544F0A492334AF6D780 /* Pods */,
+				978CAF27116001CDDB8DDAFF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -643,6 +654,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -658,6 +670,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -748,6 +761,7 @@
 				16FD6CA6204479C100D8B88D /* AccountTableViewController.swift in Sources */,
 				983DEB1520166C0C00F98A9C /* CustomFormat.swift in Sources */,
 				985935AD205564C500FB20D7 /* VisionUtilities.swift in Sources */,
+				166FE90C21142DD700F78DA4 /* NeuralNet.swift in Sources */,
 				98AFA57D20EE4F1400043FCF /* RandomLoadingMessage.swift in Sources */,
 				3C8D76FA2095E4FB007D5EBA /* VerticalScrollViewController.swift in Sources */,
 				981617202042E85100A3C29E /* SuchenTableViewSelectionHandler.swift in Sources */,
@@ -965,11 +979,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94M76HHF37;
+				DEVELOPMENT_TEAM = 4365VP3HP5;
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lab73.Phobitse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lab73.Phobitz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -987,11 +1001,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94M76HHF37;
+				DEVELOPMENT_TEAM = 4365VP3HP5;
 				INFOPLIST_FILE = Phobit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lab73.Phobitse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lab73.Phobitz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

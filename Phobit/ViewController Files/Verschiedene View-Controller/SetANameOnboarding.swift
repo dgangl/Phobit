@@ -14,6 +14,11 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var goOn: UIButton!
     @IBOutlet weak var FehlerMeldung: UILabel!
     override func viewDidLoad() {
+        TextField.addTarget(self, action: #selector(moveUp), for: .editingDidBegin)
+        TextField.addTarget(self, action: #selector(moveDown), for: .editingDidEnd)
+
+        
+        
         super.viewDidLoad()
         TextField.returnKeyType = UIReturnKeyType.done
         goOn.layer.cornerRadius = 10;
@@ -94,10 +99,42 @@ class SetANameOnboarding: UIViewController, UIGestureRecognizerDelegate {
             }
             
         
-            //Presenting Alert View End//
+        //Presenting Alert View End//
+            swipeViewSetup()
         }
+    
+    @objc func moveUp(){
+        UIView.animate(withDuration: 0.2){
+            self.view.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y - 100)
+        }
+    }
+    
+    @objc func moveDown(){
+        UIView.animate(withDuration: 0.2){
+            self.view.center = CGPoint.init(x: self.view.center.x, y: self.view.center.y + 100)
+        }
+    }
+    
+    
+    func swipeViewSetup(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let left = storyboard.instantiateViewController(withIdentifier: "left")
+        let middle = storyboard.instantiateViewController(withIdentifier: "middle")
+        let right = storyboard.instantiateViewController(withIdentifier: "right")
+        
+        
+        let snapContainer = SnapContainerViewController.containerViewWith(left, middleVC: middle, rightVC: right)
+        
+        self.view.window?.rootViewController = snapContainer
+        self.view.window?.makeKeyAndVisible()
+        print("MADE SC View Visible")
+        
         
     }
+        
+    }
+
     
     
 

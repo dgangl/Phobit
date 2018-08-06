@@ -134,4 +134,10 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    func scrollToPage(_ page: Int) {
+        UIView.animate(withDuration: 0.3) {
+            self.scrollView.contentOffset.x = self.scrollView.frame.width * CGFloat(page)
+        }
+    }
+    
 }

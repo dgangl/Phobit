@@ -64,7 +64,11 @@ extension UITableViewController: UISearchBarDelegate{
     }
     
     @objc private func reloadData(){
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            print("RELOADING DATA")
+            self.tableView.reloadData()
+
+        }
     }
     
     @objc func setToBetragSearch(){
@@ -143,6 +147,10 @@ class SuchenTableViewController: UITableViewController{
     let searchController = UISearchController(searchResultsController: nil)
     
     
+    override func viewWillDisappear(_ animated: Bool) {
+        print("TABLEVIEW DISSAPERAD")
+    }
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -169,6 +177,8 @@ class SuchenTableViewController: UITableViewController{
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: NSNotification.Name(rawValue: "loadTableView"), object: nil)
+        
         // setup the searchController
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -187,21 +197,40 @@ class SuchenTableViewController: UITableViewController{
         
         
         self.title = "Suchen"
+        self.navigationItem.rightBarButtonItems =  [UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: #selector(pageBack)), UIBarButtonItem.init(title: "Zurück", style: .plain, target: self, action: #selector(pageBack))]
         
         
         setDefaultSearchBar()
     
         
         // this should make it faster...
-        DispatchQueue.global().async {
+        DispatchQueue.main.async {
+            
+        
             self.prepareData()
         
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-        }
+            }
     
     }
+    @objc func pageBack(){
+        AppDelegate.snapContainer.scrollToPage(1)
+
+        
+    }
+    
+    @objc func reloadTableView(){
+        self.prepareData()
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+        
+    }
+    
     
     func addTheInfoView(){
        
@@ -263,7 +292,7 @@ class SuchenTableViewController: UITableViewController{
     }
     
     
-    private func prepareData() {
+    public func prepareData() {
         let start = Date().millisecondsSince1970
         if let data = Memory().read() {
             print("###### Time to read Data: \(Date().millisecondsSince1970 - start)")

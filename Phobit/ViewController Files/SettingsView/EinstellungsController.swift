@@ -45,6 +45,13 @@ class EinstellungsController: UITableViewController{
         // Prepeare Active Firm Lable
         initializeActiveFirmLable();
        
+        self.navigationItem.leftBarButtonItems =  [ UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: #selector(pageBack)), UIBarButtonItem.init(title: "Zurück", style: .plain, target: self, action: #selector(pageBack))]
+        
+        
+    }
+    
+    @objc func pageBack(){
+        AppDelegate.snapContainer.scrollToPage(1)
         
         
     }

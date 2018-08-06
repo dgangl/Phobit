@@ -180,6 +180,7 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
     
     func isAlpha() {
         
+        
         let alert = UIAlertController(title: nil, message: "Überprüfe Eingabe...", preferredStyle: .alert)
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
@@ -192,7 +193,7 @@ class OnbordingController: UIViewController, UIGestureRecognizerDelegate {
         
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
- 
+        
         
         
         let db = Database.init();

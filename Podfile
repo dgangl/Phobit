@@ -9,7 +9,6 @@ target 'Phobit' do
 
 	pod 'Alamofire', '~> 4.6'
 	pod 'MGSwipeTableCell'
-
 	pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Performance'

@@ -385,6 +385,38 @@
             endingLineNumber = "108"
             landmarkName = "userDidEdit(inIndexPath:changedText:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phobit.AuswertungsTableViewController.userDidEdit(inIndexPath: Foundation.IndexPath, changedText: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "Phobit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Kroni/Desktop/Phobit/Phobit/ViewController%20Files/AuswertungsView/AuswertungSelectionHandler.swift"
+                  timestampString = "554979162.954548"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "324">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phobit.AuswertungsTableViewController.userDidEdit(inIndexPath: Foundation.IndexPath, changedText: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "Phobit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Kroni/Desktop/Phobit/Phobit/ViewController%20Files/AuswertungsView/AuswertungSelectionHandler.swift"
+                  timestampString = "554979162.956579"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -416,6 +448,102 @@
             startingLineNumber = "174"
             endingLineNumber = "174"
             landmarkName = "returnHomeAndSave()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phobit.AuswertungsTableViewController.returnHomeAndSave() -&gt; ()"
+                  moduleName = "Phobit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Kroni/Desktop/Phobit/Phobit/ViewController%20Files/AuswertungsView/AuswertungTableViewController.swift"
+                  timestampString = "554979162.966098"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "888">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in Phobit.AuswertungsTableViewController.returnHomeAndSave() -&gt; ()"
+                  moduleName = "Phobit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Kroni/Desktop/Phobit/Phobit/ViewController%20Files/AuswertungsView/AuswertungTableViewController.swift"
+                  timestampString = "554979162.967996"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phobit/AppDelegate.swift"
+            timestampString = "554980861.170925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phobit/ViewController Files/SettingsView/AccountTableViewController.swift"
+            timestampString = "554980861.171437"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "clicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phobit/ViewController Files/SearchView/SuchenTableViewController.swift"
+            timestampString = "554980861.171683"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "addToolbar(textField:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phobit/ViewController Files/SearchView/SuchenTableViewController.swift"
+            timestampString = "554980861.172403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "reloadData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
