@@ -12,19 +12,19 @@ import Foundation
 extension DataMaster {
     // billdata..
     // searched
-    func search(text: String) {
+    func search(searchText: String) {
         
         searchedbilldata = [BillData2]()
         
-        print("Eingabe: " + text);
+        print("Eingabe: " + searchText);
         print("Now checking Price")
-        Sonderzeichen(input: text)
+        Sonderzeichen(input: searchText)
         print("Now checking DATE");
-        checkDate(text: text)
+        checkDate(text: searchText)
         print("Now checking MONTH")
-        checkMonth(text: text);
+        checkMonth(text: searchText);
         print("Now checking STRING")
-        checkElse(texti: text)
+        checkElse(text: searchText)
         
     }
     
@@ -422,8 +422,8 @@ extension DataMaster {
         }
         print(searchedbilldata ?? "EMPTY")
     }
-    func checkElse(texti: String) -> Bool {
-        let text = texti.lowercased()
+    func checkElse(text: String) -> Bool {
+        let text = text.lowercased()
         if(text.count <= 0){
             return false;
         }
