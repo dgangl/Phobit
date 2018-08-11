@@ -191,7 +191,6 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
         } else {
             scrollView.isScrollEnabled = true
         }
-        
-        print(currentPage)
+        /*print(currentPage)*/
     }
 }
