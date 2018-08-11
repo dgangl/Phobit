@@ -85,7 +85,6 @@
 		98B7672B2007867D00AFE504 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */; };
 		98BA5AB720379DF7004655A0 /* GesamtBruttoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */; };
 		98C40BFD20F6EABD00888859 /* LoadingAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C40BFC20F6EABD00888859 /* LoadingAlertViewController.swift */; };
-		98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */; };
 		98CFEDBC20A233E80045ADF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98CFEDBB20A233E80045ADF2 /* GoogleService-Info.plist */; };
 		98D11AF51FF5C4FF00E7CDEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16162C541FF58EF5002000E1 /* Images.xcassets */; };
 		98D4ACEC2098EA2A009FD192 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D4ACEB2098EA2A009FD192 /* ImageProcessor.swift */; };
@@ -198,7 +197,6 @@
 		98B7672A2007867D00AFE504 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		98BA5AB620379DF7004655A0 /* GesamtBruttoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesamtBruttoTableViewCell.swift; sourceTree = "<group>"; };
 		98C40BFC20F6EABD00888859 /* LoadingAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAlertViewController.swift; sourceTree = "<group>"; };
-		98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSuggestions.swift; sourceTree = "<group>"; };
 		98CFEDBB20A233E80045ADF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		98D4ACEB2098EA2A009FD192 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		98D768031FF52DDC00876B3E /* SuchfunktionDaten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchfunktionDaten.swift; sourceTree = "<group>"; };
@@ -267,7 +265,6 @@
 			children = (
 				16FD6C9D20431B4F00D8B88D /* ImageDataStorer.swift */,
 				16D8DC39202CB05D00D001C4 /* Memory.swift */,
-				98CCC8A32056C86A008DB9E3 /* SmartSuggestions.swift */,
 				163C3342204B121B00D03E41 /* ImageUpload.swift */,
 				984DD79C205024150098BE0F /* SampleDataLoader.swift */,
 			);
@@ -785,7 +782,6 @@
 				98D4ACEC2098EA2A009FD192 /* ImageProcessor.swift in Sources */,
 				98A9E0172098C4B9008E142D /* Overlay.swift in Sources */,
 				981B676E1FDC7B72008D9835 /* SuchenTableViewController.swift in Sources */,
-				98CCC8A42056C86A008DB9E3 /* SmartSuggestions.swift in Sources */,
 				16FD6C9C20430DAD00D8B88D /* BezahlformenPickerViewController.swift in Sources */,
 				16B0434E2091CF5200D89E93 /* NeuralNetwork.swift in Sources */,
 			);
