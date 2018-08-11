@@ -12,6 +12,7 @@ class LoadingAlertViewController: UIViewController {
 
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var messageView: UIView!
     
     var webservice: WebService?
     
@@ -24,6 +25,13 @@ class LoadingAlertViewController: UIViewController {
         super.viewDidAppear(animated)
         
         message.text = RandomLoadingMessages.init().message
+        message.adjustsFontSizeToFitWidth = true
+        
+        // animating the Message in.
+        messageView.transform = CGAffineTransform.init(scaleX: 1.1, y: 1.1)
+        UIView.animate(withDuration: 0.2, animations: {
+            self.messageView.transform = CGAffineTransform.identity
+        })
     }
     
     @IBAction func cancelButton(_ sender: Any) {

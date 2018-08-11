@@ -2040,56 +2040,56 @@ Derzeit ist es leider nur möglich, Rechnungen mit QR-Code zu scannnen. Dies wir
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BvU-sS-6rj">
-                                <rect key="frame" x="42.5" y="226" width="290" height="215"/>
+                                <rect key="frame" x="38" y="248" width="300" height="171"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cne-J8-m3U">
-                                        <rect key="frame" x="0.0" y="178" width="290" height="37"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="37" id="UI3-q3-AJi"/>
-                                        </constraints>
-                                        <state key="normal" title="Abbrechen"/>
-                                        <connections>
-                                            <action selector="cancelButton:" destination="1V2-5U-t33" eventType="touchUpInside" id="aTY-y7-8ie"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JK5-zO-aWU">
-                                        <rect key="frame" x="0.0" y="0.0" width="290" height="177"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="133"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CPT-Wi-gfF">
-                                                <rect key="frame" x="32" y="155" width="226" height="2"/>
+                                                <rect key="frame" x="32" y="111" width="236" height="2"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitte warten..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="KlF-4l-w4J">
-                                                <rect key="frame" x="32" y="8" width="226" height="130"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                                <rect key="frame" x="32" y="19" width="236" height="84"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="CPT-Wi-gfF" secondAttribute="trailing" constant="32" id="CaQ-IJ-3s5"/>
-                                            <constraint firstAttribute="trailing" secondItem="KlF-4l-w4J" secondAttribute="trailing" constant="32" id="GL7-8p-dFD"/>
-                                            <constraint firstItem="KlF-4l-w4J" firstAttribute="top" secondItem="JK5-zO-aWU" secondAttribute="top" constant="8" id="LJR-16-tdV"/>
-                                            <constraint firstItem="KlF-4l-w4J" firstAttribute="leading" secondItem="JK5-zO-aWU" secondAttribute="leading" constant="32" id="NmQ-3g-Sm2"/>
-                                            <constraint firstItem="CPT-Wi-gfF" firstAttribute="top" secondItem="KlF-4l-w4J" secondAttribute="bottom" constant="17" id="Qlf-OH-c9z"/>
-                                            <constraint firstAttribute="bottom" secondItem="CPT-Wi-gfF" secondAttribute="bottom" constant="20" id="eq3-Dh-5Zt"/>
-                                            <constraint firstItem="CPT-Wi-gfF" firstAttribute="centerX" secondItem="JK5-zO-aWU" secondAttribute="centerX" id="vuk-dG-I6f"/>
-                                            <constraint firstItem="CPT-Wi-gfF" firstAttribute="leading" secondItem="JK5-zO-aWU" secondAttribute="leading" constant="32" id="yvr-hm-8nB"/>
+                                            <constraint firstItem="KlF-4l-w4J" firstAttribute="top" secondItem="JK5-zO-aWU" secondAttribute="top" constant="19" id="ALW-3D-3TZ"/>
+                                            <constraint firstItem="CPT-Wi-gfF" firstAttribute="leading" secondItem="KlF-4l-w4J" secondAttribute="leading" id="EpU-bT-Z2p"/>
+                                            <constraint firstAttribute="bottom" secondItem="CPT-Wi-gfF" secondAttribute="bottom" constant="20" id="Lgl-ZN-rR7"/>
+                                            <constraint firstItem="CPT-Wi-gfF" firstAttribute="trailing" secondItem="KlF-4l-w4J" secondAttribute="trailing" id="V1U-uP-ETH"/>
+                                            <constraint firstItem="CPT-Wi-gfF" firstAttribute="top" secondItem="KlF-4l-w4J" secondAttribute="bottom" constant="8" id="ac4-Hh-ZN7"/>
+                                            <constraint firstAttribute="trailing" secondItem="KlF-4l-w4J" secondAttribute="trailing" constant="32" id="b90-lb-WRX"/>
+                                            <constraint firstItem="KlF-4l-w4J" firstAttribute="leading" secondItem="JK5-zO-aWU" secondAttribute="leading" constant="32" id="gT2-kj-UPq"/>
+                                            <constraint firstItem="CPT-Wi-gfF" firstAttribute="top" secondItem="KlF-4l-w4J" secondAttribute="bottom" constant="8" id="plE-wB-Jd6"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cne-J8-m3U">
+                                        <rect key="frame" x="0.0" y="134" width="300" height="37"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="bcW-mE-nXH"/>
+                                        </constraints>
+                                        <state key="normal" title="Abbrechen"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="1V2-5U-t33" eventType="touchUpInside" id="aTY-y7-8ie"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="290" id="1JS-BD-ulv"/>
-                                    <constraint firstItem="JK5-zO-aWU" firstAttribute="leading" secondItem="BvU-sS-6rj" secondAttribute="leading" id="74e-uJ-4nu"/>
-                                    <constraint firstAttribute="trailing" secondItem="Cne-J8-m3U" secondAttribute="trailing" id="AIM-kz-PGC"/>
-                                    <constraint firstItem="Cne-J8-m3U" firstAttribute="top" secondItem="JK5-zO-aWU" secondAttribute="bottom" constant="1" id="GUF-se-AHn"/>
-                                    <constraint firstAttribute="bottom" secondItem="Cne-J8-m3U" secondAttribute="bottom" id="M2g-QU-C3C"/>
-                                    <constraint firstAttribute="trailing" secondItem="JK5-zO-aWU" secondAttribute="trailing" id="OiB-Mr-gzd"/>
-                                    <constraint firstItem="Cne-J8-m3U" firstAttribute="leading" secondItem="BvU-sS-6rj" secondAttribute="leading" id="VfH-JU-nBr"/>
-                                    <constraint firstAttribute="height" constant="215" id="WiL-bD-DT3"/>
-                                    <constraint firstItem="JK5-zO-aWU" firstAttribute="top" secondItem="BvU-sS-6rj" secondAttribute="top" id="bFF-ik-w2N"/>
+                                    <constraint firstItem="Cne-J8-m3U" firstAttribute="leading" secondItem="BvU-sS-6rj" secondAttribute="leading" id="2Fs-ab-BjP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cne-J8-m3U" secondAttribute="trailing" id="8gl-Xz-869"/>
+                                    <constraint firstAttribute="width" constant="300" id="DV2-aN-BOy"/>
+                                    <constraint firstAttribute="trailing" secondItem="JK5-zO-aWU" secondAttribute="trailing" id="dpG-ka-g6S"/>
+                                    <constraint firstItem="JK5-zO-aWU" firstAttribute="top" secondItem="BvU-sS-6rj" secondAttribute="top" id="gJA-4y-jza"/>
+                                    <constraint firstItem="Cne-J8-m3U" firstAttribute="top" secondItem="JK5-zO-aWU" secondAttribute="bottom" constant="1" id="thp-I4-s7F"/>
+                                    <constraint firstItem="JK5-zO-aWU" firstAttribute="leading" secondItem="BvU-sS-6rj" secondAttribute="leading" id="uuQ-vu-Gmh"/>
+                                    <constraint firstAttribute="height" constant="171" id="xLT-6k-a81"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cne-J8-m3U" secondAttribute="bottom" id="xuT-A0-Dpd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -2101,13 +2101,14 @@ Derzeit ist es leider nur möglich, Rechnungen mit QR-Code zu scannnen. Dies wir
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="BvU-sS-6rj" firstAttribute="centerY" secondItem="m3p-Jp-zmx" secondAttribute="centerY" id="KW7-7G-ARQ"/>
-                            <constraint firstItem="BvU-sS-6rj" firstAttribute="centerX" secondItem="m3p-Jp-zmx" secondAttribute="centerX" id="bha-io-j6C"/>
+                            <constraint firstItem="BvU-sS-6rj" firstAttribute="centerX" secondItem="m3p-Jp-zmx" secondAttribute="centerX" id="D3o-j4-lhg"/>
+                            <constraint firstItem="BvU-sS-6rj" firstAttribute="centerY" secondItem="m3p-Jp-zmx" secondAttribute="centerY" id="y2r-vg-FqF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I33-50-thR"/>
                     </view>
                     <connections>
                         <outlet property="message" destination="KlF-4l-w4J" id="Kif-0e-qgR"/>
+                        <outlet property="messageView" destination="BvU-sS-6rj" id="2QX-WJ-Nys"/>
                         <outlet property="progressView" destination="CPT-Wi-gfF" id="QXk-fx-y3S"/>
                     </connections>
                 </viewController>
@@ -2367,7 +2368,6 @@ Derzeit ist es leider nur möglich, Rechnungen mit QR-Code zu scannnen. Dies wir
         <image name="SearchIcon" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XfI-HT-dFs"/>
         <segue reference="c0w-qF-i1f"/>
         <segue reference="8Pa-Zx-LIW"/>
     </inferredMetricsTieBreakers>
