@@ -81,7 +81,7 @@ class ScanningViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
         
         
-        let tapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(jumpToAuswertung(withImage:noBillData:)))
+        let tapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(jumpToAuswertungWithQR))
         foundQRCodeBanner.addGestureRecognizer(tapRecognizer)
         
         
