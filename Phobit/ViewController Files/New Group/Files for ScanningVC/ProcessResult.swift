@@ -144,6 +144,9 @@ extension ScanningViewController {
         }
     }
     
+    @objc func jumpToAuswertungWithQR() {
+        self.jumpToAuswertung(withImage: nil, noBillData: false)
+    }
     
     func isQRok() -> Bool{
         

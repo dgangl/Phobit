@@ -14,6 +14,15 @@ protocol SnapContainerViewControllerDelegate {
 
 class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
     
+    // custom. starts always with middle view.
+    var currentPage = 1 {
+        didSet {
+            update()
+        }
+    }    
+    
+    
+    
     var topVc: UIViewController?
     var leftVc: UIViewController!
     var middleVc: UIViewController!
@@ -77,8 +86,7 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
         scrollView.frame = CGRect(x: view.x,
                                   y: view.y,
                                   width: view.width,
-                                  height: view.height
-        )
+                                  height: view.height)
         
         self.view.addSubview(scrollView)
         
@@ -124,6 +132,8 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
         self.initialContentOffset = scrollView.contentOffset
     }
     
+    
+    // wird eigentlich nur gebraucht, wenn wir noch einen vertikalen view hätten
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if delegate != nil && !delegate!.outerScrollViewShouldScroll() && !directionLockDisabled {
             let newOffset = CGPoint(x: self.initialContentOffset.x, y: self.initialContentOffset.y)
@@ -132,12 +142,55 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
             // directional lock, that allows you to scroll in only one direction at any given time
             self.scrollView!.setContentOffset(newOffset, animated:  false)
         }
+        currentPage = classifyOffset(offset: scrollView.contentOffset)
     }
     
     func scrollToPage(_ page: Int) {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.3, animations: {
             self.scrollView.contentOffset.x = self.scrollView.frame.width * CGFloat(page)
+        }) { (_) in
+            self.currentPage = self.classifyOffset(offset: self.scrollView.contentOffset)
         }
     }
     
+    
+    ///////////////////////////////////////////////
+    //Custom Methods to enable the Authentication//
+    ///////////////////////////////////////////////
+    
+    func classifyOffset(offset: CGPoint) -> Int {
+
+        switch offset.x {
+        case CGFloat(0):
+            return 0
+        case CGFloat(375):
+            return 1
+        case CGFloat(750):
+            return 2
+        case let x where (x > 350 && currentPage == 0) || (x < 350 && currentPage == 2):
+            return 1 // we scroll through page 1
+        default:
+            return currentPage // the transition is in progress.
+        }
+    }
+    
+    func isScrollEnabled() -> Bool {
+        return scrollView.isScrollEnabled
+    }
+    
+    // replaces view did load, but also checks for the lock status
+    func update() {
+        
+        if currentPage == 1 {
+            let lock = Authentifizierung.getAuthStatus()
+            scrollView.isScrollEnabled = !lock
+            
+            if lock {
+                scrollToPage(1)
+            }
+        } else {
+            scrollView.isScrollEnabled = true
+        }
+        /*print(currentPage)*/
+    }
 }
