@@ -38,6 +38,16 @@ class ImageData{
         return paths[0]
     }
     
-   
+    
+    
+    // NOT TESTED
+    func DeleteImage(uuid: String) {
+        let url = getDocumentsDirectory().appendingPathComponent(uuid)
+        do {
+            try FileManager.default.removeItem(at: url)
+        } catch {
+            print(error)
+        }
+    }
 }
 

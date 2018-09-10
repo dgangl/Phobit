@@ -208,7 +208,6 @@ class SuchenTableViewController: UITableViewController{
         
         setDefaultSearchBar()
         
-        
         // this should make it faster...
         DispatchQueue.main.async {
             
