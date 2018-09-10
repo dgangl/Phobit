@@ -41,14 +41,12 @@ extension ScanningViewController {
                     let noBillData = (self.billdata == nil)
                     
                     self.jumpToAuswertung(withImage: processorImage, noBillData: noBillData)
-                    
-                    
                     self.cleanUp()
                 })
             } else if statusCode == WebServiceStatus.systemCancelled || statusCode == WebServiceStatus.timeout {
                 // dissmissing the loading alertView...
                 alertView.dismiss(animated: false, completion: {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.sync {
                         self.overlay?.invisible()
                         self.cleanUp()
                     }
