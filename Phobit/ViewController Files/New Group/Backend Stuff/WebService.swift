@@ -187,6 +187,7 @@ class WebService {
         if isAllowedToCancel {
             uploadRequest?.cancel()
             uploadRequest = nil
+            print("----- UPLOAD CANCELED FROM USER")
         }
     }
     
@@ -196,6 +197,7 @@ class WebService {
             uploadRequest?.cancel()
             uploadRequest = nil
             systemCancelled = true
+            print("----- UPLOAD CANCELED FROM SYSTEM")
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class LoadingAlertViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class LoadingAlertViewController: UIViewController {
     @IBOutlet weak var messageView: UIView!
     
     var webservice: WebService?
+    var session: AVCaptureSession?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,8 @@ class LoadingAlertViewController: UIViewController {
     
     @IBAction func cancelButton(_ sender: Any) {
         webservice?.cancelUploadFromUser()
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: false, completion: {
+            self.session?.startRunning()
+        })
     }
 }
