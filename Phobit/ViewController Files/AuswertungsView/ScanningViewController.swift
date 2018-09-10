@@ -125,7 +125,7 @@ class ScanningViewController: UIViewController {
         
         if sessionCanRun {
             if let session = session {
-                session.startRunning()
+                //session.startRunning()
             } else {
                 print("error in settung up capture session.")
             }
@@ -157,13 +157,13 @@ class ScanningViewController: UIViewController {
 
 
         } else {
-            /*
+            
             if let session = session {
                 session.startRunning()
             } else {
                 print("error in settung up capture session.")
             }
-            */
+            
         }
         
         

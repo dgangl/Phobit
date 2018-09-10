@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F986A8248A2CEDD2B63AF4E /* Pods_Phobit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CD3D03FA33FBFA63EE9988 /* Pods_Phobit.framework */; };
 		160C034E2000B20B00BD3EC2 /* EinstellungsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160C034D2000B20B00BD3EC2 /* EinstellungsController.swift */; };
 		160C03502001864200BD3EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 160C034F2001864200BD3EC2 /* LaunchScreen.storyboard */; };
 		1618676920D69C1E0031FC87 /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618676820D69C1E0031FC87 /* ScanningViewController.swift */; };
@@ -45,6 +44,7 @@
 		3C8D76FB2095E4FB007D5EBA /* SnapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8D76F92095E4FB007D5EBA /* SnapContainerViewController.swift */; };
 		3CAB9063202DDCE900453E6E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9062202DDCE800453E6E /* UserData.swift */; };
 		3CAB9067202DDD6C00453E6E /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */; };
+		8B2430B04D284E9CEF1A091C /* Pods_Phobit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CACD3AB9F4BA0DD00765E1 /* Pods_Phobit.framework */; };
 		980270C1208F0B1D0033E808 /* DateUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980270C0208F0B1D0033E808 /* DateUtilities.swift */; };
 		981617202042E85100A3C29E /* SuchenTableViewSelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816171F2042E85100A3C29E /* SuchenTableViewSelectionHandler.swift */; };
 		981B67561FDC7551008D9835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B67551FDC7551008D9835 /* AppDelegate.swift */; };
@@ -146,7 +146,6 @@
 		16FD6C9D20431B4F00D8B88D /* ImageDataStorer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataStorer.swift; sourceTree = "<group>"; };
 		16FD6CA120445A5A00D8B88D /* ZeilenPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeilenPickerViewController.swift; sourceTree = "<group>"; };
 		16FD6CA5204479C100D8B88D /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
-		36CD3D03FA33FBFA63EE9988 /* Pods_Phobit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phobit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2A41D92090C91D00FE1CE9 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		3C352B3D20447EF800117EAE /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		3C70AB9A2056C0FA002F08B0 /* SetANameOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetANameOnboarding.swift; sourceTree = "<group>"; };
@@ -154,7 +153,8 @@
 		3C8D76F92095E4FB007D5EBA /* SnapContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapContainerViewController.swift; sourceTree = "<group>"; };
 		3CAB9062202DDCE800453E6E /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		3CAB9066202DDD6B00453E6E /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
-		605A166920F65F1ACC88D79A /* Pods-Phobit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.debug.xcconfig"; sourceTree = "<group>"; };
+		56CACD3AB9F4BA0DD00765E1 /* Pods_Phobit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phobit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75C10462C9DF8B29965B44CC /* Pods-Phobit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.release.xcconfig"; sourceTree = "<group>"; };
 		980270C0208F0B1D0033E808 /* DateUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtilities.swift; sourceTree = "<group>"; };
 		9816171F2042E85100A3C29E /* SuchenTableViewSelectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchenTableViewSelectionHandler.swift; sourceTree = "<group>"; };
 		981B67521FDC7551008D9835 /* Phobit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phobit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,7 +200,7 @@
 		98CFEDBB20A233E80045ADF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		98D4ACEB2098EA2A009FD192 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		98D768031FF52DDC00876B3E /* SuchfunktionDaten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuchfunktionDaten.swift; sourceTree = "<group>"; };
-		DCFDC54D3085002D70EEE49F /* Pods-Phobit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.release.xcconfig"; sourceTree = "<group>"; };
+		9A0F92043290453D07B46882 /* Pods-Phobit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phobit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phobit/Pods-Phobit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,7 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1638DE2F2075597300FD069C /* libz.tbd in Frameworks */,
-				0F986A8248A2CEDD2B63AF4E /* Pods_Phobit.framework in Frameworks */,
+				8B2430B04D284E9CEF1A091C /* Pods_Phobit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +295,7 @@
 				1638DE2A207551F100FD069C /* CoreImage.framework */,
 				1648406620074E8B0023AC43 /* AVFoundation.framework */,
 				1648406520074E8B0023AC43 /* AVKit.framework */,
-				36CD3D03FA33FBFA63EE9988 /* Pods_Phobit.framework */,
+				56CACD3AB9F4BA0DD00765E1 /* Pods_Phobit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -389,15 +389,6 @@
 			path = SwipeFunction;
 			sourceTree = "<group>";
 		};
-		51BB39ACD553714C967C946E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				605A166920F65F1ACC88D79A /* Pods-Phobit.debug.xcconfig */,
-				DCFDC54D3085002D70EEE49F /* Pods-Phobit.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		981423DC20F4E91100E5CAE4 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,7 +405,7 @@
 				981B67531FDC7551008D9835 /* Products */,
 				1648406420074E8A0023AC43 /* Frameworks */,
 				981423DC20F4E91100E5CAE4 /* Recovered References */,
-				51BB39ACD553714C967C946E /* Pods */,
+				DFCDBE9B71EEAC072AE61A94 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -533,6 +524,15 @@
 			path = "Files for ScanningVC";
 			sourceTree = "<group>";
 		};
+		DFCDBE9B71EEAC072AE61A94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A0F92043290453D07B46882 /* Pods-Phobit.debug.xcconfig */,
+				75C10462C9DF8B29965B44CC /* Pods-Phobit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -558,12 +558,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 981B67641FDC7551008D9835 /* Build configuration list for PBXNativeTarget "Phobit" */;
 			buildPhases = (
-				CC4A5AE297CF75967BA990FB /* [CP] Check Pods Manifest.lock */,
+				15BC59A2EF11AB6E71CFCB0D /* [CP] Check Pods Manifest.lock */,
 				981B674E1FDC7551008D9835 /* Sources */,
 				981B674F1FDC7551008D9835 /* Frameworks */,
 				981B67501FDC7551008D9835 /* Resources */,
 				98AD242B1FF55E4600417176 /* Embed App Extensions */,
-				3F2A131DABC20E7CE2BFCEEC /* [CP] Embed Pods Frameworks */,
+				2AE6500308542C67BADF6295 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -639,7 +639,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3F2A131DABC20E7CE2BFCEEC /* [CP] Embed Pods Frameworks */ = {
+		15BC59A2EF11AB6E71CFCB0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Phobit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AE6500308542C67BADF6295 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -677,24 +695,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phobit/Pods-Phobit-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CC4A5AE297CF75967BA990FB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Phobit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -965,7 +965,7 @@
 		};
 		981B67651FDC7551008D9835 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 605A166920F65F1ACC88D79A /* Pods-Phobit.debug.xcconfig */;
+			baseConfigurationReference = 9A0F92043290453D07B46882 /* Pods-Phobit.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -987,7 +987,7 @@
 		};
 		981B67661FDC7551008D9835 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCFDC54D3085002D70EEE49F /* Pods-Phobit.release.xcconfig */;
+			baseConfigurationReference = 75C10462C9DF8B29965B44CC /* Pods-Phobit.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
