@@ -16,11 +16,21 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
     
     // custom. starts always with middle view.
     var currentPage = 1 {
+        willSet {
+            if newValue != currentPage {
+                handleVCChange(new: newValue, old: currentPage)
+            }
+        }
+        
         didSet {
             update()
         }
     }    
     
+    // delegate stuff
+    var leftDelegate: SnapDelegate?
+    var middleDelegate: SnapDelegate?
+    var rightDelegate: SnapDelegate?
     
     
     var topVc: UIViewController?
@@ -61,6 +71,8 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         setupVerticalScrollView()
         setupHorizontalScrollView()
+        
+        setupDelegates()
     }
     
     func setupVerticalScrollView() {
@@ -192,5 +204,43 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
             scrollView.isScrollEnabled = true
         }
         /*print(currentPage)*/
+    }
+    
+    
+    func handleVCChange(new: Int, old: Int) {
+        switch new {
+        case 0:
+            leftDelegate?.viewAppears()
+        case 1:
+            middleDelegate?.viewAppears()
+        case 2:
+            rightDelegate?.viewAppears()
+        default:
+            print("error")
+        }
+        
+        switch old {
+        case 0:
+            leftDelegate?.viewDisappears()
+        case 1:
+            middleDelegate?.viewDisappears()
+        case 2:
+            rightDelegate?.viewDisappears()
+        default:
+            print("error")
+        }
+    }
+    
+    
+    
+    func setupDelegates() {
+        guard let lvc = leftVc as? LeftViewController, let rvc = rightVc as? RightViewController, let mvc = middleVc as? MiddleViewController else {
+            print("could not set one or more delegate \(#line, #file)")
+            return
+        }
+        
+        leftDelegate = lvc
+        middleDelegate = mvc
+        rightDelegate = rvc
     }
 }
