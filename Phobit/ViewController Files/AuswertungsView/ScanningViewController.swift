@@ -13,6 +13,7 @@ import Vision
 
 class ScanningViewController: UIViewController {
     
+    
 //    @IBOutlet weak var infolabel: UILabel!
     @IBOutlet weak var blitzButton: UIButton!
     @IBOutlet weak var suchenSegueButton: UIButton!
@@ -20,7 +21,6 @@ class ScanningViewController: UIViewController {
     @IBOutlet weak var cameraButton: UIButton!
 //    @IBOutlet weak var whiteboard: UIImageView!
 //    @IBOutlet weak var stackView: UIStackView!
-    
     
     
     //InfoView
@@ -43,10 +43,11 @@ class ScanningViewController: UIViewController {
     
     // Vision stuff
     var requests = [VNRequest]()
+    var visionsRunning = true
     // end
     
     // overlay stuff and autoCapture
-    let detectionOverlay = UIView()
+    var detectionOverlay: UIView? = nil
     var overlay: Overlay?
     var autoCapture: AutoCaptureObservator?
     var canTakeNextQR = true
@@ -71,6 +72,13 @@ class ScanningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // Snap View controller
+        NotificationCenter.default.addObserver(self, selector: #selector(appears), name: NSNotification.Name(rawValue: AppearDisappearManager.getAppearString(id: 1)), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(disappears), name: NSNotification.Name(rawValue: AppearDisappearManager.getDisappearString(id: 1)), object: nil)
+        
+        
+        
         print("----- START NEURAL NET OUTPUT -----")
         _ = NeuralNet();
         print("----- END NEURAL NET OUTPUT -----")
@@ -94,14 +102,10 @@ class ScanningViewController: UIViewController {
         self.view.addGestureRecognizer(swipeToSearch)
         self.view.addGestureRecognizer(swipeToEinstellungen)
         
+        detectionOverlay = Overlay.getViewWithRatio(parentView: self.view)
+        self.view.addSubview(detectionOverlay!)
         
-        
-        detectionOverlay.frame = view.frame
-        detectionOverlay.center = view.center
-        detectionOverlay.backgroundColor = UIColor.clear
-        self.view.addSubview(detectionOverlay)
-        
-        overlay = Overlay.init(detectionView: detectionOverlay)
+        overlay = Overlay.init(detectionView: detectionOverlay!)
         
         sessionCanRun = checkForAuthorization()
         
@@ -125,7 +129,7 @@ class ScanningViewController: UIViewController {
         
         if sessionCanRun {
             if let session = session {
-                session.startRunning()
+                //session.startRunning()
             } else {
                 print("error in settung up capture session.")
             }
@@ -157,13 +161,13 @@ class ScanningViewController: UIViewController {
 
 
         } else {
-            /*
+            
             if let session = session {
                 session.startRunning()
             } else {
                 print("error in settung up capture session.")
             }
-            */
+            
         }
         
         
@@ -174,20 +178,8 @@ class ScanningViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
         session?.stopRunning()
-        overlay?.stop()
-        blitzButton.setTitle("Aus", for: .normal)
-        
-        flashIsRunning = false
-        
-        do {
-            try device?.lockForConfiguration()
-            device?.torchMode = .off
-            device?.unlockForConfiguration()
-        } catch {
-            print(error)
-        }
+        disappears()
     }
     
     func addTheInfoView(){
@@ -227,11 +219,9 @@ class ScanningViewController: UIViewController {
             }
             
         }
-        
-        
-        
-        
     }
+    
+    
     func removeInfoViewAnimation() -> Void{
         
        
@@ -256,20 +246,13 @@ class ScanningViewController: UIViewController {
         removeInfoViewAnimation()
         UserDefaults.standard.set(true, forKey: "infoView")
     }
+    
     @IBAction func close(_ sender: Any) {
         removeInfoViewAnimation()
     }
     
     
     @IBAction func segueToSuchenBTN(_ sender: Any) {
-//        if getAuthStatus() == true {
-//            authentifizierung(seague: "suchen")
-//        } else {
-//            AppDelegate.snapContainer.scrollToPage(0)
-////            self.performSegue(withIdentifier: "suchen", sender: nil)
-//        }
-        
-        
         Authentifizierung.scrollAndCheck(toID: 0)
     }
     
@@ -313,5 +296,26 @@ class ScanningViewController: UIViewController {
     @objc func appMovedToBackground() {
         self.blitzButton.setTitle("Aus", for: .normal)
         self.billdata = nil
+    }
+    
+    @objc func appears() {
+        visionsRunning = true
+        overlay?.start()
+    }
+    
+    @objc func disappears() {
+        visionsRunning = false
+        overlay?.stop()
+        blitzButton.setTitle("Aus", for: .normal)
+        
+        flashIsRunning = false
+        
+        do {
+            try device?.lockForConfiguration()
+            device?.torchMode = .off
+            device?.unlockForConfiguration()
+        } catch {
+            print(error)
+        }
     }
 }

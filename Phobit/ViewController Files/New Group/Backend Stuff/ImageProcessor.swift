@@ -29,6 +29,7 @@ class ImageProcessor {
             
             let castedResult = result as! VNRectangleObservation
             
+            
             var image = CIImage.init(image: self.image)
             
             let imageSize = image?.extent.size
@@ -63,6 +64,7 @@ class ImageProcessor {
         
         request.maximumObservations = 1
         request.minimumAspectRatio = 0
+        request.maximumAspectRatio = 0.9
         request.minimumConfidence = 0.5
         
         

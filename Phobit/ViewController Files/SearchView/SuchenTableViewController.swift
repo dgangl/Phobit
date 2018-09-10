@@ -67,7 +67,7 @@ extension UITableViewController: UISearchBarDelegate{
         DispatchQueue.main.async {
             print("RELOADING DATA")
             self.tableView.reloadData()
-
+            
         }
     }
     
@@ -78,8 +78,8 @@ extension UITableViewController: UISearchBarDelegate{
             tempSaveForTheNextExtention.toolBar.items?.first?.title = "Nummern"
         }
         else{
-        tool.keyboardType = UIKeyboardType.decimalPad
-        
+            tool.keyboardType = UIKeyboardType.decimalPad
+            
             tempSaveForTheNextExtention.toolBar.items?.first?.title = "Normal"
         }
         
@@ -156,15 +156,15 @@ class SuchenTableViewController: UITableViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-
+        
         
         
         addToolbar(textField: searchController.searchBar)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
-//        let backButton = UIBarButtonItem.init(title: "Zurück", style: .plain, target: self, action: nil)
-//        self.navigationController?.navigationItem.setRightBarButton(backButton, animated: false)
-//        self.navigationItem.setRightBarButton(backButton, animated: false)
+        //        let backButton = UIBarButtonItem.init(title: "Zurück", style: .plain, target: self, action: nil)
+        //        self.navigationController?.navigationItem.setRightBarButton(backButton, animated: false)
+        //        self.navigationItem.setRightBarButton(backButton, animated: false)
         self.navigationItem.title = "Suchen"
     }
     
@@ -174,6 +174,12 @@ class SuchenTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Snap View controller
+        NotificationCenter.default.addObserver(self, selector: #selector(appears), name: NSNotification.Name(rawValue: AppearDisappearManager.getAppearString(id: 0)), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(disappears), name: NSNotification.Name(rawValue: AppearDisappearManager.getDisappearString(id: 0)), object: nil)
+        
+        
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -201,23 +207,36 @@ class SuchenTableViewController: UITableViewController{
         
         
         setDefaultSearchBar()
-    
+        
         
         // this should make it faster...
         DispatchQueue.main.async {
             
-        
+            
             self.prepareData()
-        
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            }
-    
+        }
     }
+    
+    
+    @objc func appears() {
+        self.prepareData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    @objc func disappears() {
+        
+    }
+    
+    
     @objc func pageBack(){
         AppDelegate.snapContainer.scrollToPage(1)
-
+        
         
     }
     
@@ -233,7 +252,7 @@ class SuchenTableViewController: UITableViewController{
     
     
     func addTheInfoView(){
-       
+        
         
         
         
@@ -300,7 +319,8 @@ class SuchenTableViewController: UITableViewController{
             print("###### Time to setup Datamaster: \(Date().millisecondsSince1970 - start)")
             dates = dataMaster?.dates
         } else {
-            //dataMaster = DataMaster.init()
+            dataMaster = DataMaster.init()
+            dates = nil
         }
         
         print("###### TOTAL: \(Date().millisecondsSince1970 - start)")
@@ -333,22 +353,22 @@ class SuchenTableViewController: UITableViewController{
             return dataMaster?.dates[section]
         }
     }
-//    var anzahl = 10;
-//    var count = 0;
-//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//
-//        if indexPath.row == anzahl{
-//            for _ in 0...9{
-//                if((dataMaster?.dates.count)!-1 <= count){
-//                dataMaster?.dates[count]
-//                    count += 1;
-//                }
-//                anzahl += 10;
-//            }
-//        }
-//        self.reloadInputViews()
-//
-//    }
+    //    var anzahl = 10;
+    //    var count = 0;
+    //    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    //
+    //        if indexPath.row == anzahl{
+    //            for _ in 0...9{
+    //                if((dataMaster?.dates.count)!-1 <= count){
+    //                dataMaster?.dates[count]
+    //                    count += 1;
+    //                }
+    //                anzahl += 10;
+    //            }
+    //        }
+    //        self.reloadInputViews()
+    //
+    //    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if searchController.isActive && searchController.searchBar.text != "" {
@@ -357,7 +377,7 @@ class SuchenTableViewController: UITableViewController{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SuchenTableViewCell
             cell.firmenname.text = data?.rechnungsersteller
             cell.betrag.text = CFormat.correctGeldbetrag(zahl: String(data!.gesamtBrutto))
-
+            
             
             return cell
         } else {
@@ -373,12 +393,12 @@ class SuchenTableViewController: UITableViewController{
     }
     
     func setDefaultSearchBar(){
-//        searchController.searchBar.tintColor = .white
-
+        //        searchController.searchBar.tintColor = .white
+        
         if #available(iOS 11.0, *) {
             let sc = searchController
             let scb = sc.searchBar
-//            scb.tintColor = UIColor.white
+            //            scb.tintColor = UIColor.white
             scb.barTintColor = UIColor.white
             
             if let textfield = scb.value(forKey: "searchField") as? UITextField {

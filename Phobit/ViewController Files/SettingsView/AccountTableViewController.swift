@@ -114,7 +114,7 @@ class AccountTableViewController: UITableViewController, UIAlertViewDelegate {
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: finalArr)
         UserDefaults.standard.set(encodedData, forKey: "UserData");
         
-        NotificationCenter.default.post(name: Notification.Name("loadTableView"), object: nil)
+        //NotificationCenter.default.post(name: Notification.Name("loadTableView"), object: nil)
         
     }
     @IBAction func clearPressed(_ sender: Any) {

@@ -38,6 +38,10 @@ class EinstellungsController: UITableViewController{
         super.viewDidLoad()
         //MARK- SetUp Picker
        
+        // Snap View controller
+        NotificationCenter.default.addObserver(self, selector: #selector(appears), name: NSNotification.Name(rawValue: AppearDisappearManager.getAppearString(id: 2)), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(disappears), name: NSNotification.Name(rawValue: AppearDisappearManager.getDisappearString(id: 2)), object: nil)
+        
         
         self.checkState.addTarget(self, action: #selector(action(sender:)), for: .valueChanged)
         //Preparing the Views
@@ -52,8 +56,6 @@ class EinstellungsController: UITableViewController{
     
     @objc func pageBack(){
         AppDelegate.snapContainer.scrollToPage(1)
-        
-        
     }
     
     func initializeActiveFirmLable() {
@@ -95,19 +97,13 @@ class EinstellungsController: UITableViewController{
         
         // show alert
         self.present(alert, animated: true, completion: nil)
-        
-        
     }
     
     
     
     // Save state
     @objc func action(sender: UISwitch) {
-        
-        
-        
         userDefaults.set(sender.isOn, forKey:"slider")
-        
     }
     
     // Retrieve state
@@ -119,20 +115,16 @@ class EinstellungsController: UITableViewController{
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         setUpUserDefaults()
-      
-     
-        
     }
+    
     func getSliderState() -> Bool{
         return UserDefaults.standard.bool(forKey: "slider")
     }
+    
     func setUpDarkView(){
         darkView.frame = (self.navigationController?.view.frame)!
         darkView.backgroundColor = UIColor.black
         darkView.alpha = 0.2
-        
-        
-        
     }
     
     func setUpUserDefaults(){
@@ -154,11 +146,18 @@ class EinstellungsController: UITableViewController{
             // your code with delay
             doneView.dismiss(animated: true, completion: nil)
         }
-        
     }
     
     
+    @objc func appears() {
+        setUpUserDefaults()
+        initializeActiveFirmLable()
+        tableView.reloadData()
+    }
     
+    @objc func disappears() {
+        
+    }
 }
 //Table View
 extension EinstellungsController{
@@ -170,7 +169,6 @@ extension EinstellungsController{
             sendEmail()
         }
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
 }

@@ -62,9 +62,7 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
             return
         }
     
-        autoCapture = AutoCaptureObservator.init(device: device)
-        
-        
+        autoCapture = AutoCaptureObservator.init(device: device, rect: view.frame)
     }
  
     
@@ -122,7 +120,7 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
     
     
     func bringAllElementsToFront() {
-        view.bringSubview(toFront: detectionOverlay)
+        view.bringSubview(toFront: detectionOverlay!)
 //        view.bringSubview(toFront: whiteboard)
 //        view.bringSubview(toFront: infolabel)
         view.bringSubview(toFront: cameraButton)
@@ -171,7 +169,8 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
-
+        if !visionsRunning {return;}
+        
         var options: [VNImageOption : Any] = [:]
         
         if let camData = CMGetAttachment(sampleBuffer, kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, nil) {

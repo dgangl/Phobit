@@ -86,7 +86,7 @@ extension ScanningViewController {
         vc.loadView() // god's function
         let progressView = vc.progressView
         vc.webservice = webservice
-        
+        vc.session = session
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false, completion: nil)
         
@@ -111,10 +111,8 @@ extension ScanningViewController {
             let alertView = UIAlertController.init(title: "Fehler bei der Internetverbindung", message: reasonString, preferredStyle: .alert)
             alertView.addAction(UIAlertAction.init(title: "Okay", style: .default, handler: { (action) in
                 self.session?.startRunning()
-                alertView.dismiss(animated: true, completion: nil)
             }))
             
             self.present(alertView, animated: true, completion: nil)
-        
     }
 }
