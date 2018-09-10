@@ -34,6 +34,21 @@ class Overlay {
         shapeLayer.fillColor = UIColor.detectionOverlayColor.cgColor
     }
     
+    // call this method before you pass the detection layer
+    static func getViewWithRatio(parentView: UIView) -> UIView {
+        // we want a ratio from 667:375 (iphone 6s) because the x and above have another screen ratio
+        
+        let calculationFactor = parentView.frame.height/667
+        
+        let height = parentView.frame.height
+        let width = parentView.frame.width * calculationFactor
+        
+        let view = UIView.init(frame: CGRect.init(x: 0, y: 0, width: width, height: height))
+        view.backgroundColor = UIColor.clear
+        view.center = parentView.center
+        
+        return view
+    }
     
     func stop() {
         isRunning = false

@@ -25,6 +25,8 @@ class LoginTableViewCell: MGSwipeTableCell {
         
         // Configure the view for the selected state
     }
+    
+    
     @IBAction func DeletPressed(_ sender: Any) {
         
         

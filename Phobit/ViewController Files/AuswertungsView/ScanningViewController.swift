@@ -47,7 +47,7 @@ class ScanningViewController: UIViewController {
     // end
     
     // overlay stuff and autoCapture
-    let detectionOverlay = UIView()
+    var detectionOverlay: UIView? = nil
     var overlay: Overlay?
     var autoCapture: AutoCaptureObservator?
     var canTakeNextQR = true
@@ -102,14 +102,10 @@ class ScanningViewController: UIViewController {
         self.view.addGestureRecognizer(swipeToSearch)
         self.view.addGestureRecognizer(swipeToEinstellungen)
         
+        detectionOverlay = Overlay.getViewWithRatio(parentView: self.view)
+        self.view.addSubview(detectionOverlay!)
         
-        
-        detectionOverlay.frame = view.frame
-        detectionOverlay.center = view.center
-        detectionOverlay.backgroundColor = UIColor.clear
-        self.view.addSubview(detectionOverlay)
-        
-        overlay = Overlay.init(detectionView: detectionOverlay)
+        overlay = Overlay.init(detectionView: detectionOverlay!)
         
         sessionCanRun = checkForAuthorization()
         

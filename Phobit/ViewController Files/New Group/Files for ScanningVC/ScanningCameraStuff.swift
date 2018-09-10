@@ -62,9 +62,7 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
             return
         }
     
-        autoCapture = AutoCaptureObservator.init(device: device)
-        
-        
+        autoCapture = AutoCaptureObservator.init(device: device, rect: view.frame)
     }
  
     
@@ -122,7 +120,7 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
     
     
     func bringAllElementsToFront() {
-        view.bringSubview(toFront: detectionOverlay)
+        view.bringSubview(toFront: detectionOverlay!)
 //        view.bringSubview(toFront: whiteboard)
 //        view.bringSubview(toFront: infolabel)
         view.bringSubview(toFront: cameraButton)

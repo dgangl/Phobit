@@ -22,7 +22,7 @@ class AutoCaptureObservator {
     var counter = 0
     
     // if there were n successfull comparisions we take the picture
-    var snapValue = 5
+    var snapValue = 8
     
     // the values that are compared have to be within this degree of deviations.
     var percentageTolerance: CGFloat = 0.06
@@ -36,15 +36,17 @@ class AutoCaptureObservator {
     
     fileprivate var device: AVCaptureDevice?
     
+    fileprivate var rect: CGRect
     
-    init() {
-        // empty...
+    init(rect: CGRect) {
+        self.rect = rect
     }
     
     
     // if we also want to track the focus of the device.
-    init(device: AVCaptureDevice) {
+    init(device: AVCaptureDevice, rect: CGRect) {
         self.device = device
+        self.rect = rect
     }
     
     
@@ -63,10 +65,10 @@ class AutoCaptureObservator {
      
         var successfulCompared = false
         
-        successfulCompared = topLeft.isEqualWithTolerance(otherPoint: newTopLeft, tolerance: percentageTolerance)
-        successfulCompared = topRight.isEqualWithTolerance(otherPoint: newTopRight, tolerance: percentageTolerance)
-        successfulCompared = bottomLeft.isEqualWithTolerance(otherPoint: newBottomLeft, tolerance: percentageTolerance)
-        successfulCompared = bottomRight.isEqualWithTolerance(otherPoint: newBottomRight, tolerance: percentageTolerance)
+        successfulCompared = topLeft.isEqualWithTolerance(otherPoint: newTopLeft, tolerance: percentageTolerance, from: rect)
+        successfulCompared = topRight.isEqualWithTolerance(otherPoint: newTopRight, tolerance: percentageTolerance, from: rect)
+        successfulCompared = bottomLeft.isEqualWithTolerance(otherPoint: newBottomLeft, tolerance: percentageTolerance, from: rect)
+        successfulCompared = bottomRight.isEqualWithTolerance(otherPoint: newBottomRight, tolerance: percentageTolerance, from: rect)
         
         if successfulCompared == true {
             counter += 1
@@ -176,8 +178,8 @@ extension CGPoint {
      
         - important: values for tolerance have to be between 0 and 1
     */
-    func isEqualWithTolerance(otherPoint: CGPoint, tolerance: CGFloat) -> Bool {
-        
+    func isEqualWithTolerance(otherPoint: CGPoint, tolerance: CGFloat, from rect: CGRect) -> Bool {
+        /*
         var lowerValueX = self.x * (1-tolerance)
         var upperValueX = self.x * (1+tolerance)
         
@@ -202,6 +204,27 @@ extension CGPoint {
             }
         }
         
+        
+        return false
+        */
+        
+        let maxXTolerance = rect.width / 100 * (tolerance*100)
+        let maxYTolerance = rect.height / 100 * (tolerance*100)
+        
+        let lowestXValue = self.x - maxXTolerance
+        let highestXValue = self.x + maxXTolerance
+        
+        let lowestYValue = self.y - maxYTolerance
+        let highestYValue = self.y + maxYTolerance
+        
+        
+        
+        
+        if lowestXValue...highestXValue ~= otherPoint.x {
+            if lowestYValue...highestYValue ~= otherPoint.y {
+                return true
+            }
+        }
         
         return false
     }
