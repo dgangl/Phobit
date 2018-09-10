@@ -2368,7 +2368,7 @@ Derzeit ist es leider nur möglich, Rechnungen mit QR-Code zu scannnen. Dies wir
         <image name="SearchIcon" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Zr-14-4jj"/>
+        <segue reference="MRX-TL-If2"/>
         <segue reference="c0w-qF-i1f"/>
         <segue reference="8Pa-Zx-LIW"/>
     </inferredMetricsTieBreakers>

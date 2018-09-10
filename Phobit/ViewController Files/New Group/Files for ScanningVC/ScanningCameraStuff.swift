@@ -171,7 +171,8 @@ extension ScanningViewController: AVCaptureVideoDataOutputSampleBufferDelegate, 
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
-
+        if !visionsRunning {return;}
+        
         var options: [VNImageOption : Any] = [:]
         
         if let camData = CMGetAttachment(sampleBuffer, kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, nil) {

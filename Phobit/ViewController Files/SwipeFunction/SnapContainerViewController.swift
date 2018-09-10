@@ -28,10 +28,12 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
     }    
     
     // delegate stuff
+    /*
     var leftDelegate: SnapDelegate?
     var middleDelegate: SnapDelegate?
     var rightDelegate: SnapDelegate?
-    
+    */
+    var manager = AppearDisappearManager.init()
     
     var topVc: UIViewController?
     var leftVc: UIViewController!
@@ -72,7 +74,7 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
         setupVerticalScrollView()
         setupHorizontalScrollView()
         
-        setupDelegates()
+        //setupDelegates()
     }
     
     func setupVerticalScrollView() {
@@ -208,32 +210,37 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
     
     
     func handleVCChange(new: Int, old: Int) {
+        /*
         switch new {
         case 0:
-            leftDelegate?.viewAppears()
+            //leftDelegate?.viewAppears()
         case 1:
-            middleDelegate?.viewAppears()
+            //middleDelegate?.viewAppears()
         case 2:
-            rightDelegate?.viewAppears()
+            //rightDelegate?.viewAppears()
         default:
             print("error")
         }
         
         switch old {
         case 0:
-            leftDelegate?.viewDisappears()
+            //leftDelegate?.viewDisappears()
         case 1:
-            middleDelegate?.viewDisappears()
+            //middleDelegate?.viewDisappears()
         case 2:
-            rightDelegate?.viewDisappears()
+            //rightDelegate?.viewDisappears()
         default:
             print("error")
         }
+         */
+        
+        manager.update(new: new, old: old)
     }
     
     
     
     func setupDelegates() {
+        /*
         guard let lvc = leftVc as? LeftViewController, let rvc = rightVc as? RightViewController, let mvc = middleVc as? MiddleViewController else {
             print("could not set one or more delegate \(#line, #file)")
             return
@@ -242,5 +249,6 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
         leftDelegate = lvc
         middleDelegate = mvc
         rightDelegate = rvc
+         */
     }
 }
