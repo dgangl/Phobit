@@ -117,6 +117,7 @@ class ScanningViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        visionsRunning = true
         overlay?.start()
         canTakeNextQR = true
         billdata = nil
