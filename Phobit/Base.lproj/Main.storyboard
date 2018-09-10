@@ -511,10 +511,10 @@
             </objects>
             <point key="canvasLocation" x="-409" y="1931"/>
         </scene>
-        <!--View Controller-->
+        <!--Middle View Controller-->
         <scene sceneID="bRs-jR-SU6">
             <objects>
-                <viewController storyboardIdentifier="middle" id="G4l-X4-crn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="middle" id="G4l-X4-crn" customClass="MiddleViewController" customModule="Phobit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U8L-nB-Fc2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2262,10 +2262,10 @@ Derzeit ist es leider nur möglich, Rechnungen mit QR-Code zu scannnen. Dies wir
             </objects>
             <point key="canvasLocation" x="-8685" y="-1344"/>
         </scene>
-        <!--View Controller-->
+        <!--Left View Controller-->
         <scene sceneID="ZQY-gs-YqO">
             <objects>
-                <viewController storyboardIdentifier="left" id="OaZ-4Y-Zob" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="left" id="OaZ-4Y-Zob" customClass="LeftViewController" customModule="Phobit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DEr-Cp-1gv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2291,10 +2291,10 @@ Derzeit ist es leider nur möglich, Rechnungen mit QR-Code zu scannnen. Dies wir
             </objects>
             <point key="canvasLocation" x="-5031.1999999999998" y="-993.55322338830592"/>
         </scene>
-        <!--View Controller-->
+        <!--Right View Controller-->
         <scene sceneID="hLc-lZ-Glq">
             <objects>
-                <viewController storyboardIdentifier="right" id="cXs-7O-ler" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="right" id="cXs-7O-ler" customClass="RightViewController" customModule="Phobit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g06-TB-fKk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2368,6 +2368,7 @@ Derzeit ist es leider nur möglich, Rechnungen mit QR-Code zu scannnen. Dies wir
         <image name="SearchIcon" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="0Zr-14-4jj"/>
         <segue reference="c0w-qF-i1f"/>
         <segue reference="8Pa-Zx-LIW"/>
     </inferredMetricsTieBreakers>
