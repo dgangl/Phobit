@@ -24,8 +24,8 @@ class SavedTabBarController: UITabBarController {
         let searchNVC = UINavigationController.init(rootViewController: searchVC)
         let cachedNVC = UINavigationController.init(rootViewController: cachedVC)
         
-        searchNVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .recents, tag: 1)
-        cachedNVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .bookmarks, tag: 2)
+        searchNVC.tabBarItem = UITabBarItem.init(title: "Suchen", image: #imageLiteral(resourceName: "search tabbar"), tag: 1)
+        cachedNVC.tabBarItem = UITabBarItem.init(title: "Lokale Ablage", image: #imageLiteral(resourceName: "ablage tabbar"), tag: 2)
         
         viewControllers = [searchNVC, cachedNVC]
     }

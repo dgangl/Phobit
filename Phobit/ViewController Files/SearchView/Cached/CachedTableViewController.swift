@@ -10,7 +10,31 @@ import UIKit
 
 class CachedTableViewController: UITableViewController {
 
+    @IBOutlet var noDataInfoView: UIView!
+    
     var billData = [BillData2]()
+    
+    fileprivate func loadData() {
+        DispatchQueue.main.async {
+            if let data = LokaleAblage().read() {
+                // clean up if it was empty
+                self.tableView.separatorColor = UITableView().separatorColor
+                self.view.backgroundColor = UIColor.white
+                self.noDataInfoView.removeFromSuperview()
+                self.tableView.isScrollEnabled = true
+                
+                self.billData = data
+                self.tableView.reloadData()
+            } else {
+                // present the empty scene
+                self.tableView.separatorColor = UIColor.clear
+                self.view.backgroundColor = UIColor.groupTableViewBackground
+                self.navigationController?.view.addSubview(self.noDataInfoView)
+                self.noDataInfoView.center = (self.navigationController?.view.center)!
+                self.tableView.isScrollEnabled = false
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +47,10 @@ class CachedTableViewController: UITableViewController {
         self.navigationItem.title = title
         
         self.navigationItem.rightBarButtonItems =  [UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: #selector(pageBack)), UIBarButtonItem.init(title: "Zurück", style: .plain, target: self, action: #selector(pageBack))]
+
         
-        DispatchQueue.main.async {
-            if let data = LokaleAblage().read() {
-                self.billData = data
-                self.tableView.reloadData()
-            }
-        }
+        
+        loadData()
     }
 
     @objc func pageBack(){
@@ -72,7 +93,7 @@ class CachedTableViewController: UITableViewController {
     }
     
     @objc func appears() {
-        
+        loadData()
     }
 
     @objc func disappears() {

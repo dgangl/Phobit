@@ -25,7 +25,6 @@ class LokaleAblage {
             if let dataInMemory = read() {
                 data = dataInMemory
             }
-
         
         data.append(billdata)
         let encryptedData = NSKeyedArchiver.archivedData(withRootObject: data)
@@ -44,7 +43,6 @@ class LokaleAblage {
             //Decrypt Data and return
             let decryptedData = NSKeyedUnarchiver.unarchiveObject(with: data) as! [BillData2]
             return decryptedData
-            
         }else{
             // no user default with this name...
         }
