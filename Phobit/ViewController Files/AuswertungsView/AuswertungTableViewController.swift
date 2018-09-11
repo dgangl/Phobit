@@ -29,6 +29,7 @@ class AuswertungsTableViewController: UITableViewController{
     // falls der VC als DetailView benutzt wird. (defaultmäßig false)
     var isDetail = false
     var noBillData = false
+    var isAblage = false
     
     
     override func viewDidLoad() {
@@ -68,6 +69,7 @@ class AuswertungsTableViewController: UITableViewController{
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Zurück", style: .plain, target: self, action: #selector(returnHome))
             imagePicker.image = image
             noImgeFoundLBL.isHidden = true
+            self.navigationItem.title = "Auswertung"
         } else if(!UserData.getChoosen().name.elementsEqual("Demo Benutzer")){
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Speichern", style: .done, target: self, action: #selector(speichern))
             
@@ -78,11 +80,6 @@ class AuswertungsTableViewController: UITableViewController{
         }else if(UserData.getChoosen().name.elementsEqual("Demo Benutzer")){
             tableView.allowsSelection = false
             tableView.isUserInteractionEnabled = false
-            
-        }
-        if(!isDetail){
-            self.navigationItem.title = "Auswertung"
-
         }
     }
     
@@ -378,13 +375,11 @@ class AuswertungsTableViewController: UITableViewController{
             informationSheet.center = CGPoint.init(x: self.view.center.x, y: UIScreen.main.bounds.maxY - 90)
             self.view.addSubview(informationSheet)
         
-        
             // animate in
             UIView.animate(withDuration: 0.3) {
                 self.informationSheet.alpha = 1
                 
             }
-            
             
             // animate out after 5 seconds
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {

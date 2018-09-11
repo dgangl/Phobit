@@ -38,7 +38,7 @@ class LokaleAblage {
         UserDefaults.standard.set(encryptedData, forKey: "\(UserData.getChoosen().email)_LOCAL_STORAGE")
     }
     
-    private func read() -> [BillData2]? {
+    func read() -> [BillData2]? {
         
         if let data = UserDefaults.standard.data(forKey: String("\(UserData.getChoosen().email)_LOCAL_STORAGE")){
             //Decrypt Data and return

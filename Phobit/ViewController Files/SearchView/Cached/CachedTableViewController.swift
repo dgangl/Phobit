@@ -10,6 +10,8 @@ import UIKit
 
 class CachedTableViewController: UITableViewController {
 
+    var billData = [BillData2]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -21,6 +23,13 @@ class CachedTableViewController: UITableViewController {
         self.navigationItem.title = title
         
         self.navigationItem.rightBarButtonItems =  [UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: #selector(pageBack)), UIBarButtonItem.init(title: "Zurück", style: .plain, target: self, action: #selector(pageBack))]
+        
+        DispatchQueue.main.async {
+            if let data = LokaleAblage().read() {
+                self.billData = data
+                self.tableView.reloadData()
+            }
+        }
     }
 
     @objc func pageBack(){
@@ -30,26 +39,37 @@ class CachedTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return billData.count
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AblageTableViewCell
+        
+        let bill = billData[indexPath.row]
+        cell.firmenname.text = bill.rechnungsersteller
+        cell.betrag.text = CFormat.correctGeldbetrag(zahl: String(bill.gesamtBrutto))
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        performSegue(withIdentifier: "showDetail", sender: billData[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let vc = segue.destination as! AuswertungsTableViewController
+            vc.bill = sender as? BillData2
+            vc.isDetail = true
+        }
+    }
     
     @objc func appears() {
         
