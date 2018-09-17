@@ -349,7 +349,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-5031" y="1488"/>
+            <point key="canvasLocation" x="-5071" y="1501"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="X03-XH-sQv">
@@ -1072,7 +1072,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAe-JE-OsA">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Privacy Policy
 LAB73 built the Phobit app as a Free app. This SERVICE is provided by LAB73 at no cost and is intended for use as is.
@@ -1256,7 +1256,7 @@ You can either contact us via the Feedback Option in the Settings-Menu or direct
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ablage groß" translatesAutoresizingMaskIntoConstraints="NO" id="Uzj-hR-yki">
-                            <rect key="frame" x="34" y="0.0" width="240" height="114"/>
+                            <rect key="frame" x="34" y="20" width="240" height="94"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fme-wO-JzI">
@@ -1275,7 +1275,6 @@ You can either contact us via the Feedback Option in the Settings-Menu or direct
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <viewLayoutGuide key="safeArea" id="kWD-tN-pyr"/>
                 </view>
             </objects>
@@ -2437,6 +2436,6 @@ Derzeit ist es leider nur möglich, Rechnungen mit QR-Code zu scannnen. Dies wir
         <image name="ablage groß" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Pa-Zx-LIW"/>
+        <segue reference="dS0-Tq-IpI"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -31,6 +31,11 @@ class AuswertungsTableViewController: UITableViewController{
     var noBillData = false
     var isAblage = false
     
+    enum UseCase {
+        case detail
+        case ablage
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +85,9 @@ class AuswertungsTableViewController: UITableViewController{
         }else if(UserData.getChoosen().name.elementsEqual("Demo Benutzer")){
             tableView.allowsSelection = false
             tableView.isUserInteractionEnabled = false
+        } else if isAblage {
+            // sharebuttons...
+            // delete button
         }
     }
     
