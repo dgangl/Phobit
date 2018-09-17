@@ -153,9 +153,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         UIBarButtonItem.appearance(whenContainedInInstancesOf:[UISearchBar.self]).tintColor = UIColor.white
-        
-        
-        
     }
     
     
@@ -172,7 +169,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = AppDelegate.snapContainer
         self.window?.makeKeyAndVisible()
         print("MADE SC View Visible")
-        
-        
     }
 }
